@@ -1,4 +1,5 @@
-<h2>Most Popular Articles</h2>
+<h2>Newest Articles</h2>
+<%= render :partial => 'articles/list', :locals => { :articles => @articles_newest } %>
 
 <% content_for :sidebar do %>
 	<h3>Browse by Category</h3>
