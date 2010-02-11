@@ -1,0 +1,16 @@
+<h2>Most Popular Articles</h2>
+
+<% content_for :sidebar do %>
+	<h3>Browse by Category</h3>
+	<div id="admin-menu">
+	<ul>
+	<% @categories.each do |category| %>
+		<li><%= link_to category.title, '#', :class => 'custom_fields' %></li>
+	<% end %>
+	</ul>
+	</div>
+<% end %>
+
+<% content_for :header_tags do %>
+    <%= stylesheet_link_tag 'knowledgebase', :plugin => 'redmine_knowledgebase' %>
+<% end %>
