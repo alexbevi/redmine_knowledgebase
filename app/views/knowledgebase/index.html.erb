@@ -6,7 +6,7 @@
 	<div id="admin-menu">
 	<ul>
 	<% @categories.each do |category| %>
-		<li><%= link_to category.title, '#', :class => 'custom_fields' %></li>
+		<li><%= link_to category.title, :controller => 'categories', :action => 'show', :id => category.id  %></li>
 	<% end %>
 	</ul>
 	</div>
