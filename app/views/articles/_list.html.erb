@@ -1,3 +1,6 @@
 <% articles.each do |article| %>
-	<p><%= article.title %></p>
+<div id="article">
+	<div class="title"><%= article.title %></div><br />
+	<% unless article.summary.nil? %><div class="summary"><%= article.summary %></div><% end %>
+</div>	
 <% end %>
