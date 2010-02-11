@@ -1,14 +1,4 @@
-#article {
-	font-family: "Courier New", Courier, monospace;	
-	border: 1px solid #3A3A3A;
-	padding: 4px;	
-}
-
-#article .title {
-	font-size: 11pt;
-	font-weight: bold;
-}
-
-#article .summary {
-	font-size: 9pt;
-}
+#article { color:#333; font-family: Tahoma; font-size: 13px; line-height: 18px; background-color:#FFF; }
+#article a { color: #0066bc; text-decoration: none; }
+#article .summary { font-weight: normal; font-size: 11px; color: #777777; line-height: 17px; text-decoration: none; }
+.featured { background-image: url(../images/kb_article_featured.gif); background-repeat: no-repeat; padding-left:28px;	background-position: 0px 6px; line-height:19px; padding-bottom: 6px; }

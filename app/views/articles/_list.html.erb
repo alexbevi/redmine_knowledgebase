@@ -1,6 +1,6 @@
 <% articles.each do |article| %>
-<div id="article">
-	<div class="title"><%= article.title %></div><br />
+<div id="article" class="featured">
+	<%= link_to article.title, "#" %>	
 	<% unless article.summary.nil? %><div class="summary"><%= article.summary %></div><% end %>
 </div>	
 <% end %>
