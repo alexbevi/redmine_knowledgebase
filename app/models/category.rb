@@ -1,4 +1,5 @@
 class Category < ActiveRecord::Base
-  validates_presence_of :title
-  validates_length_of :title, :allow_nil => false
+  validates_presence_of :title  
+  
+  def self.table_name() "kb_categories" end
 end

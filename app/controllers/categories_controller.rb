@@ -22,6 +22,8 @@ class CategoriesController < ApplicationController
     if @category.save
       flash[:notice] = "Created Category: " + @category.title
       redirect_to({ :controller => 'knowledgebase', :action => 'index' })
+    else
+      render(:action => 'new')
     end
   end
   
