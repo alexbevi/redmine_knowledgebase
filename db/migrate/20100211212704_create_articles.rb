@@ -1,0 +1,14 @@
+class CreateArticles < ActiveRecord::Migration
+  def self.up
+    create_table :kb_articles do |t|
+      t.column :category_id, :int, :default => 0
+      t.column :title, :string, :null => false
+      t.column :summary, :text
+      t.column :content, :text
+    end
+  end
+
+  def self.down
+    drop_table :articles
+  end
+end

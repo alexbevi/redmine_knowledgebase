@@ -1,2 +1,3 @@
 <h2><%= @category.title %></h2>
 <p><em><%= @category.description unless @category.description.nil? %></em></p>
+<p><%= link_to "New Article", :controller => 'articles', :action => 'new', :category_id => @category.id %></p>
