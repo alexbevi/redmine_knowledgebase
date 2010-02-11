@@ -2,6 +2,7 @@
 
 <% content_for :sidebar do %>
 	<h3>Browse by Category</h3>
+	<div style="text-align: right; padding-right: 10px;"><%= link_to "New Category", :controller => 'categories', :action => 'new' %></div>
 	<div id="admin-menu">
 	<ul>
 	<% @categories.each do |category| %>
