@@ -10,7 +10,7 @@
 	<div id="admin-menu">
 	<ul>
 	<% @categories.each do |category| %>
-		<li><%= link_to category.title, :controller => 'categories', :action => 'show', :id => category.id  %></li>
+		<li><%= link_to category.title + " (" + category.articles.length.to_s + ")", :controller => 'categories', :action => 'show', :id => category.id  %></li>
 	<% end %>
 	</ul>
 	</div>
