@@ -5,6 +5,7 @@ class CreateArticles < ActiveRecord::Migration
       t.column :title, :string, :null => false
       t.column :summary, :text
       t.column :content, :text
+      t.timestamps
     end
   end
 

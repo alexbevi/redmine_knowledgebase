@@ -3,6 +3,7 @@ class CreateCategories < ActiveRecord::Migration
     create_table :kb_categories do |t|
       t.column :title, :string, :null => false
       t.column :description, :text
+      t.timestamps
     end
   end
 
