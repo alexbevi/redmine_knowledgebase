@@ -37,5 +37,12 @@ class ArticlesController < ApplicationController
       render(:action => 'edit')
     end    
   end
+  
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+    flash[:notice] = "Article Removed"
+    redirect_to({ :controller => 'knowledgebase', :action => 'index' })    
+  end
 
 end

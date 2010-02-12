@@ -14,6 +14,7 @@
 
 <div class="contextual">
 	<%= link_to "Edit", { :controller => 'articles', :action => 'edit', :id => @article.id }, :class => 'icon icon-edit' %>    
+	<%= link_to "Delete", { :controller => 'articles', :action => 'destroy', :id => @article.id }, :confirm => l(:text_are_you_sure), :method => :post, :class => 'icon icon-del' %>
 </div>
 
 <h2><%= @article.title %></h2>
