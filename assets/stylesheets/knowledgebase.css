@@ -2,6 +2,7 @@
 #article a { color: #0066bc; text-decoration: none; }
 #article .summary { font-weight: normal; font-size: 11px; color: #777777; line-height: 17px; text-decoration: none; }
 #article .info { background-color: #F1F5F8; border: solid 1px #D5E2F1; padding: 5px; }
+#article .title { margin: 0px; padding: 6px 0px 10px 0px; color:#669933; font-size: 16px; font-weight: bold; }
 
 .featured { background-image: url(../images/kb_article_featured.gif); background-repeat: no-repeat; padding-left:28px;	background-position: 0px 6px; line-height:19px; padding-bottom: 6px; }
 
@@ -13,5 +14,5 @@
 #article-options .pdf { background: url(../images/icon-pdf.png) left no-repeat; }
 #article-options .word { background: url(../images/icon-word.png) left no-repeat; }
 
-#article .navigation { background: url(../images/icon-home.png) 0px 3px no-repeat; border-bottom: dotted 1px #CCCCCC; padding-left: 20px; padding-bottom: 5px; }
-#article .navigation a:hover { text-decoration: underline; }
+#article-navigation { background: url(../images/icon-home.png) 0px 3px no-repeat; border-bottom: dotted 1px #CCCCCC; padding-left: 20px; padding-bottom: 5px; }
+#article-navigation a:hover { text-decoration: underline; }
