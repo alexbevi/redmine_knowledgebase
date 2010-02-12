@@ -2,9 +2,7 @@
 	<%= link_to "New Category", { :controller => 'categories', :action => 'new' }, :class => 'icon icon-add' %>    
 </div>
 
-<h2>Knowledgebase</h2>
-
-<table width="100%" cellpadding="5">
+<table id="article-summaries" width="100%" cellpadding="5">
 <thead>
 <tr>
 	<th>Newest Articles</th>
@@ -18,8 +16,10 @@
 </tr>
 </tbody>
 </table>
+
 <br />
-<table width="100%" cellpadding="5">
+
+<table id="article-summaries" width="100%" cellpadding="5">
 <thead>
 <tr>	
 	<th>Recently Updated Articles</th>
@@ -33,6 +33,7 @@
 </tr>
 </tbody>
 </table>
+
 <% content_for :sidebar do %>
 	<h3>Browse by Category</h3>	
 	<div id="admin-menu">

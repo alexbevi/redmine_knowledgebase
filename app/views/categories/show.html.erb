@@ -5,7 +5,7 @@
 <h2><%= @category.title %></h2>
 <p><em><%= @category.description unless @category.description.nil? %></em></p>
 
-<%= render :partial => 'articles/list', :locals => { :articles => @articles } %>
+<%= render :partial => 'articles/list', :locals => { :articles => @articles, :default_icon => 'normal' } %>
 
 <% content_for :header_tags do %>
     <%= stylesheet_link_tag 'knowledgebase', :plugin => 'redmine_knowledgebase' %>
