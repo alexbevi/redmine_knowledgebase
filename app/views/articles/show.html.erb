@@ -15,6 +15,10 @@
 
 <h2><%= @article.title %></h2>
 <div id="article">
+	<div class="navigation">
+		<%= link_to "Home", { :controller => 'knowledgebase', :action => 'index' } %>
+		 &raquo; <a href="#">Category</a>
+	</div>
 	<div class="info">Article Number: <%= @article.id %> | Rating: x / x | Last Updated: <%= time_ago_in_words(@article.updated_at) %> ago</div>
 	<br />
 	<%= textilizable @article.content %>	
