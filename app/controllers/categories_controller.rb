@@ -7,6 +7,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
+    @articles = @category.articles.find(:all)
   end
 
   def new
@@ -21,7 +22,7 @@ class CategoriesController < ApplicationController
     @category = Category.new(params[:category])
     if @category.save
       flash[:notice] = "Created Category: " + @category.title
-      redirect_to({ :controller => 'knowledgebase', :action => 'index' })
+      redirect_to({ :action => 'show', :id => @category.id })
     else
       render(:action => 'new')
     end

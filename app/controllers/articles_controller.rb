@@ -31,7 +31,7 @@ class ArticlesController < ApplicationController
       flash[:notice] = "Article Updated"
       redirect_to({ :controller => 'knowledgebase', :action => 'index' })
     else
-      render(:action => 'edit')
+      render({:action => 'edit', :id => @article.id})
     end    
   end
   
