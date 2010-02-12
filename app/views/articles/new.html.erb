@@ -1,10 +1,5 @@
-<h2>Category</h2>
-<% labelled_tabular_form_for :article, @article, :url => { :action => "create" }, :html => { :class => nil } do |f| %>
-<%= error_messages_for 'article' %>
-<div class="box tabular">
-<p><%= f.text_field :title %></p>
-<p><%= f.text_area :summary, :rows => 6 %></p>
-<p><%= f.text_area :content %></p>
+<h2>Create Category</h2>
+<% labelled_tabular_form_for :article, @article, :url => { :action => "create" }, :html => { :class => nil } do |form| %>
+<%= render :partial => 'form', :locals => { :f => form } %>
 <%= submit_tag "Create" %>
 <% end %>
-</div>

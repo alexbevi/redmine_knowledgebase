@@ -12,6 +12,10 @@
 	</ul>	
 <% end %>
 
+<div class="contextual">
+	<%= link_to "Edit", { :controller => 'articles', :action => 'edit', :id => @article.id }, :class => 'icon icon-edit' %>    
+</div>
+
 <h2><%= @article.title %></h2>
 <div id="article">
 	<div class="article-info">Article Number: <%= @article.id %> | Rating: x / x | Last Updated: <%= time_ago_in_words(@article.updated_at) %> ago</div>
