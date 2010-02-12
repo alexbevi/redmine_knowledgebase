@@ -1,7 +1,15 @@
 <%= heads_for_wiki_formatter %>
 
 <% content_for :sidebar do %>
-	
+	<div class="rating">
+		<div class="rating-title">Article Rating <span>(1 Votes)</span></div> 
+		<div class="rating_bar" title="5 out of 5"><div style="width:100%" title="5 out of 5"></div></div> 
+	</div>	
+	<ul id="article-options">
+		<li><%= link_to "Print Article", '#', :class => "icon print" %></li>
+		<li><%= link_to "Export to PDF", '#', :class => "icon pdf" %></li>
+		<li><%= link_to "Export to Word", '#', :class => "icon word" %></li>
+	</ul>	
 <% end %>
 
 <h2><%= @article.title %></h2>
