@@ -15,7 +15,7 @@
 
 <h2><%= @article.title %></h2>
 <div id="article">
-	<div class="article-info">Article Number: <%= @article.id %> | Rating: x / x | Last Updated: <%= time_ago_in_words(@article.updated_at) %> ago</div>
+	<div class="info">Article Number: <%= @article.id %> | Rating: x / x | Last Updated: <%= time_ago_in_words(@article.updated_at) %> ago</div>
 	<br />
 	<%= textilizable @article.content %>	
 </div>

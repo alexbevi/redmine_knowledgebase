@@ -1,8 +1,7 @@
 #article { color:#333; font-family: Tahoma; font-size: 13px; line-height: 18px; background-color:#FFF; }
 #article a { color: #0066bc; text-decoration: none; }
 #article .summary { font-weight: normal; font-size: 11px; color: #777777; line-height: 17px; text-decoration: none; }
-
-#article-info {	background-color:#F1F5F8; border:solid 1px #D5E2F1;	padding:5px; }
+#article .info { background-color: #F1F5F8; border: solid 1px #D5E2F1; padding: 5px; }
 
 .featured { background-image: url(../images/kb_article_featured.gif); background-repeat: no-repeat; padding-left:28px;	background-position: 0px 6px; line-height:19px; padding-bottom: 6px; }
 
