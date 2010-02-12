@@ -1,5 +1,5 @@
 <% articles.each do |article| %>
-<div id="article" class="featured">
+<div id="article" class="article-icon <%= default_icon %>">
 	<%= link_to article.title, { :controller => 'articles', :action => 'show', :id => article.id } %>	
 	<% unless article.summary.nil? %><div class="summary"><%= article.summary %></div><% end %>
 </div>	

@@ -2,9 +2,37 @@
 	<%= link_to "New Category", { :controller => 'categories', :action => 'new' }, :class => 'icon icon-add' %>    
 </div>
 
-<h2>Newest Articles</h2>
-<%= render :partial => 'articles/list', :locals => { :articles => @articles_newest } %>
+<h2>Knowledgebase</h2>
 
+<table width="100%" cellpadding="5">
+<thead>
+<tr>
+	<th>Newest Articles</th>
+	<th>Most Popular Articles</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><%= render :partial => 'articles/list', :locals => { :articles => @articles_newest, :default_icon => 'recently-added' } %></td>
+	<td><%= render :partial => 'articles/list', :locals => { :articles => @articles_newest, :default_icon => 'popular' } %></td>
+</tr>
+</tbody>
+</table>
+
+<table width="100%" cellpadding="5">
+<thead>
+<tr>	
+	<th>Recently Updated Articles</th>
+	<th>Top Rated Articles</th>	
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><%= render :partial => 'articles/list', :locals => { :articles => @articles_newest, :default_icon => 'recently-changed' } %></td>
+	<td><%= render :partial => 'articles/list', :locals => { :articles => @articles_newest, :default_icon => 'top-rated' } %></td>	
+</tr>
+</tbody>
+</table>
 <% content_for :sidebar do %>
 	<h3>Browse by Category</h3>	
 	<div id="admin-menu">
