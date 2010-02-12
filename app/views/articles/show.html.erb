@@ -1,0 +1,16 @@
+<%= heads_for_wiki_formatter %>
+
+<% content_for :sidebar do %>
+	
+<% end %>
+
+<h2><%= @article.title %></h2>
+<div id="article">
+	<div class="article-info">Article Number: <%= @article.id %> | Rating: x / x | Last Updated: <%= time_ago_in_words(@article.updated_at) %> ago</div>
+	<br />
+	<%= textilizable @article.content %>	
+</div>
+
+<% content_for :header_tags do %>
+    <%= stylesheet_link_tag 'knowledgebase', :plugin => 'redmine_knowledgebase' %>
+<% end %>

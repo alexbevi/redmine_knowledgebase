@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  unloadable
+  unloadable    
   
   def new
     @article = Article.new
@@ -17,6 +17,10 @@ class ArticlesController < ApplicationController
     else
       render(:action => 'new')
     end
+  end
+  
+  def show
+    @article = Article.find(params[:id])
   end
 
 end
