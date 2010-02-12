@@ -3,10 +3,7 @@ class ArticlesController < ApplicationController
   
   def new
     @article = Article.new
-    
-    respond_to do |format|
-      format.html
-    end    
+    @default_category = params[:category_id]
   end
   
   def create
