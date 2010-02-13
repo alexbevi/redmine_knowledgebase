@@ -4,4 +4,4 @@ This plugin adds generic knowledgebase funcationlity to the redmine project mana
 
 == Introduction
 
- Redmine (www.redmine.org) is just plain awesome, as has proven to provide 90% of the functionality I need. The one feature that was missing was a usable knowledgebase component. I've looked at some of the open source solutions available, but couldn't find anything that fit my needs exactly. Seeing as redmine is so easily extended, I figured why not create it for this platform instead of starting yet another project from scratch :P
+Redmine (www.redmine.org) is just plain awesome, as has proven to provide 90% of the functionality I need. The one feature that was missing was a usable knowledgebase component. I've looked at some of the open source solutions available, but couldn't find anything that fit my needs exactly. Seeing as redmine is so easily extended, I figured why not create it for this platform instead of starting yet another project from scratch :P
