@@ -17,10 +17,15 @@
 	<%= link_to @article.category.title, { :controller => 'categories', :action => 'show', :id => @article.category.id } %>
 </div>
 
-<div id="article">	
-	<div class="title"><%= @article.title %></div>
-	<div class="info">Article Number: <%= @article.id %> | Rating: x / x | Last Updated: <%= time_ago_in_words(@article.updated_at) %> ago</div>
-	<br />
+<div id="article">			
+    <%= avatar(@article.author, :size => "50") %>
+    <div class="title"><%= @article.title %></div>
+    <p class="info">
+    <%= authoring @article.created_at, @article.author %>.
+    <% if @article.created_at != @article.updated_at %>
+    <%= l(:label_updated_time, time_tag(@article.updated_at)) %>.
+    <% end %>
+    </p>
 	<%= textilizable @article.content %>	
 </div>
 
