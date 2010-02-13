@@ -1,4 +1,6 @@
 class Article < ActiveRecord::Base
+  acts_as_viewed
+  
   validates_presence_of :title  
   validates_presence_of :category_id
   

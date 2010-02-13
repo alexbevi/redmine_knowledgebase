@@ -1,4 +1,4 @@
-<h2>Edit Category</h2>
+<h2>Edit Article</h2>
 <% labelled_tabular_form_for :article, @article, :url => { :action => "update" }, :html => { :class => nil } do |form| %>
 <%= hidden_field_tag 'id', @article.id %>
 <%= render :partial => 'form', :locals => { :f => form } %>

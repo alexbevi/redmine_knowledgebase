@@ -19,6 +19,7 @@ class ArticlesController < ApplicationController
   
   def show
     @article = Article.find(params[:id])
+    @article.view request.remote_addr, User.current
   end
   
   def edit
