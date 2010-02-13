@@ -1,7 +1,7 @@
 require 'redmine'
 
 Redmine::Plugin.register :redmine_knowledgebase do
-  name        'Redmine Knowledgebase plugin'
+  name        'Knowledgebase'
   author      'Alex Bevilacqua'
   description 'A plugin for Redmine that adds knowledgebase functionality'
   url         'http://github.com/alexbevi/redmine_knowledgebase'
