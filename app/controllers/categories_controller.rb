@@ -11,11 +11,7 @@ class CategoriesController < ApplicationController
   end
 
   def new
-    @category = Category.new
-    
-    respond_to do |format|
-      format.html
-    end    
+    @category = Category.new        
   end
   
   def create

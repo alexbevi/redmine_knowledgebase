@@ -6,9 +6,9 @@ class ArticlesController < ApplicationController
     @default_category = params[:category_id]
   end
   
-  def create
+  def create    
     @article = Article.new(params[:article])
-    @article.author_id = User.current.id
+    #@article.author_id = User.current.id
     if @article.save
       flash[:notice] = "Created Article " + @article.title
       redirect_to({ :controller => 'knowledgebase', :action => 'index' })
