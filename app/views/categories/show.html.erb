@@ -1,6 +1,10 @@
 <div class="contextual">
-	<%= link_to "Create Article", { :controller => 'articles', :action => 'new', :category_id => @category.id }, :class => 'icon icon-add' %>
-	<%= link_to "Edit Category", { :controller => 'categories', :action => 'edit', :id => @category.id }, :class => 'icon icon-edit' %>    
+	<%= link_to_if_logged_in "Create Article", 
+			{ :controller => 'articles', :action => 'new', :category_id => @category.id }, 
+			:class => 'icon icon-add' %>
+	<%= link_to_if_logged_in "Edit Category", 
+			{ :controller => 'categories', :action => 'edit', :id => @category.id }, 
+			:class => 'icon icon-edit' %>    
 </div>
 <h2><%= @category.title %></h2>
 <p><em><%= @category.description unless @category.description.nil? %></em></p>

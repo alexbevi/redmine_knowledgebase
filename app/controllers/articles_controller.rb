@@ -1,4 +1,4 @@
-class ArticlesController < ApplicationController
+class ArticlesController < KnowledgebaseController
   unloadable    
   
   def new

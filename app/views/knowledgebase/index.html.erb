@@ -1,5 +1,7 @@
 <div class="contextual">
-	<%= link_to "New Category", { :controller => 'categories', :action => 'new' }, :class => 'icon icon-add' %>    
+	<%= link_to_if_logged_in "New Category", 
+		{ :controller => 'categories', :action => 'new' }, 
+		:class => 'icon icon-add' %>    
 </div>
 
 <table id="article-summaries" width="100%" cellpadding="5">

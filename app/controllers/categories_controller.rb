@@ -1,4 +1,4 @@
-class CategoriesController < ApplicationController
+class CategoriesController < KnowledgebaseController
 	unloadable
 	
   def index
