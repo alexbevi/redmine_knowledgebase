@@ -1,4 +1,6 @@
 class Article < ActiveRecord::Base
+  unloadable
+  
   acts_as_viewed
   
   validates_presence_of :title  
