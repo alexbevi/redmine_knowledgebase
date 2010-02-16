@@ -22,6 +22,20 @@
 <h2><%= @category.title %></h2>
 <p><div class="wiki"><%= textilizable @category.description unless @category.description.nil? %></div></p>
 
+<% @kids = @category.children %>
+
+<% if @kids.length > 0 %>
+<div class="categories">
+	<div class="category-header">Sub-categories</div>
+	<br />
+	<% @kids.each do |subs| %>
+	<%= link_to_if_logged_in subs.title + " (" + subs.articles.length.to_s + ")", 
+			{ :controller => 'categories', :action => 'show', :id => subs.id }, 
+			:class => 'category-title' %>    
+	<% end %>
+</div>
+<% end %>
+<h3>Articles</h3>
 <%= render :partial => 'articles/list', :locals => { :articles => @articles, :default_icon => 'normal' } %>
 
 <% content_for :header_tags do %>

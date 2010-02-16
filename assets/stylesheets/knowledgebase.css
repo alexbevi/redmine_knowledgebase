@@ -31,3 +31,8 @@
 #categories_nav li { border-bottom: 1px solid #ced3d5; width: 100%; }
 #categories_nav li a:link, #categories_nav li a:visited { line-height: 27px; display: block; color: #1a6ab3; }
 #categories_nav li a:hover { text-decoration: none; background-image: none; color: #FF6600; }
+
+.categories { background-color:#F1F5F8; border:solid 1px #D5E2F1; -moz-border-radius: 5px; -webkit-border-radius: 5px; margin: 10px 0px; padding: 10px; }
+.category-header { padding-top: 0; font-size:15px; font-weight:bold; padding-bottom: 10px; border-bottom: solid 1px #D5E2F1; }
+.category-title { background-image: url(../images/category.png); background-repeat: no-repeat; padding-left:22px; }
+.category-title a { font-weight:bold;}
