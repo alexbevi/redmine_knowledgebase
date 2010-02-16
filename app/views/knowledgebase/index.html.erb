@@ -1,5 +1,5 @@
 <div class="contextual">
-	<label for="category_id"><strong>Select Category</strong></label>
+	<label for="category_id"><strong>Jump to Category</strong></label>
 	<%= select_tag :category_id, 
 		options_for_select(nested_set_options(Category) {|i| "#{'»' * i.level} #{i.title}" }),
 		:onchange => "if (this.value != \'\') { window.location = '/knowledgebase/categories/' + this.value; }"
