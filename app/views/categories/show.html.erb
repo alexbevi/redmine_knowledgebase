@@ -18,7 +18,7 @@
 			:class => 'icon icon-edit' %>    
 </div>
 <h2><%= @category.title %></h2>
-<p><em><%= @category.description unless @category.description.nil? %></em></p>
+<p><div class="wiki"><%= textilizable @category.description unless @category.description.nil? %></div></p>
 
 <%= render :partial => 'articles/list', :locals => { :articles => @articles, :default_icon => 'normal' } %>
 
