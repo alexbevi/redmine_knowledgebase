@@ -1,6 +1,6 @@
 class Category < ActiveRecord::Base
   unloadable
-  #acts_as_nested_set :order => 'title'
+  acts_as_nested_set :order => 'title'
   
   validates_presence_of :title  
   
