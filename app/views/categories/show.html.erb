@@ -10,9 +10,11 @@
 	<%= link_to_if_logged_in "Create Article", 
 			{ :controller => 'articles', :action => 'new', :category_id => @category.id }, 
 			:class => 'icon icon-add' %>
+	&nbsp;|&nbsp;
 	<%= link_to_if_logged_in "New Category", 
 		{ :controller => 'categories', :action => 'new' }, 
 		:class => 'icon icon-add' %>    
+	&nbsp;|&nbsp;
 	<%= link_to_if_logged_in "Edit Category", 
 			{ :controller => 'categories', :action => 'edit', :id => @category.id }, 
 			:class => 'icon icon-edit' %>    
