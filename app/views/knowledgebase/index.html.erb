@@ -40,7 +40,7 @@
 	<h3>Browse by Category</h3>	
 	<div id="categories_nav">
 	<ul>
-	<% @categories.each do |category| %>
+	<% Category.roots.each do |category| %>
 		<li><%= link_to category.title + " (" + category.articles.length.to_s + ")", :controller => 'categories', :action => 'show', :id => category.id  %></li>
 	<% end %>
 	</ul>

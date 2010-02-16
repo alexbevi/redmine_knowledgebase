@@ -4,7 +4,6 @@ class KnowledgebaseController < ApplicationController
   before_filter :is_user_logged_in, :only => :edit
   
   def index
-		@categories = Category.find(:all)
     @articles_newest = Article.find(:all)
   end
 
