@@ -8,4 +8,7 @@ Redmine (www.redmine.org) is just plain awesome, and has proven to provide 90% o
 
 == Requirements
 
+Note that whenever possible, the necessary plugins for the knowledgebase have been stripped into the project (so they're not setup as plugins, but modules). The copyright information has been preserved when available, and the links are provided below.
+I figure if there's ever a need for these plugins in the greater Redmine application, they can be incorporated into the trunk at that point and called accordingly.
+
 * acts_as_viewed (http://rubyforge.org/projects/acts-as-viewed)

@@ -1,6 +1,8 @@
 class Article < ActiveRecord::Base
   unloadable
   
+  require 'acts_as_viewed'
+  
   acts_as_viewed
   
   validates_presence_of :title  
