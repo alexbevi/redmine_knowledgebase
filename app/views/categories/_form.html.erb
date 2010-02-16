@@ -1,18 +1,15 @@
 <%= error_messages_for 'category' %>
 <div class="box tabular">
-<p><label for="parent_selection">Category</label>
-<select id="parent_selection" name="category[parent_id]">
-<% if f.object.new_record? %>
-<option value="" selected="true">Select a Parent Category (if applicable)</option>
-<option value="" disabled="true">&nbsp;</option>
+<% if Category.find(:all).length > 0 %>
+<p><%= check_box_tag 'root_category', 'yes', true %>Root Category<br /></p>
+<p>
+<label for="parent_id">Parent Category</label>
+<%= select_tag :parent_id, options_for_select(nested_set_options(Category, @category) {|i| "#{'-' * i.level} #{i.title}" }) %><br />
+</p>
+<% else %>
+<p><%= check_box_tag 'root_category', 'yes', true, :disabled => :true %>Root Category</p>
 <% end %>
-<% @items = Category.find(:all, :order => "title") %>
-<% @items.each do |item| %>
-<option value="<%= item.id %>" selected="<%= @category.id == item.id %>">
-<%= item.title %>
-</option>
-<% end %>
-</select>	
+
 <p><%= f.text_field :title %></p>
 <p><%= f.text_area :description %></p>
 </div>

@@ -11,12 +11,17 @@ class CategoriesController < KnowledgebaseController
   end
 
   def new
-    @category = Category.new        
+    @category = Category.new    
   end
   
   def create
-    @category = Category.new(params[:category])
+    @category = Category.new(params[:category])    
     if @category.save
+      # FIXME this doesn't work
+      if !params[:root_category]
+        @category.move_to_child_of(Category.find(params[:parent_id]))  
+      end
+       
       flash[:notice] = "Created Category: " + @category.title
       redirect_to({ :action => 'show', :id => @category.id })
     else
