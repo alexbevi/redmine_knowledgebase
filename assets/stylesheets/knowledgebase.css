@@ -23,8 +23,8 @@
 #article-options .word { background: url(../images/icon-word.png) left no-repeat; }
 #article-options .bookmark { background: url(../images/icon-bookmark.png) left no-repeat; }
 
-#article-navigation { background: url(../images/icon-home.png) 0px 3px no-repeat; border-bottom: dotted 1px #CCCCCC; padding-left: 20px; padding-bottom: 5px; }
-#article-navigation a:hover { text-decoration: underline; }
+#category-crumbs { background: url(../images/icon-home.png) 0px 3px no-repeat; border-bottom: dotted 1px #CCCCCC; padding-left: 20px; padding-bottom: 5px; }
+#category-crumbs a:hover { text-decoration: underline; }
 
 #categories_nav { float: left; vertical-align: top; }
 #categories_nav ul { margin: 0; padding: 0; list-style: none; }

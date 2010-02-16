@@ -1,18 +1,8 @@
 <%= error_messages_for 'article' %>
 <div class="box tabular">
-<p><label for="parent_selection">Category</label>
-<select id="parent_selection" name="article[category_id]">
-<% if f.object.new_record? and @default_category.nil? %>
-<option value="" selected="true" >Select a Category</option>
-<option value="" disabled="true">&nbsp;</option>
-<% end %>
-<% @items = Category.find(:all, :order => "title") %>
-<% @items.each do |item| %>
-<option value="<%= item.id %>" selected="<%= @article.category_id == item.id or @default_category == item.id %>">
-<%= item.title %>
-</option>
-<% end %>
-</select>
+<p>
+<label for="category_id">Category</label>
+<%= select_tag :category_id, options_for_select(nested_set_options(Category, @article) {|i| "#{'-' * i.level} #{i.title}" }) %><br />
 </p>
 <p><%= f.text_field :title %></p>
 <p><%= f.text_area :summary, :rows => 6 %></p>

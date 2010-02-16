@@ -8,6 +8,7 @@ class ArticlesController < KnowledgebaseController
   
   def create    
     @article = Article.new(params[:article])
+    @article.category_id = params[:category_id]
     @article.author_id = User.current.id
     if @article.save
       flash[:notice] = "Created Article " + @article.title

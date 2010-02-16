@@ -1,3 +1,11 @@
+<div id="category-crumbs">
+	<%= link_to "Home", { :controller => 'knowledgebase', :action => 'index' } %>
+	<% @category.ancestors.each do |ancestor| %>
+	&nbsp;&raquo;&nbsp; 
+	<%= link_to ancestor.title, { :controller => 'categories', :action => 'show', :id => ancestor.id } %>
+	<% end %>
+</div>
+
 <div class="contextual">
 	<%= link_to_if_logged_in "Create Article", 
 			{ :controller => 'articles', :action => 'new', :category_id => @category.id }, 

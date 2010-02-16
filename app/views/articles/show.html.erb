@@ -11,8 +11,12 @@
 	</ul>	
 <% end %>
 
-<div id="article-navigation">
+<div id="category-crumbs">
 	<%= link_to "Home", { :controller => 'knowledgebase', :action => 'index' } %>
+	<% @article.category.ancestors.each do |ancestor| %>
+	&nbsp;&raquo;&nbsp; 
+	<%= link_to ancestor.title, { :controller => 'categories', :action => 'show', :id => ancestor.id } %>
+	<% end %>
 	&nbsp;&raquo;&nbsp; 
 	<%= link_to @article.category.title, { :controller => 'categories', :action => 'show', :id => @article.category.id } %>
 </div>
