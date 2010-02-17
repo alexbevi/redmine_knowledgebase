@@ -21,14 +21,13 @@
 	<%= link_to @article.category.title, { :controller => 'categories', :action => 'show', :id => @article.category.id } %>
 </div>
 
-<div id="article">			
-    <%= avatar(@article.author, :size => "50") %>
-    <div class="title"><%= @article.title %></div>
-    <p class="info">
-    <%= authoring @article.created_at, @article.author %>
-    <% if @article.created_at != @article.updated_at %>
-    | <%= l(:label_updated_time, time_tag(@article.updated_at)) %>.
-    <% end %>
+<div id="article">
+	<div class="title"><%= @article.title %></div>
+	<p class="info">
+	<%= authoring @article.created_at, @article.author %>
+	<% if @article.created_at != @article.updated_at %>
+	| <%= l(:label_updated_time, time_tag(@article.updated_at)) %>.
+	<% end %>
 	| Viewed <%= @article.view_count %> time<% if @article.view_count > 1%>(s)<% end %>
     </p>
 </div>
