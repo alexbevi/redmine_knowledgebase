@@ -29,7 +29,7 @@ class ArticlesController < KnowledgebaseController
   
   def update
     @article = Article.find(params[:id])
-    
+    params[:article][:category_id] = params[:category_id]
     if @article.update_attributes(params[:article])
       flash[:notice] = "Article Updated"
       redirect_to({ :controller => 'knowledgebase', :action => 'index' })

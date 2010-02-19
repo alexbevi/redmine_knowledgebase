@@ -17,7 +17,6 @@ class CategoriesController < KnowledgebaseController
   def create
     @category = Category.new(params[:category])    
     if @category.save
-      # FIXME this doesn't work
       if !params[:root_category]
         @category.move_to_child_of(Category.find(params[:parent_id]))  
       end
@@ -35,7 +34,9 @@ class CategoriesController < KnowledgebaseController
   
   def update
     @category = Category.find(params[:id])
-    
+    if !params[:root_category]
+        @category.move_to_child_of(Category.find(params[:parent_id]))  
+      end
     if @category.update_attributes(params[:category])
       flash[:notice] = "Category Updated"
       redirect_to({ :controller => 'knowledgebase', :action => 'index' })
