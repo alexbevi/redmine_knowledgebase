@@ -1,4 +1,7 @@
-<%= heads_for_wiki_formatter %>
+<% content_for :header_tags do %>
+	<%= stylesheet_link_tag 'knowledgebase', :plugin => 'redmine_knowledgebase' %>
+	<%= stylesheet_link_tag 'scm' %>
+<% end %>
 
 <% content_for :sidebar do %>	
 	<ul id="article-options">
@@ -31,7 +34,4 @@
 	| Viewed <%= @article.view_count %> time<% if @article.view_count > 1%>(s)<% end %>
     </p>
 </div>
-<div class="wiki"><%= textilizable @article.content %></div>
-<% content_for :header_tags do %>
-	<%= stylesheet_link_tag 'knowledgebase', :plugin => 'redmine_knowledgebase' %>
-<% end %>
+<div class="wiki"><%= textilizable(@article, :content) %></div>
