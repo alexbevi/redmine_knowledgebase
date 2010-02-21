@@ -39,7 +39,7 @@ class CategoriesController < KnowledgebaseController
       end
     if @category.update_attributes(params[:category])
       flash[:notice] = "Category Updated"
-      redirect_to({ :controller => 'knowledgebase', :action => 'index' })
+      redirect_to({ :action => 'show', :id => @category.id })
     else
       render(:action => 'edit')
     end   

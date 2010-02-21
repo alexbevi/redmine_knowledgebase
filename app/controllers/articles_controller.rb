@@ -32,7 +32,7 @@ class ArticlesController < KnowledgebaseController
     params[:article][:category_id] = params[:category_id]
     if @article.update_attributes(params[:article])
       flash[:notice] = "Article Updated"
-      redirect_to({ :controller => 'knowledgebase', :action => 'index' })
+      redirect_to({ :action => 'show', :id => @article.id })
     else
       render({:action => 'edit', :id => @article.id})
     end    
