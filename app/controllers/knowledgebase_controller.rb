@@ -4,7 +4,8 @@ class KnowledgebaseController < ApplicationController
   before_filter :is_user_logged_in, :only => :edit
   
   def index
-    @articles_newest = Article.find(:all)
+    @articles_newest  = Article.find(:all, :limit => 5, :order => 'created_at DESC')
+    @articles_updated = Article.find(:all, :limit => 5, :order => 'updated_at DESC')
   end
 
 protected
