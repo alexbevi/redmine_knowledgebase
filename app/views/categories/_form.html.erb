@@ -4,7 +4,7 @@
 <p><%= check_box_tag 'root_category', 'yes', true %>Root Category<br /></p>
 <p>
 <label for="parent_id">Parent Category</label>
-<%= select_tag :parent_id, options_for_select(nested_set_options(Category, @category) {|i| "#{'-' * i.level} #{i.title}" }, @category.id || nil) %><br />
+<%= select_tag :parent_id, options_for_select(nested_set_options(Category, @category) {|i| "#{'»' * i.level} #{i.title}" }, @category.id || nil) %><br />
 </p>
 <% else %>
 <p><%= check_box_tag 'root_category', 'yes', true, :disabled => :true %>Root Category</p>
