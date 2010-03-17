@@ -6,7 +6,7 @@
 <% content_for :sidebar do %>	
 	<ul id="article-options">
 		<li><%= link_to_if_logged_in "Edit", { :controller => 'articles', :action => 'edit', :id => @article.id }, :class => 'icon icon-edit' %></li>
-		<li><%= link_to_if_logged_in "Delete", { :controller => 'articles', :action => 'destroy', :id => @article.id }, :confirm => l(:text_are_you_sure), :method => :post, :class => 'icon icon-del' %></li>
+		<li><%= link_to_if_logged_in "Delete", { :controller => 'articles', :action => 'destroy', :id => @article.id }, :confirm => l(:text_are_you_sure), :method => :delete, :class => 'icon icon-del' %></li>
 		<li><%= link_to "Print Article", '#', :class => "icon print" %></li>
 		<li><%= link_to "Bookmark Article", '#', :class => "icon bookmark" %></li>
 		<li><%= link_to "Export to PDF", '#', :class => "icon pdf" %></li>

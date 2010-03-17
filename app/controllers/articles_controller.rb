@@ -1,5 +1,5 @@
 class ArticlesController < KnowledgebaseController
-  unloadable    
+  unloadable
   
   def new
     @article = Article.new
@@ -35,14 +35,14 @@ class ArticlesController < KnowledgebaseController
       redirect_to({ :action => 'show', :id => @article.id })
     else
       render({:action => 'edit', :id => @article.id})
-    end    
+    end
   end
   
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
     flash[:notice] = "Article Removed"
-    redirect_to({ :controller => 'knowledgebase', :action => 'index' })    
+    redirect_to({ :controller => 'knowledgebase', :action => 'index' })
   end
 
 end
