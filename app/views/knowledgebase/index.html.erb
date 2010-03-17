@@ -5,7 +5,7 @@
 		options_for_select(nested_set_options(Category) {|i| "#{'»' * i.level} #{i.title}" }),
 		:onchange => "if (this.value != \'\') { window.location = '/knowledgebase/categories/' + this.value; }"
 	%>
-	&nbsp;|&nbsp;
+	<% if User.current.logged? %>&nbsp;|&nbsp;<% end %>
 	<%= link_to_if_logged_in "New Category", 
 		{ :controller => 'categories', :action => 'new' }, 
 		:class => 'icon icon-add' %>
