@@ -37,7 +37,7 @@
 <% end %>
 <% if @articles.length > 0%>
 <h3>Articles</h3>
-<%= render :partial => 'articles/list', :locals => { :articles => @articles, :default_icon => 'normal' } %>
+<%= render :partial => 'articles/list', :locals => { :summary_format => "normal", :articles => @articles, :default_icon => 'normal' } %>
 <% end %>
 
 <% content_for :header_tags do %>
