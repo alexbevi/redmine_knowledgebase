@@ -17,7 +17,10 @@ class CategoriesController < KnowledgebaseController
   def create
     @category = Category.new(params[:category])    
     if @category.save
-      if !params[:root_category]
+      # Test if the new category is a root category, and if more categories exist.
+      # We check for a value > 1 because if this is the first entry, the category
+      # count would be 1 (since the create operation already succeeded)
+      if !params[:root_category] and Category.find(:all).length > 1
         @category.move_to_child_of(Category.find(params[:parent_id]))  
       end
        
