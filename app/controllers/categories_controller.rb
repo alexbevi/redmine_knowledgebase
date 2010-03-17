@@ -2,7 +2,7 @@ class CategoriesController < KnowledgebaseController
 	unloadable
 	
   def index
-		@categories = Category.find(:all)   
+		@categories = Category.find(:all)
   end
 
   def show
@@ -11,11 +11,11 @@ class CategoriesController < KnowledgebaseController
   end
 
   def new
-    @category = Category.new    
+    @category = Category.new
   end
   
   def create
-    @category = Category.new(params[:category])    
+    @category = Category.new(params[:category])
     if @category.save
       # Test if the new category is a root category, and if more categories exist.
       # We check for a value > 1 because if this is the first entry, the category
@@ -38,14 +38,14 @@ class CategoriesController < KnowledgebaseController
   def update
     @category = Category.find(params[:id])
     if !params[:root_category]
-        @category.move_to_child_of(Category.find(params[:parent_id]))  
+        @category.move_to_child_of(Category.find(params[:parent_id]))
       end
     if @category.update_attributes(params[:category])
       flash[:notice] = "Category Updated"
       redirect_to({ :action => 'show', :id => @category.id })
     else
       render(:action => 'edit')
-    end   
+    end
   end
   
 end
