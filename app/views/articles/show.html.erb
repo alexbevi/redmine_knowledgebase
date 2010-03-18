@@ -1,8 +1,10 @@
-<% content_for :sidebar do %>	
+<% content_for :sidebar do %>
 	<ul id="article-options">
 		<li><%= link_to_if_logged_in "Edit", { :controller => 'articles', :action => 'edit', :id => @article.id }, :class => 'icon icon-edit' %></li>
 		<li><%= link_to_if_logged_in "Delete", { :controller => 'articles', :action => 'destroy', :id => @article.id }, :confirm => l(:text_are_you_sure), :method => :delete, :class => 'icon icon-del' %></li>
-	</ul>	
+	</ul>
+	<br />
+	<%= render :partial => "rating", :locals => {:article => @article } %>
 <% end %>
 
 <div id="category-crumbs">

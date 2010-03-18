@@ -6,6 +6,13 @@ class ArticlesController < KnowledgebaseController
     @default_category = params[:category_id]
   end
   
+  
+  def rate
+    @article = Article.find(params[:article_id])
+    @article.rate params[:rating].to_i
+    render :partial => "rating", :locals => {:article => @article}
+  end
+  
   def create    
     @article = Article.new(params[:article])
     @article.category_id = params[:category_id]
