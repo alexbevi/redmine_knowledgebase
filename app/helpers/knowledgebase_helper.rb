@@ -19,19 +19,16 @@ module KnowledgebaseHelper
   end
 
   def rating_links(article)
-      average = (article.rated_count <= 0 ? 0 : article.rating_average) * 100 / 5
-  
-      html = "<ul class='stars'>"
-      html += "<li class='current_rating' style='width: #{average}%'>#{average}%</li>"
-      #if(!article.rated?)
-        html += "<li>#{link_to_remote "One",   :update => "article_rating_#{article.id}", :url => {:controller => 'articles', :action => 'rate', :article_id => article, :rating => 1 }, :html => {:class => "one_star"},    :method => :get}</li>"
-        html += "<li>#{link_to_remote "Two",   :update => "article_rating_#{article.id}", :url => {:controller => 'articles', :action => 'rate', :article_id => article, :rating => 2 }, :html => {:class => "two_stars"},   :method => :get}</li>"
-        html += "<li>#{link_to_remote "Three", :update => "article_rating_#{article.id}", :url => {:controller => 'articles', :action => 'rate', :article_id => article, :rating => 3 }, :html => {:class => "three_stars"}, :method => :get}</li>"
-        html += "<li>#{link_to_remote "Four",  :update => "article_rating_#{article.id}", :url => {:controller => 'articles', :action => 'rate', :article_id => article, :rating => 4 }, :html => {:class => "four_stars"},  :method => :get}</li>"
-        html += "<li>#{link_to_remote "Five",  :update => "article_rating_#{article.id}", :url => {:controller => 'articles', :action => 'rate', :article_id => article, :rating => 5 }, :html => {:class => "five_stars"},  :method => :get}</li>"
-      #end
-      html += "</ul>"
-      html
+    average = (article.rated_count <= 0 ? 0 : article.rating_average) * 100 / 5
+    html = "<ul class='stars'>"
+    html += "<li class='current_rating' style='width: #{average}%'>#{average}%</li>"
+    html += "<li>#{link_to_remote "One",   :update => "article_rating_#{article.id}", :url => {:controller => 'articles', :action => 'rate', :article_id => article, :rating => 1 }, :html => {:class => "one_star"},    :method => :get}</li>"
+    html += "<li>#{link_to_remote "Two",   :update => "article_rating_#{article.id}", :url => {:controller => 'articles', :action => 'rate', :article_id => article, :rating => 2 }, :html => {:class => "two_stars"},   :method => :get}</li>"
+    html += "<li>#{link_to_remote "Three", :update => "article_rating_#{article.id}", :url => {:controller => 'articles', :action => 'rate', :article_id => article, :rating => 3 }, :html => {:class => "three_stars"}, :method => :get}</li>"
+    html += "<li>#{link_to_remote "Four",  :update => "article_rating_#{article.id}", :url => {:controller => 'articles', :action => 'rate', :article_id => article, :rating => 4 }, :html => {:class => "four_stars"},  :method => :get}</li>"
+    html += "<li>#{link_to_remote "Five",  :update => "article_rating_#{article.id}", :url => {:controller => 'articles', :action => 'rate', :article_id => article, :rating => 5 }, :html => {:class => "five_stars"},  :method => :get}</li>"
+    html += "</ul>"
+    return html
   end
 
 end
