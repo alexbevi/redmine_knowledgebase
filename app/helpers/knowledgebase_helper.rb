@@ -19,7 +19,7 @@ module KnowledgebaseHelper
   end
 
   def rating_links(article)
-      average = (article.rating_average.blank? ? 0 : article.rating_average) * 100 / 5
+      average = (article.rated_count <= 0 ? 0 : article.rating_average) * 100 / 5
   
       html = "<ul class='stars'>"
       html += "<li class='current_rating' style='width: #{average}%'>#{average}%</li>"
