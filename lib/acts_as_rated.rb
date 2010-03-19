@@ -171,7 +171,7 @@ module ActiveRecord #:nodoc:
           return self.rating_avg if attributes.has_key?('rating_avg')
           return (rating_statistic.rating_avg || 0) rescue 0 if acts_as_rated_options[:stats_class]
           avg = ratings.average(:rating) 
-          avg = 0 if avg.nan?
+          avg = 0 if avg.nil? or avg.nan?
           avg
         end
 
