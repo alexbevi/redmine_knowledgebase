@@ -5,8 +5,10 @@ class KnowledgebaseController < ApplicationController
   
   def index
     @categories = Category.find(:all)
-    @articles_newest  = Article.find(:all, :limit => 5, :order => 'created_at DESC')
-    @articles_updated = Article.find(:all, :limit => 5, :order => 'updated_at DESC')
+    @articles_newest   = Article.find(:all, :limit => 5, :order => 'created_at DESC')
+    @articles_updated  = Article.find(:all, :limit => 5, :order => 'updated_at DESC')
+    @articles_toprated = Article.find(:all, :limit => 5, :order => 'updated_at DESC')
+    @articles_popular  = Article.find(:all, :limit => 5, :order => 'updated_at DESC')
   end
 
 protected

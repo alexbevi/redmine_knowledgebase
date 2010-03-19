@@ -13,6 +13,10 @@ module KnowledgebaseHelper
         output = "Created " + time_ago_in_words(article.created_at) + " ago in " + link_to(article.category.title, {:controller => 'categories', :action => 'show', :id => article.category.id})
       when "updated"
         output = "Updated " + time_ago_in_words(article.updated_at) + " ago"
+      when "popular"
+        output = "Viewed " + article.view_count.to_s + " since " + article.created_at.to_s
+      when "toprated"
+        output = "Rating: " + article.rating_average.to_s + "/5 from " + article.rated_count.to_s + " Votes"
     end
     
     content_tag(:div, output, :class => "summary")

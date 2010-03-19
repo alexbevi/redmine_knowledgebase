@@ -19,7 +19,7 @@
 		:class => 'icon icon-add' %>
 </div>
 
-<% if Article.find(:all).length > 0 %>
+<% if Article.count > 0 %>
 
 	<table id="article-summaries" width="100%" cellpadding="5">
 	<thead>
@@ -32,6 +32,21 @@
 	<tr>
 		<td width="50%"><%= render :partial => 'articles/list', :locals => { :summary_format => "newest", :articles => @articles_newest, :default_icon => 'recently-added' } %></td>
 		<td width="50%"><%= render :partial => 'articles/list', :locals => { :summary_format => "updated", :articles => @articles_updated, :default_icon => 'recently-changed' } %></td>
+	</tr>
+	</tbody>
+	</table>
+	
+	<table id="article-summaries" width="100%" cellpadding="5">
+	<thead>
+	<tr>
+		<th>Most Popular Articles</th>
+		<th>Top Rated Articles</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td width="50%"><%= render :partial => 'articles/list', :locals => { :summary_format => "popular", :articles => @articles_popular, :default_icon => 'popular' } %></td>
+		<td width="50%"><%= render :partial => 'articles/list', :locals => { :summary_format => "toprated", :articles => @articles_toprated, :default_icon => 'top-rated' } %></td>
 	</tr>
 	</tbody>
 	</table>
