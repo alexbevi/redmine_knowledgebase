@@ -28,7 +28,10 @@
     </p>
 </div>
 
-<div class="wiki"><%= textilizable @article, :content %></div>
+<div class="wiki"><%= textilizable @article, :content, :attachments => @article.attachments %></div>
+
+<h3><%= l(:label_attachment_plural) %></h3>
+<%= render :partial => 'attachments/links', :locals => {:attachments => @article.attachments, :options => {} } %>
 
 <% content_for :header_tags do %>
 	<%= stylesheet_link_tag 'knowledgebase', :plugin => 'redmine_knowledgebase' %>

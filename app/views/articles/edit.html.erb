@@ -1,7 +1,7 @@
 <h2>Edit Article</h2>
 <% labelled_tabular_form_for :article, @article, 
 	:url => { :action => "update", :id => @article.id }, 
-	:html => { :class => nil, :method => :put } do |form| %>
+	:html => { :class => nil, :method => :put, :multipart => true }  do |form| %>
 <%= render :partial => 'form', :locals => { :f => form } %>
 <%= submit_tag "Update" %>
 <% end %>

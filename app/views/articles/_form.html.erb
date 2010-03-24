@@ -4,7 +4,13 @@
 <label for="category_id">Category</label>
 <%= select_tag :category_id, options_for_select(nested_set_options(Category) {|i| "#{'»' * i.level} #{i.title}" }, @article.category_id) %><br />
 </p>
-<p><%= f.text_field :title %></p>
-<p><%= f.text_area :summary, :rows => 6 %></p>
-<p><%= f.text_area :content %></p>
+<p><%= f.text_field :title, :size => 60 %></p>
+<p><%= f.text_area :summary, :cols => 60, :rows => 5, :class => 'wiki-edit' %></p>
+<p><%= f.text_area :content, :cols => 60, :rows => 15, :class => 'wiki-edit' %></p>
 </div>
+<div class="box">
+<p><label><%=l(:label_attachment_plural)%></label><%= render :partial => 'attachments/form' %></p>
+</div>
+
+<%= wikitoolbar_for 'article_summary' %>
+<%= wikitoolbar_for 'article_content' %>

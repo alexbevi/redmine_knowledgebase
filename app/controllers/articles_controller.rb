@@ -1,6 +1,8 @@
 class ArticlesController < KnowledgebaseController
   unloadable
   
+  helper :attachments
+  
   def new
     @article = Article.new
     @default_category = params[:category_id]
@@ -18,6 +20,8 @@ class ArticlesController < KnowledgebaseController
     @article.category_id = params[:category_id]
     @article.author_id = User.current.id
     if @article.save
+      attachments = Attachment.attach_files(@article, params[:attachments])
+      render_attachment_warning_if_needed(@article)
       flash[:notice] = "Created Article " + @article.title
       redirect_to({ :controller => 'knowledgebase', :action => 'index' })
     else
@@ -28,6 +32,7 @@ class ArticlesController < KnowledgebaseController
   def show
     @article = Article.find(params[:id])
     @article.view request.remote_addr, User.current
+    @attachments = @article.attachments.find(:all, :order => "created_on DESC")
   end
   
   def edit
@@ -38,6 +43,8 @@ class ArticlesController < KnowledgebaseController
     @article = Article.find(params[:id])
     params[:article][:category_id] = params[:category_id]
     if @article.update_attributes(params[:article])
+      attachments = Attachment.attach_files(@article, params[:attachments])
+      render_attachment_warning_if_needed(@article)
       flash[:notice] = "Article Updated"
       redirect_to({ :action => 'show', :id => @article.id })
     else
@@ -50,6 +57,13 @@ class ArticlesController < KnowledgebaseController
     @article.destroy
     flash[:notice] = "Article Removed"
     redirect_to({ :controller => 'knowledgebase', :action => 'index' })
+  end
+
+  def add_attachment
+    @article = Article.find(params[:id])
+    attachments = Attachment.attach_files(@article, params[:attachments])
+    render_attachment_warning_if_needed(@article)
+    redirect_to({ :action => 'show', :id => @article.id })
   end
 
 end

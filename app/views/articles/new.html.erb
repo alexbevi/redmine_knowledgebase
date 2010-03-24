@@ -1,5 +1,5 @@
 <h2>Create Article</h2>
-<% labelled_tabular_form_for :article, @article, :url => { :action => "create" }, :html => { :class => nil } do |form| %>
+<% labelled_tabular_form_for :article, @article, :url => { :action => "create" }, :html => { :class => nil, :multipart => true } do |form| %>
 <%= render :partial => 'form', :locals => { :f => form } %>
 <%= submit_tag "Create" %>
 <% end %>
