@@ -19,13 +19,13 @@
 
 <div id="article">
 	<div class="title"><%= @article.title %></div>
-	<p class="info">
+	<div class="info">
 	<%= authoring @article.created_at, @article.author %>
 	<% if @article.created_at != @article.updated_at %>
 	| <%= l(:label_updated_time, time_tag(@article.updated_at)) %>.
 	<% end %>
 	| Viewed <%= @article.view_count %> time<% if @article.view_count > 1%>(s)<% end %>
-    </p>
+	</div>
 </div>
 
 <div class="wiki"><%= textilizable @article, :content, :attachments => @article.attachments %></div>
