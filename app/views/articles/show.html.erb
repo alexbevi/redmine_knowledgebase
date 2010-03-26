@@ -30,8 +30,13 @@
 
 <div class="wiki"><%= textilizable @article, :content, :attachments => @article.attachments %></div>
 
-<h3><%= l(:label_attachment_plural) %></h3>
+<% unless @article.attachments.empty? %>
+<div id="section-title" class="attachments">Attachments</div>
 <%= render :partial => 'attachments/links', :locals => {:attachments => @article.attachments, :options => {} } %>
+<br />
+<% end %>
+
+<div id="section-title" class="comments">Comments</div>
 
 <% content_for :header_tags do %>
 	<%= stylesheet_link_tag 'knowledgebase', :plugin => 'redmine_knowledgebase' %>
