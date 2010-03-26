@@ -7,7 +7,7 @@ class Article < ActiveRecord::Base
   acts_as_viewed
   acts_as_rated :no_rater => true
   
-  acts_as_attachable :view_permission => true, :after_remove => :attachment_removed
+  acts_as_attachable :after_remove => :attachment_removed
   
   validates_presence_of :title  
   validates_presence_of :category_id
@@ -17,6 +17,12 @@ class Article < ActiveRecord::Base
   
   def self.table_name() "kb_articles" end
   
+  # This overrides the instance method in acts_as_attachable 
+  def attachments_visible?(user=User.current)
+    true
+  end
+  
+  # acts_as_attachable requires a project association
   def project
     nil
   end
