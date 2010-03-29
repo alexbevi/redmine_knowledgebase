@@ -11,6 +11,7 @@ Redmine (www.redmine.org) is just plain awesome, and has proven to provide 90% o
 * Categorization of Articles
 * Article ratings
 * File attachments
+* Article Comments
 
 == Requirements
 
