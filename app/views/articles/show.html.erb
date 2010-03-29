@@ -32,7 +32,7 @@
 
 <% unless @article.attachments.empty? %>
 <div id="section-title" class="attachments">Attachments</div>
-<%= render :partial => 'attachments/links', :locals => {:attachments => @article.attachments, :options => {} } %>
+<%= render :partial => 'attachments/links', :locals => {:attachments => @article.attachments, :options => { :deletable => User.current.logged? } } %>
 <br />
 <% end %>
 

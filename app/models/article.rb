@@ -7,7 +7,7 @@ class Article < ActiveRecord::Base
   acts_as_viewed
   acts_as_rated :no_rater => true
   
-  acts_as_attachable :after_remove => :attachment_removed
+  acts_as_attachable
   has_many :comments, :as => :commented, :dependent => :delete_all, :order => "created_on"
   
   validates_presence_of :title  
@@ -21,6 +21,10 @@ class Article < ActiveRecord::Base
   # This overrides the instance method in acts_as_attachable 
   def attachments_visible?(user=User.current)
     true
+  end
+  
+  def attachments_deletable?(user=User.current)
+    user.logged?
   end
   
   # acts_as_attachable requires a project association
