@@ -33,6 +33,7 @@ class ArticlesController < KnowledgebaseController
     @article = Article.find(params[:id])
     @article.view request.remote_addr, User.current
     @attachments = @article.attachments.find(:all, :order => "created_on DESC")
+    @comments = @article.comments
   end
   
   def edit
@@ -50,6 +51,24 @@ class ArticlesController < KnowledgebaseController
     else
       render({:action => 'edit', :id => @article.id})
     end
+  end
+  
+  def add_comment
+    @article = Article.find(params[:id])
+    @comment = Comment.new(params[:comment])
+    @comment.author = User.current || nil
+    if @article.comments << @comment
+      flash[:notice] = l(:label_comment_added)
+      redirect_to :action => 'show', :id => @article
+    else
+      show
+      render :action => 'show'
+    end
+  end
+
+  def destroy_comment
+    @article.comments.find(params[:comment_id]).destroy
+    redirect_to :action => 'show', :id => @article
   end
   
   def destroy

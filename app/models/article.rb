@@ -8,6 +8,7 @@ class Article < ActiveRecord::Base
   acts_as_rated :no_rater => true
   
   acts_as_attachable :after_remove => :attachment_removed
+  has_many :comments, :as => :commented, :dependent => :delete_all, :order => "created_on"
   
   validates_presence_of :title  
   validates_presence_of :category_id
