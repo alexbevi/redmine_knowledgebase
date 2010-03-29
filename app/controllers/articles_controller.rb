@@ -67,6 +67,7 @@ class ArticlesController < KnowledgebaseController
   end
 
   def destroy_comment
+    @article = Article.find(params[:id])
     @article.comments.find(params[:comment_id]).destroy
     redirect_to :action => 'show', :id => @article
   end
