@@ -10,7 +10,7 @@
 	&nbsp;
 	<%= select_tag :category_id, 
 		options_for_select(nested_set_options(Category) {|i| "#{'»' * i.level} #{i.title}" }),
-		:onchange => "if (this.value != \'\') { window.location = '/knowledgebase/categories/' + this.value; }"
+		:onchange => "if (this.value != \'\') { window.location = 'knowledgebase/categories/' + this.value; }"
 	%>
 	<% end %>
 	<% if @categories.length > 0 and User.current.logged? %>&nbsp;|&nbsp;<% end %>
