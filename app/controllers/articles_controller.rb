@@ -2,7 +2,8 @@ class ArticlesController < KnowledgebaseController
   unloadable
   
   helper :attachments
-  
+  include AttachmentsHelper
+
   def new
     @article = Article.new
     @default_category = params[:category_id]
