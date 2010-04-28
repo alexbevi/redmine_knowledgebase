@@ -21,8 +21,10 @@ class ArticlesController < KnowledgebaseController
     @article.category_id = params[:category_id]
     @article.author_id = User.current.id
     if @article.save
-      attachments = Attachment.attach_files(@article, params[:attachments])
-      render_attachment_warning_if_needed(@article)
+      attachments = attach(@article, params[:attachments])
+      # XXX Commented this out for now as it's not available in the
+      # currently released (0.9) version of Redmine
+      # render_attachment_warning_if_needed(@article)
       flash[:notice] = "Created Article " + @article.title
       redirect_to({ :controller => 'knowledgebase', :action => 'index' })
     else
@@ -45,8 +47,10 @@ class ArticlesController < KnowledgebaseController
     @article = Article.find(params[:id])
     params[:article][:category_id] = params[:category_id]
     if @article.update_attributes(params[:article])
-      attachments = Attachment.attach_files(@article, params[:attachments])
-      render_attachment_warning_if_needed(@article)
+      attachments = attach(@article, params[:attachments])
+      # XXX Commented this out for now as it's not available in the
+      # currently released (0.9) version of Redmine
+      # render_attachment_warning_if_needed(@article)
       flash[:notice] = "Article Updated"
       redirect_to({ :action => 'show', :id => @article.id })
     else
@@ -82,9 +86,23 @@ class ArticlesController < KnowledgebaseController
 
   def add_attachment
     @article = Article.find(params[:id])
-    attachments = Attachment.attach_files(@article, params[:attachments])
-    render_attachment_warning_if_needed(@article)
+    attachments = attach(@article, params[:attachments])
+    # XXX Commented this out for now as it's not available in the
+    # currently released (0.9) version of Redmine
+    # render_attachment_warning_if_needed(@article)
     redirect_to({ :action => 'show', :id => @article.id })
   end
 
+private
+  
+  # Abstract attachment method to resolve how files should be attached to a model.
+  # In newer versions of Redmine, the attach_files functionality was moved
+  # from the application controller to the attachment model.
+  def attach(target, attachments)
+    if Attachment.respond_to?(:attach_files)
+      Attachment.attach_files(target, attachments)
+    else
+      attach_files(target, attachments)
+    end
+  end
 end
