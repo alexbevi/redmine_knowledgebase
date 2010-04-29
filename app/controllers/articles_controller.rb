@@ -92,6 +92,11 @@ class ArticlesController < KnowledgebaseController
     # render_attachment_warning_if_needed(@article)
     redirect_to({ :action => 'show', :id => @article.id })
   end
+  
+  def tagged
+    @tag = params[:id]
+    @list = Article.find_tagged_with(@tag)
+  end
 
 private
   
