@@ -4,7 +4,18 @@
 		<li><%= link_to_if_logged_in "Delete", { :controller => 'articles', :action => 'destroy', :id => @article.id }, :confirm => l(:text_are_you_sure), :method => :delete, :class => 'icon icon-del' %></li>
 	</ul>
 	<br />
-	<%= render :partial => "rating", :locals => {:article => @article } %>
+	<%= render :partial => "rating", :locals => {:article => @article } %>	
+	<% unless @article.tag_list.empty? %> 
+	<br /><br /><br />
+	<div class="rating-title">Tags</div>
+	<ul id="taglist">
+	  <% @article.tag_list.each do |tag| %>
+     <li><%= link_to tag, { :action => "tagged", :id => tag }, :class => "tag" %></li>
+    <% end %>
+	</ul>  
+    
+  </div>
+  <% end %>
 <% end %>
 
 <div id="category-crumbs">
@@ -18,23 +29,16 @@
 </div>
 
 <div id="article">
-	<div class="title"><%= @article.title %></div>
-	<div class="info">
-	<%= authoring @article.created_at, @article.author %>
-	<% if @article.created_at != @article.updated_at %>
-	| <%= l(:label_updated_time, time_tag(@article.updated_at)) %>.
-	<% end %>
-	| Viewed <%= @article.view_count %> time<% if @article.view_count > 1%>(s)<% end  %>
-	<% unless @article.tag_list.empty? %>	
-	<br />
-	 <% @article.tag_list.each do |tag| %>
-	   <tt><%= link_to tag, { :action => "tagged", :id => tag } %></tt>
-	 <% end %>
-	<% end %>
-	</div>
+  <div class="title"><%= @article.title %></div>
+  <div class="wiki"><%= textilizable @article, :content, :attachments => @article.attachments %></div>
+  <div class="info">
+  <%= authoring @article.created_at, @article.author %>
+  <% if @article.created_at != @article.updated_at %>
+  | <%= l(:label_updated_time, time_tag(@article.updated_at)) %>.
+  <% end %>
+  | Viewed <%= @article.view_count %> time<% if @article.view_count > 1%>(s)<% end  %>  
+  </div>
 </div>
-
-<div class="wiki"><%= textilizable @article, :content, :attachments => @article.attachments %></div>
 
 <% unless @article.attachments.empty? %>
 <div id="section-title" class="attachments">Attachments</div>
