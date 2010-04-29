@@ -3,11 +3,13 @@ class Article < ActiveRecord::Base
   
   require 'acts_as_viewed'
   require 'acts_as_rated'
+  require 'acts_as_taggable'
   
   acts_as_viewed
   acts_as_rated :no_rater => true
-  
+  acts_as_taggable
   acts_as_attachable
+  
   has_many :comments, :as => :commented, :dependent => :delete_all, :order => "created_on"
   
   validates_presence_of :title  
