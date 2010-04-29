@@ -12,6 +12,7 @@ Redmine (www.redmine.org) is just plain awesome, and has proven to provide 90% o
 * Article ratings
 * File attachments
 * Article Comments
+* Article Tags
 
 == Requirements
 
@@ -20,3 +21,4 @@ I figure if there's ever a need for these plugins in the greater Redmine applica
 
 * acts_as_viewed (http://rubyforge.org/projects/acts-as-viewed)
 * acts_as_rated (http://rubyforge.org/projects/acts-as-rated)
+* acts_as_taggable_on_steroids (http://github.com/jviney/acts_as_taggable_on_steroids)
