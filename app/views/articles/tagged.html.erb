@@ -1,0 +1,8 @@
+<h3>Articles tagged with '<%= @tag %>'</h3>
+<% if @list.length > 0 %>
+<%= render :partial => 'articles/list', :locals => { :summary_format => "normal", :articles => @list, :default_icon => 'normal' } %>
+<% end %>
+
+<% content_for :header_tags do %>
+    <%= stylesheet_link_tag 'knowledgebase', :plugin => 'redmine_knowledgebase' %>
+<% end %>

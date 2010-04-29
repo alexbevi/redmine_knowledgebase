@@ -24,7 +24,13 @@
 	<% if @article.created_at != @article.updated_at %>
 	| <%= l(:label_updated_time, time_tag(@article.updated_at)) %>.
 	<% end %>
-	| Viewed <%= @article.view_count %> time<% if @article.view_count > 1%>(s)<% end %>
+	| Viewed <%= @article.view_count %> time<% if @article.view_count > 1%>(s)<% end  %>
+	<% unless @article.tag_list.empty? %>	
+	<br />
+	 <% @article.tag_list.each do |tag| %>
+	   <tt><%= link_to tag, { :action => "tagged", :id => tag } %></tt>
+	 <% end %>
+	<% end %>
 	</div>
 </div>
 
