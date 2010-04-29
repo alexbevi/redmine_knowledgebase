@@ -28,7 +28,7 @@
 	<% unless @article.tag_list.empty? %>	
 	<br />
 	 <% @article.tag_list.each do |tag| %>
-	   <tt><%= tag %></tt>
+	   <tt><%= link_to tag, { :action => "tagged", :id => tag } %></tt>
 	 <% end %>
 	<% end %>
 	</div>
