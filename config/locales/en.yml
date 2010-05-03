@@ -1,3 +1,7 @@
 # English strings go here for Rails i18n
 en:
   field_tag_list: "Tag List"
+  label_title_articles: Article
+  label_title_category: Category
+  label_article_plural: Articles
+  label_category_plural: Categories
