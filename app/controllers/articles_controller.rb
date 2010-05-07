@@ -99,8 +99,9 @@ class ArticlesController < KnowledgebaseController
   end
 
   def preview
-    @text = (params[:article] ? params[:article][:content] : nil)
-    render :partial => 'common/preview'
+    @summary = (params[:article] ? params[:article][:summary] : nil)
+    @content = (params[:article] ? params[:article][:content] : nil)
+    render :layout => false
   end
   
 private

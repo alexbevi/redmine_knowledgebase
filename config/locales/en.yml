@@ -1,3 +1,6 @@
 # English strings go here for Rails i18n
 en:
   field_tag_list: "Tag List"
+  label_content: "Content"
+  label_summary: "Summary"
+  label_title: "Title"
