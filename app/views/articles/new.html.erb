@@ -1,5 +1,12 @@
 <h2>Create Article</h2>
-<% labelled_tabular_form_for :article, @article, :url => { :action => "create" }, :html => { :class => nil, :multipart => true } do |form| %>
+<% labelled_tabular_form_for :article, @article, :url => { :action => "create" }, :html => { :class => nil, :multipart => true, :id => "articles-form" } do |form| %>
 <%= render :partial => 'form', :locals => { :f => form } %>
 <%= submit_tag "Create" %>
+<%= link_to_remote l(:label_preview), 
+                   { :url => { :controller => 'articles', :action => 'preview' },
+                     :method => 'post',
+                     :update => 'preview',
+                     :with => "Form.serialize('articles-form')"
+                   }, :accesskey => accesskey(:preview) %>
 <% end %>
+<div id="preview" class="wiki"></div>
