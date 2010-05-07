@@ -3,13 +3,13 @@
 <% if Category.find(:all).length > 0 %>
 <p><%= check_box_tag 'root_category', 'yes', true %>Root Category<br /></p>
 <p>
-<label for="parent_id">Parent Category</label>
+<label for="parent_id"><%= l(:label_parent_category) %></label>
 <%= select_tag :parent_id, options_for_select(nested_set_options(Category, @category) {|i| "#{'»' * i.level} #{i.title}" }) %><br />
 </p>
 <% else %>
-<p><%= check_box_tag 'root_category', 'yes', true, :disabled => :true %>Root Category</p>
+<p><%= check_box_tag 'root_category', 'yes', true, :disabled => :true %><%= l(:label_root_category) %></p>
 <% end %>
 
-<p><%= f.text_field :title %></p>
-<p><%= f.text_area :description %></p>
+<p><%= f.text_field :title, :label => l(:label_title) %></p>
+<p><%= f.text_area :description, :label => l(:label_description) %></p>
 </div>

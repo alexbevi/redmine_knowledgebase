@@ -98,6 +98,12 @@ class ArticlesController < KnowledgebaseController
     @list = Article.find_tagged_with(@tag)
   end
 
+  def preview
+    @summary = (params[:article] ? params[:article][:summary] : nil)
+    @content = (params[:article] ? params[:article][:content] : nil)
+    render :layout => false
+  end
+  
 private
   
   # Abstract attachment method to resolve how files should be attached to a model.

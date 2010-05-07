@@ -1,3 +1,17 @@
 # English strings go here for Rails i18n
 en:
   field_tag_list: "Tag List"
+  label_content: "Content"
+  label_summary: "Summary"
+  label_title: "Title"
+  label_category: "Category"
+  label_description: "Description"
+  label_home: "Home"
+  title_create_article: "Create Article"
+  title_edit_article: "Edit Article"
+  title_article_rating: "Article Rating"
+  title_votes: "Votes"
+  label_parent_category: "Parent Category"
+  label_root_category: "Root Category"
+  title_edit_category: "Edit Category"
+  title_create_category: "Create Category"
