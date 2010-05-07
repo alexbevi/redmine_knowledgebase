@@ -1,7 +1,7 @@
-<h2>Create Article</h2>
+<h2><%= l(:title_create_article) %></h2>
 <% labelled_tabular_form_for :article, @article, :url => { :action => "create" }, :html => { :class => nil, :multipart => true, :id => "articles-form" } do |form| %>
 <%= render :partial => 'form', :locals => { :f => form } %>
-<%= submit_tag "Create" %>
+<%= submit_tag l(:button_create) %>
 <%= link_to_remote l(:label_preview), 
                    { :url => { :controller => 'articles', :action => 'preview' },
                      :method => 'post',
