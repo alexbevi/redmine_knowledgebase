@@ -7,6 +7,7 @@ class ArticlesController < KnowledgebaseController
   def new
     @article = Article.new
     @default_category = params[:category_id]
+    @article.category_id = params[:category_id]
   end
   
   

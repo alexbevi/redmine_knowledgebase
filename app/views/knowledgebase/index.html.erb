@@ -14,9 +14,12 @@
 	%>
 	<% end %>
 	<% if @categories.length > 0 and User.current.logged? %>&nbsp;|&nbsp;<% end %>
-	<%= link_to_if_logged_in "New Category", 
-		{ :controller => 'categories', :action => 'new' }, 
+	<%= link_to_if_logged_in "New Article", 
+		{ :controller => 'articles', :action => 'new' },
 		:class => 'icon icon-add' %>
+	<%= link_to_if_logged_in "New Category",
+    { :controller => 'categories', :action => 'new' },
+    :class => 'icon icon-add' %>
 </div>
 
 <% if Article.count > 0 %>

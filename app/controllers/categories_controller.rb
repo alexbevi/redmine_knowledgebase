@@ -30,9 +30,22 @@ class CategoriesController < KnowledgebaseController
       render(:action => 'new')
     end
   end
-  
+
   def edit
-    @category = Category.find(params[:id])   
+    @category = Category.find(params[:id])
+  end
+
+  def delete
+    @category = Category.find(params[:id])
+    if @category.articles.size == 0
+       @category.destroy
+      flash[:notice] = "Category deleted"
+      redirect_to({ :controller => :knowledgebase, :action => 'index' })
+    else
+      @articles = @category.articles.find(:all)
+      flash[:error] = "Category is assigned to articles and could not be deleted."
+      render(:action => 'show')
+    end
   end
   
   def update
