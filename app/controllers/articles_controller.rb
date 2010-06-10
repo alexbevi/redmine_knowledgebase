@@ -7,8 +7,7 @@ class ArticlesController < KnowledgebaseController
   def new
     @article = Article.new
     @default_category = params[:category_id]
-  end
-  
+  end  
   
   def rate
     @article = Article.find(params[:article_id])

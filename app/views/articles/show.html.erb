@@ -34,7 +34,6 @@
 </div>
 
 <div class="article-title"><%= @article.title %></div>
-<div class="wiki"><%= textilizable @article, :content, :attachments => @article.attachments %></div>
 <div class="article-info">
 <%= authoring @article.created_at, @article.author %>
 <% if @article.created_at != @article.updated_at %>
@@ -42,6 +41,7 @@
 <% end %>
 | Viewed <%= @article.view_count %> time<% if @article.view_count > 1%>(s)<% end  %>  
 </div>
+<div class="wiki"><%= textilizable @article, :content, :attachments => @article.attachments %></div>
 
 <% unless @article.attachments.empty? %>
 <div id="section-title" class="attachments">Attachments</div>
