@@ -20,8 +20,7 @@
 
 var Facebox = Class.create({
   initialize  : function(extra_set){
-    this.settings = {
-      loading_image : '../images/facebox/loading.gif',
+    this.settings = {      
       close_image   : '../images/facebox/closelabel.gif',      
       inited        : true, 
       facebox_html  : '\
@@ -56,9 +55,8 @@ var Facebox = Class.create({
     if (extra_set) Object.extend(this.settings, extra_set);
     $$('body').first().insert({bottom: this.settings.facebox_html});
     
-    this.preload = [ new Image(), new Image() ];
-    this.preload[0].src = this.settings.close_image;
-    this.preload[1].src = this.settings.loading_image;
+    this.preload = [ new Image() ];
+    this.preload[0].src = this.settings.close_image;    
     
     f = this;
     $$('#facebox .b:first, #facebox .bl, #facebox .br, #facebox .tl, #facebox .tr').each(function(elem){
@@ -97,23 +95,7 @@ var Facebox = Class.create({
     
   },
   
-  loading : function() {
-    if ($$('#facebox .loading').length == 1) return true;
-    
-    contentWrapper = $$('#facebox .content').first();
-    contentWrapper.childElements().each(function(elem, i){
-      elem.remove();
-    });
-    contentWrapper.insert({bottom: '<div class="loading"><img src="'+this.settings.loading_image+'"/></div>'});
-    
-    /*
-    var pageScroll = document.viewport.getScrollOffsets();
-    $('facebox').setStyle({
-      'top': pageScroll.top + (document.viewport.getHeight() / 10) + 'px',
-      'left': pageScroll.left + 'px'
-    });
-    */
-    
+  loading : function() {   
     /* Center the box on the screen */
     var bdims = document.body.getDimensions();
     var fdims = $('facebox').getDimensions();
@@ -137,8 +119,7 @@ var Facebox = Class.create({
     contentWrapper = $$('#facebox .content').first();
     if (klass) contentWrapper.addClassName(klass);
     contentWrapper.insert({bottom: data});
-    load = $$('#facebox .loading').first();
-    if(load) load.remove();
+    
     $$('#facebox .body').first().childElements().each(function(elem,i){
       elem.show();
     });
