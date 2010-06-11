@@ -1,3 +1,4 @@
+# FaceboxRender plugin for use with Prototype Facebox
 module FaceboxRender
   def render_to_facebox(options = {})
     options[:template] = "#{default_template_name}" if options.empty?

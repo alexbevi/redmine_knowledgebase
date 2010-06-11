@@ -1,4 +1,7 @@
 /*
+* Modified version of Phil Burrows Prototype Facebox for use with
+* the Redmine Knowledgebase Plugin (by Alex Bevilacqua)
+* 
 * based on Facebox by Chris Wanstrath -- http://famspam.com/facebox
 * 
 * :: ported to the Prototype JS library by ::
@@ -20,8 +23,11 @@
 
 var Facebox = Class.create({
   initialize  : function(extra_set){
-    this.settings = {      
-      close_image   : '../images/facebox/closelabel.gif',      
+    this.settings = {
+      // FIXME this path is hardcoded for the knowledgebase plugin. The logic should actually
+      // be cleaned up if this functionality (facebox) is wanted in other plugins or 
+      // redmine in general      
+      close_image   : '/plugin_assets/redmine_knowledgebase/images/facebox/closelabel.gif',      
       inited        : true, 
       facebox_html  : '\
     <div id="facebox" style="display:none;"> \
@@ -38,7 +44,7 @@ var Facebox = Class.create({
                 </div> \
                 <div class="footer"> \
                   <a href="#" class="close"> \
-                    <img src="../images/facebox/closelabel.gif" title="close" class="close_image" /> \
+                    <img src="/plugin_assets/redmine_knowledgebase/images/closelabel.gif" title="close" class="close_image" /> \
                   </a> \
                 </div> \
               </td> \
@@ -77,12 +83,7 @@ var Facebox = Class.create({
       fb.close()
     });
   },
-  
-  // watchKeyPress  : function(e){
-  //  // not sure if the call to this will work here
-  //  if (e.keyCode == 27) this.close();
-  // },
-  
+    
   watchClickEvents  : function(e){
     var f = this;
     $$('a[rel=facebox]').each(function(elem,i){
@@ -95,7 +96,12 @@ var Facebox = Class.create({
     
   },
   
-  loading : function() {   
+  loading : function() {    
+    contentWrapper = $$('#facebox .content').first();
+    contentWrapper.childElements().each(function(elem, i){
+      elem.remove();
+    });    
+   
     /* Center the box on the screen */
     var bdims = document.body.getDimensions();
     var fdims = $('facebox').getDimensions();
@@ -114,6 +120,7 @@ var Facebox = Class.create({
   reveal  : function(data, klass){
     this.loading();
     box = $('facebox');
+    
     if(!box.visible()) box.show();
     
     contentWrapper = $$('#facebox .content').first();
@@ -149,7 +156,7 @@ var Facebox = Class.create({
       // create a new element so as to not delete the original on close()
       var data = new Element(d.tagName);
       data.innerHTML = d.innerHTML;
-      this.reveal(data, klass);    
+      this.reveal(data, klass);
     } else {
       // Ajax
       var fb = this;
