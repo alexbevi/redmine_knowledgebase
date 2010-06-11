@@ -22,8 +22,7 @@ var Facebox = Class.create({
   initialize  : function(extra_set){
     this.settings = {
       loading_image : '../images/facebox/loading.gif',
-      close_image   : '../images/facebox/closelabel.gif',
-      image_types   : new RegExp('\.' + ['png', 'jpg', 'jpeg', 'gif'].join('|') + '$', 'i'),
+      close_image   : '../images/facebox/closelabel.gif',      
       inited        : true, 
       facebox_html  : '\
     <div id="facebox" style="display:none;"> \
@@ -169,14 +168,7 @@ var Facebox = Class.create({
       // create a new element so as to not delete the original on close()
       var data = new Element(d.tagName);
       data.innerHTML = d.innerHTML;
-      this.reveal(data, klass);
-    } else if (elem.href.match(this.settings.image_types)) {
-      var image = new Image();
-      fb = this;
-      image.onload = function() {
-        fb.reveal('<div class="image"><img src="' + image.src + '" /></div>', klass)
-      }
-      image.src = elem.href;
+      this.reveal(data, klass);    
     } else {
       // Ajax
       var fb = this;
