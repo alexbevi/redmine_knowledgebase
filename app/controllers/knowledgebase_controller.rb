@@ -21,6 +21,6 @@ protected
   end
 
   def is_user_allowed?
-    render_403 unless User.current.groups.detect {|g| g.name == 'ESL Staff'}
+    render_403 unless User.current.groups.detect {|g| g.lastname == 'ESL Staff'}
   end  
 end
