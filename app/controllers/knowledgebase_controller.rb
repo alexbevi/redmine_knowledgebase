@@ -2,6 +2,7 @@ class KnowledgebaseController < ApplicationController
   unloadable
   
   before_filter :is_user_logged_in, :only => :edit
+  before_filter :is_user_allowed?
   
   def index
     @categories = Category.find(:all)
@@ -18,5 +19,8 @@ protected
       render_403
     end
   end
-  
+
+  def is_user_allowed?
+    render_403 unless User.current.groups.detect {|g| g.lastname == 'ESL Staff'}
+  end  
 end
