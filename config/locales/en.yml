@@ -19,4 +19,11 @@ en:
   label_title_category: Category
   label_article_plural: Articles
   label_category_plural: Categories
->>>>>>> mschiller/master
+  knowledgebase_title: "Knowledge base"
+  label_jump_category: "Jump Category"
+  title_newest_articles: "Newest Articles"
+  title_recently_updated_articles: "Recently Updated Articles"
+  title_most_popular_articles: "Most Popular Articles"
+  title_top_rated_articles: "Top Rated Articles"
+  title_browse_by_category: "Browse by Category"
+  title_new_category: "New Category"
