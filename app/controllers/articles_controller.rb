@@ -7,6 +7,7 @@ class ArticlesController < KnowledgebaseController
   def new
     @article = Article.new
     @default_category = params[:category_id]
+    @article.category_id = params[:category_id]
   end
   
   
@@ -33,7 +34,7 @@ class ArticlesController < KnowledgebaseController
   end
   
   def show
-    @article = Article.find(params[:id])
+    @article = Article.find(params[:id] || params[:article_id])
     @article.view request.remote_addr, User.current
     @attachments = @article.attachments.find(:all, :order => "created_on DESC")
     @comments = @article.comments

@@ -15,3 +15,8 @@ en:
   label_root_category: "Root Category"
   title_edit_category: "Edit Category"
   title_create_category: "Create Category"
+  label_title_articles: Article
+  label_title_category: Category
+  label_article_plural: Articles
+  label_category_plural: Categories
+>>>>>>> mschiller/master

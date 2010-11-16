@@ -1,5 +1,7 @@
 class Article < ActiveRecord::Base
   unloadable
+
+  belongs_to :project
   
   require 'acts_as_viewed'
   require 'acts_as_rated'
@@ -10,6 +12,14 @@ class Article < ActiveRecord::Base
   acts_as_taggable
   acts_as_attachable
   
+  acts_as_searchable :columns => ["kb_articles.title", "kb_articles.content"], :no_project_scope => true, :order_column => "kb_articles.id"
+
+  acts_as_event :title => Proc.new {|o| "#{l(:label_title_articles)} ##{o.id}: #{o.title}" },
+                  :description => Proc.new {|o| "#{o.content}"},
+                  :datetime => :created_at,
+                  :type => 'articles',
+                  :url => Proc.new {|o| {:controller => 'articles', :action => 'show', :id => nil, :article_id => o.id} }
+
   has_many :comments, :as => :commented, :dependent => :delete_all, :order => "created_on"
   
   validates_presence_of :title  

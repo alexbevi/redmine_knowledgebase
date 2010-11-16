@@ -10,5 +10,7 @@ Redmine::Plugin.register :redmine_knowledgebase do
   
   requires_redmine :version_or_higher => '0.8.0'
 
-  menu :top_menu, :knowledgebase, { :controller => 'knowledgebase', :action => 'index'}, :caption => 'Knowledgebase'
+  menu :top_menu, :knowledgebase, { :controller => 'knowledgebase', :action => 'index'}, :caption => 'Knowledgebase', :if => Proc.new{ User.current.logged? }
+
+  Redmine::Search.available_search_types << 'articles'
 end
