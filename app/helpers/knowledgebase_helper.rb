@@ -4,6 +4,10 @@ module KnowledgebaseHelper
     link_to(name, options, html_options, *parameters_for_method_reference) if User.current.logged?
   end
   
+  def link_to_remote_if_logged_in(name, options = {}, html_options = nil, *parameters_for_method_reference)
+    link_to_remote(name, options, html_options, *parameters_for_method_reference) if User.current.logged?
+  end
+  
   def format_article_summary(article, format)
     output = nil
     case format

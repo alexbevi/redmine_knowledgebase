@@ -10,5 +10,9 @@ Redmine::Plugin.register :redmine_knowledgebase do
   
   requires_redmine :version_or_higher => '0.8.0'
 
-  menu :top_menu, :knowledgebase, { :controller => 'knowledgebase', :action => 'index'}, :caption => 'Knowledgebase'
+  menu :top_menu, :knowledgebase, { :controller => 'knowledgebase', :action => 'index'}, :caption => 'Knowledgebase', :if => Proc.new{ User.current.groups.detect {|g| g.lastname == 'ESL Staff'} != nil }
+
+#  FIXME: uncomment when upgrading to redmine 1.0 or find any other
+#         way to hook into the searach engine
+#  Redmine::Search.available_search_types << 'articles'
 end

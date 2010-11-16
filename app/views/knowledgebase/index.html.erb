@@ -6,7 +6,7 @@
 
 <div class="contextual">
 	<% if @categories.length > 0 %>
-	<label for="category_id"><strong>Jump to Category</strong></label>
+	<label for="category_id"><strong><%= l(:label_jump_category) %></strong></label>
 	&nbsp;
 	<%= select_tag :category_id, 
 		options_for_select(nested_set_options(Category) {|i| "#{'»' * i.level} #{i.title}" }),
@@ -14,9 +14,12 @@
 	%>
 	<% end %>
 	<% if @categories.length > 0 and User.current.logged? %>&nbsp;|&nbsp;<% end %>
-	<%= link_to_if_logged_in "New Category", 
+	<%= link_to_if_logged_in l(:title_new_category), 
 		{ :controller => 'categories', :action => 'new' }, 
 		:class => 'icon icon-add' %>
+	<%= link_to_if_logged_in "New Category",
+    { :controller => 'categories', :action => 'new' },
+    :class => 'icon icon-add' %>
 </div>
 
 <% if Article.count > 0 %>
@@ -24,8 +27,8 @@
 	<table id="article-summaries" width="100%" cellpadding="5">
 	<thead>
 	<tr>
-		<th>Newest Articles</th>
-		<th>Recently Updated Articles</th>
+		<th><%= l(:title_newest_articles) %></th>
+		<th><%= l(:title_recently_updated_articles) %></th>
 	</tr>
 	</thead>
 	<tbody>
@@ -39,8 +42,8 @@
 	<table id="article-summaries" width="100%" cellpadding="5">
 	<thead>
 	<tr>
-		<th>Most Popular Articles</th>
-		<th>Top Rated Articles</th>
+		<th><%= l(:title_most_popular_articles) %></th>
+		<th><%= l(:title_top_rated_articles) %></th>
 	</tr>
 	</thead>
 	<tbody>
@@ -58,7 +61,7 @@
 <% end #if %>
 
 <% content_for :sidebar do %>
-	<h3>Browse by Category</h3>	
+	<h3><%= l(:title_browse_by_category) %></h3>
 	<div id="categories_nav">
 	<ul>
 	<% Category.roots.each do |category| %>

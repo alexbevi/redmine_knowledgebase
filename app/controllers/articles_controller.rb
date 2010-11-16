@@ -3,12 +3,13 @@ class ArticlesController < KnowledgebaseController
   
   helper :attachments
   include AttachmentsHelper
-
+  include FaceboxRender
+  
   def new
     @article = Article.new
     @default_category = params[:category_id]
+    @article.category_id = params[:category_id]
   end
-  
   
   def rate
     @article = Article.find(params[:article_id])
@@ -33,7 +34,7 @@ class ArticlesController < KnowledgebaseController
   end
   
   def show
-    @article = Article.find(params[:id])
+    @article = Article.find(params[:id] || params[:article_id])
     @article.view request.remote_addr, User.current
     @attachments = @article.attachments.find(:all, :order => "created_on DESC")
     @comments = @article.comments
@@ -104,6 +105,11 @@ class ArticlesController < KnowledgebaseController
     render :layout => false
   end
   
+  def comment
+    @article_id = params[:article_id]
+    render_to_facebox
+  end
+
 private
   
   # Abstract attachment method to resolve how files should be attached to a model.

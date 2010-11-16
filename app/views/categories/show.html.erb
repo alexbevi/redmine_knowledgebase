@@ -7,7 +7,7 @@
 </div>
 
 <div class="contextual">
-	<%= link_to_if_logged_in "Create Article", 
+	<%= link_to_if_logged_in "New Article",
 			{ :controller => 'articles', :action => 'new', :category_id => @category.id }, 
 			:class => 'icon icon-add' %>
 	&nbsp;|&nbsp;
@@ -15,9 +15,13 @@
 		{ :controller => 'categories', :action => 'new' }, 
 		:class => 'icon icon-add' %>    
 	&nbsp;|&nbsp;
-	<%= link_to_if_logged_in "Edit Category", 
-			{ :controller => 'categories', :action => 'edit', :id => @category.id }, 
-			:class => 'icon icon-edit' %>    
+  <%= link_to_if_logged_in "Edit Category",
+      { :controller => 'categories', :action => 'edit', :id => @category.id },
+      :class => 'icon icon-edit' %>
+  &nbsp;|&nbsp;
+  <%= link_to_if_logged_in "Delete Category",
+      { :controller => 'categories', :action => 'delete', :id => @category.id },
+      :class => 'icon icon-del', :confirm => 'Are you sure?' %>
 </div>
 <h2><%= @category.title %></h2>
 <p><div class="wiki"><%= textilizable @category.description unless @category.description.nil? %></div></p>
