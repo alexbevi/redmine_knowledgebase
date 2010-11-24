@@ -17,9 +17,6 @@
 	<%= link_to_if_logged_in l(:title_new_category), 
 		{ :controller => 'categories', :action => 'new' }, 
 		:class => 'icon icon-add' %>
-	<%= link_to_if_logged_in "New Category",
-    { :controller => 'categories', :action => 'new' },
-    :class => 'icon icon-add' %>
 </div>
 
 <% if Article.count > 0 %>
