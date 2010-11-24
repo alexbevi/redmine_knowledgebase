@@ -1,0 +1,29 @@
+pt-BR:
+  field_tag_list: "Lista de Tags"
+  label_content: "Conteúdo"
+  label_summary: "Resumo"
+  label_title: "Título"
+  label_category: "Categoria"
+  label_description: "Descrição"
+  label_home: "Página Inicial"
+  title_create_article: "Criar Artigo"
+  title_edit_article: "Editar Artigo"
+  title_article_rating: "Classificação do Artigo"
+  title_votes: "Votos"
+  label_parent_category: "Categoria Pai"
+  label_root_category: "Categoria Raiz"
+  title_edit_category: "Editar Categoria"
+  title_create_category: "Criar Categoria"
+  label_title_articles: Artigo
+  label_title_category: Categoria
+  label_article_plural: Artigos
+  label_category_plural: Categorias
+  knowledgebase_title: "Knowledge Base"
+  label_jump_category: "Ir para Categoria"
+  title_newest_articles: "Novos Artigos"
+  title_recently_updated_articles: "Artigos Recentemente Atualizados"
+  title_most_popular_articles: "Artigos Mais Populares"
+  title_top_rated_articles: "Artigos Mais Bem Classificados"
+  title_browse_by_category: "Navegar por Categoria"
+  title_new_category: "Nova Categoria"
+  message_no_articles: "Nenhum artigo cadastrado ainda, talvez você queira começar..."
