@@ -17,9 +17,6 @@
 	<%= link_to_if_logged_in l(:title_new_category), 
 		{ :controller => 'categories', :action => 'new' }, 
 		:class => 'icon icon-add' %>
-	<%= link_to_if_logged_in "New Category",
-    { :controller => 'categories', :action => 'new' },
-    :class => 'icon icon-add' %>
 </div>
 
 <% if Article.count > 0 %>
@@ -56,7 +53,7 @@
 
 <% else %>
 
-	<p>No articles have been added to the knowledgebase yet. Maybe you want to get the ball rolling ...</p>
+	<p><%= t :message_no_articles %></p>
 
 <% end #if %>
 
