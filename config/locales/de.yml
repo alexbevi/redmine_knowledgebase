@@ -1,7 +1,33 @@
-# English strings go here for Rails i18n
+# German strings go here for Rails i18n
 de:
   field_tag_list: "Tag Liste"
+  label_content: "Inhalt"
+  label_summary: "Zusammenfassung"
+  label_title: "Titel"
+  label_category: "Kategorie"
+  label_description: "Beschreibung"
+  label_home: "Home"
+  title_create_article: "Artikel erstellen"
+  title_edit_article: "Artikel ändern"
+  title_article_rating: "Artikel Rating"
+  title_votes: "Votes"
+  label_parent_category: "Übergeordnete Kategorie"
+  label_root_category: "Root Kategorie"
+  title_edit_category: "Kategorie ändern"
+  title_create_category: "Kategorie erzeugen"
   label_title_articles: Artikel
   label_title_category: Kategorie
   label_article_plural: Artikel
   label_category_plural: Kategorien
+  label_root_category: Hauptkategorie
+  knowledgebase_title: "Knowledge base"
+  label_jump_category: "Zur Kategorie "
+  title_newest_articles: "Neueste Artikel"
+  title_recently_updated_articles: "Artikel zuletzt aktualisiert"
+  title_most_popular_articles: "Beliebteste Artikel"
+  title_top_rated_articles: "Bestbewertete Artikel"
+  title_browse_by_category: "Nach Kategorie"
+  title_new_category: "Neue Kategorie"
+  title_create_category: "Kategorie anlegen"
+  message_no_articles: "Es wurde noch kein Artikel eingegeben. Vielleicht kannst du das machen..."
+

@@ -11,5 +11,8 @@
 <% end %>
 
 <p><%= f.text_field :title, :label => l(:label_title) %></p>
-<p><%= f.text_area :description, :label => l(:label_description) %></p>
+<p><%= f.text_area :description, :cols => 60, :rows => 10, :class => 'wiki-edit', :label => l(:label_description) %></p>
 </div>
+
+<%= wikitoolbar_for 'category_description' %>
+
