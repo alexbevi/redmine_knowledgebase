@@ -1,19 +1,19 @@
 <div id="category-crumbs">
 	<%= link_to "Home", { :controller => 'knowledgebase', :action => 'index' } %>
 	<% @category.ancestors.each do |ancestor| %>
-	&nbsp;&raquo;&nbsp; 
+	&nbsp;&raquo;&nbsp;
 	<%= link_to ancestor.title, { :controller => 'categories', :action => 'show', :id => ancestor.id } %>
 	<% end %>
 </div>
 
 <div class="contextual">
 	<%= link_to_if_logged_in "New Article",
-			{ :controller => 'articles', :action => 'new', :category_id => @category.id }, 
+			{ :controller => 'articles', :action => 'new', :category_id => @category.id },
 			:class => 'icon icon-add' %>
 	&nbsp;|&nbsp;
-	<%= link_to_if_logged_in "New Category", 
-		{ :controller => 'categories', :action => 'new' }, 
-		:class => 'icon icon-add' %>    
+	<%= link_to_if_logged_in "New Category",
+		{ :controller => 'categories', :action => 'new', :parent_id => @category.id },
+		:class => 'icon icon-add' %>
 	&nbsp;|&nbsp;
   <%= link_to_if_logged_in "Edit Category",
       { :controller => 'categories', :action => 'edit', :id => @category.id },
@@ -33,9 +33,9 @@
 	<div class="category-header">Sub-categories</div>
 	<br />
 	<% @kids.each do |subs| %>
-	<%= link_to_if_logged_in subs.title + " (" + subs.articles.length.to_s + ")", 
-			{ :controller => 'categories', :action => 'show', :id => subs.id }, 
-			:class => 'category-title' %>    
+	<%= link_to_if_logged_in subs.title + " (" + subs.articles.length.to_s + ")",
+			{ :controller => 'categories', :action => 'show', :id => subs.id },
+			:class => 'category-title' %>
 	<% end %>
 </div>
 <% end %>
@@ -47,3 +47,4 @@
 <% content_for :header_tags do %>
     <%= stylesheet_link_tag 'knowledgebase', :plugin => 'redmine_knowledgebase' %>
 <% end %>
+

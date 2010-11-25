@@ -1,6 +1,6 @@
 class CategoriesController < KnowledgebaseController
 	unloadable
-	
+
   def index
 		@categories = Category.find(:all)
   end
@@ -12,8 +12,9 @@ class CategoriesController < KnowledgebaseController
 
   def new
     @category = Category.new
+    @parent_id = params[:parent_id]
   end
-  
+
   def create
     @category = Category.new(params[:category])
     if @category.save
@@ -21,9 +22,9 @@ class CategoriesController < KnowledgebaseController
       # We check for a value > 1 because if this is the first entry, the category
       # count would be 1 (since the create operation already succeeded)
       if !params[:root_category] and Category.count > 1
-        @category.move_to_child_of(Category.find(params[:parent_id]))  
+        @category.move_to_child_of(Category.find(params[:parent_id]))
       end
-       
+
       flash[:notice] = "Created Category: " + @category.title
       redirect_to({ :action => 'show', :id => @category.id })
     else
@@ -47,7 +48,7 @@ class CategoriesController < KnowledgebaseController
       render(:action => 'show')
     end
   end
-  
+
   def update
     @category = Category.find(params[:id])
     if !params[:root_category]
@@ -60,5 +61,6 @@ class CategoriesController < KnowledgebaseController
       render(:action => 'edit')
     end
   end
-  
+
 end
+
