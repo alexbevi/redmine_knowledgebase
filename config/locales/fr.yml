@@ -1,0 +1,30 @@
+# French strings go here for Rails i18n
+fr:
+  field_tag_list: "Liste des Tags"
+  label_content: "Contenu"
+  label_summary: "Résumé"
+  label_title: "Titre"
+  label_category: "Catégorie"
+  label_description: "Description"
+  label_home: "Page d'accueil"
+  title_create_article: "Créer un Article"
+  title_edit_article: "Modifier Article"
+  title_article_rating: "Évaluation d'Article"
+  title_votes: "Votes"
+  label_parent_category: "Catégorie Parente"
+  label_root_category: "Catégorie Racine"
+  title_edit_category: "Éditer la Catégorie"
+  title_create_category: "Créer une Catégorie"
+  label_title_articles: Article
+  label_title_category: Catégorie
+  label_article_plural: Articles
+  label_category_plural: Catégories
+  knowledgebase_title: "Base de Connaissance"
+  label_jump_category: "Aller à la  Catégorie"
+  title_newest_articles: "Derniers Articles"
+  title_recently_updated_articles: "Articles récemment modifiés"
+  title_most_popular_articles: "Articles les plus populaires"
+  title_top_rated_articles: "Articles les mieux notés"
+  title_browse_by_category: "Parcourir par Catégorie"
+  title_new_category: "Nouvelle Catégorie"
+  message_no_articles: "Aucun article n'a été ajouté à la base de connaissance."
