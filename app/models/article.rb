@@ -37,5 +37,12 @@ class Article < ActiveRecord::Base
     user.logged?
   end
 
+  # XXX this is required by acts_as_attachable. Without this, trying to download
+  # a file throws the following:
+  # "NoMethodError (undefined method 'project' for #(ActiveRecord::Associations::BelongsToPolymorphicAssociation))"
+  def project
+    nil
+  end
+
 end
 
