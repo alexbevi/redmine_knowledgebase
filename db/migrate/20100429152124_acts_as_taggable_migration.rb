@@ -27,7 +27,7 @@ class ActsAsTaggableMigration < ActiveRecord::Migration
   end
   
   def self.down
-    drop_table :taggings if self.table_exists?("tags")
+    drop_table :taggings if self.table_exists?("taggings")
     drop_table :tags if self.table_exists?("tags")
   end
   
