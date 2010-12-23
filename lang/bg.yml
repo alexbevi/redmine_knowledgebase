@@ -1,0 +1,30 @@
+# Bulgarian strings go here for Rails i18n
+bg:
+  field_tag_list: "Списък етикети"
+  label_content: "Съдържание"
+  label_summary: "Анотация"
+  label_title: "Заглавие"
+  label_category: "Категория"
+  label_description: "Описание"
+  label_home: "Начало"
+  title_create_article: "Създаване на статия"
+  title_edit_article: "Редактиране на статия"
+  title_article_rating: "Рейтинг на статията"
+  title_votes: "гласа"
+  label_parent_category: "Родителска категория"
+  label_root_category: "Коренна категория"
+  title_edit_category: "Редактиране на категория"
+  title_create_category: "Създаване на категория"
+  label_title_articles: Статия
+  label_title_category: Категория
+  label_article_plural: Статии
+  label_category_plural: Категории
+  knowledgebase_title: "База знания"
+  label_jump_category: "Преход към категория"
+  title_newest_articles: "Нови статии"
+  title_recently_updated_articles: "Скоро променяни статии"
+  title_most_popular_articles: "Най-популярни статии"
+  title_top_rated_articles: "Статии с най-голям рейтинг"
+  title_browse_by_category: "Преглед по категории"
+  title_new_category: "Нова категория"
+  message_no_articles: "В базата все още не са добавени статии. Може би трябва да започнете сега ..."
