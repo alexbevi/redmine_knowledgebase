@@ -12,8 +12,6 @@ Redmine::Plugin.register :redmine_knowledgebase do
 
   menu :top_menu, :knowledgebase, { :controller => 'knowledgebase', :action => 'index'}, :caption => 'Knowledgebase'
 
-#  FIXME: uncomment when upgrading to redmine 1.0 or find any other
-#         way to hook into the searach engine
-#  Redmine::Search.available_search_types << 'articles'
+  Redmine::Search.available_search_types << 'articles'
 end
 
