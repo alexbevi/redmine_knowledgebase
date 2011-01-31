@@ -1,10 +1,6 @@
 class Article < ActiveRecord::Base
   unloadable
 
-  require 'acts_as_viewed'
-  require 'acts_as_rated'
-  require 'acts_as_taggable'
-
   validates_presence_of :title
   validates_presence_of :category_id
 
