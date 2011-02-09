@@ -1,15 +1,18 @@
-Developers
-----------
+########################################################################
+# Developers                                                           #
+########################################################################
 
 	Alex Bevilacqua
 
-Documentation
--------------
+########################################################################
+# Documentation                                                        #
+########################################################################
 
 	Alan Bowman
 
-Translators
------------
+########################################################################
+# Translators                                                          #
+########################################################################
 
 	Brazilian Portugese:
 		Fábio D. Batista
@@ -17,17 +20,17 @@ Translators
 	Bulgarian:
 		Ivan Cenov
 
-	German:
-	eschsa
+	Chinese/Taiwan:
+		Meng-yang
 
 	French:
 		Imrane Dessaï
-
-	Swedish:	
-		Peter Brauner
+    
+	German:
+		eschsa
 
 	Italian:
 		Carlo Banfi
 
-	Chinese/Taiwan:
-		Meng-yang
+	Swedish:	
+		Peter Brauner
