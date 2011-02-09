@@ -2,13 +2,16 @@
 # Developers                                                           #
 ########################################################################
 
-	Alex Bevilacqua
+  Lead Developer:
+    Alex Bevilacqua
 
-########################################################################
-# Documentation                                                        #
-########################################################################
+  Contributors:
+    guilhem
+    shoorick
+    fabiob
 
-	Alan Bowman
+  Documentation:
+    Alan Bowman
 
 ########################################################################
 # Translators                                                          #
@@ -25,6 +28,7 @@
 
 	French:
 		Imrane Dessaï
+		Guilhem Lettron
     
 	German:
 		eschsa
