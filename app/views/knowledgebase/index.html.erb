@@ -61,9 +61,11 @@
 	<h3><%= l(:title_browse_by_category) %></h3>
 	<div id="categories_nav">
 	<ul>
-	<% Category.roots.each do |category| %>
-		<li><%= link_to category.title + " (" + category.articles.length.to_s + ")", :controller => 'categories', :action => 'show', :id => category.id  %></li>
-	<% end %>
+	<% Category.roots.each do |cat| 
+	     cat.self_and_descendants.each do |category| %>
+		<li><%= link_to ('»' * category.level) + ' ' + category.title + "(" + category.articles.length.to_s + ")", :controller => 'categories', :action => 'show', :id => category.id  %></li>
+	<% end
+	end %>
 	</ul>
 	</div>
 <% end %>
