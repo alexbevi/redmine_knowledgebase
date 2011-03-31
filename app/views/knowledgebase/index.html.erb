@@ -9,7 +9,7 @@
 	<label for="category_id"><strong><%= l(:label_jump_category) %></strong></label>
 	&nbsp;
 	<%= select_tag :category_id, 
-		options_for_select(nested_set_options(Category) {|i| "#{'»' * i.level} #{i.title}" }),
+		options_for_select([""] + nested_set_options(Category) {|i| "#{'»' * i.level} #{i.title}" }),
 		:onchange => "if (this.value != \'\') { window.location = 'knowledgebase/categories/' + this.value; }"
 	%>
 	<% end %>
