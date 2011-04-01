@@ -1,6 +1,6 @@
 <% if @categories.length == 0 and !User.current.logged? %>
 	<h2>Welcome to the Redmine Knowledgebase plugin</h2>
-	
+
 	<p>Unfortunately, there aren't any Categories defined, and you need to be logged in to create new categories.</p>
 <% else %>
 
@@ -8,14 +8,14 @@
 	<% if @categories.length > 0 %>
 	<label for="category_id"><strong><%= l(:label_jump_category) %></strong></label>
 	&nbsp;
-	<%= select_tag :category_id, 
+	<%= select_tag :category_id,
 		options_for_select([""] + nested_set_options(Category) {|i| "#{'»' * i.level} #{i.title}" }),
 		:onchange => "if (this.value != \'\') { window.location = 'knowledgebase/categories/' + this.value; }"
 	%>
 	<% end %>
 	<% if @categories.length > 0 and User.current.logged? %>&nbsp;|&nbsp;<% end %>
-	<%= link_to_if_logged_in l(:title_new_category), 
-		{ :controller => 'categories', :action => 'new' }, 
+	<%= link_to_if_logged_in l(:title_new_category),
+		{ :controller => 'categories', :action => 'new' },
 		:class => 'icon icon-add' %>
 </div>
 
@@ -35,7 +35,7 @@
 	</tr>
 	</tbody>
 	</table>
-	
+
 	<table id="article-summaries" width="100%" cellpadding="5">
 	<thead>
 	<tr>
@@ -61,9 +61,9 @@
 	<h3><%= l(:title_browse_by_category) %></h3>
 	<div id="categories_nav">
 	<ul>
-	<% Category.roots.each do |cat| 
+	<% Category.roots.each do |cat|
 	     cat.self_and_descendants.each do |category| %>
-		<li><%= link_to ('»' * category.level) + ' ' + category.title + "(" + category.articles.length.to_s + ")", :controller => 'categories', :action => 'show', :id => category.id  %></li>
+		<li><%= link_to ('»' * category.level) + ' ' + category.title + " (" + category.articles.length.to_s + ")", :controller => 'categories', :action => 'show', :id => category.id  %></li>
 	<% end
 	end %>
 	</ul>
