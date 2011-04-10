@@ -17,27 +17,33 @@ Redmine::Plugin.register :redmine_knowledgebase do
   project_module :knowledgebase do
     permission :view_articles, {
       :knowledgebase => :index,
-      :articles => [:show],:categories => [:index,:show]
+      :articles => [:show,:tagged],
+      :categories => [:index,:show]
     }
     permission :comment_and_rate_articles, {
       :knowledgebase => :index,
-      :articles => [:show,:rate,:add_comment]
+      :articles => [:show,:tagged,:rate,:comment,:add_comment],
+      :categories => [:index,:show]
     }
     permission :create_articles, {
       :knowledgebase => :index,
-      :articles => [:show,:new,:create,:add_attachment,:tagged,:preview]
+      :articles => [:show,:tagged,:new,:create,:add_attachment,:preview],
+      :categories => [:index,:show]
     }
     permission :edit_articles, {
       :knowledgebase => :index,
-      :articles => [:show,:edit,:update,:add_attachment,:tagged,:preview]
+      :articles => [:show,:tagged,:edit,:update,:add_attachment,:preview],
+      :categories => [:index,:show]
     }
     permission :manage_articles, {
       :knowledgebase => :index,
-      :articles => [:show,:new,:create,:edit,:update,:destroy,:add_attachment,:preview,:destroy_comment,:tagged]
+      :articles => [:show,:new,:create,:edit,:update,:destroy,:add_attachment,:preview,:comment,:add_comment,:destroy_comment,:tagged],
+      :categories => [:index,:show]
     }
     permission :manage_articles_comments, {
       :knowledgebase => :index,
-      :articles => [:show,:add_comment,:destroy_comment]
+      :articles => [:show,:comment,:add_comment,:destroy_comment],
+      :categories => [:index,:show]
     }
     permission :create_article_categories, {
       :knowledgebase => :index,
