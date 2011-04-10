@@ -14,7 +14,7 @@
 	%>
 	<% end %>
 	<% if @categories.length > 0 and User.current.logged? %>&nbsp;|&nbsp;<% end %>
-	<%= link_to_if_logged_in l(:title_new_category),
+	<%= link_to_if_authorized_globally l(:title_new_category),
 		{ :controller => 'categories', :action => 'new' },
 		:class => 'icon icon-add' %>
 </div>
