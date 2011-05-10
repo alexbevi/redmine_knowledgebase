@@ -9,9 +9,9 @@ Redmine::Plugin.register :redmine_knowledgebase do
   description 'A plugin for Redmine that adds knowledgebase functionality'
   url         'http://projects.alexbevi.com/projects/redmine-kb'
   author_url  'http://blog.alexbevi.com'
-  version     '0.2.5'
+  version     '0.3.0'
 
-  requires_redmine :version_or_higher => '0.8.0'
+  requires_redmine :version_or_higher => '1.0.0'
 
   #Global permissions
   project_module :knowledgebase do

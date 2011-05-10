@@ -13,6 +13,7 @@ Redmine (www.redmine.org) is just plain awesome, and has proven to provide 90% o
 * File attachments
 * Article Comments
 * Article Tags
+* Permissions
 
 ## Requirements
 
