@@ -4,6 +4,9 @@ class ArticlesController < KnowledgebaseController
   helper :attachments
   include AttachmentsHelper
   include FaceboxRender
+
+  #Authorize against global permissions defined in init.rb
+  before_filter :authorize_global
   
   def new
     @article = Article.new
@@ -110,7 +113,7 @@ class ArticlesController < KnowledgebaseController
     render_to_facebox
   end
 
-private
+  private
   
   # Abstract attachment method to resolve how files should be attached to a model.
   # In newer versions of Redmine, the attach_files functionality was moved

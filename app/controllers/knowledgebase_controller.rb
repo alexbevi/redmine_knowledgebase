@@ -1,7 +1,8 @@
 class KnowledgebaseController < ApplicationController
   unloadable
 
-  before_filter :is_user_logged_in, :only => :edit
+  #Authorize against global permissions defined in init.rb
+  before_filter :authorize_global
 
   def index
     @categories = Category.find(:all)
@@ -11,7 +12,7 @@ class KnowledgebaseController < ApplicationController
     @articles_popular  = Article.find(:all, :limit => 5, :order => 'updated_at DESC')
   end
 
-protected
+  protected
 
   def is_user_logged_in
     if !User.current.logged?

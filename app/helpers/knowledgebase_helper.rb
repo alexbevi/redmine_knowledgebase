@@ -1,4 +1,16 @@
 module KnowledgebaseHelper
+
+  # Display a link if the user has a global permission
+  def link_to_if_authorized_globally(name, options = {}, html_options = nil, *parameters_for_method_reference)
+    if authorized_globally(options[:controller],options[:action])
+        link_to(name, options, html_options, *parameters_for_method_reference)
+    end
+  end
+
+  def authorized_globally(controller,action)
+    return User.current.allowed_to?({:controller => controller, :action => action},nil, :global => true)
+  end
+
   # Display a link if the user is logged in
   def link_to_if_logged_in(name, options = {}, html_options = nil, *parameters_for_method_reference)
     link_to(name, options, html_options, *parameters_for_method_reference) if User.current.logged?
@@ -11,16 +23,16 @@ module KnowledgebaseHelper
   def format_article_summary(article, format)
     output = nil
     case format
-      when "normal"
-        output = article.summary
-      when "newest"
-        output = "Created " + time_ago_in_words(article.created_at) + " ago in " + link_to(article.category.title, {:controller => 'categories', :action => 'show', :id => article.category.id})
-      when "updated"
-        output = "Updated " + time_ago_in_words(article.updated_at) + " ago"
-      when "popular"
-        output = "Viewed " + article.view_count.to_s + " since " + article.created_at.to_s
-      when "toprated"
-        output = "Rating: " + article.rating_average.to_s + "/5 from " + article.rated_count.to_s + " Votes"
+    when "normal"
+      output = article.summary
+    when "newest"
+      output = "Created " + time_ago_in_words(article.created_at) + " ago in " + link_to(article.category.title, {:controller => 'categories', :action => 'show', :id => article.category.id})
+    when "updated"
+      output = "Updated " + time_ago_in_words(article.updated_at) + " ago"
+    when "popular"
+      output = "Viewed " + article.view_count.to_s + " since " + article.created_at.to_s
+    when "toprated"
+      output = "Rating: " + article.rating_average.to_s + "/5 from " + article.rated_count.to_s + " Votes"
     end
     
     content_tag(:div, output, :class => "summary")

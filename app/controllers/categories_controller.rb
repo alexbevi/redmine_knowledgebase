@@ -1,6 +1,9 @@
 class CategoriesController < KnowledgebaseController
 	unloadable
 
+  #Authorize against global permissions defined in init.rb
+  before_filter :authorize_global
+
   def index
 		@categories = Category.find(:all)
   end
@@ -39,7 +42,7 @@ class CategoriesController < KnowledgebaseController
   def delete
     @category = Category.find(params[:id])
     if @category.articles.size == 0
-       @category.destroy
+      @category.destroy
       flash[:notice] = "Category deleted"
       redirect_to({ :controller => :knowledgebase, :action => 'index' })
     else
@@ -52,8 +55,8 @@ class CategoriesController < KnowledgebaseController
   def update
     @category = Category.find(params[:id])
     if !params[:root_category]
-        @category.move_to_child_of(Category.find(params[:parent_id]))
-      end
+      @category.move_to_child_of(Category.find(params[:parent_id]))
+    end
     if @category.update_attributes(params[:category])
       flash[:notice] = "Category Updated"
       redirect_to({ :action => 'show', :id => @category.id })
