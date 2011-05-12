@@ -28,3 +28,9 @@ en:
   title_browse_by_category: "Browse by Category"
   title_new_category: "New Category"
   message_no_articles: "No articles have been added to the knowledgebase yet. Maybe you want to get the ball rolling ..."
+  label_new_article: "New Article"
+  label_new_category: "New Category"
+  label_edit_category: "Edit Category"
+  label_delete_category: "Delete Category"
+  label_subcategories: "Sub-categories"
+        

@@ -1,5 +1,5 @@
 <div id="category-crumbs">
-	<%= link_to "Home", { :controller => 'knowledgebase', :action => 'index' } %>
+	<%= link_to l(:label_home), { :controller => 'knowledgebase', :action => 'index' } %>
 	<% @category.ancestors.each do |ancestor| %>
 	&nbsp;&raquo;&nbsp;
 	<%= link_to ancestor.title, { :controller => 'categories', :action => 'show', :id => ancestor.id } %>
@@ -7,19 +7,19 @@
 </div>
 
 <div class="contextual">
-	<%= link_to_if_logged_in "New Article",
+	<%= link_to_if_logged_in l(:label_new_article),
 			{ :controller => 'articles', :action => 'new', :category_id => @category.id },
 			:class => 'icon icon-add' %>
 	&nbsp;|&nbsp;
-	<%= link_to_if_logged_in "New Category",
+	<%= link_to_if_logged_in l(:label_new_category),
 		{ :controller => 'categories', :action => 'new', :parent_id => @category.id },
 		:class => 'icon icon-add' %>
 	&nbsp;|&nbsp;
-  <%= link_to_if_logged_in "Edit Category",
+  <%= link_to_if_logged_in l(:label_edit_category),
       { :controller => 'categories', :action => 'edit', :id => @category.id },
       :class => 'icon icon-edit' %>
   &nbsp;|&nbsp;
-  <%= link_to_if_logged_in "Delete Category",
+  <%= link_to_if_logged_in l(:label_delete_category),
       { :controller => 'categories', :action => 'delete', :id => @category.id },
       :class => 'icon icon-del', :confirm => 'Are you sure?' %>
 </div>
@@ -30,7 +30,7 @@
 
 <% if @kids.length > 0 %>
 <div class="categories">
-	<div class="category-header">Sub-categories</div>
+	<div class="category-header"><%= l(:label_subcategories) %></div>
 	<br />
 	<% @kids.each do |subs| %>
 	<%= link_to_if_logged_in subs.title + " (" + subs.articles.length.to_s + ")",
@@ -40,7 +40,7 @@
 </div>
 <% end %>
 <% if @articles.length > 0%>
-<h3>Articles</h3>
+<h3><%= l(:label_article_plural) %></h3>
 <%= render :partial => 'articles/list', :locals => { :summary_format => "normal", :articles => @articles, :default_icon => 'normal' } %>
 <% end %>
 
