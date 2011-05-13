@@ -55,7 +55,7 @@ Redmine::Plugin.register :redmine_knowledgebase do
     }
   end
   
-  menu :top_menu, :knowledgebase, { :controller => 'knowledgebase', :action => 'index'}, :caption => 'Knowledgebase',:if =>  Proc.new {
+  menu :top_menu, :knowledgebase, { :controller => 'knowledgebase', :action => 'index'}, :caption => :knowledgebase_title, :if =>  Proc.new {
     User.current.allowed_to?({:controller => 'knowledgebase', :action => 'index'},nil, :global => true)
   }
 
