@@ -1,5 +1,6 @@
 # Russian strings go here for Rails i18n
 ru:
+  knowledgebase_title: "База знаний"
   field_tag_list: "Список меток"
   label_content: "Содержимое"
   label_summary: "Summary"

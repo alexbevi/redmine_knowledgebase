@@ -1,5 +1,6 @@
 # Polish translation by Tomasz Sawicki (https://github.com/Furgas)
 pl:
+  knowledgebase_title: "Baza Wiedzy"
   field_tag_list: "Słowa kluczowe"
   label_content: "Treść"
   label_summary: "Podsumowanie"
@@ -18,8 +19,7 @@ pl:
   label_title_articles: Artykuł
   label_title_category: Kategoria
   label_article_plural: Artykuły
-  label_category_plural: Kategorie
-  knowledgebase_title: "Baza Wiedzy"
+  label_category_plural: Kategorie  
   label_jump_category: "Idź do kategorii"
   title_newest_articles: "Najnowsze artykuły"
   title_recently_updated_articles: "Ostatnio zaktualizowane artykuły"

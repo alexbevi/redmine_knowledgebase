@@ -1,5 +1,6 @@
 # English strings go here for Rails i18n
 en:
+  knowledgebase_title: "Knowledge base"
   field_tag_list: "Tag List"
   label_content: "Content"
   label_summary: "Summary"
@@ -19,7 +20,6 @@ en:
   label_title_category: Category
   label_article_plural: Articles
   label_category_plural: Categories
-  knowledgebase_title: "Knowledge base"
   label_jump_category: "Jump Category"
   title_newest_articles: "Newest Articles"
   title_recently_updated_articles: "Recently Updated Articles"

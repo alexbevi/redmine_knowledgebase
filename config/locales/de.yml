@@ -1,5 +1,6 @@
 # German strings go here for Rails i18n
 de:
+  knowledgebase_title: "Wissensbasis"
   field_tag_list: "Tag Liste"
   label_content: "Inhalt"
   label_summary: "Zusammenfassung"

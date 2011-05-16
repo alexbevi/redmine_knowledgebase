@@ -1,5 +1,6 @@
 # Italian strings go here for Rails i18n
 it:
+  knowledgebase_title: "Conoscenza di base"
   field_tag_list: "Tag"
   label_content: "Contenuto"
   label_summary: "Sommario"

@@ -1,5 +1,6 @@
 # zh strings go here for Rails i18n
 zh:
+  knowledgebase_title: "Knowledge base"
   field_tag_list: "标签列表"
   label_content: "内容"
   label_summary: "摘要"
