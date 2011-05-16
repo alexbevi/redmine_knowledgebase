@@ -20,7 +20,6 @@ it:
   label_title_category: "Categoria"
   label_article_plural: "Articoli"
   label_category_plural: "Categorie"
-  knowledgebase_title: "Knowledge base"
   label_jump_category: "Vai alla categoria"
   title_newest_articles: "Articoli recenti"
   title_recently_updated_articles: "Articoli modificati di recente"
