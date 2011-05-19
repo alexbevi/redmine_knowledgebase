@@ -30,7 +30,7 @@ module KnowledgebaseHelper
     when "updated"
       output = "Updated " + time_ago_in_words(article.updated_at) + " ago"
     when "popular"
-      output = "Viewed " + article.view_count.to_s + " since " + article.created_at.to_s
+      output = "Viewed " + article.view_count.to_s + " time#{"s" if article.view_count > 1} since " + article.created_at.to_s
     when "toprated"
       output = "Rating: " + article.rating_average.to_s + "/5 from " + article.rated_count.to_s + " Votes"
     end
