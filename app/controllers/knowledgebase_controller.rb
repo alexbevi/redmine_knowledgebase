@@ -2,7 +2,7 @@ class KnowledgebaseController < ApplicationController
   unloadable
 
   #Authorize against global permissions defined in init.rb
-  before_filter :authorize_global
+  before_filter :authorize_global, :unless => :allow_anonymous_access?
 
   def index
     @categories = Category.find(:all)
@@ -18,6 +18,10 @@ class KnowledgebaseController < ApplicationController
     if !User.current.logged?
       render_403
     end
+  end
+  
+  def allow_anonymous_access?
+	return Setting['plugin_redmine_knowledgebase']['knowledgebase_anonymous_access'].to_i == 1
   end
 
 end
