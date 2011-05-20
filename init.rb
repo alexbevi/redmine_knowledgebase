@@ -14,7 +14,8 @@ Redmine::Plugin.register :redmine_knowledgebase do
   requires_redmine :version_or_higher => '1.0.0'
 
   settings :default => {
-    'knowledgebase_anonymous_access' => "1"
+    'knowledgebase_anonymous_access' => "1",
+    'knowledgebase_sort_category_tree' => "1"
   }, :partial => 'settings/knowledgebase_settings'
 
   #Global permissions

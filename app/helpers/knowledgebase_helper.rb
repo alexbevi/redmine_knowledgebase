@@ -47,5 +47,9 @@ module KnowledgebaseHelper
     html += "</ul>"
     html
   end
-
+  
+  def sort_categories?
+    Setting['plugin_redmine_knowledgebase']['knowledgebase_sort_category_tree'].to_i == 1
+  end
+  
 end

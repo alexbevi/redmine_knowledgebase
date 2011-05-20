@@ -2,7 +2,7 @@
   <table class="list" style="border: 0">
   <tbody>
   <% cats = Category.roots %>
-  
+  <% cats = cats.sort_by(&:title) if sort_categories? %>
   <% cats.each do |category| %>
     <%= render :partial => "categories/tree_row", :locals => { :category => category } %>
   <% end %>
