@@ -8,7 +8,11 @@ class KnowledgebaseController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, :with => :force_404
   
   def index
-    summary_limit = 5
+    begin
+      summary_limit = Setting['plugin_redmine_knowledgebase']['knowledgebase_summary_limit'].to_i
+    rescue
+      summary_limit = 5
+    end
     
     @categories = Category.find(:all)
     @articles_newest   = Article.find(:all, :limit => summary_limit, :order => 'created_at DESC')
@@ -17,9 +21,11 @@ class KnowledgebaseController < ApplicationController
     #FIXME the following method still requires ALL records to be loaded before being filtered.
     
     a = Article.find(:all, :include => :viewings).sort_by(&:view_count)
-    @articles_popular  = a.drop(a.count - summary_limit).reverse
+    a = a.drop(a.count - summary_limit) if a.count > summary_limit
+    @articles_popular  = a.reverse
     a = Article.find(:all, :include => :ratings).sort_by(&:rated_count)
-    @articles_toprated = a.drop(a.count - summary_limit).reverse
+    a = a.drop(a.count - summary_limit) if a.count > summary_limit
+    @articles_toprated = a.reverse
   end
 
 #########

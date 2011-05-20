@@ -16,7 +16,8 @@ Redmine::Plugin.register :redmine_knowledgebase do
   settings :default => {
     'knowledgebase_anonymous_access' => "1",
     'knowledgebase_sort_category_tree' => "1",
-    'knowledgebase_show_category_totals' => "1"
+    'knowledgebase_show_category_totals' => "1",
+    'knowledgebase_summary_limit' => "5"
   }, :partial => 'settings/knowledgebase_settings'
 
   #Global permissions
