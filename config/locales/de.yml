@@ -30,4 +30,4 @@ de:
   title_new_category: "Neue Kategorie"
   title_create_category: "Kategorie anlegen"
   message_no_articles: "Es wurde noch kein Artikel eingegeben. Vielleicht kannst du das machen..."
-
+  allow_anon_access: "Allow anonymous access?"

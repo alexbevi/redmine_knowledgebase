@@ -27,3 +27,4 @@ pt-BR:
   title_browse_by_category: "Navegar por Categoria"
   title_new_category: "Nova Categoria"
   message_no_articles: "Nenhum artigo cadastrado ainda, talvez você queira começar..."
+  allow_anon_access: "Allow anonymous access?"

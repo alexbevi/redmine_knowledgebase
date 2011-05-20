@@ -13,6 +13,11 @@ Redmine::Plugin.register :redmine_knowledgebase do
 
   requires_redmine :version_or_higher => '1.0.0'
 
+  settings :default => {
+    'knowledgebase_anonymous_access' => "1"
+  }, :partial => 'settings/knowledgebase_settings'
+
+
   #Global permissions
   project_module :knowledgebase do
     permission :view_articles, {
@@ -55,9 +60,11 @@ Redmine::Plugin.register :redmine_knowledgebase do
     }
   end
   
-  menu :top_menu, :knowledgebase, { :controller => 'knowledgebase', :action => 'index'}, :caption => :knowledgebase_title, :if =>  Proc.new {
-    User.current.allowed_to?({:controller => 'knowledgebase', :action => 'index'},nil, :global => true)
-  }
+  menu :top_menu, :knowledgebase, { :controller => 'knowledgebase', :action => 'index' }, :caption => :knowledgebase_title, 
+	:if =>  Proc.new {
+		User.current.allowed_to?({:controller => 'knowledgebase', :action => 'index'}, nil, :global => true) ||
+		Setting['plugin_redmine_knowledgebase']['knowledgebase_anonymous_access'].to_i == 1
+	}
 
   Redmine::Search.available_search_types << 'articles'
 end

@@ -28,3 +28,4 @@ zh:
   title_browse_by_category: "根据分类浏览"
   title_new_category: "新分类"
   message_no_articles: "目前尚未有任何文章"
+  allow_anon_access: "Allow anonymous access?"

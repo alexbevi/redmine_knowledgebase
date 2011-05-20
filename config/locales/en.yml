@@ -33,4 +33,5 @@ en:
   label_edit_category: "Edit Category"
   label_delete_category: "Delete Category"
   label_subcategories: "Sub-categories"
+  allow_anon_access: "Allow anonymous access?"
         

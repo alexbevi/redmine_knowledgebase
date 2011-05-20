@@ -33,3 +33,4 @@ pl:
   label_edit_category: "Edytuj kategorię"
   label_delete_category: "Usuń kategorię"
   label_subcategories: "Kategorie podrzędne"
+  allow_anon_access: "Allow anonymous access?"
