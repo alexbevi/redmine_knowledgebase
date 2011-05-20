@@ -1,5 +1,5 @@
 #article-summaries th { font-family: Tahoma; padding: 6px 0px; color: #669933; font-size: 15px; font-weight: bold; border-bottom: solid 1px #CCCCCC; text-align: left;  }
-
+#article { padding: 10px 5px 20px 5px }
 .article-summary { font-weight: normal; font-size: 11px; color: #777777; line-height: 17px; text-decoration: none; }
 .article-info { background-color: #F1F5F8; border: solid 1px #D5E2F1; padding: 5px; }
 .article-title { margin: 0px; padding: 6px 0px 5px 0px; color:#669933; font-size: 16px; font-weight: bold; }
@@ -11,16 +11,16 @@
 .recently-added { background-image: url(../images/page_white_add.png); background-repeat: no-repeat; }
 .recently-changed { background-image: url(../images/page_white_edit.png); background-repeat: no-repeat; }
 
-#article-options { padding: 0; margin-left: -10px; }
-#article-options li { margin: 0; padding: 0; list-style-type: none; position: relative }
-#article-options li a { display: block; line-height: 22px; padding-left: 25px; }
-#article-options .icon { position: relative; top: 10px; left: 12px }
-#article-options .print { background: url(../images/icon-printer.png) left no-repeat; }
-#article-options .pdf { background: url(../images/icon-pdf.png) left no-repeat; }
-#article-options .word { background: url(../images/icon-word.png) left no-repeat; }
-#article-options .bookmark { background: url(../images/icon-bookmark.png) left no-repeat; }
+#options { padding: 0; margin-left: -10px; }
+#options li { margin: 0; padding: 0; list-style-type: none; position: relative }
+#options li a { display: block; line-height: 22px; padding-left: 25px; }
+#options .icon { position: relative; top: 10px; left: 12px }
+#options .print { background: url(../images/icon-printer.png) left no-repeat; }
+#options .pdf { background: url(../images/icon-pdf.png) left no-repeat; }
+#options .word { background: url(../images/icon-word.png) left no-repeat; }
+#options .bookmark { background: url(../images/icon-bookmark.png) left no-repeat; }
 
-#category-crumbs { background: url(../images/icon-home.png) 0px 3px no-repeat; border-bottom: dotted 1px #CCCCCC; padding-left: 20px; padding-bottom: 5px; }
+#category-crumbs { background: url(../images/icon-home.png) 0px 3px no-repeat; padding-left: 20px; padding-bottom: 10px; }
 #category-crumbs a:hover { text-decoration: underline; }
 
 .categories { background-color:#F1F5F8; border:solid 1px #D5E2F1; -moz-border-radius: 5px; -webkit-border-radius: 5px; margin: 10px 0px; padding: 10px; }

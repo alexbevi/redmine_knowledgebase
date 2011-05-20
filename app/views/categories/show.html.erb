@@ -4,16 +4,19 @@
 	&nbsp;&raquo;&nbsp;
 	<%= link_to ancestor.title, { :controller => 'categories', :action => 'show', :id => ancestor.id } %>
 	<% end %>
+  &nbsp;&raquo;&nbsp;
+  <%= @category.title %>
 </div>
 
-<div class="contextual">
-	<%= link_to_if_authorized_globally l(:label_new_article), { :controller => 'articles', :action => 'new', :category_id => @category.id }, :class => 'icon icon-add' %>
-	<%= link_to_if_authorized_globally l(:label_new_category), { :controller => 'categories', :action => 'new', :parent_id => @category.id }, :class => 'icon icon-add' %>
-  <%= link_to_if_authorized_globally l(:label_edit_category), { :controller => 'categories', :action => 'edit', :id => @category.id }, :class => 'icon icon-edit' %>
-  <%= link_to_if_authorized_globally l(:label_delete_category), { :controller => 'categories', :action => 'delete', :id => @category.id }, :class => 'icon icon-del', :confirm => 'Are you sure?' %>
-</div>
+<% content_for :sidebar do %>
+	<ul id="options">
+		<li><%= link_to_if_authorized_globally l(:label_new_article), { :controller => 'articles', :action => 'new', :category_id => @category.id }, :class => 'icon icon-add' %></li>
+    <li><%= link_to_if_authorized_globally l(:label_new_category), { :controller => 'categories', :action => 'new', :parent_id => @category.id }, :class => 'icon icon-add' %></li>
+    <li><%= link_to_if_authorized_globally l(:label_edit_category), { :controller => 'categories', :action => 'edit', :id => @category.id }, :class => 'icon icon-edit' %></li>
+    <li><%= link_to_if_authorized_globally l(:label_delete_category), { :controller => 'categories', :action => 'delete', :id => @category.id }, :class => 'icon icon-del', :confirm => 'Are you sure?' %></li>
+	</ul>
+<% end %>
 
-<h2><%= @category.title %></h2>
 <p><div class="wiki"><%= textilizable @category.description unless @category.description.nil? %></div></p>
 
 <% @kids = @category.children %>
