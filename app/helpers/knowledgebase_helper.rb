@@ -6,15 +6,17 @@ module KnowledgebaseHelper
         link_to(name, options, html_options, *parameters_for_method_reference)
     end
   end
+  
+  def link_to_remote_if_authorized_globally(name, options = {}, html_options = nil, *parameters_for_method_reference)
+    if authorized_globally(options[:controller],options[:action])
+        link_to_remote(name, options, html_options, *parameters_for_method_reference)
+    end
+  end
 
   def authorized_globally(controller,action)
     return User.current.allowed_to?({:controller => controller, :action => action},nil, :global => true)
   end
-
-  def link_to_remote_if_logged_in(name, options = {}, html_options = nil, *parameters_for_method_reference)
-    link_to_remote(name, options, html_options, *parameters_for_method_reference) if User.current.logged?
-  end
-  
+ 
   def format_article_summary(article, format)
     output = nil
     case format
