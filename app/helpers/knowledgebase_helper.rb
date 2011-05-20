@@ -14,7 +14,7 @@ module KnowledgebaseHelper
   end
 
   def authorized_globally(controller,action)
-    return User.current.allowed_to?({:controller => controller, :action => action},nil, :global => true)
+    User.current.allowed_to?({:controller => controller, :action => action}, nil, :global => true)
   end
  
   def format_article_summary(article, format)
@@ -45,7 +45,7 @@ module KnowledgebaseHelper
     html += "<li>#{link_to_remote "Four",  :update => "article_rating_#{article.id}", :url => {:controller => 'articles', :action => 'rate', :article_id => article, :rating => 4 }, :html => {:class => "four_stars"},  :method => :get}</li>"
     html += "<li>#{link_to_remote "Five",  :update => "article_rating_#{article.id}", :url => {:controller => 'articles', :action => 'rate', :article_id => article, :rating => 5 }, :html => {:class => "five_stars"},  :method => :get}</li>"
     html += "</ul>"
-    return html
+    html
   end
 
 end
