@@ -52,4 +52,8 @@ module KnowledgebaseHelper
     Setting['plugin_redmine_knowledgebase']['knowledgebase_sort_category_tree'].to_i == 1
   end
   
+  def show_category_totals?
+    Setting['plugin_redmine_knowledgebase']['knowledgebase_show_category_totals'].to_i == 1
+  end
+  
 end
