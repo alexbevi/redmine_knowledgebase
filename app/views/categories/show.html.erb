@@ -7,41 +7,29 @@
 </div>
 
 <div class="contextual">
-	<%= link_to_if_authorized_globally l(:label_new_article),
-			{ :controller => 'articles', :action => 'new', :category_id => @category.id },
-			:class => 'icon icon-add' %>
-	&nbsp;|&nbsp;
-	<%= link_to_if_authorized_globally l(:label_new_category),
-		{ :controller => 'categories', :action => 'new', :parent_id => @category.id },
-		:class => 'icon icon-add' %>
-	&nbsp;|&nbsp;
-  <%= link_to_if_authorized_globally l(:label_edit_category),
-      { :controller => 'categories', :action => 'edit', :id => @category.id },
-      :class => 'icon icon-edit' %>
-  &nbsp;|&nbsp;
-  <%= link_to_if_authorized_globally l(:label_delete_category),
-      { :controller => 'categories', :action => 'delete', :id => @category.id },
-      :class => 'icon icon-del', :confirm => 'Are you sure?' %>
+	<%= link_to_if_authorized_globally l(:label_new_article), { :controller => 'articles', :action => 'new', :category_id => @category.id }, :class => 'icon icon-add' %>
+	<%= link_to_if_authorized_globally l(:label_new_category), { :controller => 'categories', :action => 'new', :parent_id => @category.id }, :class => 'icon icon-add' %>
+  <%= link_to_if_authorized_globally l(:label_edit_category), { :controller => 'categories', :action => 'edit', :id => @category.id }, :class => 'icon icon-edit' %>
+  <%= link_to_if_authorized_globally l(:label_delete_category), { :controller => 'categories', :action => 'delete', :id => @category.id }, :class => 'icon icon-del', :confirm => 'Are you sure?' %>
 </div>
+
 <h2><%= @category.title %></h2>
 <p><div class="wiki"><%= textilizable @category.description unless @category.description.nil? %></div></p>
 
 <% @kids = @category.children %>
 
 <% if @kids.length > 0 %>
-<div class="categories">
-	<div class="category-header"><%= l(:label_subcategories) %></div>
-	<br />
-	<% @kids.each do |subs| %>
-	<%= link_to subs.title + " (" + subs.articles.length.to_s + ")",
-			{ :controller => 'categories', :action => 'show', :id => subs.id },
-			:class => 'category-title' %>
-	<% end %>
-</div>
+  <div class="categories">
+    <div class="category-header"><%= l(:label_subcategories) %></div>
+    <br />
+    <% @kids.each do |subs| %>
+      <%= link_to subs.title + " (" + subs.articles.length.to_s + ")", { :controller => 'categories', :action => 'show', :id => subs.id }, :class => 'category-title' %>
+    <% end %>
+  </div>
 <% end %>
 <% if @articles.length > 0%>
-<h3><%= l(:label_article_plural) %></h3>
-<%= render :partial => 'articles/list', :locals => { :summary_format => "normal", :articles => @articles, :default_icon => 'normal' } %>
+  <h3><%= l(:label_article_plural) %></h3>
+  <%= render :partial => 'articles/list', :locals => { :summary_format => "normal", :articles => @articles, :default_icon => 'normal' } %>
 <% end %>
 
 <% content_for :header_tags do %>

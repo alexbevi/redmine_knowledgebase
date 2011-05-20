@@ -5,7 +5,7 @@ class CategoriesController < KnowledgebaseController
   before_filter :authorize_global
 
   def index
-		@categories = Category.find(:all)
+    @categories = Category.find(:all)
   end
 
   def show

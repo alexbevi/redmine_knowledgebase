@@ -12,7 +12,9 @@ class KnowledgebaseController < ApplicationController
     @articles_toprated = Article.find(:all, :include => :ratings).sort_by(&:rated_count).reverse
   end
 
-  protected
+#########
+protected
+#########
 
   def is_user_logged_in
     if !User.current.logged?

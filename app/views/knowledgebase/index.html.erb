@@ -1,78 +1,64 @@
 <% if @categories.length == 0 and !User.current.logged? %>
 	<h2>Welcome to the Redmine Knowledgebase plugin</h2>
-
 	<p>Unfortunately, there aren't any Categories defined, and you need to be logged in to create new categories.</p>
 <% else %>
+  <div class="contextual">
+    <% if @categories.length > 0 %>
+      <label for="category_id"><strong><%= l(:label_jump_category) %></strong></label>
+      &nbsp;
+      <%= select_tag :category_id, options_for_select([""] + nested_set_options(Category) {|i| "#{'»' * i.level} #{i.title}" }), :onchange => "if (this.value != \'\') { window.location = 'knowledgebase/categories/' + this.value; }" %>
+    <% end %>
+    <%= link_to_if_authorized_globally l(:title_new_category), { :controller => 'categories', :action => 'new' }, :class => 'icon icon-add' %>
+  </div>
 
-<div class="contextual">
-	<% if @categories.length > 0 %>
-	<label for="category_id"><strong><%= l(:label_jump_category) %></strong></label>
-	&nbsp;
-	<%= select_tag :category_id,
-		options_for_select([""] + nested_set_options(Category) {|i| "#{'»' * i.level} #{i.title}" }),
-		:onchange => "if (this.value != \'\') { window.location = 'knowledgebase/categories/' + this.value; }"
-	%>
-	<% end %>
-	<% if @categories.length > 0 and User.current.logged? %>&nbsp;|&nbsp;<% end %>
-	<%= link_to_if_authorized_globally l(:title_new_category),
-		{ :controller => 'categories', :action => 'new' },
-		:class => 'icon icon-add' %>
-</div>
+  <% if Article.count > 0 %>
+    <table id="article-summaries" width="100%" cellpadding="5">
+    <thead>
+    <tr>
+      <th><%= l(:title_newest_articles) %></th>
+      <th><%= l(:title_recently_updated_articles) %></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td width="50%" valign="top"><%= render :partial => 'articles/list', :locals => { :summary_format => "newest", :articles => @articles_newest, :default_icon => 'recently-added' } %></td>
+      <td width="50%" valign="top"><%= render :partial => 'articles/list', :locals => { :summary_format => "updated", :articles => @articles_updated, :default_icon => 'recently-changed' } %></td>
+    </tr>
+    </tbody>
+    </table>
 
-<% if Article.count > 0 %>
+    <table id="article-summaries" width="100%" cellpadding="5">
+    <thead>
+    <tr>
+      <th><%= l(:title_most_popular_articles) %></th>
+      <th><%= l(:title_top_rated_articles) %></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td width="50%" valign="top"><%= render :partial => 'articles/list', :locals => { :summary_format => "popular", :articles => @articles_popular, :default_icon => 'popular' } %></td>
+      <td width="50%" valign="top"><%= render :partial => 'articles/list', :locals => { :summary_format => "toprated", :articles => @articles_toprated, :default_icon => 'top-rated' } %></td>
+    </tr>
+    </tbody>
+    </table>
+  <% else %>
+    <p><%= t :message_no_articles %></p>
+  <% end %>
 
-	<table id="article-summaries" width="100%" cellpadding="5">
-	<thead>
-	<tr>
-		<th><%= l(:title_newest_articles) %></th>
-		<th><%= l(:title_recently_updated_articles) %></th>
-	</tr>
-	</thead>
-	<tbody>
-	<tr>
-		<td width="50%" valign="top"><%= render :partial => 'articles/list', :locals => { :summary_format => "newest", :articles => @articles_newest, :default_icon => 'recently-added' } %></td>
-		<td width="50%" valign="top"><%= render :partial => 'articles/list', :locals => { :summary_format => "updated", :articles => @articles_updated, :default_icon => 'recently-changed' } %></td>
-	</tr>
-	</tbody>
-	</table>
-
-	<table id="article-summaries" width="100%" cellpadding="5">
-	<thead>
-	<tr>
-		<th><%= l(:title_most_popular_articles) %></th>
-		<th><%= l(:title_top_rated_articles) %></th>
-	</tr>
-	</thead>
-	<tbody>
-	<tr>
-		<td width="50%" valign="top"><%= render :partial => 'articles/list', :locals => { :summary_format => "popular", :articles => @articles_popular, :default_icon => 'popular' } %></td>
-		<td width="50%" valign="top"><%= render :partial => 'articles/list', :locals => { :summary_format => "toprated", :articles => @articles_toprated, :default_icon => 'top-rated' } %></td>
-	</tr>
-	</tbody>
-	</table>
-
-<% else %>
-
-	<p><%= t :message_no_articles %></p>
-
-<% end #if %>
-
-<% content_for :sidebar do %>
-	<h3><%= l(:title_browse_by_category) %></h3>
-	<div id="categories_nav">
-	<ul>
-	<% Category.roots.each do |cat|
-	     cat.self_and_descendants.each do |category| %>
-		<li><%= link_to ('»' * category.level) + ' ' + category.title + " (" + category.articles.length.to_s + ")", :controller => 'categories', :action => 'show', :id => category.id  %></li>
-	<% end
-	end %>
-	</ul>
-	</div>
+  <% content_for :sidebar do %>
+    <h3><%= l(:title_browse_by_category) %></h3>
+    <div id="categories_nav">
+    <ul>
+    <% Category.roots.each do |cat|
+       cat.self_and_descendants.each do |category| %>
+      <li><%= link_to ('»' * category.level) + ' ' + category.title + " (" + category.articles.length.to_s + ")", :controller => 'categories', :action => 'show', :id => category.id  %></li>
+    <% end
+    end %>
+    </ul>
+    </div>
+  <% end %>
 <% end %>
-
-<% end #if %>
 
 <% content_for :header_tags do %>
 	<%= stylesheet_link_tag 'knowledgebase', :plugin => 'redmine_knowledgebase' %>
 <% end %>
-

@@ -3,13 +3,13 @@ module KnowledgebaseHelper
   # Display a link if the user has a global permission
   def link_to_if_authorized_globally(name, options = {}, html_options = nil, *parameters_for_method_reference)
     if authorized_globally(options[:controller],options[:action])
-        link_to(name, options, html_options, *parameters_for_method_reference)
+      link_to(name, options, html_options, *parameters_for_method_reference)
     end
   end
   
   def link_to_remote_if_authorized_globally(name, options = {}, html_options = nil, *parameters_for_method_reference)
     if authorized_globally(options[:controller],options[:action])
-        link_to_remote(name, options, html_options, *parameters_for_method_reference)
+      link_to_remote(name, options, html_options, *parameters_for_method_reference)
     end
   end
 
