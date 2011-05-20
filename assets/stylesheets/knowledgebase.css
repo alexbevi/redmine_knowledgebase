@@ -1,10 +1,9 @@
 #article-summaries th { font-family: Tahoma; padding: 6px 0px; color: #669933; font-size: 15px; font-weight: bold; border-bottom: solid 1px #CCCCCC; text-align: left;  }
 #article { padding: 10px 5px 20px 5px }
 .article-summary { font-weight: normal; font-size: 11px; color: #777777; line-height: 17px; text-decoration: none; }
-.article-info { background-color: #F1F5F8; border: solid 1px #D5E2F1; padding: 5px; }
 .article-title { margin: 0px; padding: 6px 0px 5px 0px; color:#669933; font-size: 16px; font-weight: bold; }
-
 .article-icon { padding-left: 35px; background-position: 0px 6px; line-height: 19px; padding-bottom: 6px; }
+
 .normal { background-image: url(../images/page_white_text.png); background-repeat: no-repeat;  }
 .top-rated { background-image: url(../images/page_white_star.png); background-repeat: no-repeat; }
 .popular { background-image: url(../images/page_white_medal.png); background-repeat: no-repeat; }
@@ -48,7 +47,9 @@ ul.stars li a.five_stars  { width: 100%; z-index: 2; }
 .rating-title { font-size:14px; font-weight:bold; color:#C60; }
 .rating-title span { font-size:12px; font-weight:normal; }
 
-#section-title { padding:6px 0px; color:#669933; font-size:15px; font-weight:bold; border-bottom:solid 1px #CCCCCC; padding-bottom: 10px; }
+.infobox { background-color: #F1F5F8; border: solid 1px #D5E2F1; padding: 5px; }
+
+#section-title { padding:6px 0px; color:#669933; font-size:15px; font-weight:bold; padding-bottom: 10px; }
 #section-title.attachments { background-image: url(../images/attachments.png); background-repeat: no-repeat; padding-left: 42px; }
 #section-title.comments { background-image: url(../images/comments.png); background-repeat: no-repeat; padding-left: 42px; }
 
