@@ -47,14 +47,19 @@
 
   <% content_for :sidebar do %>
     <h3><%= l(:title_browse_by_category) %></h3>
-    <div id="categories_nav">
-    <ul>
-    <% Category.roots.each do |cat|
-       cat.self_and_descendants.each do |category| %>
-      <li><%= link_to ('»' * category.level) + ' ' + category.title + " (" + category.articles.length.to_s + ")", :controller => 'categories', :action => 'show', :id => category.id  %></li>
-    <% end
-    end %>
-    </ul>
+    
+    <div class="autoscroll">
+      <table class="list" style="border: 0">
+      <tbody>
+      <% Category.roots.each do |cat| cat.self_and_descendants.each do |category| %>
+        <tr class="project child leaf <%= category.level > 0 ? "idnt idnt-#{category.level}" : nil %>">
+          <td class="name">
+            <span><%= link_to(category.title, :controller => 'categories', :action => 'show', :id => category.id) %></span>
+          </td>
+        </tr>
+      <% end end %>
+      </tbody>
+      </table>
     </div>
   <% end %>
 <% end %>
