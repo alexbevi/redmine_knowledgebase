@@ -11,11 +11,6 @@ module KnowledgebaseHelper
     return User.current.allowed_to?({:controller => controller, :action => action},nil, :global => true)
   end
 
-  # Display a link if the user is logged in
-  def link_to_if_logged_in(name, options = {}, html_options = nil, *parameters_for_method_reference)
-    link_to(name, options, html_options, *parameters_for_method_reference) if User.current.logged?
-  end
-  
   def link_to_remote_if_logged_in(name, options = {}, html_options = nil, *parameters_for_method_reference)
     link_to_remote(name, options, html_options, *parameters_for_method_reference) if User.current.logged?
   end

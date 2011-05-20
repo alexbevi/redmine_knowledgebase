@@ -7,19 +7,19 @@
 </div>
 
 <div class="contextual">
-	<%= link_to_if_logged_in l(:label_new_article),
+	<%= link_to_if_authorized_globally l(:label_new_article),
 			{ :controller => 'articles', :action => 'new', :category_id => @category.id },
 			:class => 'icon icon-add' %>
 	&nbsp;|&nbsp;
-	<%= link_to_if_logged_in l(:label_new_category),
+	<%= link_to_if_authorized_globally l(:label_new_category),
 		{ :controller => 'categories', :action => 'new', :parent_id => @category.id },
 		:class => 'icon icon-add' %>
 	&nbsp;|&nbsp;
-  <%= link_to_if_logged_in l(:label_edit_category),
+  <%= link_to_if_authorized_globally l(:label_edit_category),
       { :controller => 'categories', :action => 'edit', :id => @category.id },
       :class => 'icon icon-edit' %>
   &nbsp;|&nbsp;
-  <%= link_to_if_logged_in l(:label_delete_category),
+  <%= link_to_if_authorized_globally l(:label_delete_category),
       { :controller => 'categories', :action => 'delete', :id => @category.id },
       :class => 'icon icon-del', :confirm => 'Are you sure?' %>
 </div>
@@ -33,7 +33,7 @@
 	<div class="category-header"><%= l(:label_subcategories) %></div>
 	<br />
 	<% @kids.each do |subs| %>
-	<%= link_to_if_logged_in subs.title + " (" + subs.articles.length.to_s + ")",
+	<%= link_to subs.title + " (" + subs.articles.length.to_s + ")",
 			{ :controller => 'categories', :action => 'show', :id => subs.id },
 			:class => 'category-title' %>
 	<% end %>

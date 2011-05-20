@@ -55,7 +55,7 @@
 <div id="section-title" class="comments"><%= l(:label_comment_plural) %></div>
 <% @comments.each do |comment| %>
   <div class="contextual">
-  <%= link_to_if_logged_in image_tag('delete.png'), {:controller => 'articles', :action => 'destroy_comment', :id => @article, :comment_id => comment},
+  <%= link_to_if_authorized_globally image_tag('delete.png'), {:controller => 'articles', :action => 'destroy_comment', :id => @article, :comment_id => comment},
                                                      :confirm => l(:text_are_you_sure), :method => :post, :title => l(:button_delete) %>
   </div>
   <h4><%= avatar(comment.author, :size => "24") %><%= authoring comment.created_on, comment.author %></h4>
