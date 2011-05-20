@@ -8,11 +8,18 @@ class KnowledgebaseController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, :with => :force_404
   
   def index
+    summary_limit = 5
+    
     @categories = Category.find(:all)
-    @articles_newest   = Article.find(:all, :limit => 5, :order => 'created_at DESC')
-    @articles_updated  = Article.find(:all, :limit => 5, :conditions => ['created_at <> updated_at'], :order => 'updated_at DESC')
-    @articles_popular  = Article.find(:all, :include => :viewings).sort_by(&:view_count).reverse
-    @articles_toprated = Article.find(:all, :include => :ratings).sort_by(&:rated_count).reverse
+    @articles_newest   = Article.find(:all, :limit => summary_limit, :order => 'created_at DESC')
+    @articles_updated  = Article.find(:all, :limit => summary_limit, :conditions => ['created_at <> updated_at'], :order => 'updated_at DESC')
+    
+    #FIXME the following method still requires ALL records to be loaded before being filtered.
+    
+    a = Article.find(:all, :include => :viewings).sort_by(&:view_count)
+    @articles_popular  = a.drop(a.count - summary_limit).reverse
+    a = Article.find(:all, :include => :ratings).sort_by(&:rated_count)
+    @articles_toprated = a.drop(a.count - summary_limit).reverse
   end
 
 #########
