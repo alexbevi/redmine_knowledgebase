@@ -25,3 +25,4 @@ es:
   title_new_category: "Nueva Categoría"
   message_no_articles: "No hay artículos agregados... Empieza cuando quieras..."
   allow_anon_access: "Allow anonymous access?"
+  allow_sort_category_tree: "Sort the category tree alphabetically?"

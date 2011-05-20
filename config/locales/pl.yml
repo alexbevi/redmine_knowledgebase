@@ -34,3 +34,4 @@ pl:
   label_delete_category: "Usuń kategorię"
   label_subcategories: "Kategorie podrzędne"
   allow_anon_access: "Allow anonymous access?"
+  allow_sort_category_tree: "Sort the category tree alphabetically?"

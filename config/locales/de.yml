@@ -31,3 +31,4 @@ de:
   title_create_category: "Kategorie anlegen"
   message_no_articles: "Es wurde noch kein Artikel eingegeben. Vielleicht kannst du das machen..."
   allow_anon_access: "Allow anonymous access?"
+  allow_sort_category_tree: "Sort the category tree alphabetically?"

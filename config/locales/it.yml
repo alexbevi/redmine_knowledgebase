@@ -29,3 +29,4 @@ it:
   title_new_category: "Nuova categoria"
   message_no_articles: "Nessun articolo è stato ancora aggiunto alla knowledgebase."
   allow_anon_access: "Allow anonymous access?"
+  allow_sort_category_tree: "Sort the category tree alphabetically?"

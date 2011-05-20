@@ -24,3 +24,4 @@ ru:
   title_browse_by_category: "Просмотр по категориям"
   title_new_category: "Новая категория"
   allow_anon_access: "Allow anonymous access?"
+  allow_sort_category_tree: "Sort the category tree alphabetically?"

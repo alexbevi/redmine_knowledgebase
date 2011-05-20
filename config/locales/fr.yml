@@ -30,3 +30,4 @@ fr:
   title_new_category: "Nouvelle Catégorie"
   message_no_articles: "Aucun article n'a été ajouté à la base de connaissance."
   allow_anon_access: "Allow anonymous access?"
+  allow_sort_category_tree: "Sort the category tree alphabetically?"
