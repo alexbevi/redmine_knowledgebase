@@ -1,0 +1,11 @@
+<div class="autoscroll">
+  <table class="list" style="border: 0">
+  <tbody>
+  <% cats = Category.roots %>
+  
+  <% cats.each do |category| %>
+    <%= render :partial => "categories/tree_row", :locals => { :category => category } %>
+  <% end %>
+  </tbody>
+  </table>
+</div>

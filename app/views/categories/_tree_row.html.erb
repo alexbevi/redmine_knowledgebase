@@ -1,0 +1,10 @@
+<tr class="project child leaf <%= category.level > 0 ? "idnt idnt-#{category.level}" : nil %>">
+  <td class="name">
+    <span><%= link_to(category.title, :controller => 'categories', :action => 'show', :id => category.id) %></span>
+  </td>
+</tr>
+
+<% subs = category.children %>
+<% subs.each do |subcat| %>
+  <%= render :partial => 'categories/tree_row', :locals => { :category => subcat } %>
+<% end %>
