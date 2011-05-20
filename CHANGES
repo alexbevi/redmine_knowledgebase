@@ -1,0 +1,12 @@
+0.3.1 (11-MAY-20)
+-----------------
+* added Polish translation
+* localized the top menu entry
+* added Spanish translation
+* properly filter the main page's new/updated/toprated/popular items
+* added a plugin configuration panel
+* use proper link authentication helpers for acticles/categories
+* allow anonymous access to the knowledgebase (read-only) based on
+  the setting in the configuration panel (default => true)
+* cleanup category list on the main page
+* fixed comment creation popup not being displayed
