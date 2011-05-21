@@ -1,0 +1,35 @@
+# Polish translation by Tomasz Sawicki (https://github.com/Furgas)
+pl:
+  knowledgebase_title: "Baza Wiedzy"
+  field_tag_list: "Słowa kluczowe"
+  label_content: "Treść"
+  label_summary: "Podsumowanie"
+  label_title: "Tytuł"
+  label_category: "Kategoria"
+  label_description: "Opis"
+  label_home: "Strona główna"
+  title_create_article: "Nowy artykuł"
+  title_edit_article: "Edycha artykułu"
+  title_article_rating: "Ocena artykułu"
+  title_votes: "Głosy"
+  label_parent_category: "Nadrzędna kategoria"
+  label_root_category: "Główna kategoria"
+  title_edit_category: "Edycja kategorii"
+  title_create_category: "Nowa kategoria"
+  label_title_articles: Artykuł
+  label_title_category: Kategoria
+  label_article_plural: Artykuły
+  label_category_plural: Kategorie  
+  label_jump_category: "Idź do kategorii"
+  title_newest_articles: "Najnowsze artykuły"
+  title_recently_updated_articles: "Ostatnio zaktualizowane artykuły"
+  title_most_popular_articles: "Najpopularniejsze artykuły"
+  title_top_rated_articles: "Najlepiej ocenione artykuły"
+  title_browse_by_category: "Podsumowanie wg kategorii"
+  title_new_category: "Nowa kategoria"
+  message_no_articles: "W bazie wiedzy nie ma jeszcze żadnych artykułów."
+  label_new_article: "Dodaj artykuł"
+  label_new_category: "Dodaj kategorię"
+  label_edit_category: "Edytuj kategorię"
+  label_delete_category: "Usuń kategorię"
+  label_subcategories: "Kategorie podrzędne"

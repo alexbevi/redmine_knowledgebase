@@ -30,8 +30,8 @@
 	</thead>
 	<tbody>
 	<tr>
-		<td width="50%"><%= render :partial => 'articles/list', :locals => { :summary_format => "newest", :articles => @articles_newest, :default_icon => 'recently-added' } %></td>
-		<td width="50%"><%= render :partial => 'articles/list', :locals => { :summary_format => "updated", :articles => @articles_updated, :default_icon => 'recently-changed' } %></td>
+		<td width="50%" valign="top"><%= render :partial => 'articles/list', :locals => { :summary_format => "newest", :articles => @articles_newest, :default_icon => 'recently-added' } %></td>
+		<td width="50%" valign="top"><%= render :partial => 'articles/list', :locals => { :summary_format => "updated", :articles => @articles_updated, :default_icon => 'recently-changed' } %></td>
 	</tr>
 	</tbody>
 	</table>
@@ -45,8 +45,8 @@
 	</thead>
 	<tbody>
 	<tr>
-		<td width="50%"><%= render :partial => 'articles/list', :locals => { :summary_format => "popular", :articles => @articles_popular, :default_icon => 'popular' } %></td>
-		<td width="50%"><%= render :partial => 'articles/list', :locals => { :summary_format => "toprated", :articles => @articles_toprated, :default_icon => 'top-rated' } %></td>
+		<td width="50%" valign="top"><%= render :partial => 'articles/list', :locals => { :summary_format => "popular", :articles => @articles_popular, :default_icon => 'popular' } %></td>
+		<td width="50%" valign="top"><%= render :partial => 'articles/list', :locals => { :summary_format => "toprated", :articles => @articles_toprated, :default_icon => 'top-rated' } %></td>
 	</tr>
 	</tbody>
 	</table>

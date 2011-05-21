@@ -1,5 +1,6 @@
 # Russian strings go here for Rails i18n
 ru:
+  knowledgebase_title: "База знаний"
   field_tag_list: "Список меток"
   label_content: "Содержимое"
   label_summary: "Summary"
@@ -15,7 +16,6 @@ ru:
   label_root_category: "Корневая категория"
   title_edit_category: "Редактировать категорию"
   title_create_category: "Создать категорию"
-  knowledgebase_title: "База знаний"
   label_jump_category: "Перейти к категории"
   title_newest_articles: "Свежие статьи"
   title_recently_updated_articles: "Недавно обновлённые статьи"

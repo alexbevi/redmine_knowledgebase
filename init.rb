@@ -7,11 +7,11 @@ Redmine::Plugin.register :redmine_knowledgebase do
   name        'Knowledgebase'
   author      'Alex Bevilacqua'
   description 'A plugin for Redmine that adds knowledgebase functionality'
-  url         'http://projects.alexbevi.com/projects/redmine-kb'
+  url         'http://alexbevi.com/projects/redmine-kb'
   author_url  'http://blog.alexbevi.com'
-  version     '0.2.5'
+  version     '0.3.0'
 
-  requires_redmine :version_or_higher => '0.8.0'
+  requires_redmine :version_or_higher => '1.0.0'
 
   #Global permissions
   project_module :knowledgebase do
@@ -55,7 +55,7 @@ Redmine::Plugin.register :redmine_knowledgebase do
     }
   end
   
-  menu :top_menu, :knowledgebase, { :controller => 'knowledgebase', :action => 'index'}, :caption => 'Knowledgebase',:if =>  Proc.new {
+  menu :top_menu, :knowledgebase, { :controller => 'knowledgebase', :action => 'index'}, :caption => :knowledgebase_title, :if =>  Proc.new {
     User.current.allowed_to?({:controller => 'knowledgebase', :action => 'index'},nil, :global => true)
   }
 

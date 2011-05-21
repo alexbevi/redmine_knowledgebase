@@ -1,5 +1,6 @@
 # German strings go here for Rails i18n
 de:
+  knowledgebase_title: "Wissensbasis"
   field_tag_list: "Tag Liste"
   label_content: "Inhalt"
   label_summary: "Zusammenfassung"
@@ -20,7 +21,6 @@ de:
   label_article_plural: Artikel
   label_category_plural: Kategorien
   label_root_category: Hauptkategorie
-  knowledgebase_title: "Knowledge base"
   label_jump_category: "Zur Kategorie "
   title_newest_articles: "Neueste Artikel"
   title_recently_updated_articles: "Artikel zuletzt aktualisiert"
