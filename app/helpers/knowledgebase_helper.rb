@@ -21,7 +21,7 @@ module KnowledgebaseHelper
     output = nil
     case format
     when "normal"
-      output = article.summary
+      output = textilizable article.summary
     when "newest"
       output = "Created " + time_ago_in_words(article.created_at) + " ago in " + link_to(article.category.title, {:controller => 'categories', :action => 'show', :id => article.category.id})
     when "updated"
