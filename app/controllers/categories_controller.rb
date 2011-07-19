@@ -24,7 +24,7 @@ class CategoriesController < KnowledgebaseController
         @category.move_to_child_of(Category.find(params[:parent_id]))
       end
 
-      flash[:notice] = l(:label_category_created) + @category.title
+      flash[:notice] = l(:label_category_created, :title => @category.title)
       redirect_to({ :action => 'show', :id => @category.id })
     else
       render(:action => 'new')

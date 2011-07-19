@@ -1,4 +1,4 @@
-<h3><%= l(:title_tagged_articles) %> '<%= @tag %>'</h3>
+<h3><%= l(:title_tagged_articles, :tag => @tag) %></h3>
 
 <% if @list.length > 0 %>
   <%= render :partial => 'articles/list', :locals => { :summary_format => "normal", :articles => @list, :default_icon => 'normal' } %>

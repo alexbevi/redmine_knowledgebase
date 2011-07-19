@@ -39,7 +39,7 @@
 <% if @article.created_at != @article.updated_at %>
 | <%= l(:label_updated_time, time_tag(@article.updated_at)) %>.
 <% end %>
-| Viewed <%= @article.view_count %> time<% if @article.view_count > 1%>(s)<% end  %>  
+| <%= l(:label_article_viewed, :count => @article.view_count) %>
 </div>
 
 <div id="article">
