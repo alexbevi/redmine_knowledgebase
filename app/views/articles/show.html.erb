@@ -7,15 +7,15 @@
 
 <% content_for :sidebar do %>
 	<ul id="options">
-		<li><%= link_to_if_authorized_globally "Edit", { :controller => 'articles', :action => 'edit', :id => @article.id }, :class => 'icon icon-edit' %></li>
-		<li><%= link_to_if_authorized_globally "Delete", { :controller => 'articles', :action => 'destroy', :id => @article.id }, :confirm => l(:text_are_you_sure), :method => :delete, :class => 'icon icon-del' %></li>
-		<li><%= link_to_remote_if_authorized_globally "New Comment", :url => { :controller => "articles", :action => "comment", :article_id => @article.id }, :html => { :class => "icon icon-comment" } %></li>
+		<li><%= link_to_if_authorized_globally l(:label_edit_article), { :controller => 'articles', :action => 'edit', :id => @article.id }, :class => 'icon icon-edit' %></li>
+		<li><%= link_to_if_authorized_globally l(:label_delete_article), { :controller => 'articles', :action => 'destroy', :id => @article.id }, :confirm => l(:text_are_you_sure), :method => :delete, :class => 'icon icon-del' %></li>
+		<li><%= link_to_remote_if_authorized_globally l(:label_new_comment), :url => { :controller => "articles", :action => "comment", :article_id => @article.id }, :html => { :class => "icon icon-comment" } %></li>
 	</ul>
 	<br />
 	<%= render :partial => "rating", :locals => {:article => @article } %>	
 	<% unless @article.tag_list.empty? %> 
 	<br /><br /><br />
-	<div class="rating-title">Tags</div>
+	<div class="rating-title"><%= l(:title_tags) %></div>
 	<ul id="taglist">
 	  <% @article.tag_list.each do |tag| %>
      <li><%= link_to tag, { :action => "tagged", :id => tag }, :class => "tag" %></li>
@@ -48,7 +48,7 @@
 </div>
 
 <% unless @article.attachments.empty? %>
-<div id="section-title" class="attachments infobox">Attachments</div>
+<div id="section-title" class="attachments infobox"><%= l(:label_attachment_plural) %></div>
 <%= render :partial => 'attachments/links', :locals => {:attachments => @article.attachments, :options => { :deletable => User.current.logged? } } %>
 <br />
 <% end %>
