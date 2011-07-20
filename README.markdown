@@ -179,6 +179,17 @@ You can also Edit or Delete the article, as well as rate the article. Clicking o
 
 You can also comment on an article by clicking on Add a comment.
 
+### Using Wiki Macros
+
+You can easily create links to articles and categories from issues or Wiki pages using the macros.
+
+4 macros are available so far:
+
+* {{kb(<article_id>)}} will render a link to the "kb#<article_id>" format. (It may change according to your locale).
+* {{article_id(<article_id>)}}, identical to the kb macro, will render a link to the "kb#<article_id>" format.
+* {{article(<article_id>)}} will render a link to the "kb#<article_id>: <article_title>" format.
+* {{category(<category_id>)}} will render a link to the "<category_title>" format, only renders the title of the category.
+
 ## Knowledgebase Home Page
 
 Now that categories and articles have been created, the Home page of the Knowledgebase will show the *Newest Articles*, *Recently Updated Articles*, *Most Popular Articles*, and *Top Rated Articles*. You can use this page to help navigate the Knowledgebase, as well as using the *Jump to Category* drop down menu or the *Browse by Category* menu on the right of the screen. You can reach this page from anywhere inside the Knowledgebase by clicking on the Home link.

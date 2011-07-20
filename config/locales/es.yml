@@ -28,3 +28,5 @@ es:
   allow_sort_category_tree: "Sort the category tree alphabetically?"
   show_category_totals: "Show category totals in tree?"
   summary_item_limit: "Knowledgebase summary page article limit"
+  #prefix for the macro links pointing to a Wiki article
+  label_kb_link: "KB#{{kb_id}}"
