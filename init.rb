@@ -2,6 +2,8 @@ require 'redmine'
 require 'acts_as_viewed'
 require 'acts_as_rated'
 require 'acts_as_taggable'
+#Register KB macro
+require 'macros'
 
 Redmine::Plugin.register :redmine_knowledgebase do
   name        'Knowledgebase'
