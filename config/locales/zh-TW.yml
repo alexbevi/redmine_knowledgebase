@@ -28,3 +28,7 @@ zh-TW:
   title_browse_by_category: "根據分類瀏覽"
   title_new_category: "新分類"
   message_no_articles: "目前尚未有任何文章"
+  allow_anon_access: "Allow anonymous access?"
+  allow_sort_category_tree: "Sort the category tree alphabetically?"
+  show_category_totals: "Show category totals in tree?"
+  summary_item_limit: "Knowledgebase summary page article limit"

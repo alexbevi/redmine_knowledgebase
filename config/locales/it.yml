@@ -28,3 +28,7 @@ it:
   title_browse_by_category: "Naviga per categoria"
   title_new_category: "Nuova categoria"
   message_no_articles: "Nessun articolo è stato ancora aggiunto alla knowledgebase."
+  allow_anon_access: "Allow anonymous access?"
+  allow_sort_category_tree: "Sort the category tree alphabetically?"
+  show_category_totals: "Show category totals in tree?"
+  summary_item_limit: "Knowledgebase summary page article limit"

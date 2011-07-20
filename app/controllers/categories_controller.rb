@@ -4,10 +4,6 @@ class CategoriesController < KnowledgebaseController
   #Authorize against global permissions defined in init.rb
   before_filter :authorize_global
 
-  def index
-		@categories = Category.find(:all)
-  end
-
   def show
     @category = Category.find(params[:id])
     @articles = @category.articles.find(:all)

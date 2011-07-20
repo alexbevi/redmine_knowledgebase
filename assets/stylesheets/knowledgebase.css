@@ -1,33 +1,26 @@
 #article-summaries th { font-family: Tahoma; padding: 6px 0px; color: #669933; font-size: 15px; font-weight: bold; border-bottom: solid 1px #CCCCCC; text-align: left;  }
-
+#article { padding: 10px 5px 20px 5px }
 .article-summary { font-weight: normal; font-size: 11px; color: #777777; line-height: 17px; text-decoration: none; }
-.article-info { background-color: #F1F5F8; border: solid 1px #D5E2F1; padding: 5px; }
 .article-title { margin: 0px; padding: 6px 0px 5px 0px; color:#669933; font-size: 16px; font-weight: bold; }
-
 .article-icon { padding-left: 35px; background-position: 0px 6px; line-height: 19px; padding-bottom: 6px; }
+
 .normal { background-image: url(../images/page_white_text.png); background-repeat: no-repeat;  }
 .top-rated { background-image: url(../images/page_white_star.png); background-repeat: no-repeat; }
 .popular { background-image: url(../images/page_white_medal.png); background-repeat: no-repeat; }
 .recently-added { background-image: url(../images/page_white_add.png); background-repeat: no-repeat; }
 .recently-changed { background-image: url(../images/page_white_edit.png); background-repeat: no-repeat; }
 
-#article-options { padding: 0; margin-left: -10px; }
-#article-options li { margin: 0; padding: 0; list-style-type: none; position: relative }
-#article-options li a { display: block; line-height: 22px; padding-left: 25px; }
-#article-options .icon { position: relative; top: 10px; left: 12px }
-#article-options .print { background: url(../images/icon-printer.png) left no-repeat; }
-#article-options .pdf { background: url(../images/icon-pdf.png) left no-repeat; }
-#article-options .word { background: url(../images/icon-word.png) left no-repeat; }
-#article-options .bookmark { background: url(../images/icon-bookmark.png) left no-repeat; }
+#options { padding: 0; margin-left: -10px; }
+#options li { margin: 0; padding: 0; list-style-type: none; position: relative }
+#options li a { display: block; line-height: 22px; padding-left: 25px; }
+#options .icon { position: relative; top: 10px; left: 12px }
+#options .print { background: url(../images/icon-printer.png) left no-repeat; }
+#options .pdf { background: url(../images/icon-pdf.png) left no-repeat; }
+#options .word { background: url(../images/icon-word.png) left no-repeat; }
+#options .bookmark { background: url(../images/icon-bookmark.png) left no-repeat; }
 
-#category-crumbs { background: url(../images/icon-home.png) 0px 3px no-repeat; border-bottom: dotted 1px #CCCCCC; padding-left: 20px; padding-bottom: 5px; }
+#category-crumbs { background: url(../images/icon-home.png) 0px 3px no-repeat; padding-left: 20px; padding-bottom: 10px; }
 #category-crumbs a:hover { text-decoration: underline; }
-
-#categories_nav { float: left; vertical-align: top; }
-#categories_nav ul { margin: 0; padding: 0; list-style: none; }
-#categories_nav li { border-bottom: 1px solid #ced3d5; width: 100%; }
-#categories_nav li a:link, #categories_nav li a:visited { line-height: 27px; display: block; color: #1a6ab3; }
-#categories_nav li a:hover { text-decoration: none; background-image: none; color: #FF6600; }
 
 .categories { background-color:#F1F5F8; border:solid 1px #D5E2F1; -moz-border-radius: 5px; -webkit-border-radius: 5px; margin: 10px 0px; padding: 10px; }
 .category-header { padding-top: 0; font-size:15px; font-weight:bold; padding-bottom: 10px; border-bottom: solid 1px #D5E2F1; }
@@ -54,7 +47,9 @@ ul.stars li a.five_stars  { width: 100%; z-index: 2; }
 .rating-title { font-size:14px; font-weight:bold; color:#C60; }
 .rating-title span { font-size:12px; font-weight:normal; }
 
-#section-title { padding:6px 0px; color:#669933; font-size:15px; font-weight:bold; border-bottom:solid 1px #CCCCCC; padding-bottom: 10px; }
+.infobox { background-color: #F1F5F8; border: solid 1px #D5E2F1; padding: 5px; }
+
+#section-title { padding:6px 0px; color:#669933; font-size:15px; font-weight:bold; padding-bottom: 10px; }
 #section-title.attachments { background-image: url(../images/attachments.png); background-repeat: no-repeat; padding-left: 42px; }
 #section-title.comments { background-image: url(../images/comments.png); background-repeat: no-repeat; padding-left: 42px; }
 

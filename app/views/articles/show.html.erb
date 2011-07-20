@@ -6,10 +6,10 @@
 <% end %>
 
 <% content_for :sidebar do %>
-	<ul id="article-options">
+	<ul id="options">
 		<li><%= link_to_if_authorized_globally "Edit", { :controller => 'articles', :action => 'edit', :id => @article.id }, :class => 'icon icon-edit' %></li>
 		<li><%= link_to_if_authorized_globally "Delete", { :controller => 'articles', :action => 'destroy', :id => @article.id }, :confirm => l(:text_are_you_sure), :method => :delete, :class => 'icon icon-del' %></li>
-		<li><%= link_to_if_authorized_globally "New Comment", { :controller => "articles", :action => "comment", :article_id => @article.id },  :class => "icon icon-comment" %></li>
+		<li><%= link_to_remote_if_authorized_globally "New Comment", :url => { :controller => "articles", :action => "comment", :article_id => @article.id }, :html => { :class => "icon icon-comment" } %></li>
 	</ul>
 	<br />
 	<%= render :partial => "rating", :locals => {:article => @article } %>	
@@ -34,31 +34,37 @@
 	<%= link_to @article.category.title, { :controller => 'categories', :action => 'show', :id => @article.category.id } %>
 </div>
 
-<div class="article-title"><%= @article.title %></div>
-<div class="article-info">
+<div class="infobox">
 <%= authoring @article.created_at, @article.author %>
 <% if @article.created_at != @article.updated_at %>
 | <%= l(:label_updated_time, time_tag(@article.updated_at)) %>.
 <% end %>
 | Viewed <%= @article.view_count %> time<% if @article.view_count > 1%>(s)<% end  %>  
 </div>
-<div class="wiki"><%= textilizable @article, :content, :attachments => @article.attachments %></div>
+
+<div id="article">
+  <div class="article-title"><%= @article.title %></div>
+  <div class="wiki"><%= textilizable @article, :content, :attachments => @article.attachments %></div>
+</div>
 
 <% unless @article.attachments.empty? %>
-<div id="section-title" class="attachments">Attachments</div>
+<div id="section-title" class="attachments infobox">Attachments</div>
 <%= render :partial => 'attachments/links', :locals => {:attachments => @article.attachments, :options => { :deletable => User.current.logged? } } %>
 <br />
 <% end %>
 
 <% unless @comments.empty? %>
 <div id="comments" style="margin-bottom:16px;">
-<div id="section-title" class="comments"><%= l(:label_comment_plural) %></div>
+<div id="section-title" class="comments infobox"><%= l(:label_comment_plural) %></div>
 <% @comments.each do |comment| %>
-  <div class="contextual">
-  <%= link_to_if_logged_in image_tag('delete.png'), {:controller => 'articles', :action => 'destroy_comment', :id => @article, :comment_id => comment},
-                                                     :confirm => l(:text_are_you_sure), :method => :post, :title => l(:button_delete) %>
-  </div>
-  <h4><%= avatar(comment.author, :size => "24") %><%= authoring comment.created_on, comment.author %></h4>
+  <h4>
+    <%= avatar(comment.author, :size => "24") %>
+    &nbsp;<%= authoring comment.created_on, comment.author %>&nbsp; 
+    <%= link_to_if_authorized_globally image_tag('delete.png'), 
+         { :controller => 'articles', :action => 'destroy_comment', :id => @article, :comment_id => comment },
+         :confirm => l(:text_are_you_sure), 
+         :method => :post, :title => l(:button_delete) %>
+  </h4>
   <%= textilizable(comment.comments) %>
 <% end %>
 </div>

@@ -1,14 +1,17 @@
 <h2><%= l(:title_edit_article) %></h2>
+
 <% labelled_tabular_form_for :article, @article, 
 	:url => { :action => "update", :id => @article.id }, 
 	:html => { :class => nil, :method => :put, :multipart => true, :id => "articles-form" }  do |form| %>
-<%= render :partial => 'form', :locals => { :f => form } %>
-<%= submit_tag l(:button_update) %>
-<%= link_to_remote l(:label_preview), 
-                   { :url => { :controller => 'articles', :action => 'preview' },
-                     :method => 'post',
-                     :update => 'preview',
-                     :with => "Form.serialize('articles-form')"
-                   }, :accesskey => accesskey(:preview) %>
+  
+  <%= render :partial => 'form', :locals => { :f => form } %>
+  <%= submit_tag l(:button_update) %>
+  <%= link_to_remote l(:label_preview), 
+                     { :url => { :controller => 'articles', :action => 'preview' },
+                       :method => 'post',
+                       :update => 'preview',
+                       :with => "Form.serialize('articles-form')"
+                     }, :accesskey => accesskey(:preview) %>
 <% end %>
+
 <div id="preview" class="wiki"></div>

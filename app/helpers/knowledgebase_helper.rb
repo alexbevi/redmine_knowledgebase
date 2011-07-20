@@ -3,23 +3,20 @@ module KnowledgebaseHelper
   # Display a link if the user has a global permission
   def link_to_if_authorized_globally(name, options = {}, html_options = nil, *parameters_for_method_reference)
     if authorized_globally(options[:controller],options[:action])
-        link_to(name, options, html_options, *parameters_for_method_reference)
+      link_to(name, options, html_options, *parameters_for_method_reference)
+    end
+  end
+  
+  def link_to_remote_if_authorized_globally(name, options = {}, html_options = nil, *parameters_for_method_reference)
+    if authorized_globally(options[:controller],options[:action])
+      link_to_remote(name, options, html_options, *parameters_for_method_reference)
     end
   end
 
   def authorized_globally(controller,action)
-    return User.current.allowed_to?({:controller => controller, :action => action},nil, :global => true)
+    User.current.allowed_to?({:controller => controller, :action => action}, nil, :global => true)
   end
-
-  # Display a link if the user is logged in
-  def link_to_if_logged_in(name, options = {}, html_options = nil, *parameters_for_method_reference)
-    link_to(name, options, html_options, *parameters_for_method_reference) if User.current.logged?
-  end
-  
-  def link_to_remote_if_logged_in(name, options = {}, html_options = nil, *parameters_for_method_reference)
-    link_to_remote(name, options, html_options, *parameters_for_method_reference) if User.current.logged?
-  end
-  
+ 
   def format_article_summary(article, format)
     output = nil
     case format
@@ -48,7 +45,15 @@ module KnowledgebaseHelper
     html += "<li>#{link_to_remote "Four",  :update => "article_rating_#{article.id}", :url => {:controller => 'articles', :action => 'rate', :article_id => article, :rating => 4 }, :html => {:class => "four_stars"},  :method => :get}</li>"
     html += "<li>#{link_to_remote "Five",  :update => "article_rating_#{article.id}", :url => {:controller => 'articles', :action => 'rate', :article_id => article, :rating => 5 }, :html => {:class => "five_stars"},  :method => :get}</li>"
     html += "</ul>"
-    return html
+    html
   end
-
+  
+  def sort_categories?
+    Setting['plugin_redmine_knowledgebase']['knowledgebase_sort_category_tree'].to_i == 1
+  end
+  
+  def show_category_totals?
+    Setting['plugin_redmine_knowledgebase']['knowledgebase_show_category_totals'].to_i == 1
+  end
+  
 end

@@ -1,5 +1,5 @@
 <h2><%= l(:title_create_category) %></h2>
-<% labelled_tabular_form_for :category, @category, :url => { :action => 'create' }, :html => { :class => nil } do |form| %>
-<%= render :partial => 'form', :locals => { :f => form } %>
-<%= submit_tag l(:button_create) %>
+<% labelled_tabular_form_for :category, @category, :url => { :action => 'create' }, :html => { :class => nil } do |form| %>  
+  <%= render :partial => 'form', :locals => { :f => form } %>
+  <%= submit_tag l(:button_create) %>
 <% end %>

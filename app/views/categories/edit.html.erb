@@ -1,7 +1,6 @@
 <h2><%= l(:title_edit_category) %></h2>
-<% labelled_tabular_form_for :category, @category, 
-	:url => { :action => 'update', :id => @category.id }, 
-	:html => { :class => nil, :method => :put } do |form| %>
-<%= render :partial => 'form', :locals => { :f => form } %>
-<%= submit_tag l(:button_update) %>
+
+<% labelled_tabular_form_for :category, @category, :url => { :action => 'update', :id => @category.id }, :html => { :class => nil, :method => :put } do |form| %>
+  <%= render :partial => 'form', :locals => { :f => form } %>
+  <%= submit_tag l(:button_update) %>
 <% end %>

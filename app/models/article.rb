@@ -1,6 +1,8 @@
 class Article < ActiveRecord::Base
   unloadable
 
+  set_table_name "kb_articles"
+
   validates_presence_of :title
   validates_presence_of :category_id
 
@@ -25,8 +27,6 @@ class Article < ActiveRecord::Base
                 :url => Proc.new { |o| {:controller => 'articles', :action => 'show', :id => nil, :article_id => o.id} }
 
   has_many :comments, :as => :commented, :dependent => :delete_all, :order => "created_on"
-
-  def self.table_name() "kb_articles" end
 
   # This overrides the instance method in acts_as_attachable
   def attachments_visible?(user=User.current)

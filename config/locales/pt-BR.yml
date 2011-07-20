@@ -27,3 +27,7 @@ pt-BR:
   title_browse_by_category: "Navegar por Categoria"
   title_new_category: "Nova Categoria"
   message_no_articles: "Nenhum artigo cadastrado ainda, talvez você queira começar..."
+  allow_anon_access: "Allow anonymous access?"
+  allow_sort_category_tree: "Sort the category tree alphabetically?"
+  show_category_totals: "Show category totals in tree?"
+  summary_item_limit: "Knowledgebase summary page article limit"

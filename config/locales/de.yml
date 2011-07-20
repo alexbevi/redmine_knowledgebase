@@ -30,4 +30,7 @@ de:
   title_new_category: "Neue Kategorie"
   title_create_category: "Kategorie anlegen"
   message_no_articles: "Es wurde noch kein Artikel eingegeben. Vielleicht kannst du das machen..."
-
+  allow_anon_access: "Allow anonymous access?"
+  allow_sort_category_tree: "Sort the category tree alphabetically?"
+  show_category_totals: "Show category totals in tree?"
+  summary_item_limit: "Knowledgebase summary page article limit"

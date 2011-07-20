@@ -23,3 +23,7 @@ ru:
   title_top_rated_articles: "Статьи с наибольшим рейтингом"
   title_browse_by_category: "Просмотр по категориям"
   title_new_category: "Новая категория"
+  allow_anon_access: "Allow anonymous access?"
+  allow_sort_category_tree: "Sort the category tree alphabetically?"
+  show_category_totals: "Show category totals in tree?"
+  summary_item_limit: "Knowledgebase summary page article limit"

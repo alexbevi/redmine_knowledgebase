@@ -1,6 +1,6 @@
 <% articles.each do |article| %>
-<div id="article" class="article-icon <%= default_icon %>">
-	<%= link_to article.title, { :controller => 'articles', :action => 'show', :id => article.id } %>
-	<%= format_article_summary(article, summary_format) %>
-</div>	
+  <div class="article-icon <%= default_icon %>">
+    <%= link_to article.title, { :controller => 'articles', :action => 'show', :id => article.id } %>
+    <%= format_article_summary(article, summary_format) %>
+  </div>	
 <% end %>
