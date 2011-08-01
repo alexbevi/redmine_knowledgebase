@@ -64,3 +64,5 @@ en:
   label_summary_toprated_articles:
     one: "Rating: %{rating_avg}/%{rating_max} from one vote"
     other: "Rating: %{rating_avg}/%{rating_max} from %{count} votes"
+  #prefix for the macro links pointing to a Wiki article
+  label_kb_link: "KB#{{kb_id}}"

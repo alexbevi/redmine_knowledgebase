@@ -65,3 +65,4 @@ cs:
   label_summary_toprated_articles:
     one: "Hodnoceno jedním hlasem, %{rating_avg}/%{rating_max}"
     other: "Hodnoceno %{count} hlasy, %{rating_avg}/%{rating_max}"
+  label_kb_link: "KB#{{kb_id}}"
