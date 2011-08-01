@@ -65,7 +65,7 @@ module KnowledgebaseHelper
   end
 
   def link_to_article(article)
-    link_to(l(:label_kb_link,{:kb_id=>article.id.to_s}),{ :controller => 'articles', :action => 'show', :id => article.id})
+    link_to(l(:label_kb_link,{:kb_id=>article.id.to_s}),{ :controller => 'articles', :action => 'show', :id => article.id}, :title => article.title)
   end
 
   def link_to_article_with_title(article)
