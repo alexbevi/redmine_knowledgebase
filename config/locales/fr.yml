@@ -7,7 +7,7 @@ fr:
   label_title: "Titre"
   label_category: "Catégorie"
   label_description: "Description"
-  label_home: "Page d'accueil"
+  label_kb_home: "Page d'accueil"
   title_create_article: "Créer un Article"
   title_edit_article: "Modifier Article"
   title_article_rating: "Évaluation d'Article"

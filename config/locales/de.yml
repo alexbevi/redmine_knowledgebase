@@ -7,7 +7,7 @@ de:
   label_title: "Titel"
   label_category: "Kategorie"
   label_description: "Beschreibung"
-  label_home: "Home"
+  label_kb_home: "Home"
   title_create_article: "Artikel erstellen"
   title_edit_article: "Artikel ändern"
   title_article_rating: "Artikel Rating"

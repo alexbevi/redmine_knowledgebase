@@ -7,7 +7,7 @@ ru:
   label_title: "Заголовок"
   label_category: "Категория"
   label_description: "Описание"
-  label_home: "Начало"
+  label_kb_home: "Начало"
   title_create_article: "Создать статью"
   title_edit_article: "Редактировать статью"
   title_article_rating: "Рейтинг статьи"

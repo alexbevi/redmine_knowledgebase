@@ -1,5 +1,5 @@
 <div id="category-crumbs">
-	<%= link_to l(:label_home), { :controller => 'knowledgebase', :action => 'index' } %>
+	<%= link_to l(:label_kb_home), { :controller => 'knowledgebase', :action => 'index' } %>
 	<% @category.ancestors.each do |ancestor| %>
 	&nbsp;&raquo;&nbsp;
 	<%= link_to ancestor.title, { :controller => 'categories', :action => 'show', :id => ancestor.id } %>

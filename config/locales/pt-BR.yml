@@ -6,7 +6,7 @@ pt-BR:
   label_title: "Título"
   label_category: "Categoria"
   label_description: "Descrição"
-  label_home: "Página Inicial"
+  label_kb_home: "Página Inicial"
   title_create_article: "Criar Artigo"
   title_edit_article: "Editar Artigo"
   title_article_rating: "Classificação do Artigo"

@@ -6,7 +6,7 @@ zh-TW:
   label_title: "標題"
   label_category: "類別"
   label_description: "描述"
-  label_home: "Home"
+  label_kb_home: "Home"
   title_create_article: "建立文章"
   title_edit_article: "編輯文章"
   title_article_rating: "文章評比"

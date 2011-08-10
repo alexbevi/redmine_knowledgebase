@@ -7,7 +7,7 @@ pl:
   label_title: "Tytuł"
   label_category: "Kategoria"
   label_description: "Opis"
-  label_home: "Strona główna"
+  label_kb_home: "Strona główna"
   title_create_article: "Nowy artykuł"
   title_edit_article: "Edycha artykułu"
   title_article_rating: "Ocena artykułu"

@@ -7,7 +7,7 @@ en:
   label_title: "Title"
   label_category: "Category"
   label_description: "Description"
-  label_home: "Home"
+  label_kb_home: "Home"
   title_create_article: "Create Article"
   title_edit_article: "Edit Article"
   title_article_rating: "Article Rating"
