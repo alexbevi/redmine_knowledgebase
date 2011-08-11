@@ -20,19 +20,23 @@ de:
   label_title_category: Kategorie
   label_article_plural: Artikel
   label_category_plural: Kategorien
-  label_root_category: Hauptkategorie
-  label_jump_category: "Zur Kategorie "
+  
+  label_jump_category: "Zur Kategorie wechseln "
   title_newest_articles: "Neueste Artikel"
   title_recently_updated_articles: "Artikel zuletzt aktualisiert"
   title_most_popular_articles: "Beliebteste Artikel"
   title_top_rated_articles: "Bestbewertete Artikel"
   title_browse_by_category: "Nach Kategorie"
   title_new_category: "Neue Kategorie"
-  title_create_category: "Kategorie anlegen"
-  message_no_articles: "Es wurde noch kein Artikel eingegeben. Vielleicht kannst du das machen..."
-  allow_anon_access: "Allow anonymous access?"
-  allow_sort_category_tree: "Sort the category tree alphabetically?"
-  show_category_totals: "Show category totals in tree?"
-  summary_item_limit: "Knowledgebase summary page article limit"
-  #prefix for the macro links pointing to a Wiki article
+  
+  message_no_articles: "Es wurde noch kein Artikel eingegeben. Beginnen Sie mit einem Artikel zum Thema..."
+  label_new_article: "Artikel erstellen"
+  label_new_category: "Kategorie erstellen"
+  label_edit_category: "Kategorie bearbeiten"
+  label_delete_category: "Kategorie entfernen"
+  label_subcategories: "Unterkategorien"
+  allow_anon_access: "Anonymen Zugriff erlauben?"
+  allow_sort_category_tree: "Den Katgegoriebaum alphabetisch sortieren?"
+  show_category_totals: "Anzahl der Arctiel pro Katgeorie im Katgeoriebaum anzeigen?"
+  summary_item_limit: "Maximale Anzahl von Artikeln in der Übersicht"
   label_kb_link: "KB#{{kb_id}}"
