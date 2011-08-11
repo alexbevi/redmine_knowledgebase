@@ -13,7 +13,7 @@
 		<li><%= link_to_if_authorized_globally l(:label_new_article), { :controller => 'articles', :action => 'new', :category_id => @category.id }, :class => 'icon icon-add' %></li>
     <li><%= link_to_if_authorized_globally l(:label_new_category), { :controller => 'categories', :action => 'new', :parent_id => @category.id }, :class => 'icon icon-add' %></li>
     <li><%= link_to_if_authorized_globally l(:label_edit_category), { :controller => 'categories', :action => 'edit', :id => @category.id }, :class => 'icon icon-edit' %></li>
-    <li><%= link_to_if_authorized_globally l(:label_delete_category), { :controller => 'categories', :action => 'delete', :id => @category.id }, :class => 'icon icon-del', :confirm => 'Are you sure?' %></li>
+    <li><%= link_to_if_authorized_globally l(:label_delete_category), { :controller => 'categories', :action => 'delete', :id => @category.id }, :class => 'icon icon-del', :confirm => l(:text_are_you_sure) %></li>
 	</ul>
 <% end %>
 

@@ -2,7 +2,7 @@
 
 <div class="box tabular">
   <% if Category.find(:all).length > 0 %>
-    <p><%= check_box_tag 'root_category', 'yes', @parent_id.nil? %>Root Category<br /></p>
+    <p><%= check_box_tag 'root_category', 'yes', @parent_id.nil? %><label for="root_category"><%= l(:label_root_category) %></label><br /></p>
     <p>
       <label for="parent_id"><%= l(:label_parent_category) %></label>
       <%= select_tag :parent_id, options_for_select(nested_set_options(Category, @category) {|i| "#{'»' * i.level} #{i.title}" }, @parent_id.to_i) %>
