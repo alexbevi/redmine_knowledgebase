@@ -14,16 +14,16 @@ class KnowledgebaseController < ApplicationController
       summary_limit = 5
     end
     
-    @categories = Category.find(:all)
-    @articles_newest   = Article.find(:all, :limit => summary_limit, :order => 'created_at DESC')
-    @articles_updated  = Article.find(:all, :limit => summary_limit, :conditions => ['created_at <> updated_at'], :order => 'updated_at DESC')
+    @categories = KbCategory.find(:all)
+    @articles_newest   = KbArticle.find(:all, :limit => summary_limit, :order => 'created_at DESC')
+    @articles_updated  = KbArticle.find(:all, :limit => summary_limit, :conditions => ['created_at <> updated_at'], :order => 'updated_at DESC')
     
     #FIXME the following method still requires ALL records to be loaded before being filtered.
     
-    a = Article.find(:all, :include => :viewings).sort_by(&:view_count)
+    a = KbArticle.find(:all, :include => :viewings).sort_by(&:view_count)
     a = a.drop(a.count - summary_limit) if a.count > summary_limit
     @articles_popular  = a.reverse
-    a = Article.find(:all, :include => :ratings).sort_by(&:rated_count)
+    a = KbArticle.find(:all, :include => :ratings).sort_by(&:rated_count)
     a = a.drop(a.count - summary_limit) if a.count > summary_limit
     @articles_toprated = a.reverse
   end

@@ -23,7 +23,7 @@ module KnowledgebaseHelper
     when "normal"
       output = textilizable article.summary
     when "newest"
-      output = "Created " + time_ago_in_words(article.created_at) + " ago in " + link_to(article.category.title, {:controller => 'categories', :action => 'show', :id => article.category.id})
+      output = "Created " + time_ago_in_words(article.created_at) + " ago in " + link_to(article.category.title, {:controller => 'categories', :action => 'show', :id => article.category_id})
     when "updated"
       output = "Updated " + time_ago_in_words(article.updated_at) + " ago"
     when "popular"

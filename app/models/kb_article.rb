@@ -1,4 +1,4 @@
-class Article < ActiveRecord::Base
+class KbArticle < ActiveRecord::Base
   unloadable
 
   set_table_name "kb_articles"
@@ -7,8 +7,8 @@ class Article < ActiveRecord::Base
   validates_presence_of :category_id
 
   belongs_to :project # XXX association added to allow searching to work
-  belongs_to :category
-  belongs_to :author, :class_name => 'User', :foreign_key => 'author_id'
+  belongs_to :category, :class_name => "KbCategory"
+  belongs_to :author,   :class_name => 'User', :foreign_key => 'author_id'
 
   acts_as_viewed
   acts_as_rated :no_rater => true

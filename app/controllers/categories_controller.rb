@@ -5,23 +5,23 @@ class CategoriesController < KnowledgebaseController
   before_filter :authorize_global
 
   def show
-    @category = Category.find(params[:id])
+    @category = KbCategory.find(params[:id])
     @articles = @category.articles.find(:all)
   end
 
   def new
-    @category = Category.new
+    @category = KbCategory.new
     @parent_id = params[:parent_id]
   end
 
   def create
-    @category = Category.new(params[:category])
+    @category = KbCategory.new(params[:category])
     if @category.save
       # Test if the new category is a root category, and if more categories exist.
       # We check for a value > 1 because if this is the first entry, the category
       # count would be 1 (since the create operation already succeeded)
-      if !params[:root_category] and Category.count > 1
-        @category.move_to_child_of(Category.find(params[:parent_id]))
+      if !params[:root_category] and KbCategory.count > 1
+        @category.move_to_child_of(KbCategory.find(params[:parent_id]))
       end
 
       flash[:notice] = "Created Category: " + @category.title
@@ -32,11 +32,11 @@ class CategoriesController < KnowledgebaseController
   end
 
   def edit
-    @category = Category.find(params[:id])
+    @category = KbCategory.find(params[:id])
   end
 
   def delete
-    @category = Category.find(params[:id])
+    @category = KbCategory.find(params[:id])
     if @category.articles.size == 0
       @category.destroy
       flash[:notice] = "Category deleted"
@@ -49,9 +49,9 @@ class CategoriesController < KnowledgebaseController
   end
 
   def update
-    @category = Category.find(params[:id])
+    @category = KbCategory.find(params[:id])
     if !params[:root_category]
-      @category.move_to_child_of(Category.find(params[:parent_id]))
+      @category.move_to_child_of(KbCategory.find(params[:parent_id]))
     end
     if @category.update_attributes(params[:category])
       flash[:notice] = "Category Updated"

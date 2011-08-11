@@ -9,19 +9,19 @@ class ArticlesController < KnowledgebaseController
   before_filter :authorize_global
   
   def new
-    @article = Article.new
+    @article = KbArticle.new
     @default_category = params[:category_id]
     @article.category_id = params[:category_id]
   end
   
   def rate
-    @article = Article.find(params[:article_id])
+    @article = KbArticle.find(params[:article_id])
     @article.rate params[:rating].to_i
     render :partial => "rating", :locals => {:article => @article}
   end
   
   def create    
-    @article = Article.new(params[:article])
+    @article = KbArticle.new(params[:article])
     @article.category_id = params[:category_id]
     @article.author_id = User.current.id
     if @article.save
@@ -34,18 +34,18 @@ class ArticlesController < KnowledgebaseController
   end
   
   def show
-    @article = Article.find(params[:id] || params[:article_id])
+    @article = KbArticle.find(params[:id] || params[:article_id])
     @article.view request.remote_addr, User.current
     @attachments = @article.attachments.find(:all, :order => "created_on DESC")
     @comments = @article.comments
   end
   
   def edit
-    @article = Article.find(params[:id])
+    @article = KbArticle.find(params[:id])
   end
   
   def update
-    @article = Article.find(params[:id])
+    @article = KbArticle.find(params[:id])
     params[:article][:category_id] = params[:category_id]
     if @article.update_attributes(params[:article])
       attachments = attach(@article, params[:attachments])
@@ -57,7 +57,7 @@ class ArticlesController < KnowledgebaseController
   end
   
   def add_comment
-    @article = Article.find(params[:id])
+    @article = KbArticle.find(params[:id])
     @comment = Comment.new(params[:comment])
     @comment.author = User.current || nil
     if @article.comments << @comment
@@ -70,27 +70,27 @@ class ArticlesController < KnowledgebaseController
   end
 
   def destroy_comment
-    @article = Article.find(params[:id])
+    @article = KbArticle.find(params[:id])
     @article.comments.find(params[:comment_id]).destroy
     redirect_to :action => 'show', :id => @article
   end
   
   def destroy
-    @article = Article.find(params[:id])
+    @article = KbArticle.find(params[:id])
     @article.destroy
     flash[:notice] = "Article Removed"
     redirect_to({ :controller => 'knowledgebase', :action => 'index' })
   end
 
   def add_attachment
-    @article = Article.find(params[:id])
+    @article = KbArticle.find(params[:id])
     attachments = attach(@article, params[:attachments])    
     redirect_to({ :action => 'show', :id => @article.id })
   end
   
   def tagged
     @tag = params[:id]
-    @list = Article.find_tagged_with(@tag)
+    @list = KbArticle.find_tagged_with(@tag)
   end
 
   def preview

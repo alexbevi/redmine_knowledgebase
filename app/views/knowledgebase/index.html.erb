@@ -6,12 +6,12 @@
     <% if @categories.length > 0 %>
       <label for="category_id"><strong><%= l(:label_jump_category) %></strong></label>
       &nbsp;
-      <%= select_tag :category_id, options_for_select([""] + nested_set_options(Category) {|i| "#{'»' * i.level} #{i.title}" }), :onchange => "if (this.value != \'\') { window.location = 'knowledgebase/categories/' + this.value; }" %>
+      <%= select_tag :category_id, options_for_select([""] + nested_set_options(KbCategory) {|i| "#{'»' * i.level} #{i.title}" }), :onchange => "if (this.value != \'\') { window.location = 'knowledgebase/categories/' + this.value; }" %>
     <% end %>
     <%= link_to_if_authorized_globally l(:title_new_category), { :controller => 'categories', :action => 'new' }, :class => 'icon icon-add' %>
   </div>
 
-  <% if Article.count > 0 %>
+  <% if KbArticle.count > 0 %>
     <table id="article-summaries" width="100%" cellpadding="5">
     <thead>
     <tr>
