@@ -4,28 +4,50 @@ en:
   allow_sort_category_tree: "Sort the category tree alphabetically?"
   field_tag_list: "Tag List"
   knowledgebase_title: "Knowledge base"
+  label_article_created: "Created article '%{title}'"
   label_article_plural: Articles
+  label_article_removed: "Article removed"
+  label_article_updated: "Article updated"
+  label_article_viewed: 
+    one: "Viewed once"
+    other: "Viewed %{count} times"
   label_category: Category
+  label_category_created: "Created category '%{title}'"
+  label_category_deleted: "Category deleted"
+  label_category_not_empty_cannot_delete: "Category is assigned to articles and could not be deleted."
   label_category_plural: Categories
+  label_category_updated: "Category updated"
   label_content: Content
+  label_delete_article: Delete
   label_delete_category: "Delete Category"
   label_description: Description
+  label_edit_article: Edit
   label_edit_category: "Edit Category"
   label_jump_category: "Jump Category"
   label_kb_home: Home
   label_kb_link: "KB#{{kb_id}}"
   label_new_article: "New Article"
   label_new_category: "New Category"
+  label_new_comment: "New Comment"
   label_parent_category: "Parent Category"
   label_root_category: "Root Category"
   label_subcategories: Sub-categories
   label_summary: Summary
+  label_summary_newest_articles: "Created %{ago} ago in %{category}"
+  label_summary_popular_articles: 
+    one: "Viewed once since %{created}"
+    other: "Viewed %{count} times since %{created}"
+  label_summary_toprated_articles: 
+    one: "Rating: %{rating_avg}/%{rating_max} from one vote"
+    other: "Rating: %{rating_avg}/%{rating_max} from %{count} votes"
+  label_summary_updated_articles: "Updated %{ago} ago"
   label_title: Title
   label_title_articles: Article
   label_title_category: Category
   message_no_articles: "No articles have been added to the knowledgebase yet. Maybe you want to get the ball rolling ..."
   show_category_totals: "Show category totals in tree?"
   summary_item_limit: "Knowledgebase summary page article limit"
+  title_add_comment: "Add Comment"
   title_article_rating: "Article Rating"
   title_browse_by_category: "Browse by Category"
   title_create_article: "Create Article"
@@ -36,32 +58,10 @@ en:
   title_new_category: "New Category"
   title_newest_articles: "Newest Articles"
   title_recently_updated_articles: "Recently Updated Articles"
-  title_top_rated_articles: "Top Rated Articles"
-  title_votes:
-    zero:  "no votes"
-    one:   "one vote"
-    other: "%{count} votes"
-  title_tags: "Tags"
-  label_edit_article: "Edit"
-  label_delete_article: "Delete"
-  label_new_comment: "New Comment"
-  title_add_comment: "Add Comment"
   title_tagged_articles: "Articles tagged with %{tag}"
-  label_article_created: "Created article '%{title}'"
-  label_article_updated: "Article updated"
-  label_article_removed: "Article removed"
-  label_category_created: "Created category '%{title}'"
-  label_category_updated: "Category updated"
-  label_category_deleted: "Category deleted"
-  label_category_not_empty_cannot_delete: "Category is assigned to articles and could not be deleted." 
-  label_article_viewed:
-    one:   "Viewed once"
-    other: "Viewed %{count} times"
-  label_summary_newest_articles: "Created %{ago} ago in %{category}"
-  label_summary_updated_articles: "Updated %{ago} ago"
-  label_summary_popular_articles:
-    one:   "Viewed once since %{created}"
-    other: "Viewed %{count} times since %{created}"
-  label_summary_toprated_articles:
-    one:   "Rating: %{rating_avg}/%{rating_max} from one vote"
-    other: "Rating: %{rating_avg}/%{rating_max} from %{count} votes"
+  title_tags: Tags
+  title_top_rated_articles: "Top Rated Articles"
+  title_votes: 
+    one: "one vote"
+    other: "%{count} votes"
+    zero: "no votes"

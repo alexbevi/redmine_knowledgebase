@@ -4,28 +4,50 @@ ru:
   allow_sort_category_tree: "Sort the category tree alphabetically?"
   field_tag_list: "Список меток"
   knowledgebase_title: "База знаний"
+  label_article_created: "Created article '%{title}'"
   label_article_plural: Articles
+  label_article_removed: "Article removed"
+  label_article_updated: "Article updated"
+  label_article_viewed: 
+    one: "Viewed once"
+    other: "Viewed %{count} times"
   label_category: Категория
+  label_category_created: "Created category '%{title}'"
+  label_category_deleted: "Category deleted"
+  label_category_not_empty_cannot_delete: "Category is assigned to articles and could not be deleted."
   label_category_plural: Categories
+  label_category_updated: "Category updated"
   label_content: Содержимое
+  label_delete_article: Delete
   label_delete_category: "Delete Category"
   label_description: Описание
+  label_edit_article: Edit
   label_edit_category: "Edit Category"
   label_jump_category: "Перейти к категории"
   label_kb_home: Начало
   label_kb_link: "KB#{{kb_id}}"
   label_new_article: "New Article"
   label_new_category: "New Category"
+  label_new_comment: "New Comment"
   label_parent_category: "Родительская категория"
   label_root_category: "Корневая категория"
   label_subcategories: Sub-categories
   label_summary: Summary
+  label_summary_newest_articles: "Created %{ago} ago in %{category}"
+  label_summary_popular_articles: 
+    one: "Viewed once since %{created}"
+    other: "Viewed %{count} times since %{created}"
+  label_summary_toprated_articles: 
+    one: "Rating: %{rating_avg}/%{rating_max} from one vote"
+    other: "Rating: %{rating_avg}/%{rating_max} from %{count} votes"
+  label_summary_updated_articles: "Updated %{ago} ago"
   label_title: Заголовок
   label_title_articles: Article
   label_title_category: Category
   message_no_articles: "No articles have been added to the knowledgebase yet. Maybe you want to get the ball rolling ..."
   show_category_totals: "Show category totals in tree?"
   summary_item_limit: "Knowledgebase summary page article limit"
+  title_add_comment: "Add Comment"
   title_article_rating: "Рейтинг статьи"
   title_browse_by_category: "Просмотр по категориям"
   title_create_article: "Создать статью"
@@ -36,5 +58,7 @@ ru:
   title_new_category: "Новая категория"
   title_newest_articles: "Свежие статьи"
   title_recently_updated_articles: "Недавно обновлённые статьи"
+  title_tagged_articles: "Articles tagged with %{tag}"
+  title_tags: Tags
   title_top_rated_articles: "Статьи с наибольшим рейтингом"
   title_votes: голосов
