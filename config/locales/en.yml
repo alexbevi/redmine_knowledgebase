@@ -1,41 +1,40 @@
-# English strings go here for Rails i18n
-en:
-  knowledgebase_title: "Knowledge base"
-  field_tag_list: "Tag List"
-  label_content: "Content"
-  label_summary: "Summary"
-  label_title: "Title"
-  label_category: "Category"
-  label_description: "Description"
-  label_kb_home: "Home"
-  title_create_article: "Create Article"
-  title_edit_article: "Edit Article"
-  title_article_rating: "Article Rating"
-  title_votes: "Votes"
-  label_parent_category: "Parent Category"
-  label_root_category: "Root Category"
-  title_edit_category: "Edit Category"
-  title_create_category: "Create Category"
-  label_title_articles: Article
-  label_title_category: Category
-  label_article_plural: Articles
-  label_category_plural: Categories
-  label_jump_category: "Jump Category"
-  title_newest_articles: "Newest Articles"
-  title_recently_updated_articles: "Recently Updated Articles"
-  title_most_popular_articles: "Most Popular Articles"
-  title_top_rated_articles: "Top Rated Articles"
-  title_browse_by_category: "Browse by Category"
-  title_new_category: "New Category"
-  message_no_articles: "No articles have been added to the knowledgebase yet. Maybe you want to get the ball rolling ..."
-  label_new_article: "New Article"
-  label_new_category: "New Category"
-  label_edit_category: "Edit Category"
-  label_delete_category: "Delete Category"
-  label_subcategories: "Sub-categories"
+--- 
+en: 
   allow_anon_access: "Allow anonymous access?"
   allow_sort_category_tree: "Sort the category tree alphabetically?"
+  field_tag_list: "Tag List"
+  knowledgebase_title: "Knowledge base"
+  label_article_plural: Articles
+  label_category: Category
+  label_category_plural: Categories
+  label_content: Content
+  label_delete_category: "Delete Category"
+  label_description: Description
+  label_edit_category: "Edit Category"
+  label_jump_category: "Jump Category"
+  label_kb_home: Home
+  label_kb_link: "KB#{{kb_id}}"
+  label_new_article: "New Article"
+  label_new_category: "New Category"
+  label_parent_category: "Parent Category"
+  label_root_category: "Root Category"
+  label_subcategories: Sub-categories
+  label_summary: Summary
+  label_title: Title
+  label_title_articles: Article
+  label_title_category: Category
+  message_no_articles: "No articles have been added to the knowledgebase yet. Maybe you want to get the ball rolling ..."
   show_category_totals: "Show category totals in tree?"
   summary_item_limit: "Knowledgebase summary page article limit"
-  #prefix for the macro links pointing to a Wiki article
-  label_kb_link: "KB#{{kb_id}}"
+  title_article_rating: "Article Rating"
+  title_browse_by_category: "Browse by Category"
+  title_create_article: "Create Article"
+  title_create_category: "Create Category"
+  title_edit_article: "Edit Article"
+  title_edit_category: "Edit Category"
+  title_most_popular_articles: "Most Popular Articles"
+  title_new_category: "New Category"
+  title_newest_articles: "Newest Articles"
+  title_recently_updated_articles: "Recently Updated Articles"
+  title_top_rated_articles: "Top Rated Articles"
+  title_votes: Votes

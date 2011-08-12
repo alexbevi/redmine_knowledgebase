@@ -1,32 +1,40 @@
-#Spanish strings go here for Rails i18n
-es:
-  knowledgebase_title: "Base de conocimientos"
-  field_tag_list: "Lista de Etiquetas"
-  label_content: "Contenido"
-  label_summary: "Resumen"
-  label_title: "Título"
-  label_category: "Categoría"
-  label_description: "Descripción"
-  label_kb_home: "Inicio"
-  title_create_article: "Crear Artículo"
-  title_edit_article: "Editar Artículo"
-  title_article_rating: "Valoración del Artículo"
-  title_votes: "Votos"
-  label_parent_category: "Categoría Principal"
-  label_root_category: "Categoría Raiz"
-  title_edit_category: "Editar Categoría"
-  title_create_category: "Crear Categoría"
-  label_jump_category: "Saltar Categoría"
-  title_newest_articles: "Articulos más Recientes"
-  title_recently_updated_articles: "Artículos Actualizados"
-  title_most_popular_articles: "Artículos Populares"
-  title_top_rated_articles: "Artículos de más Valor"
-  title_browse_by_category: "Explorar por Categoría"
-  title_new_category: "Nueva Categoría"
-  message_no_articles: "No hay artículos agregados... Empieza cuando quieras..."
+--- 
+es: 
   allow_anon_access: "Allow anonymous access?"
   allow_sort_category_tree: "Sort the category tree alphabetically?"
+  field_tag_list: "Lista de Etiquetas"
+  knowledgebase_title: "Base de conocimientos"
+  label_article_plural: Articles
+  label_category: Categoría
+  label_category_plural: Categories
+  label_content: Contenido
+  label_delete_category: "Delete Category"
+  label_description: Descripción
+  label_edit_category: "Edit Category"
+  label_jump_category: "Saltar Categoría"
+  label_kb_home: Inicio
+  label_kb_link: "KB#{{kb_id}}"
+  label_new_article: "New Article"
+  label_new_category: "New Category"
+  label_parent_category: "Categoría Principal"
+  label_root_category: "Categoría Raiz"
+  label_subcategories: Sub-categories
+  label_summary: Resumen
+  label_title: Título
+  label_title_articles: Article
+  label_title_category: Category
+  message_no_articles: "No hay artículos agregados... Empieza cuando quieras..."
   show_category_totals: "Show category totals in tree?"
   summary_item_limit: "Knowledgebase summary page article limit"
-  #prefix for the macro links pointing to a Wiki article
-  label_kb_link: "KB#{{kb_id}}"
+  title_article_rating: "Valoración del Artículo"
+  title_browse_by_category: "Explorar por Categoría"
+  title_create_article: "Crear Artículo"
+  title_create_category: "Crear Categoría"
+  title_edit_article: "Editar Artículo"
+  title_edit_category: "Editar Categoría"
+  title_most_popular_articles: "Artículos Populares"
+  title_new_category: "Nueva Categoría"
+  title_newest_articles: "Articulos más Recientes"
+  title_recently_updated_articles: "Artículos Actualizados"
+  title_top_rated_articles: "Artículos de más Valor"
+  title_votes: Votos

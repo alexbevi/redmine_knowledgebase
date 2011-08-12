@@ -1,36 +1,40 @@
-# Italian strings go here for Rails i18n
-it:
-  knowledgebase_title: "Conoscenza di base"
-  field_tag_list: "Tag"
-  label_content: "Contenuto"
-  label_summary: "Sommario"
-  label_title: "Titolo"
-  label_category: "Categoria"
-  label_description: "Descrizione"
-  label_kb_home: "Home"
-  title_create_article: "Nuovo Articolo"
-  title_edit_article: "Modifica Articolo"
-  title_article_rating: "Popolarità Articolo"
-  title_votes: "Voti"
-  label_parent_category: "Categoria padre"
-  label_root_category: "Categoria principale"
-  title_edit_category: "Modifica Categoria"
-  title_create_category: "Nuovo Categoria"
-  label_title_articles: "Articolo"
-  label_title_category: "Categoria"
-  label_article_plural: "Articoli"
-  label_category_plural: "Categorie"
-  label_jump_category: "Vai alla categoria"
-  title_newest_articles: "Articoli recenti"
-  title_recently_updated_articles: "Articoli modificati di recente"
-  title_most_popular_articles: "Articoli più letti"
-  title_top_rated_articles: "Articoli più votati"
-  title_browse_by_category: "Naviga per categoria"
-  title_new_category: "Nuova categoria"
-  message_no_articles: "Nessun articolo è stato ancora aggiunto alla knowledgebase."
+--- 
+it: 
   allow_anon_access: "Allow anonymous access?"
   allow_sort_category_tree: "Sort the category tree alphabetically?"
+  field_tag_list: Tag
+  knowledgebase_title: "Conoscenza di base"
+  label_article_plural: Articoli
+  label_category: Categoria
+  label_category_plural: Categorie
+  label_content: Contenuto
+  label_delete_category: "Delete Category"
+  label_description: Descrizione
+  label_edit_category: "Edit Category"
+  label_jump_category: "Vai alla categoria"
+  label_kb_home: Home
+  label_kb_link: "KB#{{kb_id}}"
+  label_new_article: "New Article"
+  label_new_category: "New Category"
+  label_parent_category: "Categoria padre"
+  label_root_category: "Categoria principale"
+  label_subcategories: Sub-categories
+  label_summary: Sommario
+  label_title: Titolo
+  label_title_articles: Articolo
+  label_title_category: Categoria
+  message_no_articles: "Nessun articolo è stato ancora aggiunto alla knowledgebase."
   show_category_totals: "Show category totals in tree?"
   summary_item_limit: "Knowledgebase summary page article limit"
-  #prefix for the macro links pointing to a Wiki article
-  label_kb_link: "KB#{{kb_id}}"
+  title_article_rating: "Popolarità Articolo"
+  title_browse_by_category: "Naviga per categoria"
+  title_create_article: "Nuovo Articolo"
+  title_create_category: "Nuovo Categoria"
+  title_edit_article: "Modifica Articolo"
+  title_edit_category: "Modifica Categoria"
+  title_most_popular_articles: "Articoli più letti"
+  title_new_category: "Nuova categoria"
+  title_newest_articles: "Articoli recenti"
+  title_recently_updated_articles: "Articoli modificati di recente"
+  title_top_rated_articles: "Articoli più votati"
+  title_votes: Voti

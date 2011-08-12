@@ -1,37 +1,40 @@
-# French strings go here for Rails i18n
-fr:
-  knowledgebase_title: "Base de connaissances"
-  field_tag_list: "Liste des Tags"
-  label_content: "Contenu"
-  label_summary: "Résumé"
-  label_title: "Titre"
-  label_category: "Catégorie"
-  label_description: "Description"
-  label_kb_home: "Page d'accueil"
-  title_create_article: "Créer un Article"
-  title_edit_article: "Modifier Article"
-  title_article_rating: "Évaluation d'Article"
-  title_votes: "Votes"
-  label_parent_category: "Catégorie Parente"
-  label_root_category: "Catégorie Racine"
-  title_edit_category: "Éditer la Catégorie"
-  title_create_category: "Créer une Catégorie"
-  label_title_articles: Article
-  label_title_category: Catégorie
-  label_article_plural: Articles
-  label_category_plural: Catégories
-  knowledgebase_title: "Base de Connaissance"
-  label_jump_category: "Aller à la  Catégorie"
-  title_newest_articles: "Derniers Articles"
-  title_recently_updated_articles: "Articles récemment modifiés"
-  title_most_popular_articles: "Articles les plus populaires"
-  title_top_rated_articles: "Articles les mieux notés"
-  title_browse_by_category: "Parcourir par Catégorie"
-  title_new_category: "Nouvelle Catégorie"
-  message_no_articles: "Aucun article n'a été ajouté à la base de connaissance."
+--- 
+fr: 
   allow_anon_access: "Allow anonymous access?"
   allow_sort_category_tree: "Sort the category tree alphabetically?"
+  field_tag_list: "Liste des Tags"
+  knowledgebase_title: "Base de Connaissance"
+  label_article_plural: Articles
+  label_category: Catégorie
+  label_category_plural: Catégories
+  label_content: Contenu
+  label_delete_category: "Delete Category"
+  label_description: Description
+  label_edit_category: "Edit Category"
+  label_jump_category: "Aller à la  Catégorie"
+  label_kb_home: "Page d'accueil"
+  label_kb_link: "KB#{{kb_id}}"
+  label_new_article: "New Article"
+  label_new_category: "New Category"
+  label_parent_category: "Catégorie Parente"
+  label_root_category: "Catégorie Racine"
+  label_subcategories: Sub-categories
+  label_summary: Résumé
+  label_title: Titre
+  label_title_articles: Article
+  label_title_category: Catégorie
+  message_no_articles: "Aucun article n'a été ajouté à la base de connaissance."
   show_category_totals: "Show category totals in tree?"
   summary_item_limit: "Knowledgebase summary page article limit"
-  #prefix for the macro links pointing to a Wiki article
-  label_kb_link: "KB#{{kb_id}}"
+  title_article_rating: "Évaluation d'Article"
+  title_browse_by_category: "Parcourir par Catégorie"
+  title_create_article: "Créer un Article"
+  title_create_category: "Créer une Catégorie"
+  title_edit_article: "Modifier Article"
+  title_edit_category: "Éditer la Catégorie"
+  title_most_popular_articles: "Articles les plus populaires"
+  title_new_category: "Nouvelle Catégorie"
+  title_newest_articles: "Derniers Articles"
+  title_recently_updated_articles: "Articles récemment modifiés"
+  title_top_rated_articles: "Articles les mieux notés"
+  title_votes: Votes
