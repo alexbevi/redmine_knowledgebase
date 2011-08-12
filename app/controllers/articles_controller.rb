@@ -26,7 +26,7 @@ class ArticlesController < KnowledgebaseController
     @article.author_id = User.current.id
     if @article.save
       attachments = attach(@article, params[:attachments])
-      flash[:notice] = "Created Article " + @article.title
+      flash[:notice] = l(:label_article_created, :title => @article.title)
       redirect_to({ :controller => 'knowledgebase', :action => 'index' })
     else
       render(:action => 'new')
@@ -49,7 +49,7 @@ class ArticlesController < KnowledgebaseController
     params[:article][:category_id] = params[:category_id]
     if @article.update_attributes(params[:article])
       attachments = attach(@article, params[:attachments])
-      flash[:notice] = "Article Updated"
+      flash[:notice] = l(:label_article_updated)
       redirect_to({ :action => 'show', :id => @article.id })
     else
       render({:action => 'edit', :id => @article.id})
@@ -78,7 +78,7 @@ class ArticlesController < KnowledgebaseController
   def destroy
     @article = KbArticle.find(params[:id])
     @article.destroy
-    flash[:notice] = "Article Removed"
+    flash[:notice] = l(:label_article_removed)
     redirect_to({ :controller => 'knowledgebase', :action => 'index' })
   end
 

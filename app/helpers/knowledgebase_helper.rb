@@ -23,13 +23,21 @@ module KnowledgebaseHelper
     when "normal"
       output = textilizable article.summary
     when "newest"
-      output = "Created " + time_ago_in_words(article.created_at) + " ago in " + link_to(article.category.title, {:controller => 'categories', :action => 'show', :id => article.category_id})
+      output = l(:label_summary_newest_articles,
+        :ago => time_ago_in_words(article.created_at),
+        :category => link_to(article.category.title, {:controller => 'categories', :action => 'show', :id => article.category_id}))
     when "updated"
-      output = "Updated " + time_ago_in_words(article.updated_at) + " ago"
+      output = l(:label_summary_updated_articles,
+        :ago =>time_ago_in_words(article.updated_at))
     when "popular"
-      output = "Viewed " + article.view_count.to_s + " time#{"s" if article.view_count > 1} since " + article.created_at.to_s
+      output = l(:label_summary_popular_articles,
+        :count => article.view_count,
+        :created => article.created_at.to_s)
     when "toprated"
-      output = "Rating: " + article.rating_average.to_s + "/5 from " + article.rated_count.to_s + " Votes"
+      output = l(:label_summary_toprated_articles,
+        :rating_avg => article.rating_average.to_s,
+        :rating_max => "5",
+        :count => article.rated_count)
     end
     
     content_tag(:div, output, :class => "summary")
@@ -57,7 +65,7 @@ module KnowledgebaseHelper
   end
 
   def link_to_article(article)
-    link_to(l(:label_kb_link,{:kb_id=>article.id.to_s}),{ :controller => 'articles', :action => 'show', :id => article.id})
+    link_to(l(:label_kb_link,{:kb_id=>article.id.to_s}),{ :controller => 'articles', :action => 'show', :id => article.id}, :title => article.title)
   end
 
   def link_to_article_with_title(article)

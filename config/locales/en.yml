@@ -37,4 +37,31 @@ en:
   title_newest_articles: "Newest Articles"
   title_recently_updated_articles: "Recently Updated Articles"
   title_top_rated_articles: "Top Rated Articles"
-  title_votes: Votes
+  title_votes:
+    zero:  "no votes"
+    one:   "one vote"
+    other: "%{count} votes"
+  title_tags: "Tags"
+  label_edit_article: "Edit"
+  label_delete_article: "Delete"
+  label_new_comment: "New Comment"
+  title_add_comment: "Add Comment"
+  title_tagged_articles: "Articles tagged with %{tag}"
+  label_article_created: "Created article '%{title}'"
+  label_article_updated: "Article updated"
+  label_article_removed: "Article removed"
+  label_category_created: "Created category '%{title}'"
+  label_category_updated: "Category updated"
+  label_category_deleted: "Category deleted"
+  label_category_not_empty_cannot_delete: "Category is assigned to articles and could not be deleted." 
+  label_article_viewed:
+    one:   "Viewed once"
+    other: "Viewed %{count} times"
+  label_summary_newest_articles: "Created %{ago} ago in %{category}"
+  label_summary_updated_articles: "Updated %{ago} ago"
+  label_summary_popular_articles:
+    one:   "Viewed once since %{created}"
+    other: "Viewed %{count} times since %{created}"
+  label_summary_toprated_articles:
+    one:   "Rating: %{rating_avg}/%{rating_max} from one vote"
+    other: "Rating: %{rating_avg}/%{rating_max} from %{count} votes"
