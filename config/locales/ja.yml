@@ -1,0 +1,41 @@
+# English strings go here for Rails i18n
+ja:
+  knowledgebase_title: "知識DB"
+  field_tag_list: "タグリスト"
+  label_content: "詳細"
+  label_summary: "概要"
+  label_title: "件名"
+  label_category: "カテゴリ"
+  label_description: "説明"
+  label_home: "ホーム"
+  title_create_article: "新規記事発行"
+  title_edit_article: "記事を編集"
+  title_article_rating: "評価レート"
+  title_votes: "投票数"
+  label_parent_category: "親カテゴリ"
+  label_root_category: "最上位カテゴリ"
+  title_edit_category: "カテゴリを編集"
+  title_create_category: "カテゴリを追加"
+  label_title_articles: 記事
+  label_title_category: カテゴリ
+  label_article_plural: 記事一覧
+  label_category_plural: カテゴリ一覧
+  label_jump_category: "カテゴリー選択"
+  title_newest_articles: "最新の記事"
+  title_recently_updated_articles: "最近更新された記事"
+  title_most_popular_articles: "人気の記事"
+  title_top_rated_articles: "評価の高い記事"
+  title_browse_by_category: "カテゴリ別一覧"
+  title_new_category: "新規カテゴリ"
+  message_no_articles: "知識データベースに追加された記事はありません．早速作りましょう！"
+  label_new_article: "新しい記事"
+  label_new_category: "新しいカテゴリ"
+  label_edit_category: "カテゴリを編集"
+  label_delete_category: "カテゴリを削除"
+  label_subcategories: "サブカテゴリ群"
+  allow_anon_access: "匿名アクセス許可しますか？"
+  allow_sort_category_tree: "カテゴリをアルファベット順に並び替える"
+  show_category_totals: "ツリーの全てのカテゴリを表示する"
+  summary_item_limit: "知識データベースに表示する記事数"
+  #prefix for the macro links pointing to a Wiki article
+  label_kb_link: "KB#{{kb_id}}"
