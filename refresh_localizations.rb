@@ -8,8 +8,10 @@
 # It also takes the control (primary) localization file and injects any keys
 # that may be missing from the derivative files
 ###############################################################################
-require 'yaml'
 $KCODE = 'UTF8' unless RUBY_VERSION >= '1.9'
+
+require 'rubygems'
+require 'yaml'
 require 'ya2yaml'
 
 class Hash
@@ -30,28 +32,28 @@ end
 
 # The "control" file is the one we assume will always have the latest
 # translatable fields that should be copied to all other translation files
+PATH = "config/locales/"
 CONTROL = "en.yml"
-ctrl = YAML::load(File.open(CONTROL))
+ctrl = YAML::load(File.open(PATH + CONTROL))
 
 Dir["*.yml"].each do |lang|  
-  data = YAML::load(File.open(lang))
+  data = YAML::load(File.open(PATH + lang))
   
   unless lang == CONTROL
     # Fill the current translation template with any keys that may be missing
     # from the control template
-    # We assume that the YAML struture will always be:
+    # We assume that the YAML structure will always be:
     #   lang:
     #     entry_1: value
     #     entry_2: value
     # so we fetch the first hash value and work the it's children
     ctrl["#{ctrl.keys.first}"].each do |c|
-      data["#{data.keys.first}"][c[0]] = c[1] unless data["#{data.keys.first}"].has_key?(c[0]) 
+      data["#{data.keys.first}"][c[0]] = c[1] unless data["#{data.keys.first}"].has_key?(c[0])
     end
   end
   
   # overwrite the original file with the sorted and refreshed translation files
-  file = File.open(lang, 'w')    
+  file = File.open(lang, 'w')
   file.write(data.ya2yaml(:syck_compatible => true))
-  file.close  
-    
+  file.close
 end
