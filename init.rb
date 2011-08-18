@@ -1,7 +1,11 @@
+config.gem "acts-as-taggable-on", :source => "http://gemcutter.org", :version => '2.0.0.rc1'
+
 require 'redmine'
+
 require 'acts_as_viewed'
 require 'acts_as_rated'
-require 'acts_as_taggable'
+require 'acts-as-taggable-on'
+
 #Register KB macro
 require 'macros'
 
