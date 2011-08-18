@@ -3,16 +3,28 @@
 # refresh.rb
 # (c) 2011, Alex Bevilacqua
 #
-# This script takes all yaml localization files in the current directory and
-# re-orders them so that they appear in alphabetical order.
+# This script takes all yaml localization files in the target directory
+# (as defined by PATH) and re-orders them so that they appear in 
+# alphabetical order.
 # It also takes the control (primary) localization file and injects any keys
-# that may be missing from the derivative files
+# that may be missing from the derivative files.
+#
+# TODO don't discard comments
+# TODO don't discard other elements in the file that don't match
+#      hash.keys.first
 ###############################################################################
 $KCODE = 'UTF8' unless RUBY_VERSION >= '1.9'
 
 require 'rubygems'
 require 'yaml'
 require 'ya2yaml'
+
+# The location of the locale files
+PATH = "config/locales/"
+
+# The "control" file is the one we assume will always have the latest
+# translatable fields that should be copied to all other translation files
+CONTROL = "en.yml"
 
 class Hash
   # Replacing the to_yaml function so it'll serialize hashes sorted (by their keys)
@@ -30,12 +42,10 @@ class Hash
   end
 end
 
-# The "control" file is the one we assume will always have the latest
-# translatable fields that should be copied to all other translation files
-PATH = "config/locales/"
-CONTROL = "en.yml"
+# open the control file before processing the file list
 ctrl = YAML::load(File.open(PATH + CONTROL))
 
+# iterate over each YAML file in the target directory
 Dir["#{PATH}*.yml"].each do |lang|  
   data = YAML::load(File.open(lang))
   
