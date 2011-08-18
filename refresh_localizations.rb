@@ -36,8 +36,8 @@ PATH = "config/locales/"
 CONTROL = "en.yml"
 ctrl = YAML::load(File.open(PATH + CONTROL))
 
-Dir["*.yml"].each do |lang|  
-  data = YAML::load(File.open(PATH + lang))
+Dir["#{PATH}*.yml"].each do |lang|  
+  data = YAML::load(File.open(lang))
   
   unless lang == CONTROL
     # Fill the current translation template with any keys that may be missing
