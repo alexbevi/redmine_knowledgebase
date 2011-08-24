@@ -75,5 +75,5 @@ Redmine::Plugin.register :redmine_knowledgebase do
 		Setting['plugin_redmine_knowledgebase']['knowledgebase_anonymous_access'].to_i == 1
 	}
 
-  Redmine::Search.available_search_types << 'articles'
+  Redmine::Search.available_search_types << 'kb_articles'
 end
