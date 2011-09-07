@@ -1,3 +1,11 @@
+require 'rubygems'
+begin
+  gem "acts-as-taggable-on", "2.0.0.rc1"
+rescue Gem::LoadError => load_error
+  $stderr.puts %([redmine_knowledgebase] Missing the acts-as-taggable-on 2.0.0.rc1 gem. Please `gem install -v=2.0.0.rc1 acts-as-taggable-on`)
+  exit 1
+end
+
 config.gem "acts-as-taggable-on", :source => "http://gemcutter.org", :version => '2.0.0.rc1'
 
 require 'redmine'
