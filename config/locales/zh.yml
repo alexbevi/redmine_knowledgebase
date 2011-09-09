@@ -4,24 +4,24 @@ zh:
   allow_sort_category_tree: 类别树按字母排序？
   field_tag_list: 标签列表
   knowledgebase_title: 知识库
-  label_article_created: "Created article '%{title}'"
+  label_article_created: "文章【'%{title}'】已创建"
   label_article_plural: 文章
-  label_article_removed: "Article removed"
-  label_article_updated: "Article updated"
-  label_article_viewed: 
-    one: "Viewed once"
-    other: "Viewed %{count} times"
+  label_article_removed: "文章已移除"
+  label_article_updated: "文章已更新"
+  label_article_viewed:
+    one: "已阅 1 次"
+    other: "已阅 %{count} 次"
   label_category: 类别
-  label_category_created: "Created category '%{title}'"
-  label_category_deleted: "Category deleted"
-  label_category_not_empty_cannot_delete: "Category is assigned to articles and could not be deleted."
+  label_category_created: "类别【'%{title}'】已创建"
+  label_category_deleted: "类别已删除"
+  label_category_not_empty_cannot_delete: "当前类别下有文章，不能删除"
   label_category_plural: 类别
-  label_category_updated: "Category updated"
+  label_category_updated: "类别已更新"
   label_content: 内容
-  label_delete_article: Delete
+  label_delete_article: 删除
   label_delete_category: 删除类型
   label_description: 描述
-  label_edit_article: Edit
+  label_edit_article: 编辑
   label_edit_category: 编辑类型
   label_home: Home
   label_jump_category: 移至类别
@@ -29,26 +29,26 @@ zh:
   label_kb_link: "KB#{{kb_id}}"
   label_new_article: 新建文章
   label_new_category: 新建类型
-  label_new_comment: "New Comment"
-  label_parent_category: 父层类别
+  label_new_comment: "新增批注"
+  label_parent_category: 父类别
   label_root_category: 根类别
   label_subcategories: 子类型
   label_summary: 摘要
-  label_summary_newest_articles: "Created %{ago} ago in %{category}"
-  label_summary_popular_articles: 
-    one: "Viewed once since %{created}"
-    other: "Viewed %{count} times since %{created}"
-  label_summary_toprated_articles: 
-    one: "Rating: %{rating_avg}/%{rating_max} from one vote"
-    other: "Rating: %{rating_avg}/%{rating_max} from %{count} votes"
-  label_summary_updated_articles: "Updated %{ago} ago"
+  label_summary_newest_articles: "位于【%{category}】类别，创建于 %{ago} 之前"
+  label_summary_popular_articles:
+    one: "自 %{created} 起，已阅 1 次"
+    other: "自 %{created} 起，已阅 %{count} 次"
+  label_summary_toprated_articles:
+    one: "综合评分: %{rating_avg}/%{rating_max} 来自于 1 次评分"
+    other: "综合评分: %{rating_avg}/%{rating_max} 来自于 %{count} 次评分"
+  label_summary_updated_articles: "更新于 %{ago} 之前"
   label_title: 标题
   label_title_articles: 文章
   label_title_category: 类别
   message_no_articles: 目前尚未有任何文章
   show_category_totals: 在类别树中显示数量？
   summary_item_limit: 知识库主页文章限制
-  title_add_comment: "Add Comment"
+  title_add_comment: "新增批注"
   title_article_rating: 文章评比
   title_browse_by_category: 根据分类浏览
   title_create_article: 建立文章
@@ -59,7 +59,7 @@ zh:
   title_new_category: 新分类
   title_newest_articles: 最新文章
   title_recently_updated_articles: 最近更新的文章
-  title_tagged_articles: "Articles tagged with %{tag}"
-  title_tags: Tags
+  title_tagged_articles: "含【%{tag}】标签的文章"
+  title_tags: 标签
   title_top_rated_articles: 评分最高的文章
   title_votes: 评分
