@@ -6,17 +6,17 @@ ja:
   knowledgebase_title: 知識DB
   label_article_created: "'%{title}'の記事を作成しました．"
   label_article_plural: 知識DB記事
-  label_article_removed: "記事を削除しました．"
-  label_article_updated: "記事を更新しました．"
+  label_article_removed: 記事を削除しました．
+  label_article_updated: 記事を更新しました．
   label_article_viewed: 
     one: "Viewed once"
     other: "Viewed %{count} times"
   label_category: カテゴリ
   label_category_created: "'%{title}'カテゴリーを生成しました．"
-  label_category_deleted: "カテゴリーを削除しました．"
-  label_category_not_empty_cannot_delete: "関連記事があるため，カテゴリーを削除できません．"
+  label_category_deleted: カテゴリーを削除しました．
+  label_category_not_empty_cannot_delete: 関連記事があるため，カテゴリーを削除できません．
   label_category_plural: カテゴリ一覧
-  label_category_updated: "カテゴリーを更新しました．"
+  label_category_updated: カテゴリーを更新しました．
   label_content: 詳細
   label_delete_article: 削除
   label_delete_category: カテゴリを削除
@@ -29,7 +29,7 @@ ja:
   label_kb_link: "KB#{{kb_id}}"
   label_new_article: 新しい記事
   label_new_category: 新しいカテゴリ
-  label_new_comment: "コメントする"
+  label_new_comment: コメントする
   label_parent_category: 親カテゴリ
   label_root_category: 最上位カテゴリ
   label_subcategories: サブカテゴリ群
@@ -48,7 +48,7 @@ ja:
   message_no_articles: 知識データベースに追加された記事はありません．早速作りましょう！
   show_category_totals: ツリーの全てのカテゴリを表示する
   summary_item_limit: 知識データベースに表示する記事数
-  title_add_comment: "コメントを追加"
+  title_add_comment: コメントを追加
   title_article_rating: 評価レート
   title_browse_by_category: カテゴリ別一覧
   title_create_article: 新規記事発行
