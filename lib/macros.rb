@@ -7,7 +7,7 @@ module Macros
     macro :kb do |obj, args|
       args, options = extract_macro_options(args, :parent)
       raise 'No or bad arguments.' if args.size != 1
-      article = Article.find(args.first)
+      article = KbArticle.find(args.first)
       link_to_article(article)
     end
 
@@ -15,7 +15,7 @@ module Macros
     macro :article_id do |obj, args|
       args, options = extract_macro_options(args, :parent)
       raise 'No or bad arguments.' if args.size != 1
-      article = Article.find(args.first)
+      article = KbArticle.find(args.first)
       link_to_article(article)
     end
 
@@ -23,7 +23,7 @@ module Macros
     macro :article do |obj, args|
       args, options = extract_macro_options(args, :parent)
       raise 'No or bad arguments.' if args.size != 1
-      article = Article.find(args.first)
+      article = KbArticle.find(args.first)
       link_to_article_with_title(article)
     end
 
@@ -31,7 +31,7 @@ module Macros
     macro :category do |obj, args|
       args, options = extract_macro_options(args, :parent)
       raise 'No or bad arguments.' if args.size != 1
-      category = Category.find(args.first)
+      category = KbCategory.find(args.first)
       link_to_category_with_title(category)
     end
   end
