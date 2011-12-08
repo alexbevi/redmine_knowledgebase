@@ -4,50 +4,50 @@ de:
   allow_sort_category_tree: "Den Katgegoriebaum alphabetisch sortieren?"
   field_tag_list: "Tag Liste"
   knowledgebase_title: Wissensbasis
-  label_article_created: "Created article '%{title}'"
+  label_article_created: "Artikel '%{title}' erstellt"
   label_article_plural: Artikel
-  label_article_removed: "Article removed"
-  label_article_updated: "Article updated"
+  label_article_removed: "Artikel entfernt"
+  label_article_updated: "Artikel aktualisiert"
   label_article_viewed: 
-    one: "Viewed once"
-    other: "Viewed %{count} times"
+    one: "Einmal gesehen"
+    other: "%{count} Views"
   label_category: Kategorie
-  label_category_created: "Created category '%{title}'"
-  label_category_deleted: "Category deleted"
-  label_category_not_empty_cannot_delete: "Category is assigned to articles and could not be deleted."
+  label_category_created: "Kategorie '%{title}' erstellt"
+  label_category_deleted: "Kategorie gelöscht"
+  label_category_not_empty_cannot_delete: "Dieser Kategorie sind noch Artikel zugewiesen und kann nicht gelöscht werden,"
   label_category_plural: Kategorien
-  label_category_updated: "Category updated"
+  label_category_updated: "Kategorie aktualisiert"
   label_content: Inhalt
-  label_delete_article: Delete
+  label_delete_article: Löschen
   label_delete_category: "Kategorie entfernen"
   label_description: Beschreibung
-  label_edit_article: Edit
+  label_edit_article: Bearbeiten
   label_edit_category: "Kategorie bearbeiten"
   label_jump_category: "Zur Kategorie wechseln "
   label_kb_home: Home
   label_kb_link: "KB#{{kb_id}}"
   label_new_article: "Artikel erstellen"
   label_new_category: "Kategorie erstellen"
-  label_new_comment: "New Comment"
+  label_new_comment: "Neuer Kommentar"
   label_parent_category: "Übergeordnete Kategorie"
   label_root_category: "Root Kategorie"
   label_subcategories: Unterkategorien
   label_summary: Zusammenfassung
-  label_summary_newest_articles: "Created %{ago} ago in %{category}"
+  label_summary_newest_articles: "Erstellt vor %{ago} in %{category}"
   label_summary_popular_articles: 
-    one: "Viewed once since %{created}"
-    other: "Viewed %{count} times since %{created}"
+    one: "Einmal angezeigt seit %{created}"
+    other: "%{count} Views seit %{created}"
   label_summary_toprated_articles: 
-    one: "Rating: %{rating_avg}/%{rating_max} from one vote"
-    other: "Rating: %{rating_avg}/%{rating_max} from %{count} votes"
-  label_summary_updated_articles: "Updated %{ago} ago"
+    one: "Rating: %{rating_avg}/%{rating_max} aus einer Stimme"
+    other: "Rating: %{rating_avg}/%{rating_max} aus %{count} Stimmen"
+  label_summary_updated_articles: "Vor %{ago} aktualisiert"
   label_title: Titel
   label_title_articles: Artikel
   label_title_category: Kategorie
   message_no_articles: "Es wurde noch kein Artikel eingegeben. Beginnen Sie mit einem Artikel zum Thema..."
   show_category_totals: "Anzahl der Arctiel pro Katgeorie im Katgeoriebaum anzeigen?"
   summary_item_limit: "Maximale Anzahl von Artikeln in der Übersicht"
-  title_add_comment: "Add Comment"
+  title_add_comment: "Kommentar hinzufügen"
   title_article_rating: "Artikel Rating"
   title_browse_by_category: "Nach Kategorie"
   title_create_article: "Artikel erstellen"
@@ -58,7 +58,7 @@ de:
   title_new_category: "Neue Kategorie"
   title_newest_articles: "Neueste Artikel"
   title_recently_updated_articles: "Artikel zuletzt aktualisiert"
-  title_tagged_articles: "Articles tagged with %{tag}"
+  title_tagged_articles: "Artikel getaggt mit %{tag}"
   title_tags: Tags
   title_top_rated_articles: "Bestbewertete Artikel"
   title_votes: Votes
