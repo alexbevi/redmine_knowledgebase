@@ -45,8 +45,8 @@ de:
   label_title_articles: Artikel
   label_title_category: Kategorie
   message_no_articles: "Es wurde noch kein Artikel eingegeben. Beginnen Sie mit einem Artikel zum Thema..."
-  show_category_totals: "Anzahl der Arctiel pro Katgeorie im Katgeoriebaum anzeigen?"
-  summary_item_limit: "Maximale Anzahl von Artikeln in der Übersicht"
+  show_category_totals: "Anzahl der Artikel pro Katgeorie im Katgeoriebaum anzeigen?"
+  summary_item_limit: "Maximale Artikel in der Übersicht"
   title_add_comment: "Kommentar hinzufügen"
   title_article_rating: "Artikel Rating"
   title_browse_by_category: "Nach Kategorie"
