@@ -1,5 +1,6 @@
 class KnowledgebaseController < ApplicationController
   unloadable
+  include TagsHelper
 
   #Authorize against global permissions defined in init.rb
   before_filter :authorize_global, :unless => :allow_anonymous_access?
@@ -26,6 +27,8 @@ class KnowledgebaseController < ApplicationController
     a = KbArticle.find(:all, :include => :ratings).sort_by(&:rated_count)
     a = a.drop(a.count - summary_limit) if a.count > summary_limit
     @articles_toprated = a.reverse
+
+    @tags = KbArticle.tag_counts
   end
 
 #########

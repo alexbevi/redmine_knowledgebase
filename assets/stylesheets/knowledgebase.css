@@ -57,3 +57,10 @@ ul.stars li a.five_stars  { width: 100%; z-index: 2; }
 #taglist li { margin-left: -40px; list-style-type: none; margin-bottom: 10px; }
 #taglist a { color:#060; background-color:#E1FFD1; border:solid 1px #C5F8AC; -moz-border-radius: 5px; -webkit-border-radius: 5px; padding: 3px; }
 #taglist a:hover { text-decoration:underline;}
+
+.tag-x-small { font-size:  80%; }
+.tag-small   { font-size:  90%; }
+.tag-medium  { font-size: 100%; }
+.tag-large   { font-size: 120%; }
+.tag-x-large { font-size: 150%; }
+
