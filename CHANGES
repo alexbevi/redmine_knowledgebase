@@ -1,3 +1,13 @@
+0.3.2 (12-JAN-02)
+-----------------
+* added configuration option for number of articles to summarize in knowledgebase#index
+* added a wiki macro for knowledgebase articles
+* added Czech translation
+* added Japanese translation
+* added a tag cloud to the knowledgebase#index
+* fixed routing for redmine 1.3+
+* updated acts-as-taggable-on dependency
+
 0.3.1 (11-MAY-20)
 -----------------
 * added Polish translation
