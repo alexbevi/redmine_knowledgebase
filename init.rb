@@ -1,17 +1,17 @@
 require 'rubygems'
 begin
-  gem "acts-as-taggable-on", "2.0.0.rc1"
+  gem 'acts-as-taggable-on', '2.1.1'
 rescue Gem::LoadError => load_error
-  $stderr.puts %([redmine_knowledgebase] Missing the acts-as-taggable-on 2.0.0.rc1 gem. Please `gem install -v=2.0.0.rc1 acts-as-taggable-on`)
+  $stderr.puts %([redmine_knowledgebase] Missing the acts-as-taggable-on 2.1.1 gem. Please `gem install -v=2.1.1 acts-as-taggable-on`)
   exit 1
 end
-
-config.gem "acts-as-taggable-on", :source => "http://gemcutter.org", :version => '2.0.0.rc1'
 
 require 'redmine'
 
 require 'acts_as_viewed'
 require 'acts_as_rated'
+
+config.gem 'acts-as-taggable-on', :version => '2.1.1'
 require 'acts-as-taggable-on'
 
 #Register KB macro

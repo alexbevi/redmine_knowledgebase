@@ -1,6 +1,6 @@
 class KnowledgebaseController < ApplicationController
   unloadable
-  include TagsHelper
+  include ActsAsTaggableOn::TagsHelper
 
   #Authorize against global permissions defined in init.rb
   before_filter :authorize_global, :unless => :allow_anonymous_access?
