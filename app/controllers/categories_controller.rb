@@ -35,7 +35,7 @@ class CategoriesController < KnowledgebaseController
     @category = KbCategory.find(params[:id])
   end
 
-  def delete
+  def destroy
     @category = KbCategory.find(params[:id])
     if @category.articles.size == 0
       @category.destroy
