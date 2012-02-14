@@ -1,18 +1,7 @@
-require 'rubygems'
-begin
-  gem 'acts-as-taggable-on', '2.1.1'
-rescue Gem::LoadError => load_error
-  $stderr.puts %([redmine_knowledgebase] Missing the acts-as-taggable-on 2.1.1 gem. Please `gem install -v=2.1.1 acts-as-taggable-on`)
-  exit 1
-end
-
 require 'redmine'
-
 require 'acts_as_viewed'
 require 'acts_as_rated'
-
-config.gem 'acts-as-taggable-on', :version => '2.1.1'
-require 'acts-as-taggable-on'
+require 'acts_as_taggable'
 
 #Register KB macro
 require 'macros'
@@ -23,7 +12,7 @@ Redmine::Plugin.register :redmine_knowledgebase do
   description 'A plugin for Redmine that adds knowledgebase functionality'
   url         'http://alexbevi.com/projects/redmine-kb'
   author_url  'http://blog.alexbevi.com'
-  version     '0.3.2-devel'
+  version     '0.3.3'
 
   requires_redmine :version_or_higher => '1.0.0'
 
