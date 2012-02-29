@@ -34,6 +34,7 @@
 	&nbsp;&raquo;&nbsp; 
 	<%= link_to @article.category.title, { :controller => 'categories', :action => 'show', :id => @article.category.id } %>
 </p>
+<% html_title @article.title %>
 
 <h2><%= @article.title %></h2>
 

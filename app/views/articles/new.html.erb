@@ -1,3 +1,5 @@
+<% html_title l(:title_create_category) %>
+
 <h2><%= l(:title_create_article) %></h2>
 
 <%= labelled_form_for :article, @article, :url => { :action => "create" }, :html => {  :multipart => true, :id => "articles-form" } do |form| %>
