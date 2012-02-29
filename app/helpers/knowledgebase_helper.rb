@@ -21,7 +21,7 @@ module KnowledgebaseHelper
     output = nil
     case format
     when "normal"
-      output = textilizable article.summary
+      output = article.summary
     when "newest"
       output = l(:label_summary_newest_articles,
         :ago => time_ago_in_words(article.created_at),
