@@ -34,6 +34,8 @@
 	<%= link_to @article.category.title, { :controller => 'categories', :action => 'show', :id => @article.category.id } %>
 </p>
 
+<h2><%= @article.title %></h2>
+
 <div class="infobox">
 <%= authoring @article.created_at, @article.author %>
 <% if @article.created_at != @article.updated_at %>
