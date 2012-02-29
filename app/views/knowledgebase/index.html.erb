@@ -21,7 +21,7 @@
   		</div>
   		<h4><%= l(:title_recently_updated_articles) %></h4>
   		<div class="articles recently-updated">
-  			<%= render :partial => 'articles/list', :locals => { :summary_format => "updated", :articles => @articles_updated, :default_icon => 'recently-changed' } %>
+  			<%= render :partial => 'articles/list', :locals => { :summary_format => "updated", :articles => @articles_updated, :default_icon => 'recently-changed', :truncate_length => 25 } %>
   		</div>
   	</div>
   	<div class="splitcontentright">
