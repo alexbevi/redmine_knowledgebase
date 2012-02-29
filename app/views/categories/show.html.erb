@@ -1,4 +1,4 @@
-<div id="category-crumbs">
+<p id="category-crumbs" class="breadcrumb">
 	<%= link_to l(:label_kb_home), { :controller => 'knowledgebase', :action => 'index' } %>
 	<% @category.ancestors.each do |ancestor| %>
 	&nbsp;&raquo;&nbsp;
@@ -6,7 +6,7 @@
 	<% end %>
   &nbsp;&raquo;&nbsp;
   <%= @category.title %>
-</div>
+</p>
 
 <% content_for :sidebar do %>
 	<ul id="options">

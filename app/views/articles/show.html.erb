@@ -24,7 +24,7 @@
   <% end %>
 <% end %>
 
-<div id="category-crumbs">
+<p id="category-crumbs" class="breadcrumb">
 	<%= link_to l(:label_kb_home), { :controller => 'knowledgebase', :action => 'index' } %>
 	<% @article.category.ancestors.each do |ancestor| %>
 	&nbsp;&raquo;&nbsp; 
@@ -32,7 +32,7 @@
 	<% end %>
 	&nbsp;&raquo;&nbsp; 
 	<%= link_to @article.category.title, { :controller => 'categories', :action => 'show', :id => @article.category.id } %>
-</div>
+</p>
 
 <div class="infobox">
 <%= authoring @article.created_at, @article.author %>
