@@ -3,19 +3,24 @@
 h3.cattitle {
 	border-bottom: 1px solid #ddd;
 }
-.articles {
+
+.most-popular {
+	background-color: #f6f6f6;
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
 	border-radius: 8px 8px 8px 8px;
 	padding: 5px 10px;
 	background-color: #f6f6f6;
 }
-.articles .article-icon:nth-child(even) {
+.most-popular .article-icon:nth-child(even) {
 	background-color: #eee;
 }
-.most-popular {
-	background-color: #f6f6f6;
+
+.recently-updated .article-icon {
+	width: 40%;
+	float: left;
 }
+
 .article-summary { font-weight: normal; font-size: 11px; color: #777777; line-height: 17px; text-decoration: none; }
 .article-title { margin: 0px; padding: 6px 0px 5px 0px; color:#669933; font-size: 16px; font-weight: bold; }
 .article-icon {
@@ -29,10 +34,7 @@ h3.cattitle {
 	color: #666;
 	line-height: 16px;
 }
-.recently-updated .article-icon {
-	width: 40%;
-	float: left;
-}
+
 
 .normal { background-image: url(../images/page_white_text.png); background-repeat: no-repeat;  }
 .top-rated { background-image: url(../images/page_white_star.png); background-repeat: no-repeat; }
