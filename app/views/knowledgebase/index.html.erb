@@ -1,5 +1,5 @@
 <% if @categories.length == 0 and !User.current.logged? %>
-	<h2>Welcome to the Redmine Knowledgebase plugin</h2>
+	<h2>Knowledgebase</h2>
 	<p>Unfortunately, there aren't any Categories defined, and you need to be logged in to create new categories.</p>
 <% else %>
   <div class="contextual">
@@ -10,7 +10,7 @@
     <% end %>
     <%= link_to_if_authorized_globally l(:title_new_category), { :controller => 'categories', :action => 'new' }, :class => 'icon icon-add' %>
   </div>
-
+  <h2>Knowledgebase</h2>
   <% if KbArticle.count > 0 %>
     <table id="article-summaries" width="100%" cellpadding="5">
     <thead>
