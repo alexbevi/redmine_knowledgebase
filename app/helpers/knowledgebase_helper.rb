@@ -28,11 +28,12 @@ module KnowledgebaseHelper
         :category => link_to(article.category.title, {:controller => 'categories', :action => 'show', :id => article.category_id}))
     when "updated"
       output = l(:label_summary_updated_articles,
-        :ago =>time_ago_in_words(article.updated_at))
+        :ago =>time_ago_in_words(article.updated_at)),
+        :category => link_to(article.category.title, {:controller => 'categories', :action => 'show', :id => article.category_id}))
     when "popular"
       output = l(:label_summary_popular_articles,
         :count => article.view_count,
-        :created => article.created_at.to_s)
+        :created => article.created_at.to_formatted_s(:rfc822)
     when "toprated"
       output = l(:label_summary_toprated_articles,
         :rating_avg => article.rating_average.to_s,

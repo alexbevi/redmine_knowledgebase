@@ -17,7 +17,7 @@
   		<div class="articles most-popular">
   			<%= render :partial => 'articles/list', :locals => { :summary_format => "popular", :articles => @articles_popular, :default_icon => 'popular' } %>
   		</div>
-  		<h3><%= l(:title_recently_updated_articles) %></h3>
+  		<h4><%= l(:title_recently_updated_articles) %></h4>
   		<div class="articles recently-updated">
   			<%= render :partial => 'articles/list', :locals => { :summary_format => "updated", :articles => @articles_updated, :default_icon => 'recently-changed' } %>
   		</div>
