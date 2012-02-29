@@ -7,20 +7,24 @@
   &nbsp;&raquo;&nbsp;
   <%= @category.title %>
 </p>
-
 <% content_for :sidebar do %>
+	<h3><%= l(:title_edit_category) %>
 	<ul id="options">
 		<li><%= link_to_if_authorized_globally l(:label_new_article), { :controller => 'articles', :action => 'new', :category_id => @category.id }, :class => 'icon icon-add' %></li>
     <li><%= link_to_if_authorized_globally l(:label_new_category), { :controller => 'categories', :action => 'new', :parent_id => @category.id }, :class => 'icon icon-add' %></li>
     <li><%= link_to_if_authorized_globally l(:label_edit_category), { :controller => 'categories', :action => 'edit', :id => @category.id }, :class => 'icon icon-edit' %></li>
     <li><%= link_to_if_authorized_globally l(:label_delete_category), { :controller => 'categories', :action => 'destroy', :id => @category.id }, :confirm => l(:text_are_you_sure), :method => :delete, :class => 'icon icon-del' %></li>
 	</ul>
+	<h3><%= l(:title_browse_by_category) %></h3>
+    <%= render :partial => "categories/tree" %>
+    <div id="taglist">
+      <% tag_cloud(@tags, ['tag-x-small', 'tag-small', 'tag-medium', 'tag-large', 'tag-x-large']) do |tag, css_class| %>
+        <%= link_to(tag.name, {:controller => 'articles', :action => :tagged, :id => tag.name }, :class => "tag #{css_class}") %>
+      <% end %>
+    </div>
 <% end %>
-
 <p><div class="wiki"><%= textilizable @category.description unless @category.description.nil? %></div></p>
-
 <% @kids = @category.children %>
-
 <% if @kids.length > 0 %>
   <div class="categories">
     <div class="category-header"><%= l(:label_subcategories) %></div>
@@ -34,8 +38,6 @@
   <h3><%= l(:label_article_plural) %></h3>
   <%= render :partial => 'articles/list', :locals => { :summary_format => "normal", :articles => @articles, :default_icon => 'normal' } %>
 <% end %>
-
 <% content_for :header_tags do %>
     <%= stylesheet_link_tag 'knowledgebase', :plugin => 'redmine_knowledgebase' %>
 <% end %>
-

@@ -52,7 +52,7 @@ h3.cattitle {
 #options .word { background: url(../images/icon-word.png) left no-repeat; }
 #options .bookmark { background: url(../images/icon-bookmark.png) left no-repeat; }
 
-#category-crumbs { background: url(../images/icon-home.png) 0px 3px no-repeat; padding-left: 20px; padding-bottom: 10px; }
+#category-crumbs { background-image: url(../images/icon-home.png); }
 #category-crumbs a:hover { text-decoration: underline; }
 
 .categories { background-color:#F1F5F8; border:solid 1px #D5E2F1; -moz-border-radius: 5px; -webkit-border-radius: 5px; margin: 10px 0px; padding: 10px; }
