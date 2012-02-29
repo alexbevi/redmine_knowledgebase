@@ -1,8 +1,38 @@
 #article-summaries th { font-family: Tahoma; padding: 6px 0px; color: #669933; font-size: 15px; font-weight: bold; border-bottom: solid 1px #CCCCCC; text-align: left;  }
 #article { padding: 10px 5px 20px 5px }
+h3.cattitle {
+	border-bottom: 1px solid #ddd;
+}
+.articles {
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px 8px 8px 8px;
+	padding: 5px 10px;
+	background-color: #f6f6f6;
+}
+.articles .article-icon:nth-child(even) {
+	background-color: #eee;
+}
+.most-popular {
+	background-color: #f6f6f6;
+}
 .article-summary { font-weight: normal; font-size: 11px; color: #777777; line-height: 17px; text-decoration: none; }
 .article-title { margin: 0px; padding: 6px 0px 5px 0px; color:#669933; font-size: 16px; font-weight: bold; }
-.article-icon { padding-left: 35px; background-position: 0px 6px; line-height: 19px; padding-bottom: 6px; }
+.article-icon {
+	background-position: 5px 10px;
+	line-height: 20px;
+	padding: 6px 0 6px 40px
+	}
+.article-icon .summary {
+	font-size: 80%;
+	font-weight: normal;
+	color: #666;
+	line-height: 16px;
+}
+.recently-updated .article-icon {
+	width: 40%;
+	float: left;
+}
 
 .normal { background-image: url(../images/page_white_text.png); background-repeat: no-repeat;  }
 .top-rated { background-image: url(../images/page_white_star.png); background-repeat: no-repeat; }
