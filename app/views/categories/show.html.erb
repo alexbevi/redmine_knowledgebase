@@ -1,3 +1,5 @@
+<% html_title @category.title %>
+
 <p id="category-crumbs" class="breadcrumb">
 	<%= link_to l(:label_kb_home), { :controller => 'knowledgebase', :action => 'index' } %>
 	<% @category.ancestors.each do |ancestor| %>

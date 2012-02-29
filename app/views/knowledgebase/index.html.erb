@@ -1,3 +1,5 @@
+<% html_title l(:knowledgebase_title) %>
+	
 <% if @categories.length == 0 and !User.current.logged? %>
 	<h2><%= l(:knowledgebase_title) %></h2>
 	<p>Unfortunately, there aren't any Categories defined, and you need to be logged in to create new categories.</p>
