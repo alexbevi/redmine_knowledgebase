@@ -5,6 +5,7 @@
 	<%= link_to ancestor.title, { :controller => 'categories', :action => 'show', :id => ancestor.id } %>
 	<% end %>
 </p>
+<h2><%= @category.title %></h2>
 
 <% content_for :sidebar do %>
 	<h3><%= l(:title_edit_category) %></h3>
