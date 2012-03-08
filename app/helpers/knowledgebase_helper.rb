@@ -8,7 +8,7 @@ module KnowledgebaseHelper
   end
   
   def link_to_remote_if_authorized_globally(name, options = {}, html_options = nil, *parameters_for_method_reference)
-    if authorized_globally(options[:controller],options[:action])
+    if authorized_globally(options[:url][:controller],options[:url][:action])
       link_to_remote(name, options, html_options, *parameters_for_method_reference)
     end
   end
