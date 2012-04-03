@@ -1,4 +1,4 @@
 <div id="article_rating_<%= article.id %>">
-	<div class="rating-title"><%= l(:title_article_rating) %> <span>(<%= article.rated_count.to_s + " " + l(:title_votes) %>)</span></div>
+	<div class="rating-title"><%= l(:title_article_rating) %> <span>(<%= l(:title_votes, :count => article.rated_count) %>)</span></div>
 	<%= rating_links(article) %>
 </div>

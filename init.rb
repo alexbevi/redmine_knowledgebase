@@ -5,13 +5,16 @@ require 'acts_as_taggable'
 #Register KB macro
 require 'macros'
 
+#Register KB macro
+require 'macros'
+
 Redmine::Plugin.register :redmine_knowledgebase do
   name        'Knowledgebase'
   author      'Alex Bevilacqua'
   description 'A plugin for Redmine that adds knowledgebase functionality'
   url         'http://alexbevi.com/projects/redmine-kb'
   author_url  'http://blog.alexbevi.com'
-  version     '0.3.2-devel'
+  version     '0.3.3'
 
   requires_redmine :version_or_higher => '1.0.0'
 
@@ -71,5 +74,5 @@ Redmine::Plugin.register :redmine_knowledgebase do
 		Setting['plugin_redmine_knowledgebase']['knowledgebase_anonymous_access'].to_i == 1
 	}
 
-  Redmine::Search.available_search_types << 'articles'
+  Redmine::Search.available_search_types << 'kb_articles'
 end

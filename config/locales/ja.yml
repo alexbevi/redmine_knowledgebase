@@ -1,0 +1,65 @@
+--- 
+ja: 
+  allow_anon_access: 匿名アクセス許可
+  allow_sort_category_tree: カテゴリをアルファベット順に並び替える
+  field_tag_list: タグリスト
+  knowledgebase_title: 知識DB
+  label_article_created: "'%{title}'の記事を作成しました．"
+  label_article_plural: 知識DB記事
+  label_article_removed: 記事を削除しました．
+  label_article_updated: 記事を更新しました．
+  label_article_viewed: 
+    one: "Viewed once"
+    other: "Viewed %{count} times"
+  label_category: カテゴリ
+  label_category_created: "'%{title}'カテゴリーを生成しました．"
+  label_category_deleted: カテゴリーを削除しました．
+  label_category_not_empty_cannot_delete: 関連記事があるため，カテゴリーを削除できません．
+  label_category_plural: カテゴリ一覧
+  label_category_updated: カテゴリーを更新しました．
+  label_content: 詳細
+  label_delete_article: 削除
+  label_delete_category: カテゴリを削除
+  label_description: 説明
+  label_edit_article: 編集
+  label_edit_category: カテゴリを編集
+  label_home: ホーム
+  label_jump_category: カテゴリー選択
+  label_kb_home: Home
+  label_kb_link: "KB#{{kb_id}}"
+  label_new_article: 新しい記事
+  label_new_category: 新しいカテゴリ
+  label_new_comment: コメントする
+  label_parent_category: 親カテゴリ
+  label_root_category: 最上位カテゴリ
+  label_subcategories: サブカテゴリ群
+  label_summary: 概要
+  label_summary_newest_articles: "%{ago}前に作成 in %{category}"
+  label_summary_popular_articles: 
+    one: "Viewed once since %{created}"
+    other: "Viewed %{count} times since %{created}"
+  label_summary_toprated_articles: 
+    one: "評価: %{rating_avg}/%{rating_max} from 1票"
+    other: "評価: %{rating_avg}/%{rating_max} from %{count} 票"
+  label_summary_updated_articles: "%{ago}前に更新"
+  label_title: 件名
+  label_title_articles: 記事
+  label_title_category: カテゴリ
+  message_no_articles: 知識データベースに追加された記事はありません．早速作りましょう！
+  show_category_totals: ツリーの全てのカテゴリを表示する
+  summary_item_limit: 知識データベースに表示する記事数
+  title_add_comment: コメントを追加
+  title_article_rating: 評価レート
+  title_browse_by_category: カテゴリ別一覧
+  title_create_article: 新規記事発行
+  title_create_category: カテゴリを追加
+  title_edit_article: 記事を編集
+  title_edit_category: カテゴリを編集
+  title_most_popular_articles: 人気の記事
+  title_new_category: 新規カテゴリ
+  title_newest_articles: 最新の記事
+  title_recently_updated_articles: 最近更新された記事
+  title_tagged_articles: "Articles tagged with %{tag}"
+  title_tags: タグ
+  title_top_rated_articles: 評価の高い記事
+  title_votes: 投票数

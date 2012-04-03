@@ -1,41 +1,64 @@
-# Polish translation by Tomasz Sawicki (https://github.com/Furgas)
-pl:
-  knowledgebase_title: "Baza Wiedzy"
-  field_tag_list: "Słowa kluczowe"
-  label_content: "Treść"
-  label_summary: "Podsumowanie"
-  label_title: "Tytuł"
-  label_category: "Kategoria"
-  label_description: "Opis"
-  label_home: "Strona główna"
-  title_create_article: "Nowy artykuł"
-  title_edit_article: "Edycha artykułu"
-  title_article_rating: "Ocena artykułu"
-  title_votes: "Głosy"
-  label_parent_category: "Nadrzędna kategoria"
-  label_root_category: "Główna kategoria"
-  title_edit_category: "Edycja kategorii"
-  title_create_category: "Nowa kategoria"
-  label_title_articles: Artykuł
-  label_title_category: Kategoria
-  label_article_plural: Artykuły
-  label_category_plural: Kategorie  
-  label_jump_category: "Idź do kategorii"
-  title_newest_articles: "Najnowsze artykuły"
-  title_recently_updated_articles: "Ostatnio zaktualizowane artykuły"
-  title_most_popular_articles: "Najpopularniejsze artykuły"
-  title_top_rated_articles: "Najlepiej ocenione artykuły"
-  title_browse_by_category: "Podsumowanie wg kategorii"
-  title_new_category: "Nowa kategoria"
-  message_no_articles: "W bazie wiedzy nie ma jeszcze żadnych artykułów."
-  label_new_article: "Dodaj artykuł"
-  label_new_category: "Dodaj kategorię"
-  label_edit_category: "Edytuj kategorię"
-  label_delete_category: "Usuń kategorię"
-  label_subcategories: "Kategorie podrzędne"
+--- 
+pl: 
   allow_anon_access: "Allow anonymous access?"
   allow_sort_category_tree: "Sort the category tree alphabetically?"
+  field_tag_list: "Słowa kluczowe"
+  knowledgebase_title: "Baza Wiedzy"
+  label_article_created: "Created article '%{title}'"
+  label_article_plural: Artykuły
+  label_article_removed: "Article removed"
+  label_article_updated: "Article updated"
+  label_article_viewed: 
+    one: "Viewed once"
+    other: "Viewed %{count} times"
+  label_category: Kategoria
+  label_category_created: "Created category '%{title}'"
+  label_category_deleted: "Category deleted"
+  label_category_not_empty_cannot_delete: "Category is assigned to articles and could not be deleted."
+  label_category_plural: Kategorie
+  label_category_updated: "Category updated"
+  label_content: Treść
+  label_delete_article: Delete
+  label_delete_category: "Usuń kategorię"
+  label_description: Opis
+  label_edit_article: Edit
+  label_edit_category: "Edytuj kategorię"
+  label_jump_category: "Idź do kategorii"
+  label_kb_home: "Strona główna"
+  label_kb_link: "KB#{{kb_id}}"
+  label_new_article: "Dodaj artykuł"
+  label_new_category: "Dodaj kategorię"
+  label_new_comment: "New Comment"
+  label_parent_category: "Nadrzędna kategoria"
+  label_root_category: "Główna kategoria"
+  label_subcategories: "Kategorie podrzędne"
+  label_summary: Podsumowanie
+  label_summary_newest_articles: "Created %{ago} ago in %{category}"
+  label_summary_popular_articles: 
+    one: "Viewed once since %{created}"
+    other: "Viewed %{count} times since %{created}"
+  label_summary_toprated_articles: 
+    one: "Rating: %{rating_avg}/%{rating_max} from one vote"
+    other: "Rating: %{rating_avg}/%{rating_max} from %{count} votes"
+  label_summary_updated_articles: "Updated %{ago} ago"
+  label_title: Tytuł
+  label_title_articles: Artykuł
+  label_title_category: Kategoria
+  message_no_articles: "W bazie wiedzy nie ma jeszcze żadnych artykułów."
   show_category_totals: "Show category totals in tree?"
   summary_item_limit: "Knowledgebase summary page article limit"
-  #prefix for the macro links pointing to a Wiki article
-  label_kb_link: "KB#{{kb_id}}"
+  title_add_comment: "Add Comment"
+  title_article_rating: "Ocena artykułu"
+  title_browse_by_category: "Podsumowanie wg kategorii"
+  title_create_article: "Nowy artykuł"
+  title_create_category: "Nowa kategoria"
+  title_edit_article: "Edycha artykułu"
+  title_edit_category: "Edycja kategorii"
+  title_most_popular_articles: "Najpopularniejsze artykuły"
+  title_new_category: "Nowa kategoria"
+  title_newest_articles: "Najnowsze artykuły"
+  title_recently_updated_articles: "Ostatnio zaktualizowane artykuły"
+  title_tagged_articles: "Articles tagged with %{tag}"
+  title_tags: Tags
+  title_top_rated_articles: "Najlepiej ocenione artykuły"
+  title_votes: Głosy

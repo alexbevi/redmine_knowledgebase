@@ -1,0 +1,77 @@
+--- 
+cs: 
+  allow_anon_access: "Dovolit anonymní přístup?"
+  allow_sort_category_tree: "Řadit strom kategorií podle abecedy?"
+  field_tag_list: "Seznam štítků"
+  knowledgebase_title: "Znalostní databáze"
+  label_article_created: "Byl vytvořen článek %{title}"
+  label_article_plural: Články
+  label_article_removed: "Článek byl smazán"
+  label_article_updated: "Článek byl aktualizován"
+  label_article_viewed: 
+    one: "Zobrazeno jednou"
+    other: "Zobrazeno %{count} krát"
+  label_category: Kategorie
+  label_category_created: "Byla vytvořena kategorie %{title}"
+  label_category_deleted: "Kategorie byla smazána"
+  label_category_not_empty_cannot_delete: "Kategorie obsahuje články a nemůže být smazána."
+  label_category_plural: Kategorie
+  label_category_updated: "Kategorie byla aktualizována"
+  label_content: Obsah
+  label_delete_article: Smazat
+  label_delete_category: "Odstranit kategorii"
+  label_description: Popis
+  label_edit_article: Upravit
+  label_edit_category: "Upravit kategorii"
+  label_home: Úvodní
+  label_jump_category: "Skočit na kategorii"
+  label_kb_home: Home
+  label_kb_link: "KB#{{kb_id}}"
+  label_new_article: "Nový článek"
+  label_new_category: "Nová kategorie"
+  label_new_comment: "Nový komentář"
+  label_parent_category: "Nadřazená kategorie"
+  label_root_category: "Kategorie nejvyšší úrovně"
+  label_subcategories: Podkategorie
+  label_summary: Souhrn
+  label_summary_newest_articles: "Vytvořeno před %{ago} v %{category}"
+  label_summary_popular_articles: 
+    one: "Zobrazeno jednou od %{created}"
+    other: "Zobrazeno %{count} krát od %{created}"
+  label_summary_toprated_articles: 
+    one: "Hodnoceno jedním hlasem, %{rating_avg}/%{rating_max}"
+    other: "Hodnoceno %{count} hlasy, %{rating_avg}/%{rating_max}"
+  label_summary_updated_articles: "Aktualizováno před %{ago}"
+  label_title: Název
+  label_title_articles: Články
+  label_title_category: Kategorie
+  message_no_articles: "Zatím nejsou ve znalostní databázi žádné články. Asi byste měli začít něco dělat..."
+  permission_comment_and_rate_articles: "Komentovat a hodnotit články"
+  permission_create_article_categories: "Vytvářet kategorie"
+  permission_create_articles: "Vytvářet články"
+  permission_edit_articles: "Upravovat články"
+  permission_manage_article_categories: "Spravovat kategorie"
+  permission_manage_articles: "Spravovat články"
+  permission_manage_articles_comments: "Spravovat komentáře"
+  permission_view_articles: "Zobrazit články"
+  show_category_totals: "Zobrazit součty pro kategorie ve stromě?"
+  summary_item_limit: "Limit pro délku souhrnu"
+  title_add_comment: "Přidat komentář"
+  title_article_rating: "Hodnocení článku"
+  title_browse_by_category: "Procházet podle kategorie"
+  title_create_article: "Vytvořit článek"
+  title_create_category: "Vytvořit kategorii"
+  title_edit_article: "Upravit článek"
+  title_edit_category: "Upravit kategrii"
+  title_most_popular_articles: "Nejpopulárnější články"
+  title_new_category: "Nová kategorie"
+  title_newest_articles: "Nejnovější články"
+  title_recently_updated_articles: "Nedávno upravené články"
+  title_tagged_articles: "Články se štítkem %{tag}"
+  title_tags: Štítky
+  title_top_rated_articles: "Nejlépe hodnocené články"
+  title_votes: 
+    few: hlasy
+    one: "jeden hlas"
+    other: "%{count} hlasů"
+    zero: "žádné hlasy"

@@ -1,35 +1,64 @@
-pt-BR:
-  knowledgebase_title: "Base de conhecimento"
-  field_tag_list: "Lista de Tags"
-  label_content: "Conteúdo"
-  label_summary: "Resumo"
-  label_title: "Título"
-  label_category: "Categoria"
-  label_description: "Descrição"
-  label_home: "Página Inicial"
-  title_create_article: "Criar Artigo"
-  title_edit_article: "Editar Artigo"
-  title_article_rating: "Classificação do Artigo"
-  title_votes: "Votos"
-  label_parent_category: "Categoria Pai"
-  label_root_category: "Categoria Raiz"
-  title_edit_category: "Editar Categoria"
-  title_create_category: "Criar Categoria"
-  label_title_articles: Artigo
-  label_title_category: Categoria
-  label_article_plural: Artigos
-  label_category_plural: Categorias
-  label_jump_category: "Ir para Categoria"
-  title_newest_articles: "Novos Artigos"
-  title_recently_updated_articles: "Artigos Recentemente Atualizados"
-  title_most_popular_articles: "Artigos Mais Populares"
-  title_top_rated_articles: "Artigos Mais Bem Classificados"
-  title_browse_by_category: "Navegar por Categoria"
-  title_new_category: "Nova Categoria"
-  message_no_articles: "Nenhum artigo cadastrado ainda, talvez você queira começar..."
+--- 
+pt-BR: 
   allow_anon_access: "Allow anonymous access?"
   allow_sort_category_tree: "Sort the category tree alphabetically?"
+  field_tag_list: "Lista de Tags"
+  knowledgebase_title: "Base de conhecimento"
+  label_article_created: "Created article '%{title}'"
+  label_article_plural: Artigos
+  label_article_removed: "Article removed"
+  label_article_updated: "Article updated"
+  label_article_viewed: 
+    one: "Viewed once"
+    other: "Viewed %{count} times"
+  label_category: Categoria
+  label_category_created: "Created category '%{title}'"
+  label_category_deleted: "Category deleted"
+  label_category_not_empty_cannot_delete: "Category is assigned to articles and could not be deleted."
+  label_category_plural: Categorias
+  label_category_updated: "Category updated"
+  label_content: Conteúdo
+  label_delete_article: Delete
+  label_delete_category: "Delete Category"
+  label_description: Descrição
+  label_edit_article: Edit
+  label_edit_category: "Edit Category"
+  label_jump_category: "Ir para Categoria"
+  label_kb_home: "Página Inicial"
+  label_kb_link: "KB#{{kb_id}}"
+  label_new_article: "New Article"
+  label_new_category: "New Category"
+  label_new_comment: "New Comment"
+  label_parent_category: "Categoria Pai"
+  label_root_category: "Categoria Raiz"
+  label_subcategories: Sub-categories
+  label_summary: Resumo
+  label_summary_newest_articles: "Created %{ago} ago in %{category}"
+  label_summary_popular_articles: 
+    one: "Viewed once since %{created}"
+    other: "Viewed %{count} times since %{created}"
+  label_summary_toprated_articles: 
+    one: "Rating: %{rating_avg}/%{rating_max} from one vote"
+    other: "Rating: %{rating_avg}/%{rating_max} from %{count} votes"
+  label_summary_updated_articles: "Updated %{ago} ago"
+  label_title: Título
+  label_title_articles: Artigo
+  label_title_category: Categoria
+  message_no_articles: "Nenhum artigo cadastrado ainda, talvez você queira começar..."
   show_category_totals: "Show category totals in tree?"
   summary_item_limit: "Knowledgebase summary page article limit"
-  #prefix for the macro links pointing to a Wiki article
-  label_kb_link: "KB#{{kb_id}}"
+  title_add_comment: "Add Comment"
+  title_article_rating: "Classificação do Artigo"
+  title_browse_by_category: "Navegar por Categoria"
+  title_create_article: "Criar Artigo"
+  title_create_category: "Criar Categoria"
+  title_edit_article: "Editar Artigo"
+  title_edit_category: "Editar Categoria"
+  title_most_popular_articles: "Artigos Mais Populares"
+  title_new_category: "Nova Categoria"
+  title_newest_articles: "Novos Artigos"
+  title_recently_updated_articles: "Artigos Recentemente Atualizados"
+  title_tagged_articles: "Articles tagged with %{tag}"
+  title_tags: Tags
+  title_top_rated_articles: "Artigos Mais Bem Classificados"
+  title_votes: Votos

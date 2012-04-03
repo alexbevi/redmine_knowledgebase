@@ -1,38 +1,64 @@
-# German strings go here for Rails i18n
-de:
-  knowledgebase_title: "Wissensbasis"
+--- 
+de: 
+  allow_anon_access: "Anonymen Zugriff erlauben?"
+  allow_sort_category_tree: "Den Katgegoriebaum alphabetisch sortieren?"
   field_tag_list: "Tag Liste"
-  label_content: "Inhalt"
-  label_summary: "Zusammenfassung"
-  label_title: "Titel"
-  label_category: "Kategorie"
-  label_description: "Beschreibung"
-  label_home: "Home"
-  title_create_article: "Artikel erstellen"
-  title_edit_article: "Artikel ändern"
-  title_article_rating: "Artikel Rating"
-  title_votes: "Votes"
+  knowledgebase_title: Wissensbasis
+  label_article_created: "Artikel '%{title}' erstellt"
+  label_article_plural: Artikel
+  label_article_removed: "Artikel entfernt"
+  label_article_updated: "Artikel aktualisiert"
+  label_article_viewed: 
+    one: "Einmal gesehen"
+    other: "%{count} Views"
+  label_category: Kategorie
+  label_category_created: "Kategorie '%{title}' erstellt"
+  label_category_deleted: "Kategorie gelöscht"
+  label_category_not_empty_cannot_delete: "Dieser Kategorie sind noch Artikel zugewiesen und kann nicht gelöscht werden,"
+  label_category_plural: Kategorien
+  label_category_updated: "Kategorie aktualisiert"
+  label_content: Inhalt
+  label_delete_article: Löschen
+  label_delete_category: "Kategorie entfernen"
+  label_description: Beschreibung
+  label_edit_article: Bearbeiten
+  label_edit_category: "Kategorie bearbeiten"
+  label_jump_category: "Zur Kategorie wechseln "
+  label_kb_home: Home
+  label_kb_link: "KB#{{kb_id}}"
+  label_new_article: "Artikel erstellen"
+  label_new_category: "Kategorie erstellen"
+  label_new_comment: "Neuer Kommentar"
   label_parent_category: "Übergeordnete Kategorie"
   label_root_category: "Root Kategorie"
-  title_edit_category: "Kategorie ändern"
-  title_create_category: "Kategorie erzeugen"
+  label_subcategories: Unterkategorien
+  label_summary: Zusammenfassung
+  label_summary_newest_articles: "Erstellt vor %{ago} in %{category}"
+  label_summary_popular_articles: 
+    one: "Einmal angezeigt seit %{created}"
+    other: "%{count} Views seit %{created}"
+  label_summary_toprated_articles: 
+    one: "Rating: %{rating_avg}/%{rating_max} aus einer Stimme"
+    other: "Rating: %{rating_avg}/%{rating_max} aus %{count} Stimmen"
+  label_summary_updated_articles: "Vor %{ago} aktualisiert"
+  label_title: Titel
   label_title_articles: Artikel
   label_title_category: Kategorie
-  label_article_plural: Artikel
-  label_category_plural: Kategorien
-  label_root_category: Hauptkategorie
-  label_jump_category: "Zur Kategorie "
+  message_no_articles: "Es wurde noch kein Artikel eingegeben. Beginnen Sie mit einem Artikel zum Thema..."
+  show_category_totals: "Anzahl der Artikel pro Katgeorie im Katgeoriebaum anzeigen?"
+  summary_item_limit: "Maximale Artikel in der Übersicht"
+  title_add_comment: "Kommentar hinzufügen"
+  title_article_rating: "Artikel Rating"
+  title_browse_by_category: "Nach Kategorie"
+  title_create_article: "Artikel erstellen"
+  title_create_category: "Kategorie erzeugen"
+  title_edit_article: "Artikel ändern"
+  title_edit_category: "Kategorie ändern"
+  title_most_popular_articles: "Beliebteste Artikel"
+  title_new_category: "Neue Kategorie"
   title_newest_articles: "Neueste Artikel"
   title_recently_updated_articles: "Artikel zuletzt aktualisiert"
-  title_most_popular_articles: "Beliebteste Artikel"
+  title_tagged_articles: "Artikel getaggt mit %{tag}"
+  title_tags: Tags
   title_top_rated_articles: "Bestbewertete Artikel"
-  title_browse_by_category: "Nach Kategorie"
-  title_new_category: "Neue Kategorie"
-  title_create_category: "Kategorie anlegen"
-  message_no_articles: "Es wurde noch kein Artikel eingegeben. Vielleicht kannst du das machen..."
-  allow_anon_access: "Allow anonymous access?"
-  allow_sort_category_tree: "Sort the category tree alphabetically?"
-  show_category_totals: "Show category totals in tree?"
-  summary_item_limit: "Knowledgebase summary page article limit"
-  #prefix for the macro links pointing to a Wiki article
-  label_kb_link: "KB#{{kb_id}}"
+  title_votes: Votes
