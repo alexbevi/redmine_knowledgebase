@@ -18,6 +18,7 @@ class KbArticle < ActiveRecord::Base
   acts_as_searchable :columns => [ "kb_articles.title", "kb_articles.content"],
                      :include => [ :project ],
                      :order_column => "kb_articles.id",
+                     :date_column => "kb_articles.created_at",
                      :permission => nil
 
   acts_as_event :title => Proc.new { |o| "#{l(:label_title_articles)} ##{o.id}: #{o.title}" },
