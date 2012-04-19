@@ -1,3 +1,15 @@
+0.3.4 (12-APR-19)
+-----------------
+* added Bulgarian translation
+* fixed #70 - search results
+* fixed #72 - preview broken in article edit mode
+
+0.3.3 (12-FEB-14)
+-----------------
+* fixed acts-as-taggable-on dependency hell (hopefully once and for all)
+* fixed routing to work with Redmine 1.3+
+
+
 0.3.2 (12-JAN-02)
 -----------------
 * added configuration option for number of articles to summarize in knowledgebase#index
