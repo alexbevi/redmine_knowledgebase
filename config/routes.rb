@@ -9,6 +9,7 @@ ActionController::Routing::Routes.draw do |map|
     end
     article_routes.with_options :conditions => {:method => :post} do |actions|
       actions.connect '/knowledgebase/articles/preview', :action => 'preview'
+      actions.connect '/knowledgebase/articles/:id', :action => 'update'
       actions.connect '/knowledgebase/articles/:id/comment', :action => 'comment'
       actions.connect '/knowledgebase/articles/:id/add_comment', :action => 'add_comment'
       actions.connect '/knowledgebase/articles/:id/destroy_comment', :action => 'destroy_comment'
