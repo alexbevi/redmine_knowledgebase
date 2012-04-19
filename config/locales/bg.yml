@@ -1,0 +1,64 @@
+--- 
+bg: 
+  allow_anon_access: "Разрешаване на анонимен достъп?"
+  allow_sort_category_tree: "Азбучно сортиране на дървото на категориите?"
+  field_tag_list: "Сипсък на маркерите"
+  knowledgebase_title: "База знания"
+  label_article_created: "Създадена статия '%{title}'"
+  label_article_plural: Статии
+  label_article_removed: "Статията е премахната"
+  label_article_updated: "Статията е обновена"
+  label_article_viewed: 
+    one: "Разглеждана един път"
+    other: "Разглеждана %{count} пъти"
+  label_category: Категория
+  label_category_created: "Създадена категория '%{title}'"
+  label_category_deleted: "Категорията е премахната"
+  label_category_not_empty_cannot_delete: "В категорията има статии и поради това не може да бъде премахната."
+  label_category_plural: Категории
+  label_category_updated: "Категорията е обновена"
+  label_content: Съдържание
+  label_delete_article: Премахване
+  label_delete_category: "Премахване на категория"
+  label_description: Описание
+  label_edit_article: Редактиране
+  label_edit_category: "Редактиране на категория"
+  label_jump_category: "Преход към категория"
+  label_kb_home: Начало
+  label_kb_link: "KB#{{kb_id}}"
+  label_new_article: "Нова статия"
+  label_new_category: "Нова категория"
+  label_new_comment: "Нов коментар"
+  label_parent_category: "Родителска категория"
+  label_root_category: "Коренна категория"
+  label_subcategories: Под-категории
+  label_summary: Анотация
+  label_summary_newest_articles: "Създадена преди %{ago} в %{category}"
+  label_summary_popular_articles: 
+    one: "Разглеждана един път след %{created}"
+    other: "Разглеждана %{count} пъти след %{created}"
+  label_summary_toprated_articles: 
+    one: "Рейтинг: %{rating_avg}/%{rating_max} от един вот"
+    other: "Рейтинг: %{rating_avg}/%{rating_max} от %{count} вота"
+  label_summary_updated_articles: "Обновени преди %{ago}"
+  label_title: Заглавие
+  label_title_articles: Статия
+  label_title_category: Категория
+  message_no_articles: "Все още няма добавени статии в базата знания. Може би сега ще започнете с първата ..."
+  show_category_totals: "Показване на информацията за категориите в дървовидна структура?"
+  summary_item_limit: "Knowledgebase summary page article limit"
+  title_add_comment: "Добавяне на коментар"
+  title_article_rating: "Рейтинг на статията"
+  title_browse_by_category: "Разглеждане по категории"
+  title_create_article: "Създаване на статия"
+  title_create_category: "Създаване на категория"
+  title_edit_article: "Редактиране на статия"
+  title_edit_category: "Редактиране на категория"
+  title_most_popular_articles: "Най-популярни статии"
+  title_new_category: "Нова категория"
+  title_newest_articles: "Нови статии"
+  title_recently_updated_articles: "Наскоро обновени статии"
+  title_tagged_articles: "Статии, маркирани с %{tag}"
+  title_tags: Маркери
+  title_top_rated_articles: "Статии с най-голям рейтинг"
+  title_votes: гласа
