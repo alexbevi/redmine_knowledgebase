@@ -96,12 +96,17 @@ module ActiveRecord #:nodoc:
               end
             EOV
           end
-         
-          write_inheritable_attribute( :acts_as_viewed_options , 
-                                         { :viewing_class => viewing_class,
-                                           :viewer_class => viewer_class } )
-          class_inheritable_reader :acts_as_viewed_options
           
+          # Rails < 3
+          # write_inheritable_attribute( :acts_as_viewed_options , 
+          #                                { :viewing_class => viewing_class,
+          #                                  :viewer_class => viewer_class } )
+          # class_inheritable_reader :acts_as_viewed_options
+          
+          # Rails >= 3
+          class_attribute :acts_as_viewed_options
+          self.acts_as_viewed_options = { :viewing_class => viewing_class,
+                                          :viewer_class => viewer_class }
           class_eval do
             has_many :viewings, :as => :viewed, :dependent => :delete_all, :class_name => viewing_class.to_s
             has_many(:viewers, :through => :viewings, :class_name => viewer_class.to_s)
