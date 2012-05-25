@@ -1,4 +1,3 @@
-include KnowledgebaseHelper
 module Macros
   Redmine::WikiFormatting::Macros.register do
 
