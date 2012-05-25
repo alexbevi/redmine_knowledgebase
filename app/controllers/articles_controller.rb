@@ -34,7 +34,7 @@ class ArticlesController < KnowledgebaseController
   end
   
   def show
-    @article = KbArticle.find(params[:id] || params[:article_id])
+    @article = KbArticle.find(params[:id])
     @article.view request.remote_addr, User.current
     @attachments = @article.attachments.find(:all, :order => "created_on DESC")
     @comments = @article.comments

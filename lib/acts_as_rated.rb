@@ -134,13 +134,21 @@ module ActiveRecord #:nodoc:
           end
          
           raise RatedError, ":rating_range must be a range object" unless options[:rating_range].nil? || (Range === options[:rating_range])
-          write_inheritable_attribute( :acts_as_rated_options , 
-                                         { :rating_range => options[:rating_range], 
-                                           :rating_class => rating_class,
-                                           :stats_class => stats_class,
-                                           :rater_class => rater_class } )
-          class_inheritable_reader :acts_as_rated_options
           
+          # Rails < 3
+          # write_inheritable_attribute( :acts_as_rated_options , 
+          #                                { :rating_range => options[:rating_range], 
+          #                                  :rating_class => rating_class,
+          #                                  :stats_class => stats_class,
+          #                                  :rater_class => rater_class } )
+          # class_inheritable_reader :acts_as_rated_options
+          
+          # Rails >= 3
+          class_attribute :acts_as_rated_options
+          self.acts_as_rated_options = { :rating_range => options[:rating_range], 
+                                         :rating_class => rating_class,
+                                         :stats_class => stats_class,
+                                         :rater_class => rater_class }
           class_eval do
             has_many :ratings, :as => :rated, :dependent => :delete_all, :class_name => rating_class.to_s
             has_many(:raters, :through => :ratings, :class_name => rater_class.to_s) unless options[:no_rater]

@@ -40,7 +40,7 @@ module KnowledgebaseHelper
         :count => article.rated_count)
     end
     
-    content_tag(:div, output, :class => "summary")
+    content_tag(:div, raw(output), :class => "summary")
   end
 
   def rating_links(article)
