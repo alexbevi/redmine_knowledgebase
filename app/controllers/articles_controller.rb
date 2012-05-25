@@ -7,6 +7,7 @@ class ArticlesController < KnowledgebaseController
 
   #Authorize against global permissions defined in init.rb
   before_filter :authorize_global
+  before_filter :get_article, :only => [:add_attachment, :show, :edit, :update, :add_comment, :destroy, :destroy_comment]
   
   def new
     @article = KbArticle.new
@@ -34,19 +35,15 @@ class ArticlesController < KnowledgebaseController
   end
   
   def show
-    @article = KbArticle.find(params[:id])
-    @article = @article.first if @article.is_a?(ActiveRecord::Relation)
     @article.view request.remote_addr, User.current
     @attachments = @article.attachments.find(:all, :order => "created_on DESC")
     @comments = @article.comments
   end
   
   def edit
-    @article = KbArticle.find(params[:id])
   end
   
   def update
-    @article = KbArticle.find(params[:id])
     params[:article][:category_id] = params[:category_id]
     if @article.update_attributes(params[:article])
       attachments = attach(@article, params[:attachments])
@@ -58,7 +55,6 @@ class ArticlesController < KnowledgebaseController
   end
   
   def add_comment
-    @article = KbArticle.find(params[:id])
     @comment = Comment.new(params[:comment])
     @comment.author = User.current || nil
     if @article.comments << @comment
@@ -71,20 +67,17 @@ class ArticlesController < KnowledgebaseController
   end
 
   def destroy_comment
-    @article = KbArticle.find(params[:id])
     @article.comments.find(params[:comment_id]).destroy
     redirect_to :action => 'show', :id => @article
   end
   
   def destroy
-    @article = KbArticle.find(params[:id])
     @article.destroy
     flash[:notice] = l(:label_article_removed)
     redirect_to({ :controller => 'knowledgebase', :action => 'index' })
   end
 
   def add_attachment
-    @article = KbArticle.find(params[:id])
     attachments = attach(@article, params[:attachments])    
     redirect_to({ :action => 'show', :id => @article.id })
   end
@@ -119,5 +112,10 @@ private
     else
       attach_files(target, attachments)
     end
+  end
+
+  def get_article
+    @article = KbArticle.find(params[:id])
+    @article = @article.first if @article.is_a?(ActiveRecord::Relation)
   end
 end
