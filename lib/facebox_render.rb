@@ -1,7 +1,15 @@
 # FaceboxRender plugin for use with Prototype Facebox
 module FaceboxRender
-  def render_to_facebox(options = {})
-    options[:template] = "#{default_template_name}" if options.empty?
+  def render_to_facebox(controller_path, action_name, options = {})
+    if options.empty?
+      # ActionController::Base#default_template_name is depracated so we just
+      # implement the relevant functionality here
+      action_name = action_name.to_s
+      if action_name.include?('/') && template_path_includes_controller?(action_name)
+        action_name = strip_out_controller(action_name)
+      end
+      options[:template] = "#{controller_path}/#{action_name}"
+    end
 
     logger.info(options[:template])
     

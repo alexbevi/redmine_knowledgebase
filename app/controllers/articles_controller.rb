@@ -95,7 +95,7 @@ class ArticlesController < KnowledgebaseController
   
   def comment
     @article_id = params[:article_id]
-    render_to_facebox
+    render_to_facebox(self.controller_path, self.action_name)
   end
 
 #######

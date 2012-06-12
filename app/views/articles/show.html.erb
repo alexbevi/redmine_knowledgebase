@@ -61,7 +61,7 @@
     <%= avatar(comment.author, :size => "24") %>
     &nbsp;<%= authoring comment.created_on, comment.author %>&nbsp; 
     <%= link_to_if_authorized_globally image_tag('delete.png'), 
-         { :controller => 'articles', :action => 'destroy_comment', :id => @article, :comment_id => comment },
+         { :controller => 'articles', :action => 'destroy_comment', :id => @article.id, :comment_id => comment.id },
          :confirm => l(:text_are_you_sure), 
          :method => :post, :title => l(:button_delete) %>
   </h4>
