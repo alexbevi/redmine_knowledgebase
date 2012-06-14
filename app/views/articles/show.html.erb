@@ -6,6 +6,7 @@
 <% end %>
 
 <% content_for :sidebar do %>
+	<h3><%= l(:title_edit_article) %></h3>
 	<ul id="options">
 		<li><%= link_to_if_authorized_globally l(:label_edit_article), { :controller => 'articles', :action => 'edit', :id => @article.id }, :class => 'icon icon-edit' %></li>
 		<li><%= link_to_if_authorized_globally l(:label_delete_article), { :controller => 'articles', :action => 'destroy', :id => @article.id }, :confirm => l(:text_are_you_sure), :method => :delete, :class => 'icon icon-del' %></li>
@@ -20,11 +21,11 @@
 	  <% @article.tag_list.each do |tag| %>
      <li><%= link_to tag, { :action => "tagged", :id => tag }, :class => "tag" %></li>
     <% end %>
-	</ul>  
+	</ul>
   <% end %>
 <% end %>
 
-<div id="category-crumbs">
+<p id="category-crumbs" class="breadcrumb">
 	<%= link_to l(:label_kb_home), { :controller => 'knowledgebase', :action => 'index' } %>
 	<% @article.category.ancestors.each do |ancestor| %>
 	&nbsp;&raquo;&nbsp; 
@@ -32,7 +33,10 @@
 	<% end %>
 	&nbsp;&raquo;&nbsp; 
 	<%= link_to @article.category.title, { :controller => 'categories', :action => 'show', :id => @article.category.id } %>
-</div>
+</p>
+<% html_title @article.title %>
+
+<h2><%= @article.title %></h2>
 
 <div class="infobox">
 <%= authoring @article.created_at, @article.author %>
@@ -43,7 +47,6 @@
 </div>
 
 <div id="article">
-  <div class="article-title"><%= @article.title %></div>
   <div class="wiki"><%= textilizable @article, :content, :attachments => @article.attachments %></div>
 </div>
 

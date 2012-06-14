@@ -1,3 +1,5 @@
+<% html_title l(:title_edit_category) << " " << @category.title %>
+
 <h2><%= l(:title_edit_category) %></h2>
 
 <% labelled_tabular_form_for :category, @category, :url => { :action => 'update', :id => @category.id }, :html => { :class => nil, :method => :put } do |form| %>
