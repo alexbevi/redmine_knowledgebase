@@ -3,7 +3,7 @@ en:
   allow_anon_access: "Allow anonymous access?"
   allow_sort_category_tree: "Sort the category tree alphabetically?"
   field_tag_list: "Tag List"
-  knowledgebase_title: "Knowledge base"
+  knowledgebase_title: "Knowledgebase"
   label_article_created: "Created article '%{title}'"
   label_article_plural: Articles
   label_article_removed: "Article removed"

@@ -1,5 +1,7 @@
+<% html_title l(:knowledgebase_title) %>
+	
 <% if @categories.length == 0 and !User.current.logged? %>
-	<h2>Welcome to the Redmine Knowledgebase plugin</h2>
+	<h2><%= l(:knowledgebase_title) %></h2>
 	<p>Unfortunately, there aren't any Categories defined, and you need to be logged in to create new categories.</p>
 <% else %>
   <div class="contextual">
@@ -10,49 +12,31 @@
     <% end %>
     <%= link_to_if_authorized_globally l(:title_new_category), { :controller => 'categories', :action => 'new' }, :class => 'icon icon-add' %>
   </div>
-
+  <h2><%= l(:knowledgebase_title) %></h2>
   <% if KbArticle.count > 0 %>
-    <table id="article-summaries" width="100%" cellpadding="5">
-    <thead>
-    <tr>
-      <th><%= l(:title_newest_articles) %></th>
-      <th><%= l(:title_recently_updated_articles) %></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td width="50%" valign="top"><%= render :partial => 'articles/list', :locals => { :summary_format => "newest", :articles => @articles_newest, :default_icon => 'recently-added' } %></td>
-      <td width="50%" valign="top"><%= render :partial => 'articles/list', :locals => { :summary_format => "updated", :articles => @articles_updated, :default_icon => 'recently-changed' } %></td>
-    </tr>
-    </tbody>
-    </table>
-
-    <table id="article-summaries" width="100%" cellpadding="5">
-    <thead>
-    <tr>
-      <th><%= l(:title_most_popular_articles) %></th>
-      <th><%= l(:title_top_rated_articles) %></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td width="50%" valign="top"><%= render :partial => 'articles/list', :locals => { :summary_format => "popular", :articles => @articles_popular, :default_icon => 'popular' } %></td>
-      <td width="50%" valign="top"><%= render :partial => 'articles/list', :locals => { :summary_format => "toprated", :articles => @articles_toprated, :default_icon => 'top-rated' } %></td>
-    </tr>
-    </tbody>
-    </table>
+  	<div class="splitcontentleft">
+  		<h3><%= l(:title_most_popular_articles) %></h3>
+  		<div class="articles most-popular">
+  			<%= render :partial => 'articles/list', :locals => { :summary_format => "popular", :articles => @articles_popular, :default_icon => 'popular' } %>
+  		</div>
+  		<h4><%= l(:title_recently_updated_articles) %></h4>
+  		<div class="articles recently-updated">
+  			<%= render :partial => 'articles/list', :locals => { :summary_format => "updated", :articles => @articles_updated, :default_icon => 'recently-changed', :truncate_length => 25 } %>
+  		</div>
+  	</div>
+  	<div class="splitcontentright">
+  		<div class="categories">
+  			<h3><%= l(:title_browse_by_category) %></h3>
+	    	<%= render :partial => "categories/tree" %>
+	    </div>
+	    <div id="taglist">
+		     <% tag_cloud(@tags, ['tag-x-small', 'tag-small', 'tag-medium', 'tag-large', 'tag-x-large']) do |tag, css_class| %>
+	       	<%= link_to(tag.name, {:controller => 'articles', :action => :tagged, :id => tag.name }, :class => "tag #{css_class}") %>
+	     	<% end %>
+	    </div>
+  	</div>
   <% else %>
-    <p><%= t :message_no_articles %></p>
-  <% end %>
-
-  <% content_for :sidebar do %>
-    <h3><%= l(:title_browse_by_category) %></h3>
-    <%= render :partial => "categories/tree" %>
-    <div id="taglist">
-      <% tag_cloud(@tags, ['tag-x-small', 'tag-small', 'tag-medium', 'tag-large', 'tag-x-large']) do |tag, css_class| %>
-        <%= link_to(tag.name, {:controller => 'articles', :action => :tagged, :id => tag.name }, :class => "tag #{css_class}") %>
-      <% end %>
-    </div>
+    <p class="nodata"><%= t :message_no_articles %></p>
   <% end %>
 <% end %>
 

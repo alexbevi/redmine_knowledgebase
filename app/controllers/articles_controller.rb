@@ -27,7 +27,7 @@ class ArticlesController < KnowledgebaseController
     if @article.save
       attachments = attach(@article, params[:attachments])
       flash[:notice] = l(:label_article_created, :title => @article.title)
-      redirect_to({ :controller => 'knowledgebase', :action => 'index' })
+      redirect_to({ :controller => 'categories', :action => 'show', :id => @article.category_id })
     else
       render(:action => 'new')
     end

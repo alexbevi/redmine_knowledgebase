@@ -17,22 +17,23 @@ module KnowledgebaseHelper
     User.current.allowed_to?({:controller => controller, :action => action}, nil, :global => true)
   end
  
-  def format_article_summary(article, format)
+  def format_article_summary(article, format, options = {})
     output = nil
     case format
     when "normal"
-      output = textilizable article.summary
+      output = truncate article.summary, :length => options[:truncate]
     when "newest"
       output = l(:label_summary_newest_articles,
         :ago => time_ago_in_words(article.created_at),
         :category => link_to(article.category.title, {:controller => 'categories', :action => 'show', :id => article.category_id}))
     when "updated"
       output = l(:label_summary_updated_articles,
-        :ago =>time_ago_in_words(article.updated_at))
+        :ago =>time_ago_in_words(article.updated_at),
+        :category => link_to(article.category.title, {:controller => 'categories', :action => 'show', :id => article.category_id}))
     when "popular"
       output = l(:label_summary_popular_articles,
         :count => article.view_count,
-        :created => article.created_at.to_s)
+        :created => article.created_at.to_formatted_s(:rfc822))
     when "toprated"
       output = l(:label_summary_toprated_articles,
         :rating_avg => article.rating_average.to_s,
