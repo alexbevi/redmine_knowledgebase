@@ -1,7 +1,7 @@
 class KbArticle < ActiveRecord::Base
   unloadable
 
-  set_table_name "kb_articles"
+  self.table_name = "kb_articles"
 
   validates_presence_of :title
   validates_presence_of :category_id
