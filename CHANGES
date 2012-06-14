@@ -1,3 +1,9 @@
+0.4.0 (12-JUN-14)
+-----------------
+* major cleanup of index page
+* fixes for 1.4+ compatibility
+* bugfixes
+
 0.3.4 (12-APR-19)
 -----------------
 * added Bulgarian translation
