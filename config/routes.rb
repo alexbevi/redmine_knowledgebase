@@ -5,6 +5,8 @@ ActionController::Routing::Routes.draw do |map|
   
   map.with_options :controller => 'articles' do |article_routes|
     article_routes.with_options :conditions => {:method => :get} do |actions|
+      # used when searching (see https://github.com/alexbevi/redmine_knowledgebase/issues/78)
+      actions.connect '/knowledgebase/articles/:article_id', :action => 'show'
       actions.connect '/knowledgebase/articles/:id/rate', :action => 'rate'
       actions.connect '/knowledgebase/articles/tagged/:id', :action => 'tagged'
     end
