@@ -4,7 +4,7 @@ This plugin adds generic knowledgebase funcationlity to the redmine project mana
 
 ## Compatibility
 
-The plugin is available in two versions, which track the Redmine versions to reflect their level of compatibility. If you're using Redmine 1.x.x, use a 0.x.x or 1.x.x version of the Knowledgebase; if you're using Redmine 2+, using a Knowledgebase version >= 2.
+The plugin is available in two versions, which track the Redmine versions to reflect their level of compatibility. If you're using Redmine 1.x.x, use a 0.x.x or 1.x.x version of the Knowledgebase; if you're using Redmine 2+, use a Knowledgebase version >= 2.
 
 ## Introduction
 
