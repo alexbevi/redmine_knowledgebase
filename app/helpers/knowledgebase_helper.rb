@@ -17,11 +17,11 @@ module KnowledgebaseHelper
     User.current.allowed_to?({:controller => controller, :action => action}, nil, :global => true)
   end
  
-  def format_article_summary(article, format)
+  def format_article_summary(article, format, options = {})
     output = nil
     case format
     when "normal"
-      output = article.summary
+      output = truncate article.summary, :length => options[:truncate]
     when "newest"
       output = l(:label_summary_newest_articles,
         :ago => time_ago_in_words(article.created_at),
