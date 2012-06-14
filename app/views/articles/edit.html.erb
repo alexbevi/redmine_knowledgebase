@@ -2,10 +2,7 @@
 
 <h2><%= l(:title_edit_article) %></h2>
 
-<%= labelled_form_for :article, @article, 
-                     :url  => { :action => "update" },
-                     :html => { :multipart => true, :id => "articles-form" } do |form| %>
-  
+<%= labelled_form_for :article, @article, :url => { :action => "update" }, :html => {  :multipart => true, :id => "articles-form" } do |form| %>
   <%= render :partial => 'form', :locals => { :f => form } %>
   <%= submit_tag l(:button_update) %>
   <%= link_to_remote l(:label_preview), 

@@ -9,6 +9,7 @@ scope "/knowledgebase" do
     end
     post "comment"
     member do
+      put  "preview"
       post "add_comment"
       post "destroy_comment"
     end
