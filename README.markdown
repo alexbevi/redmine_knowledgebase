@@ -38,9 +38,9 @@ command line access to the server where Redmine is installed, and be able to wor
 
 To install the knowledgebase, execute the following commands from the root of your redmine directory:
 
-  cd plugins
-  git clone git://github.com/alexbevi/redmine_knowledgebase.git
-  rake db:migrate:plugins RAILS_ENV=production
+    cd plugins
+    git clone git://github.com/alexbevi/redmine_knowledgebase.git
+    rake db:migrate:plugins RAILS_ENV=production
 
 More information on installing Redmine plugins can be found here: [http://www.redmine.org/wiki/redmine/Plugins](http://www.redmine.org/wiki/redmine/Plugins "Redmine Plugins")
 
@@ -183,3 +183,5 @@ You can easily create links to articles and categories from issues or Wiki pages
 Now that categories and articles have been created, the Home page of the Knowledgebase will show the *Newest Articles*, *Recently Updated Articles*, *Most Popular Articles*, and *Top Rated Articles*. You can use this page to help navigate the Knowledgebase, as well as using the *Jump to Category* drop down menu or the *Browse by Category* menu on the right of the screen. You can reach this page from anywhere inside the Knowledgebase by clicking on the Home link.
 
 Copyright (c) 2010-2012 Alex Bevilacqua, released under the MIT license
+
+See [AUTHORS](https://github.com/alexbevi/redmine_knowledgebase/blob/master/AUTHORS) for additional contributors, [CHANGES](https://github.com/alexbevi/redmine_knowledgebase/blob/master/CHANGES) for the changelog.
