@@ -34,30 +34,15 @@ Note that these plugins are included with the knowledgebase and do not need to b
 To install the Redmine Knowledgebase Plugin, you will need to have
 command line access to the server where Redmine is installed, and be able to work as the root user.
 
-
 ## Downloading and installing the Knowledgebase Plugin
 
-To download the files for the plugin, run the following command from the
-Redmine application root directory, as the root user:
+To install the knowledgebase, execute the following commands from the root of your redmine directory:
 
-<pre><code>script/plugin install git://github.com/alexbevi/redmine_knowledgebase.git</code></pre>
-
-This downloads the files for the plugin from the GitHub repository, and
-installs them in the *$redmine\_root/vendor/plugins/redmine\_knowledgebase*
-directory.
-
-After the plugin has been installed, you will need to do a db migration
-to update your Redmine database (make a backup of the database before
-running this command).
-
-In the Redmine application root directory, run this command as the root
-user:
-
-<pre><code>rake db:migrate_plugins RAILS_ENV=production</code></pre>
-
+  cd plugins
+  git clone git://github.com/alexbevi/redmine_knowledgebase.git
+  rake db:migrate:plugins RAILS_ENV=production
 
 More information on installing Redmine plugins can be found here: [http://www.redmine.org/wiki/redmine/Plugins](http://www.redmine.org/wiki/redmine/Plugins "Redmine Plugins")
-
 
 After the plugin is installed and the db migration completed, you will
 need to restart Redmine for the plugin to be available.
