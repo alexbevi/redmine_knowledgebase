@@ -45,6 +45,7 @@ pt-BR:
   label_title_articles: Artigo
   label_title_category: Categoria
   message_no_articles: "Nenhum artigo cadastrado ainda, talvez você queira começar..."
+  message_no_categories: "Unfortunately, there aren't any Categories defined, and you need to be logged in to create new categories."
   show_category_totals: "Show category totals in tree?"
   summary_item_limit: "Knowledgebase summary page article limit"
   title_add_comment: "Add Comment"

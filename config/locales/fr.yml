@@ -45,6 +45,7 @@ fr:
   label_title_articles: Article
   label_title_category: Catégorie
   message_no_articles: "Aucun article n'a été ajouté à la base de connaissance."
+  message_no_categories: "Unfortunately, there aren't any Categories defined, and you need to be logged in to create new categories."
   show_category_totals: "Show category totals in tree?"
   summary_item_limit: "Knowledgebase summary page article limit"
   title_add_comment: "Add Comment"

@@ -45,6 +45,7 @@ zh-TW:
   label_title_articles: 文章
   label_title_category: 類別
   message_no_articles: 目前尚未有任何文章
+  message_no_categories: "Unfortunately, there aren't any Categories defined, and you need to be logged in to create new categories."
   show_category_totals: "Show category totals in tree?"
   summary_item_limit: "Knowledgebase summary page article limit"
   title_add_comment: "Add Comment"

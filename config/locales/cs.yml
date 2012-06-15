@@ -46,6 +46,7 @@ cs:
   label_title_articles: Články
   label_title_category: Kategorie
   message_no_articles: "Zatím nejsou ve znalostní databázi žádné články. Asi byste měli začít něco dělat..."
+  message_no_categories: "Unfortunately, there aren't any Categories defined, and you need to be logged in to create new categories."
   permission_comment_and_rate_articles: "Komentovat a hodnotit články"
   permission_create_article_categories: "Vytvářet kategorie"
   permission_create_articles: "Vytvářet články"

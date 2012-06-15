@@ -46,6 +46,7 @@ ja:
   label_title_articles: 記事
   label_title_category: カテゴリ
   message_no_articles: 知識データベースに追加された記事はありません．早速作りましょう！
+  message_no_categories: "Unfortunately, there aren't any Categories defined, and you need to be logged in to create new categories."
   show_category_totals: ツリーの全てのカテゴリを表示する
   summary_item_limit: 知識データベースに表示する記事数
   title_add_comment: コメントを追加

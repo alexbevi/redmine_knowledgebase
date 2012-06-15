@@ -46,6 +46,7 @@ zh:
   label_title_articles: 文章
   label_title_category: 类别
   message_no_articles: 目前尚未有任何文章
+  message_no_categories: "Unfortunately, there aren't any Categories defined, and you need to be logged in to create new categories."
   show_category_totals: 在类别树中显示数量？
   summary_item_limit: 知识库主页文章限制
   title_add_comment: 新增批注

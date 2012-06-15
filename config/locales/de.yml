@@ -45,6 +45,7 @@ de:
   label_title_articles: Artikel
   label_title_category: Kategorie
   message_no_articles: "Es wurde noch kein Artikel eingegeben. Beginnen Sie mit einem Artikel zum Thema..."
+  message_no_categories: "Unfortunately, there aren't any Categories defined, and you need to be logged in to create new categories."
   show_category_totals: "Anzahl der Artikel pro Katgeorie im Katgeoriebaum anzeigen?"
   summary_item_limit: "Maximale Artikel in der Übersicht"
   title_add_comment: "Kommentar hinzufügen"

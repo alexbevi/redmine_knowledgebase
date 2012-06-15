@@ -45,6 +45,7 @@ es:
   label_title_articles: Article
   label_title_category: Category
   message_no_articles: "No hay artículos agregados... Empieza cuando quieras..."
+  message_no_categories: "Unfortunately, there aren't any Categories defined, and you need to be logged in to create new categories."
   show_category_totals: "Show category totals in tree?"
   summary_item_limit: "Knowledgebase summary page article limit"
   title_add_comment: "Add Comment"
