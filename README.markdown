@@ -6,6 +6,14 @@ This plugin adds generic knowledgebase funcationlity to the redmine project mana
 
 The plugin is available in two versions, which track the Redmine versions to reflect their level of compatibility. If you're using Redmine 1.x.x, use a 0.x.x or 1.x.x version of the Knowledgebase; if you're using Redmine 2+, use a Knowledgebase version >= 2.
 
+This plugin also incorporates the functionality of several popular Rails plugins:
+
+* [acts_as_viewed](http://rubyforge.org/projects/acts-as-viewed)
+* [acts_as_rated](http://rubyforge.org/projects/acts-as-rated)
+* [acts_as_taggable_on_steroids](http://github.com/jviney/acts_as_taggable_on_steroids)
+
+Note that these plugins are included with the knowledgebase and do not need to be installed directly, as they have been slightly modified in order to function properly with Rails 3+.
+
 ## Introduction
 
 [Redmine](http://www.redmine.org) is just plain awesome, and has proven to provide 90% of the functionality I need. The one feature that was missing was a usable knowledgebase component. I've looked at some of the open source solutions available, but couldn't find anything that fit my needs exactly. Seeing as redmine is so easily extended, I figured why not create it for this platform instead of starting yet another project from scratch :P
@@ -18,15 +26,6 @@ The plugin is available in two versions, which track the Redmine versions to ref
 * Article Comments
 * Article Tags
 * Permissions
-
-## Requirements
-
-Note that whenever possible, the necessary plugins for the knowledgebase have been stripped into the project (so they're not setup as plugins, but modules). The copyright information has been preserved when available, and the links are provided below.
-I figure if there's ever a need for these plugins in the greater Redmine application, they can be incorporated into the trunk at that point and called accordingly.
-
-* [acts_as_viewed](http://rubyforge.org/projects/acts-as-viewed)
-* [acts_as_rated](http://rubyforge.org/projects/acts-as-rated)
-* [acts_as_taggable_on_steroids](http://github.com/jviney/acts_as_taggable_on_steroids)
 
 # Redmine Knowledgebase Plugin install guide
 
