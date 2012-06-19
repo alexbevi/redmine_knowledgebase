@@ -10,6 +10,6 @@ class CreateArticles < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :articles
+    drop_table :kb_articles
   end
 end
