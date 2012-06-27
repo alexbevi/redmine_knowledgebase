@@ -115,7 +115,7 @@ private
   end
 
   def get_article
-    @article = KbArticle.find(params[:id])
+    @article = KbArticle.where(:id => params[:id])
     @article = @article.first if @article.is_a?(ActiveRecord::Relation)
   end
 end
