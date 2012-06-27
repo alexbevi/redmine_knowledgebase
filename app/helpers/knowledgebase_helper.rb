@@ -76,14 +76,4 @@ module KnowledgebaseHelper
   def link_to_category_with_title(category)
     link_to(category.title,{ :controller => 'categories', :action => 'show', :id => category.id})
   end
-  
-  def tag_cloud(tags, classes)
-    return if tags.empty?
-    max_count = tags.sort_by(&:count).last.count.to_f
-    return unless max_count > 0
-    tags.each do |tag|
-      index = ((tag.count / max_count) * (classes.size - 1)).round
-      yield tag, classes[index]
-    end
-  end
 end

@@ -1,7 +1,6 @@
 require 'redmine'
 require 'acts_as_viewed'
 require 'acts_as_rated'
-require 'acts_as_taggable'
 
 #Register KB macro
 require 'macros'
@@ -14,7 +13,9 @@ Redmine::Plugin.register :redmine_knowledgebase do
   version     '2.0.0'
 
   requires_redmine :version_or_higher => '2.0.0'
-
+  
+  gem 'acts-as-taggable-on', '~> 2.3.1'
+  
   settings :default => {
     'knowledgebase_anonymous_access' => "1",
     'knowledgebase_sort_category_tree' => "1",
