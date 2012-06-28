@@ -41,7 +41,7 @@
 <div class="infobox">
 <%= authoring @article.created_at, @article.author %>
 <% if @article.created_at != @article.updated_at %>
-| <%= l(:label_updated_time, time_tag(@article.updated_at)) %>.
+| <%= l(:label_updated_time, time_tag(@article.updated_at)).html_safe %>.
 <% end %>
 | <%= l(:label_article_viewed, :count => @article.view_count) %>
 </div>
