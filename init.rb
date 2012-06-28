@@ -10,11 +10,9 @@ Redmine::Plugin.register :redmine_knowledgebase do
   author      'Alex Bevilacqua'
   description 'A plugin for Redmine that adds knowledgebase functionality'
   url         'https://github.com/alexbevi/redmine_knowledgebase'
-  version     '2.0.0'
+  version     '2.0.1'
 
   requires_redmine :version_or_higher => '2.0.0'
-  
-  gem 'acts-as-taggable-on', '~> 2.3.1'
   
   settings :default => {
     'knowledgebase_anonymous_access' => "1",
