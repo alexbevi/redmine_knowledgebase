@@ -1,22 +1,19 @@
-# Redmine Knowledgebase plugin
-
 This plugin adds generic knowledgebase funcationlity to the redmine project management application.
 
 ## Compatibility
 
-The plugin is available in two versions, which track the Redmine versions to reflect their level of compatibility. If you're using Redmine 1.x.x, use a 0.x.x or 1.x.x version of the Knowledgebase; if you're using Redmine 2+, use a Knowledgebase version >= 2.
+The plugin is available in two (2) versions, which track the Redmine versions to reflect their level of compatibility. If you're using Redmine 1.x.x, use a 0.x.x or 1.x.x version of the Knowledgebase; if you're using Redmine 2+, use a Knowledgebase version >= 2.
 
-This plugin also incorporates the functionality of several popular Rails plugins:
+This plugin also incorporates the following libraries directly. 
 
 * [acts_as_viewed](http://rubyforge.org/projects/acts-as-viewed)
 * [acts_as_rated](http://rubyforge.org/projects/acts-as-rated)
-* [acts_as_taggable_on_steroids](http://github.com/jviney/acts_as_taggable_on_steroids)
 
-Note that these plugins are included with the knowledgebase and do not need to be installed directly, as they have been slightly modified in order to function properly with Rails 3+.
+They do _NOT_ need to be installed manually as they have been [patched](https://github.com/alexbevi/redmine_knowledgebase/commit/18c6fd1dff134e8c1f8578b643dc9ba920b7d854) to include Rails 3+ support.
 
 ## Introduction
 
-[Redmine](http://www.redmine.org) is just plain awesome, and has proven to provide 90% of the functionality I need. The one feature that was missing was a usable knowledgebase component. I've looked at some of the open source solutions available, but couldn't find anything that fit my needs exactly. Seeing as redmine is so easily extended, I figured why not create it for this platform instead of starting yet another project from scratch :P
+[Redmine](http://www.redmine.org) is just plain awesome, and has proven to provide 90% of the functionality I need. The one feature that was missing was a usable knowledgebase component. I've looked at some of the open source solutions available, but couldn't find anything that fit my needs exactly. Seeing as Redmine is so easily extended, I figured why not create it for this platform instead of starting yet another project from scratch :P
 
 ## Features
 
@@ -38,9 +35,9 @@ command line access to the server where Redmine is installed, and be able to wor
 
 To install the knowledgebase, execute the following commands from the root of your redmine directory:
 
-    cd plugins
-    git clone git://github.com/alexbevi/redmine_knowledgebase.git
-    rake db:migrate:plugins RAILS_ENV=production
+    git clone git://github.com/alexbevi/redmine_knowledgebase.git plugins/redmine_knowledgebase
+    bundle install
+    rake redmine:plugins:migrate
 
 More information on installing Redmine plugins can be found here: [http://www.redmine.org/wiki/redmine/Plugins](http://www.redmine.org/wiki/redmine/Plugins "Redmine Plugins")
 
@@ -184,4 +181,4 @@ Now that categories and articles have been created, the Home page of the Knowled
 
 Copyright (c) 2010-2012 Alex Bevilacqua, released under the MIT license
 
-See [AUTHORS](https://github.com/alexbevi/redmine_knowledgebase/blob/master/AUTHORS) for additional contributors, [CHANGES](https://github.com/alexbevi/redmine_knowledgebase/blob/master/CHANGES) for the changelog.
+Though I initially wrote this plugin, it would not be possible without the many contributions from the community. See [AUTHORS](https://github.com/alexbevi/redmine_knowledgebase/blob/master/AUTHORS) for the full list.
