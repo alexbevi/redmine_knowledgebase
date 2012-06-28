@@ -84,7 +84,7 @@ class ArticlesController < KnowledgebaseController
   
   def tagged
     @tag = params[:id]
-    @list = KbArticle.find_tagged_with(@tag)
+    @list = KbArticle.tagged_with(@tag)
   end
 
   def preview
