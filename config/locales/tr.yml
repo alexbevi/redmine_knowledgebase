@@ -1,0 +1,67 @@
+--- 
+tr: 
+  allow_anon_access: "Anonim erişime izin ver?"
+  allow_sort_category_tree: "Kategori ağacını alfabetik olarak sırala?"
+  field_tag_list: "Etiket Listesi"
+  knowledgebase_title: "Bilgi Bankası"
+  label_article_created: "'%{title} makalesi oluşturuldu'"
+  label_article_plural: Makaleler
+  label_article_removed: "Makale kaldırıldı"
+  label_article_updated: "Makale güncellendi"
+  label_article_viewed: 
+    one: "Bir kez görüntülendi"
+    other: "%{count} defa görüntülendi"
+  label_category: Kategori
+  label_category_created: "'%{title}' kategorisi oluşturuldu"
+  label_category_deleted: "Kategori silindi"
+  label_category_not_empty_cannot_delete: "Bu kategoride makaleler var ve silinemez."
+  label_category_plural: Kategoriler
+  label_category_updated: "Kategori güncellendi"
+  label_content: İçerik
+  label_delete_article: Sil
+  label_delete_category: "Kategoriyi sil"
+  label_description: Açıklama
+  label_edit_article: Düzenle
+  label_edit_category: "Kategoriyi düzenle"
+  label_jump_category: "Kategoriye git"
+  label_kb_home: Anasayfa
+  label_kb_link: "KB#{{kb_id}}"
+  label_new_article: "Yeni Makale"
+  label_new_category: "Yeni Kategori"
+  label_new_comment: "Yeni Yorum"
+  label_parent_category: "Üst Kategori"
+  label_root_category: "Temel Kategori"
+  label_subcategories: Alt-kategoriler
+  label_summary: Özet
+  label_summary_newest_articles: "%{ago} önce %{category} içinde oluşturuldu"
+  label_summary_popular_articles: 
+    one: "%{created} tarihinden bu yana bir kez görüntülendi"
+    other: "%{created} tarihinden bu yana %{count} kez görüntülendi"
+  label_summary_toprated_articles: 
+    one: "Derecelendirme: Bir oy ile %{rating_avg}/%{rating_max}"
+    other: "Derecelendirme: %{count} oy ile %{rating_avg}/%{rating_max}"
+  label_summary_updated_articles: "%{ago} önce güncellendi"
+  label_title: Başlık
+  label_title_articles: Makale
+  label_title_category: Kategori
+  message_no_articles: "Henüz bilgi bankasına hiç bir makale eklenmedi. Belki  bir kaç tane eklemek istersiniz..."
+  show_category_totals: "Kategori toplamını ağaç yapısnda göster?"
+  summary_item_limit: "Bilgi bankası özet sayfası makale sınırı"
+  title_add_comment: "Yorum ekle"
+  title_article_rating: "Makale Derecelendirmesi"
+  title_browse_by_category: "Kategoriler"
+  title_create_article: "Makale oluştur"
+  title_create_category: "Kategori oluştur"
+  title_edit_article: "Makaleyi düzenle"
+  title_edit_category: "Kategoriyi düzenle"
+  title_most_popular_articles: "En Beğenilen Makaleler"
+  title_new_category: "Yeni Kategori"
+  title_newest_articles: "En Yeni Makaleler"
+  title_recently_updated_articles: "Yakın zamanda Güncellenmiş Makaleler"
+  title_tagged_articles: "%{tag} ile etiketlenmiş makaleler"
+  title_tags: Etiketler
+  title_top_rated_articles: "En Çok Oy Alan Makaleler"
+  title_votes: 
+    one: "Bir oy"
+    other: "%{count} oy"
+    zero: "Oy yok"
