@@ -24,14 +24,7 @@ They do _NOT_ need to be installed manually as they have been [patched](https://
 * Article Tags
 * Permissions
 
-# Redmine Knowledgebase Plugin install guide
-
-### Overview (Linux/UNIX systems)
-
-To install the Redmine Knowledgebase Plugin, you will need to have
-command line access to the server where Redmine is installed, and be able to work as the root user.
-
-## Downloading and installing the Knowledgebase Plugin
+## Installation
 
 To install the knowledgebase, execute the following commands from the root of your redmine directory:
 
@@ -44,9 +37,9 @@ More information on installing Redmine plugins can be found here: [http://www.re
 After the plugin is installed and the db migration completed, you will
 need to restart Redmine for the plugin to be available.
 
-# Redmine Knowledgebase Plugin User Guide
+## User Guide
 
-## Overview
+### Overview
 
 Once the Redmine Knowledgebase Plugin is installed, there will be a
 Knowledgebase link in the Redmine navigation header. Unlike the Redmine
@@ -54,7 +47,7 @@ Wiki, which is only available at the per-project or subproject level,
 the Knowledgebase is available at the root level of the Redmine
 application.
 
-## Configuring the Knowledgebase
+### Configuration
 
 To start using the Knowledgebase plugin, click on the Knowledgebase link
 in the Redmine navigation header.
@@ -96,12 +89,12 @@ navigate to categories (not sub-categories) by clicking on the category
 name in the right hand *Browse by Category* side bar.
 
 
-## Using the Knowledgebase
+### Using the Knowledgebase
 
 Once you have created categories, you can then add articles and
 sub-categories.
 
-### Creating Sub-categories
+#### Creating Sub-categories
 
 To create a sub-category, click on a root category in the right hand
 *Browse by Category* sidebar, or use the *Jump to Category* drop down menu
@@ -134,7 +127,7 @@ In the *Jump to Category* drop down menu, sub-categories are shown with a
 leading > , sub sub-categories with a leading >> , etc.
 
 
-### Creating Articles
+#### Creating Articles
 
 To create an Article, navigate to a category or sub-category, and click
 on the **Create Article** link. This opens the *Create Article* page.
@@ -156,7 +149,7 @@ Redmine Wiki is possible here.
 
 Click on **Create** to add the article. Click on **Preview** to see how the article will look and make any necessary changes before adding the article.
 
-### Managing Articles
+#### Managing Articles
 
 Once you click on Create to add the article, you are taken to the article main page. This page shows the name and content of the article, the creator (Added by username), how long ago the article was created, and how many times it has been viewed.
 
@@ -164,7 +157,7 @@ You can also Edit or Delete the article, as well as rate the article. Clicking o
 
 You can also comment on an article by clicking on Add a comment.
 
-### Using Wiki Macros
+#### Using Wiki Macros
 
 You can easily create links to articles and categories from issues or Wiki pages using the macros.
 
@@ -175,9 +168,11 @@ You can easily create links to articles and categories from issues or Wiki pages
 * `{{article(<article_id>)}}` will render a link to the "kb#<article_id>: <article_title>" format.
 * `{{category(<category_id>)}}` will render a link to the "<category_title>" format, only renders the title of the category.
 
-## Knowledgebase Home Page
+### Knowledgebase Home Page
 
 Now that categories and articles have been created, the Home page of the Knowledgebase will show the *Newest Articles*, *Recently Updated Articles*, *Most Popular Articles*, and *Top Rated Articles*. You can use this page to help navigate the Knowledgebase, as well as using the *Jump to Category* drop down menu or the *Browse by Category* menu on the right of the screen. You can reach this page from anywhere inside the Knowledgebase by clicking on the Home link.
+
+### About
 
 Copyright (c) 2010-2012 Alex Bevilacqua, released under the MIT license
 
