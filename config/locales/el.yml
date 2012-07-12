@@ -1,0 +1,68 @@
+--- 
+el: 
+  allow_anon_access: "Να επιτραπεί ανώνυμη πρόσβαση;"
+  allow_sort_category_tree: "Ταξινόμηση δέντρου κατα αλφαβητική σειρά;"
+  field_tag_list: "Λίστα ετικετών"
+  knowledgebase_title: Γνωσιακή βάση
+  label_article_created: "Δημιουργηθέν άρθρο '%{title}'"
+  label_article_plural: Άρθρα
+  label_article_removed: "Το άρθρο διαγράφηκε"
+  label_article_updated: "Το άρθρο επικαιροποιήθηκε"
+  label_article_viewed: 
+    one: "Προβλήθηκε μία φορά"
+    other: "Προβλήθηκε %{count} φορές"
+  label_category: Κατηγορία
+  label_category_created: "Δημιουργημένη κατηγορία '%{title}'"
+  label_category_deleted: "Η κατηγορία διαγράφηκε"
+  label_category_not_empty_cannot_delete: "Η κατηγορία έχει ανατεθεί σε άρθρα με αποτέλεσμα να μη μπορεί να διαγραφεί."
+  label_category_plural: Κατηγορίες
+  label_category_updated: "Η κατηγορία επικαιροποιήθηκε"
+  label_content: Περιεχόμενο
+  label_delete_article: Διαγραφή
+  label_delete_category: "Διαγραφή Κατηγορίας"
+  label_description: Περιγραφή
+  label_edit_article: Επεξεργασία
+  label_edit_category: "Επεξεργασία Κατηγορίας"
+  label_jump_category: "Μεταπήδηση σε Κατηγορία"
+  label_kb_home: Αρχική
+  label_kb_link: "KB#{{kb_id}}"
+  label_new_article: "Νέο Άρθρο"
+  label_new_category: "Νέα Κατηγορία"
+  label_new_comment: "Νέο Σχόλιο"
+  label_parent_category: "Μητρική Κατηγορία"
+  label_root_category: "Αρχική Κατηγορία"
+  label_subcategories: Υποκατηγορείες
+  label_summary: Περίληψη
+  label_summary_newest_articles: "Δημιουργήθηκε πριν από %{ago} στην %{category}"
+  label_summary_popular_articles: 
+    one: "Προβλήθηκε μία φορά την %{created}"
+    other: "Προβλήθηκε %{count} φορές από την %{created}"
+  label_summary_toprated_articles: 
+    one: "Βαθμολογία: %{rating_avg}/%{rating_max} από μία ψήφο"
+    other: "Βαθμολογία: %{rating_avg}/%{rating_max} από %{count} ψήφους"
+  label_summary_updated_articles: "Επικαιροποιήθηκε πριν %{ago}"
+  label_title: Τίτλος
+  label_title_articles: Άρθρο
+  label_title_category: Κατηγορία
+  message_no_articles: "Δεν έχουν προστεθέι άρθρα στην Γνωσιακή Βάση για την ώρα. Ίσως θέλετε να κάνετε την αρχή ..."
+  message_no_categories: "Δυστυχώς, δεν έχουν καθοριστεί κατηγορίες, πρέπει να να συνδεθεί για να δημιουργήσετε νέες κατηγορίες."
+  show_category_totals: "Εμφάνιση συνόλων κατηγοριών στο δέντρο;"
+  summary_item_limit: "Όριο σύνοψης σελίδας της Γνωσιακής Βάσης"
+  title_add_comment: "Προσθήκη Σχολίου"
+  title_article_rating: "Βαθμολογία Άρθρου"
+  title_browse_by_category: "Περιήγηση στην Κατηγορία"
+  title_create_article: "Δημιουργία Άρθρου"
+  title_create_category: "Δημιουργία Κατηγορίας"
+  title_edit_article: "Επεξεργασία Άρθρου"
+  title_edit_category: "Έπεξεργασία Κατηγορίας"
+  title_most_popular_articles: "Δημοφιλέστερα Άρθρα"
+  title_new_category: "Νέα Κατηγορία"
+  title_newest_articles: "Νεότερα Άρθρα"
+  title_recently_updated_articles: "Πρόσφατα ενημερωμένα άρθρα"
+  title_tagged_articles: "Άρθα επισημασμένα με %{tag}"
+  title_tags: Ετικέτες
+  title_top_rated_articles: "Κορυφαία βαθμολογημένα άρθρα"
+  title_votes: 
+    one: "μία ψήφος"
+    other: "%{count} ψήφοι"
+    zero: "χωρίς ψήφους"
