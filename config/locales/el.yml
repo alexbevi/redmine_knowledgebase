@@ -3,7 +3,7 @@ el:
   allow_anon_access: "Να επιτραπεί ανώνυμη πρόσβαση;"
   allow_sort_category_tree: "Ταξινόμηση δέντρου κατα αλφαβητική σειρά;"
   field_tag_list: "Λίστα ετικετών"
-  knowledgebase_title: Γνωσιακή βάση
+  knowledgebase_title: "Γνωσιακή βάση"
   label_article_created: "Δημιουργηθέν άρθρο '%{title}'"
   label_article_plural: Άρθρα
   label_article_removed: "Το άρθρο διαγράφηκε"
