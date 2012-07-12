@@ -1,0 +1,66 @@
+--- 
+ko: 
+  allow_anon_access: "익명 접근허가"
+  allow_sort_category_tree: "카테고리를 알파벳순 정렬"
+  field_tag_list: 태그목록
+  knowledgebase_title: 지식자료
+  label_article_created: "'%{title}' 지식을 작성했습니다."
+  label_article_plural: 지식자료
+  label_article_removed: "지식을 삭제했습니다．"
+  label_article_updated: "지식을 수정했습니다.．"
+  label_article_viewed: 
+    one: "1회 조회"
+    other: "%{count}회 조회"
+  label_category: 카테고리
+  label_category_created: "'%{title}' 카테고리를 작성했습니다."
+  label_category_deleted: "카테고리를 삭제했습니다.．"
+  label_category_not_empty_cannot_delete: "관련지식이 있는 관계로 카테고리를 삭제할 수 없습니다."
+  label_category_plural: "카테고리 목록"
+  label_category_updated: "카테고리를 수정했습니다."
+  label_content: 상세
+  label_delete_article: 삭제
+  label_delete_category: "카테고리 삭제"
+  label_description: 설명
+  label_edit_article: 수정
+  label_edit_category: "카테고리 수정"
+  label_home: Home
+  label_jump_category: "카테고리 선택"
+  label_kb_home: Home
+  label_kb_link: "KB#{{kb_id}}"
+  label_new_article: "새로운 지식"
+  label_new_category: "새로운 카테고리"
+  label_new_comment: 댓글달기
+  label_parent_category: "상위 카테고리"
+  label_root_category: "최상위 카테고리"
+  label_subcategories: "하위 카테고리들"
+  label_summary: 개요
+  label_summary_newest_articles: "%{ago}전에 작성 in %{category}"
+  label_summary_popular_articles: 
+    one: "1회 조회 %{created}"
+    other: "%{count}회 조회 %{created}부터"
+  label_summary_toprated_articles: 
+    one: "평가: %{rating_avg}/%{rating_max} from 1표"
+    other: "평가: %{rating_avg}/%{rating_max} from %{count}표"
+  label_summary_updated_articles: "%{ago}전에 수정"
+  label_title: 제목
+  label_title_articles: 지식명
+  label_title_category: 카테고리명
+  message_no_articles: "지식 데이터베이스에 추가된 지식이 없습니다."
+  message_no_categories: "Unfortunately, there aren't any Categories defined, and you need to be logged in to create new categories."
+  show_category_totals: "모든 카테고리 표시"
+  summary_item_limit: "지식자료에 표시되는 지식수"
+  title_add_comment: "댓글 추가"
+  title_article_rating: 평가순위
+  title_browse_by_category: "카테고리 목록"
+  title_create_article: "새로운 지식 작성"
+  title_create_category: "카테고리 추가"
+  title_edit_article: "지식 수정"
+  title_edit_category: "카테고리 수정"
+  title_most_popular_articles: "인기 지식"
+  title_new_category: "새로운 카테고리"
+  title_newest_articles: "최근 지식"
+  title_recently_updated_articles: "최근에 수정된 지식"
+  title_tagged_articles: "이 지식은 %{tag}로 태그됨"
+  title_tags: 태그
+  title_top_rated_articles: "평가가 높은 지식"
+  title_votes: 투표수
