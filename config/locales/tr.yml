@@ -45,11 +45,12 @@ tr:
   label_title_articles: Makale
   label_title_category: Kategori
   message_no_articles: "Henüz bilgi bankasına hiç bir makale eklenmedi. Belki  bir kaç tane eklemek istersiniz..."
+  message_no_categories: "Unfortunately, there aren't any Categories defined, and you need to be logged in to create new categories."
   show_category_totals: "Kategori toplamını ağaç yapısnda göster?"
   summary_item_limit: "Bilgi bankası özet sayfası makale sınırı"
   title_add_comment: "Yorum ekle"
   title_article_rating: "Makale Derecelendirmesi"
-  title_browse_by_category: "Kategoriler"
+  title_browse_by_category: Kategoriler
   title_create_article: "Makale oluştur"
   title_create_category: "Kategori oluştur"
   title_edit_article: "Makaleyi düzenle"
