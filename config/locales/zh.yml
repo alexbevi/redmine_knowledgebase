@@ -26,7 +26,7 @@ zh:
   label_home: Home
   label_jump_category: 移至类别
   label_kb_home: Home
-  label_kb_link: "KB#{{kb_id}}"
+  label_kb_link: "KB#%{kb_id}"
   label_new_article: 新建文章
   label_new_category: 新建类型
   label_new_comment: 新增批注

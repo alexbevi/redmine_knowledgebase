@@ -25,7 +25,7 @@ el:
   label_edit_category: "Επεξεργασία Κατηγορίας"
   label_jump_category: "Μεταπήδηση σε Κατηγορία"
   label_kb_home: Αρχική
-  label_kb_link: "KB#{{kb_id}}"
+  label_kb_link: "KB#%{kb_id}"
   label_new_article: "Νέο Άρθρο"
   label_new_category: "Νέα Κατηγορία"
   label_new_comment: "Νέο Σχόλιο"

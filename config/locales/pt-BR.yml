@@ -25,7 +25,7 @@ pt-BR:
   label_edit_category: "Edit Category"
   label_jump_category: "Ir para Categoria"
   label_kb_home: "Página Inicial"
-  label_kb_link: "KB#{{kb_id}}"
+  label_kb_link: "KB#%{kb_id}"
   label_new_article: "New Article"
   label_new_category: "New Category"
   label_new_comment: "New Comment"

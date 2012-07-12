@@ -25,7 +25,7 @@ pl:
   label_edit_category: "Edytuj kategorię"
   label_jump_category: "Idź do kategorii"
   label_kb_home: "Strona główna"
-  label_kb_link: "KB#{{kb_id}}"
+  label_kb_link: "KB#%{kb_id}"
   label_new_article: "Dodaj artykuł"
   label_new_category: "Dodaj kategorię"
   label_new_comment: "New Comment"

@@ -26,7 +26,7 @@ ja:
   label_home: ホーム
   label_jump_category: カテゴリー選択
   label_kb_home: Home
-  label_kb_link: "KB#{{kb_id}}"
+  label_kb_link: "KB#%{kb_id}"
   label_new_article: 新しい記事
   label_new_category: 新しいカテゴリ
   label_new_comment: コメントする

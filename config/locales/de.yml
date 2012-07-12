@@ -25,7 +25,7 @@ de:
   label_edit_category: "Kategorie bearbeiten"
   label_jump_category: "Zur Kategorie wechseln "
   label_kb_home: Home
-  label_kb_link: "KB#{{kb_id}}"
+  label_kb_link: "KB#%{kb_id}"
   label_new_article: "Artikel erstellen"
   label_new_category: "Kategorie erstellen"
   label_new_comment: "Neuer Kommentar"

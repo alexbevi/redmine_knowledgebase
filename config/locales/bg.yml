@@ -25,7 +25,7 @@ bg:
   label_edit_category: "Редактиране на категория"
   label_jump_category: "Преход към категория"
   label_kb_home: Начало
-  label_kb_link: "KB#{{kb_id}}"
+  label_kb_link: "KB#%{kb_id}"
   label_new_article: "Нова статия"
   label_new_category: "Нова категория"
   label_new_comment: "Нов коментар"

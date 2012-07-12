@@ -25,7 +25,7 @@ ru:
   label_edit_category: "Edit Category"
   label_jump_category: "Перейти к категории"
   label_kb_home: Начало
-  label_kb_link: "KB#{{kb_id}}"
+  label_kb_link: "KB#%{kb_id}"
   label_new_article: "New Article"
   label_new_category: "New Category"
   label_new_comment: "New Comment"
