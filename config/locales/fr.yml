@@ -1,65 +1,65 @@
 --- 
 fr: 
-  allow_anon_access: "Allow anonymous access?"
-  allow_sort_category_tree: "Sort the category tree alphabetically?"
-  field_tag_list: "Liste des Tags"
+  allow_anon_access: "Consultation anonyme ?"
+  allow_sort_category_tree: "Trier les catégories par ordre alphabétique ?"
+  field_tag_list: "Liste des tags"
   knowledgebase_title: "Base de Connaissance"
   label_article_created: "Created article '%{title}'"
   label_article_plural: Articles
-  label_article_removed: "Article removed"
-  label_article_updated: "Article updated"
+  label_article_removed: "Article supprimé"
+  label_article_updated: "Article mis à jour"
   label_article_viewed: 
-    one: "Viewed once"
-    other: "Viewed %{count} times"
+    one: "Consulté une fois"
+    other: "Consulté %{count} fois"
   label_category: Catégorie
   label_category_created: "Created category '%{title}'"
-  label_category_deleted: "Category deleted"
-  label_category_not_empty_cannot_delete: "Category is assigned to articles and could not be deleted."
+  label_category_deleted: "Catégorie supprimée"
+  label_category_not_empty_cannot_delete: "Cette catégorie contient des articles et ne peut être supprimée."
   label_category_plural: Catégories
-  label_category_updated: "Category updated"
+  label_category_updated: "Catégorie mise à jour"
   label_content: Contenu
   label_delete_article: Delete
-  label_delete_category: "Delete Category"
+  label_delete_category: "Supprimer la catégorie"
   label_description: Description
   label_edit_article: Edit
-  label_edit_category: "Edit Category"
-  label_jump_category: "Aller à la  Catégorie"
+  label_edit_category: "Modifier la catégorie"
+  label_jump_category: "Aller à la catégorie"
   label_kb_home: "Page d'accueil"
   label_kb_link: "KB#{{kb_id}}"
-  label_new_article: "New Article"
-  label_new_category: "New Category"
-  label_new_comment: "New Comment"
-  label_parent_category: "Catégorie Parente"
-  label_root_category: "Catégorie Racine"
-  label_subcategories: Sub-categories
+  label_new_article: "Nouvel article"
+  label_new_category: "Nouvelle catégorie"
+  label_new_comment: "Nouveau commentaire"
+  label_parent_category: "Catégorie parente"
+  label_root_category: "Catégorie racine"
+  label_subcategories: Sous-catégories
   label_summary: Résumé
   label_summary_newest_articles: "Created %{ago} ago in %{category}"
   label_summary_popular_articles: 
-    one: "Viewed once since %{created}"
-    other: "Viewed %{count} times since %{created}"
+    one: "Lu une fois depuis %{created}"
+    other: "Lu %{count} fois depuis %{created}"
   label_summary_toprated_articles: 
     one: "Rating: %{rating_avg}/%{rating_max} from one vote"
     other: "Rating: %{rating_avg}/%{rating_max} from %{count} votes"
-  label_summary_updated_articles: "Updated %{ago} ago"
+  label_summary_updated_articles: "Mis à jour il y a %{ago}"
   label_title: Titre
   label_title_articles: Article
   label_title_category: Catégorie
   message_no_articles: "Aucun article n'a été ajouté à la base de connaissance."
-  message_no_categories: "Unfortunately, there aren't any Categories defined, and you need to be logged in to create new categories."
+  message_no_categories: "Il n'y a aucune catégorie pour l'instant, connectez-vous pour en créer une."
   show_category_totals: "Show category totals in tree?"
   summary_item_limit: "Knowledgebase summary page article limit"
-  title_add_comment: "Add Comment"
-  title_article_rating: "Évaluation d'Article"
-  title_browse_by_category: "Parcourir par Catégorie"
-  title_create_article: "Créer un Article"
-  title_create_category: "Créer une Catégorie"
-  title_edit_article: "Modifier Article"
-  title_edit_category: "Éditer la Catégorie"
+  title_add_comment: "Ajouter un commentaire"
+  title_article_rating: "Évaluation de l'article"
+  title_browse_by_category: "Parcourir par catégorie"
+  title_create_article: "Créer un article"
+  title_create_category: "Créer une catégorie"
+  title_edit_article: "Modifier l'article"
+  title_edit_category: "Éditer la catégorie"
   title_most_popular_articles: "Articles les plus populaires"
-  title_new_category: "Nouvelle Catégorie"
-  title_newest_articles: "Derniers Articles"
+  title_new_category: "Nouvelle catégorie"
+  title_newest_articles: "Derniers articles"
   title_recently_updated_articles: "Articles récemment modifiés"
-  title_tagged_articles: "Articles tagged with %{tag}"
+  title_tagged_articles: "Articles associés au tag « %{tag} »"
   title_tags: Tags
   title_top_rated_articles: "Articles les mieux notés"
   title_votes: Votes
