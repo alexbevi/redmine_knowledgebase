@@ -60,7 +60,7 @@ Redmine::Plugin.register :redmine_knowledgebase do
     }
     permission :manage_article_categories, {
       :knowledgebase => :index,
-      :categories    => [:index, :show, :new, :create, :edit, :update, :delete]
+      :categories    => [:index, :show, :new, :create, :edit, :update, :destroy]
     }
   end
   
