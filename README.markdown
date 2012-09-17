@@ -1,3 +1,8 @@
+[![Flattr this][2]][1]
+
+[1]: http://flattr.com/thing/890708/alexbeviredmineknowledgebase
+[2]: http://api.flattr.com/button/button-static-50x60.png
+
 This plugin adds generic knowledgebase funcationlity to the redmine project management application.
 
 ## Compatibility
