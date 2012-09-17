@@ -35,12 +35,16 @@ To install the knowledgebase, execute the following commands from the root of yo
 
     git clone git://github.com/alexbevi/redmine_knowledgebase.git plugins/redmine_knowledgebase
     bundle install
-    rake redmine:plugins:migrate
+    rake redmine:plugins:migrate NAME=redmine_knowledgebase
 
 More information on installing Redmine plugins can be found here: [http://www.redmine.org/wiki/redmine/Plugins](http://www.redmine.org/wiki/redmine/Plugins "Redmine Plugins")
 
 After the plugin is installed and the db migration completed, you will
 need to restart Redmine for the plugin to be available.
+
+### Uninstall
+
+`rake redmine:plugins:migrate NAME=redmine_knowledgebase VERSION=0`
 
 ## User Guide
 
