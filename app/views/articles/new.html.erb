@@ -5,12 +5,7 @@
 <%= labelled_form_for :article, @article, :url => { :action => "create" }, :html => {  :multipart => true, :id => "articles-form" } do |form| %>
   <%= render :partial => 'form', :locals => { :f => form } %>
   <%= submit_tag l(:button_create) %>
-  <%= link_to_remote l(:label_preview), 
-                     { :url => { :controller => 'articles', :action => 'preview' },
-                       :method => 'post',
-                       :update => 'preview',
-                       :with => "Form.serialize('articles-form')"
-                     }, :accesskey => accesskey(:preview) %>
+  <%= preview_link({:controller => 'articles', :action => 'preview'}, 'articles-form') %>
 <% end %>
 
 <div id="preview" class="wiki"></div>
