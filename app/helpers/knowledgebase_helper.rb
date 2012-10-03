@@ -6,12 +6,6 @@ module KnowledgebaseHelper
       link_to(name, options, html_options, *parameters_for_method_reference)
     end
   end
-  
-  def link_to_remote_if_authorized_globally(name, options = {}, html_options = nil, *parameters_for_method_reference)
-    if authorized_globally(options[:url][:controller],options[:url][:action])
-      link_to_remote(name, options, html_options, *parameters_for_method_reference)
-    end
-  end
 
   def authorized_globally(controller,action)
     User.current.allowed_to?({:controller => controller, :action => action}, nil, :global => true)
@@ -48,11 +42,11 @@ module KnowledgebaseHelper
     average = (article.rating_average.blank?) ? 0 : article.rating_average * 100 / 5
     html = "<ul class='stars'>"
     html += "<li class='current_rating' style='width: #{average}%'>#{average}%</li>"
-    html += "<li>#{link_to_remote "One",   :update => "article_rating_#{article.id}", :url => {:controller => 'articles', :action => 'rate', :article_id => article, :rating => 1 }, :html => {:class => "one_star"},    :method => :get}</li>"
-    html += "<li>#{link_to_remote "Two",   :update => "article_rating_#{article.id}", :url => {:controller => 'articles', :action => 'rate', :article_id => article, :rating => 2 }, :html => {:class => "two_stars"},   :method => :get}</li>"
-    html += "<li>#{link_to_remote "Three", :update => "article_rating_#{article.id}", :url => {:controller => 'articles', :action => 'rate', :article_id => article, :rating => 3 }, :html => {:class => "three_stars"}, :method => :get}</li>"
-    html += "<li>#{link_to_remote "Four",  :update => "article_rating_#{article.id}", :url => {:controller => 'articles', :action => 'rate', :article_id => article, :rating => 4 }, :html => {:class => "four_stars"},  :method => :get}</li>"
-    html += "<li>#{link_to_remote "Five",  :update => "article_rating_#{article.id}", :url => {:controller => 'articles', :action => 'rate', :article_id => article, :rating => 5 }, :html => {:class => "five_stars"},  :method => :get}</li>"
+    html += "<li>#{link_to "One",   :update => "article_rating_#{article.id}", :url => {:controller => 'articles', :action => 'rate', :article_id => article, :rating => 1 }, :html => {:class => "one_star", :remote => true},    :method => :get}</li>"
+    html += "<li>#{link_to "Two",   :update => "article_rating_#{article.id}", :url => {:controller => 'articles', :action => 'rate', :article_id => article, :rating => 2 }, :html => {:class => "two_stars", :remote => true},   :method => :get}</li>"
+    html += "<li>#{link_to "Three", :update => "article_rating_#{article.id}", :url => {:controller => 'articles', :action => 'rate', :article_id => article, :rating => 3 }, :html => {:class => "three_stars", :remote => true}, :method => :get}</li>"
+    html += "<li>#{link_to "Four",  :update => "article_rating_#{article.id}", :url => {:controller => 'articles', :action => 'rate', :article_id => article, :rating => 4 }, :html => {:class => "four_stars", :remote => true},  :method => :get}</li>"
+    html += "<li>#{link_to "Five",  :update => "article_rating_#{article.id}", :url => {:controller => 'articles', :action => 'rate', :article_id => article, :rating => 5 }, :html => {:class => "five_stars", :remote => true},  :method => :get}</li>"
     html += "</ul>"
     html
   end
