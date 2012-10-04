@@ -91,6 +91,8 @@ ul.stars li a.five_stars  { width: 100%; z-index: 2; }
 #section-title.attachments { background-image: url(../images/attachments.png); background-repeat: no-repeat; padding-left: 42px; }
 #section-title.comments { background-image: url(../images/comments.png); background-repeat: no-repeat; padding-left: 42px; }
 
+#section-subtitle  { margin-top: 2em; margin-bottom: 0.5em; color: #505050; padding: 0.5em; font-weight: bold; background-color: #F1F5F8; border-bottom: solid 1px #D5E2F1; }
+
 #taglist ul { font-family: "Courier"; font-size: 10px; line-height: 2em; }
 #taglist li { margin-left: -40px; list-style-type: none; margin-bottom: 10px; }
 #taglist a { color:#060; background-color:#E1FFD1; border:solid 1px #C5F8AC; -moz-border-radius: 5px; -webkit-border-radius: 5px; padding: 3px; }

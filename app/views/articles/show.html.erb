@@ -34,7 +34,7 @@
 </p>
 <% html_title @article.title %>
 
-<h2><%= @article.title %></h2>
+<h1><%= @article.title %></h1>
 
 <div class="infobox">
 <%= authoring @article.created_at, @article.author %>
@@ -43,6 +43,11 @@
 <% end %>
 | <%= l(:label_article_viewed, :count => @article.view_count) %>
 </div>
+
+<div id="section-subtitle" ><%= l(:label_summary) %></div>
+<%= @article.summary %>
+
+<div id="section-subtitle" ><%= l(:label_content) %></div>
 
 <div id="article">
   <div class="wiki"><%= textilizable @article, :content, :attachments => @article.attachments %></div>
