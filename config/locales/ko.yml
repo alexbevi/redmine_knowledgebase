@@ -45,6 +45,7 @@ ko:
   label_title: 제목
   label_title_articles: 지식명
   label_title_category: 카테고리명
+  label_updated_who: "Updated by %{updater} %{age} ago"
   message_no_articles: "지식 데이터베이스에 추가된 지식이 없습니다."
   message_no_categories: "Unfortunately, there aren't any Categories defined, and you need to be logged in to create new categories."
   show_category_totals: "모든 카테고리 표시"

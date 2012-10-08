@@ -44,6 +44,7 @@ bg:
   label_title: Заглавие
   label_title_articles: Статия
   label_title_category: Категория
+  label_updated_who: "Updated by %{updater} %{age} ago"
   message_no_articles: "Все още няма добавени статии в базата знания. Може би сега ще започнете с първата ..."
   message_no_categories: "Unfortunately, there aren't any Categories defined, and you need to be logged in to create new categories."
   show_category_totals: "Показване на информацията за категориите в дървовидна структура?"

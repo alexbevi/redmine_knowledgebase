@@ -44,6 +44,7 @@ it:
   label_title: Titolo
   label_title_articles: Articolo
   label_title_category: Categoria
+  label_updated_who: "Updated by %{updater} %{age} ago"
   message_no_articles: "Nessun articolo è stato ancora aggiunto alla knowledgebase."
   message_no_categories: "Unfortunately, there aren't any Categories defined, and you need to be logged in to create new categories."
   show_category_totals: "Show category totals in tree?"

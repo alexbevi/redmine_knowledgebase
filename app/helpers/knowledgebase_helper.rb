@@ -58,4 +58,8 @@ module KnowledgebaseHelper
   def show_category_totals?
     Setting['plugin_redmine_knowledgebase']['knowledgebase_show_category_totals'].to_i == 1
   end
+  
+  def updated_by(updated, updater)
+     l(:label_updated_who, :updater => link_to_user(updater), :age => time_tag(updated)).html_safe
+  end
 end

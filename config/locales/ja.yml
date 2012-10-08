@@ -45,6 +45,7 @@ ja:
   label_title: 件名
   label_title_articles: 記事
   label_title_category: カテゴリ
+  label_updated_who: "Updated by %{updater} %{age} ago"
   message_no_articles: 知識データベースに追加された記事はありません．早速作りましょう！
   message_no_categories: "Unfortunately, there aren't any Categories defined, and you need to be logged in to create new categories."
   show_category_totals: ツリーの全てのカテゴリを表示する
