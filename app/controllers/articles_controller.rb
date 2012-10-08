@@ -43,7 +43,8 @@ class ArticlesController < KnowledgebaseController
   end
   
   def update
-    params[:article][:category_id] = params[:category_id]
+    @article.updater_id = User.current.id
+	params[:article][:category_id] = params[:category_id]
     if @article.update_attributes(params[:article])
       attachments = attach(@article, params[:attachments])
       flash[:notice] = l(:label_article_updated)

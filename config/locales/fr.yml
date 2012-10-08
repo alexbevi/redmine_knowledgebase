@@ -44,6 +44,7 @@ fr:
   label_title: Titre
   label_title_articles: Article
   label_title_category: Catégorie
+  label_updated_who: "Updated by %{updater} %{age} ago"
   message_no_articles: "Aucun article n'a été ajouté à la base de connaissance."
   message_no_categories: "Il n'y a aucune catégorie pour l'instant, connectez-vous pour en créer une."
   show_category_totals: "Show category totals in tree?"
