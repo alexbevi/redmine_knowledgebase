@@ -44,6 +44,7 @@ ru:
   label_title: Заголовок
   label_title_articles: Статьи
   label_title_category: Раздел
+  label_updated_who: "Updated by %{updater} %{age} ago"
   message_no_articles: "Пока что не было создано ни одной статьи в Базе Знаний. Может вы хотите стать первым  ..."
   message_no_categories: "К сожалению необозначено ни одного раздела, и Вам необходимо Войти чтобы создать новый раздел."
   show_category_totals: "Показать все разделы в виде дерева?"

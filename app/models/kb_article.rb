@@ -9,6 +9,7 @@ class KbArticle < ActiveRecord::Base
   belongs_to :project # XXX association added to allow searching to work
   belongs_to :category, :class_name => "KbCategory"
   belongs_to :author,   :class_name => 'User', :foreign_key => 'author_id'
+  belongs_to :updater,  :class_name => 'User', :foreign_key => 'updater_id'
 
   acts_as_viewed
   acts_as_rated :no_rater => true

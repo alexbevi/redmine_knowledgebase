@@ -36,7 +36,7 @@
 <% if @articles.length > 0%>
   <h3><%= l(:label_article_plural) %></h3>
   <div class="articles category-articles">
-  <%= render :partial => 'articles/list', :locals => { :summary_format => "normal", :articles => @articles, :default_icon => 'normal', :truncate_length => 40 } %>
+  <%= render :partial => 'articles/list', :locals => { :summary_format => "normal", :articles => @articles, :default_icon => 'normal', :truncate_length => nil } %>
   </div>
 <% end %>
 <% content_for :header_tags do %>
