@@ -3,7 +3,6 @@ class ArticlesController < KnowledgebaseController
   
   helper :attachments
   include AttachmentsHelper
-  include FaceboxRender
 
   #Authorize against global permissions defined in init.rb
   before_filter :authorize_global
@@ -95,7 +94,10 @@ class ArticlesController < KnowledgebaseController
   
   def comment
     @article_id = params[:article_id]
-    render_to_facebox(self.controller_path, self.action_name)
+
+    respond_to do |f|
+      f.js
+    end
   end
 
 #######

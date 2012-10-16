@@ -8,7 +8,7 @@ scope "/knowledgebase" do
       get "tagged"
       post "preview"
     end
-    post "comment"
+    get "comment"
     member do
       put  "preview"
       post "add_comment"
