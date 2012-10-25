@@ -30,8 +30,8 @@ ru:
   label_new_category: "Новый раздел"
   label_new_comment: "Создать комментарий"
   label_parent_category: "Родительский раздел"
-  label_root_category: "Родительский раздел"
-  label_subcategories: Подраздел
+  label_root_category: "Корневой раздел"
+  label_subcategories: Подразделы
   label_summary: Описание
   label_summary_newest_articles: "Создан %{ago} в разделе %{category}"
   label_summary_popular_articles:
@@ -44,6 +44,7 @@ ru:
   label_title: Заголовок
   label_title_articles: Статьи
   label_title_category: Раздел
+  label_updated_who: "Обновлено %{updater} %{age} назад"
   message_no_articles: "Пока что не было создано ни одной статьи в Базе Знаний. Может быть, вы захотите стать первым..."
   message_no_categories: "Пока что категории отсутствуют. Войдите, чтобы создать новый раздел."
   show_category_totals: "Показать все разделы в виде дерева?"
@@ -62,4 +63,7 @@ ru:
   title_tagged_articles: "Статьи отмеченные тегом %{tag}"
   title_tags: Тэг
   title_top_rated_articles: "Статьи с наибольшим рейтингом"
-  title_votes: голосов
+  title_votes:
+    one: "один голос"
+    other: "%{count} голосов"
+    zero: "голосов нет"
