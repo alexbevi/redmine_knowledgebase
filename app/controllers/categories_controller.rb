@@ -33,6 +33,7 @@ class CategoriesController < KnowledgebaseController
 
   def edit
     @category = KbCategory.find(params[:id])
+    @parent_id = @category.parent_id
   end
 
   def destroy
