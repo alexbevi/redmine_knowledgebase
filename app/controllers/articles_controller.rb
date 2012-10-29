@@ -15,9 +15,10 @@ class ArticlesController < KnowledgebaseController
   end
   
   def rate
-    @article = KbArticle.find(params[:article_id])
-    @article.rate params[:rating].to_i
-    render :partial => "rating", :locals => {:article => @article}
+    @article = KbArticle.find(params[:id])
+    rating = params[:rating].to_i
+    @article.rate rating if rating > 0
+    render :partial => "rating", :locals => { :article => @article }
   end
   
   def create    
