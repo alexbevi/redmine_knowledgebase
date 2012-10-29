@@ -51,14 +51,18 @@ class CategoriesController < KnowledgebaseController
 
   def update
     @category = KbCategory.find(params[:id])
-    if !params[:root_category]
+    
+    if params[:root_category] == "yes"
+      @category.parent_id = nil
+    else
       @category.move_to_child_of(KbCategory.find(params[:parent_id]))
     end
+
     if @category.update_attributes(params[:category])
       flash[:notice] = l(:label_category_updated)
       redirect_to({ :action => 'show', :id => @category.id })
     else
-      render(:action => 'edit')
+      render :action => 'edit'
     end
   end
 
