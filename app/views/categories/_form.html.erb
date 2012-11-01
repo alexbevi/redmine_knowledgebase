@@ -3,12 +3,11 @@
   <p><%= check_box_tag 'root_category', 'yes', @parent_id.nil? %><label for="root_category"><%= l(:label_root_category) %></label><br /></p>
   <p>
     <label for="parent_id"><%= l(:label_parent_category) %></label>
-    <%= select_tag :parent_id, options_for_select(nested_set_options(KbCategory, @category) {|i| "#{'»' * i.level} #{i.title}" }, @parent_id.to_i) %>
+    <%= select_tag :parent_id, options_for_select(nested_set_options(@categories) {|i| "#{'»' * i.level} #{i.title}" }, @parent_id.to_i) %>
   </p>
-
+  <%= hidden_field_tag 'project_id', @project.id %>
   <p><%= f.text_field :title, :label => l(:label_title) %></p>
   <p><%= f.text_area :description, :cols => 60, :rows => 10, :class => 'wiki-edit', :label => l(:label_description) %></p>
 </div>
 
 <%= wikitoolbar_for 'category_description' %>
-

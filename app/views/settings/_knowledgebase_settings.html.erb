@@ -1,12 +1,6 @@
 <% defaults = Redmine::Plugin::registered_plugins[:redmine_knowledgebase].settings[:default] %>
 
 <p>
-  <label><%= l(:allow_anon_access) %></label>
-  <%= hidden_field_tag 'settings[knowledgebase_anonymous_access]', 0 %>
-  <%= check_box_tag 'settings[knowledgebase_anonymous_access]', 1, @settings['knowledgebase_anonymous_access'].to_i == 1 %>
-</p>
-
-<p>
   <label><%= l(:allow_sort_category_tree) %></label>
   <%= hidden_field_tag 'settings[knowledgebase_sort_category_tree]', 0 %>
   <%= check_box_tag 'settings[knowledgebase_sort_category_tree]', 1, @settings['knowledgebase_sort_category_tree'].to_i == 1 %>

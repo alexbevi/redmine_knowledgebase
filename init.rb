@@ -1,6 +1,7 @@
 require 'redmine'
 require 'acts_as_viewed'
 require 'acts_as_rated'
+require 'project_patch'
 
 #Register KB macro
 require 'macros'
@@ -64,11 +65,7 @@ Redmine::Plugin.register :redmine_knowledgebase do
     }
   end
   
-  menu :top_menu, :knowledgebase, { :controller => 'knowledgebase', :action => 'index' }, :caption => :knowledgebase_title, 
-	:if =>  Proc.new {
-		User.current.allowed_to?({ :controller => 'knowledgebase', :action => 'index' }, nil, :global => true) ||
-		Setting['plugin_redmine_knowledgebase']['knowledgebase_anonymous_access'].to_i == 1
-	}
+  menu :project_menu, :knowledgebase, { :controller => 'knowledgebase', :action => 'index' }, :caption => :knowledgebase_title, :after => :activity, :param => :project_id
 
   Redmine::Search.available_search_types << 'kb_articles'
 end

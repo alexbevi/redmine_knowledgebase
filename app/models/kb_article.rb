@@ -6,7 +6,7 @@ class KbArticle < ActiveRecord::Base
   validates_presence_of :title
   validates_presence_of :category_id
 
-  belongs_to :project # XXX association added to allow searching to work
+  belongs_to :project
   belongs_to :category, :class_name => "KbCategory"
   belongs_to :author,   :class_name => 'User', :foreign_key => 'author_id'
   belongs_to :updater,  :class_name => 'User', :foreign_key => 'updater_id'
@@ -38,13 +38,5 @@ class KbArticle < ActiveRecord::Base
   def attachments_deletable?(user=User.current)
     user.logged?
   end
-
-  # XXX this is required by acts_as_attachable. Without this, trying to download
-  # a file throws the following:
-  # "NoMethodError (undefined method 'project' for #(ActiveRecord::Associations::BelongsToPolymorphicAssociation))"
-  def project
-    nil
-  end
-
+  
 end
-

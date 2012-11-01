@@ -4,12 +4,24 @@ class ArticlesController < KnowledgebaseController
   helper :attachments
   include AttachmentsHelper
 
-  #Authorize against global permissions defined in init.rb
-  before_filter :authorize_global
+  before_filter :find_project, :authorize
   before_filter :get_article, :only => [:add_attachment, :show, :edit, :update, :add_comment, :destroy, :destroy_comment]
+
+  def find_project
+    if !params[:project_id].nil?
+        @project=Project.find(params[:project_id])
+    elsif !params[:category_id].nil?
+        @project=KbCategory.find(params[:category_id]).project
+    elsif !params[:id].nil?
+        @project=KbArticle.find(params[:id]).category.project
+    elsif !params[:article_id].nil?
+        @project=KbArticle.find(params[:article_id]).category.project
+    end
+  end
   
   def new
     @article = KbArticle.new
+	@categories=@project.categories.find(:all)
     @default_category = params[:category_id]
     @article.category_id = params[:category_id]
   end
@@ -28,10 +40,11 @@ class ArticlesController < KnowledgebaseController
     @article = KbArticle.new(params[:article])
     @article.category_id = params[:category_id]
     @article.author_id = User.current.id
+	@article.project_id=KbCategory.find(params[:category_id]).project_id
     if @article.save
       attachments = attach(@article, params[:attachments])
       flash[:notice] = l(:label_article_created, :title => @article.title)
-      redirect_to({ :controller => 'categories', :action => 'show', :id => @article.category_id })
+      redirect_to({ :controller => 'categories', :action => 'show', :id=>KbCategory.find(params[:category_id]), :project_id => @project})
     else
       render(:action => 'new')
     end
@@ -44,6 +57,7 @@ class ArticlesController < KnowledgebaseController
   end
   
   def edit
+    @categories=@project.categories.find(:all)
   end
   
   def update
@@ -52,7 +66,7 @@ class ArticlesController < KnowledgebaseController
     if @article.update_attributes(params[:article])
       attachments = attach(@article, params[:attachments])
       flash[:notice] = l(:label_article_updated)
-      redirect_to({ :action => 'show', :id => @article.id })
+      redirect_to({ :action => 'show', :id => @article.id, :project_id => @project })
     else
       render({:action => 'edit', :id => @article.id})
     end
@@ -63,7 +77,7 @@ class ArticlesController < KnowledgebaseController
     @comment.author = User.current || nil
     if @article.comments << @comment
       flash[:notice] = l(:label_comment_added)
-      redirect_to :action => 'show', :id => @article
+      redirect_to :action => 'show', :id => @article, :project_id => @project
     else
       show
       render :action => 'show'
@@ -72,23 +86,23 @@ class ArticlesController < KnowledgebaseController
 
   def destroy_comment
     @article.comments.find(params[:comment_id]).destroy
-    redirect_to :action => 'show', :id => @article
+    redirect_to :action => 'show', :id => @article, :project_id => @project
   end
   
   def destroy
     @article.destroy
     flash[:notice] = l(:label_article_removed)
-    redirect_to({ :controller => 'knowledgebase', :action => 'index' })
+    redirect_to({ :controller => 'knowledgebase', :action => 'index', :project_id => @project})
   end
 
   def add_attachment
     attachments = attach(@article, params[:attachments])    
-    redirect_to({ :action => 'show', :id => @article.id })
+    redirect_to({ :action => 'show', :id => @article.id, :project_id => @project })
   end
   
   def tagged
     @tag = params[:id]
-    @list = KbArticle.tagged_with(@tag)
+    @list = @project.articles.tagged_with(@tag)	
   end
 
   def preview
