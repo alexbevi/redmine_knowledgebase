@@ -67,16 +67,9 @@ class CategoriesController < KnowledgebaseController
 
   def update
     @category = KbCategory.find(params[:id])
-<<<<<<< HEAD
-    if params[:root_category] == "yes"
-	  @category.parent_id = nil
-	else
-=======
-    
     if params[:root_category] == "yes"
       @category.parent_id = nil
     else
->>>>>>> upstream/master
       @category.move_to_child_of(KbCategory.find(params[:parent_id]))
     end
 
