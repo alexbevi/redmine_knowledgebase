@@ -2,6 +2,9 @@
 tr: 
   allow_anon_access: "Anonim erişime izin ver?"
   allow_sort_category_tree: "Kategori ağacını alfabetik olarak sırala?"
+  field_article_author: "Created by"
+  field_article_destroyer: "Deleted by"
+  field_article_updater: "Updated by"
   field_tag_list: "Etiket Listesi"
   knowledgebase_title: "Bilgi Bankası"
   label_article_created: "'%{title} makalesi oluşturuldu'"

@@ -2,6 +2,9 @@
 fr: 
   allow_anon_access: "Consultation anonyme ?"
   allow_sort_category_tree: "Trier les catégories par ordre alphabétique ?"
+  field_article_author: "Created by"
+  field_article_destroyer: "Deleted by"
+  field_article_updater: "Updated by"
   field_tag_list: "Liste des tags (séparés par une virgule)"
   knowledgebase_title: "Base de Connaissance"
   label_article_created: "Article '%{title}' créé"

@@ -15,7 +15,7 @@ class KbArticle < ActiveRecord::Base
   acts_as_rated :no_rater => true
   acts_as_taggable
   acts_as_attachable
-
+  acts_as_watchable
   acts_as_searchable :columns => [ "kb_articles.title", "kb_articles.content"],
                      :include => [ :project ],
                      :order_column => "kb_articles.id",
@@ -37,6 +37,16 @@ class KbArticle < ActiveRecord::Base
 
   def attachments_deletable?(user=User.current)
     user.logged?
+  end
+  
+  def recipients
+    notified = []
+    # Author and assignee are always notified unless they have been
+    # locked or don't want to be notified
+    notified << author if author
+    notified = notified.select {|u| u.active? && u.notify_about?(self)}
+    notified.uniq!
+    notified.collect(&:mail)
   end
   
 end

@@ -2,6 +2,9 @@
 bg: 
   allow_anon_access: "Разрешаване на анонимен достъп?"
   allow_sort_category_tree: "Азбучно сортиране на дървото на категориите?"
+  field_article_author: "Created by"
+  field_article_destroyer: "Deleted by"
+  field_article_updater: "Updated by"
   field_tag_list: "Сипсък на маркерите"
   knowledgebase_title: "База знания"
   label_article_created: "Създадена статия '%{title}'"

@@ -63,6 +63,12 @@ Redmine::Plugin.register :redmine_knowledgebase do
       :knowledgebase => :index,
       :categories    => [:index, :show, :new, :create, :edit, :update, :destroy]
     }
+    permission :watch_articles, {
+      :watchers		=> [:new, :destroy]
+    }
+    permission :watch_categories, {
+      :watchers => [:new, :destroy]
+    }
   end
   
   menu :project_menu, :knowledgebase, { :controller => 'knowledgebase', :action => 'index' }, :caption => :knowledgebase_title, :after => :activity, :param => :project_id

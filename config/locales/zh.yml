@@ -2,6 +2,9 @@
 zh: 
   allow_anon_access: 是否允许匿名访问？
   allow_sort_category_tree: 类别树按字母排序？
+  field_article_author: "Created by"
+  field_article_destroyer: "Deleted by"
+  field_article_updater: "Updated by"
   field_tag_list: 标签列表
   knowledgebase_title: 知识库
   label_article_created: "文章【'%{title}'】已创建"

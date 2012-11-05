@@ -11,4 +11,6 @@ class KbCategory < ActiveRecord::Base
   
   acts_as_nested_set :order => 'title'
 
+  acts_as_watchable
+  
 end

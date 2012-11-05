@@ -45,6 +45,7 @@ class ArticlesController < KnowledgebaseController
       attachments = attach(@article, params[:attachments])
       flash[:notice] = l(:label_article_created, :title => @article.title)
       redirect_to({ :controller => 'categories', :action => 'show', :id=>KbCategory.find(params[:category_id]), :project_id => @project})
+	  KbMailer.article_create(@article).deliver
     else
       render(:action => 'new')
     end
@@ -67,6 +68,7 @@ class ArticlesController < KnowledgebaseController
       attachments = attach(@article, params[:attachments])
       flash[:notice] = l(:label_article_updated)
       redirect_to({ :action => 'show', :id => @article.id, :project_id => @project })
+	  KbMailer.article_update(@article).deliver
     else
       render({:action => 'edit', :id => @article.id})
     end
@@ -78,6 +80,7 @@ class ArticlesController < KnowledgebaseController
     if @article.comments << @comment
       flash[:notice] = l(:label_comment_added)
       redirect_to :action => 'show', :id => @article, :project_id => @project
+	  KbMailer.article_comment(@article, @comment).deliver
     else
       show
       render :action => 'show'
@@ -90,6 +93,7 @@ class ArticlesController < KnowledgebaseController
   end
   
   def destroy
+    KbMailer.article_destroy(@article).deliver
     @article.destroy
     flash[:notice] = l(:label_article_removed)
     redirect_to({ :controller => 'knowledgebase', :action => 'index', :project_id => @project})

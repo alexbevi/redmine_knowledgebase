@@ -1,0 +1,6 @@
+<h1><%= l(:label_comment_added) %>: <%= link_to(h(@article.title), @article_url) %></h1>
+<br />
+<b><%= l(:label_comment) %>:</b> <%= @comment.comments %>
+<br />
+<br />
+<%= authoring @comment.created_on, @comment.author %>
