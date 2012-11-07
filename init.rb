@@ -16,7 +16,6 @@ Redmine::Plugin.register :redmine_knowledgebase do
   requires_redmine :version_or_higher => '2.0.0'
   
   settings :default => {
-    'knowledgebase_anonymous_access' => "1",
     'knowledgebase_sort_category_tree' => "1",
     'knowledgebase_show_category_totals' => "1",
     'knowledgebase_summary_limit' => "5"
@@ -72,6 +71,10 @@ Redmine::Plugin.register :redmine_knowledgebase do
   end
   
   menu :project_menu, :knowledgebase, { :controller => 'knowledgebase', :action => 'index' }, :caption => :knowledgebase_title, :after => :activity, :param => :project_id
-
+  
+  Redmine::Activity.map do |activity|
+      activity.register :articles, :class_name => 'KbArticle'
+  end
+  
   Redmine::Search.available_search_types << 'kb_articles'
 end

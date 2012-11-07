@@ -22,11 +22,17 @@ class KbArticle < ActiveRecord::Base
                      :date_column => "kb_articles.created_at",
                      :permission => nil
 
-  acts_as_event :title => Proc.new { |o| "#{l(:label_title_articles)} ##{o.id}: #{o.title}" },
-                :description => Proc.new { |o| "#{o.content}" },
-                :datetime => :created_at,
+  acts_as_event :title => Proc.new {|o| status = (o.new_status ? "(#{l(:label_new_article)})" : "(#{l(:label_article_updated)})"); "#{status} #{l(:label_title_articles)} ##{o.id} - #{o.title}" },
+                :description => :summary,
+				:datetime => :updated_at,
                 :type => 'articles',
-                :url => Proc.new { |o| {:controller => 'articles', :action => 'show', :id => nil, :article_id => o.id} }
+                :url => Proc.new { |o| {:controller => 'articles', :action => 'show', :id => o.id, :project_id => o.project} }
+
+  acts_as_activity_provider :find_options => {:include => :project},
+							:author_key => :author_id,
+							:type => 'articles',
+                            :timestamp => :updated_at,
+                            :permission => :view_articles
 
   has_many :comments, :as => :commented, :dependent => :delete_all, :order => "created_on"
 
@@ -49,4 +55,9 @@ class KbArticle < ActiveRecord::Base
     notified.collect(&:mail)
   end
   
+  def new_status
+    if self.updater_id == 0
+		true
+	end
+  end
 end
