@@ -2,6 +2,9 @@
 el: 
   allow_anon_access: "Να επιτραπεί ανώνυμη πρόσβαση;"
   allow_sort_category_tree: "Ταξινόμηση δέντρου κατα αλφαβητική σειρά;"
+  field_article_author: "Created by"
+  field_article_destroyer: "Deleted by"
+  field_article_updater: "Updated by"
   field_tag_list: "Λίστα ετικετών"
   knowledgebase_title: "Γνωσιακή βάση"
   label_article_created: "Δημιουργηθέν άρθρο '%{title}'"

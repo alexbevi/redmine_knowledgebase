@@ -1,7 +1,7 @@
 <% articles.each do |article| %>
   <div class="article-icon <%= default_icon %>">
   	<% truncate_length = 100 if local_assigns[:truncate_length].nil? %>
-    <%= link_to truncate(article.title, :length => truncate_length), { :controller => 'articles', :action => 'show', :id => article.id }, :title => article.title %>
+    <%= link_to truncate(article.title, :length => truncate_length), { :controller => 'articles', :action => 'show', :id => article.id, :project_id => @project}, :title => article.title %>
     <%= format_article_summary(article, summary_format, :truncate => truncate_length ) %>
   </div>	
 <% end %>

@@ -1,6 +1,7 @@
 require 'redmine'
 require 'acts_as_viewed'
 require 'acts_as_rated'
+require 'project_patch'
 
 #Register KB macro
 require 'macros'
@@ -15,7 +16,6 @@ Redmine::Plugin.register :redmine_knowledgebase do
   requires_redmine :version_or_higher => '2.0.0'
   
   settings :default => {
-    'knowledgebase_anonymous_access' => "1",
     'knowledgebase_sort_category_tree' => "1",
     'knowledgebase_show_category_totals' => "1",
     'knowledgebase_summary_limit' => "5"
@@ -62,13 +62,19 @@ Redmine::Plugin.register :redmine_knowledgebase do
       :knowledgebase => :index,
       :categories    => [:index, :show, :new, :create, :edit, :update, :destroy]
     }
+    permission :watch_articles, {
+      :watchers		=> [:new, :destroy]
+    }
+    permission :watch_categories, {
+      :watchers => [:new, :destroy]
+    }
   end
   
-  menu :top_menu, :knowledgebase, { :controller => 'knowledgebase', :action => 'index' }, :caption => :knowledgebase_title, 
-	:if =>  Proc.new {
-		User.current.allowed_to?({ :controller => 'knowledgebase', :action => 'index' }, nil, :global => true) ||
-		Setting['plugin_redmine_knowledgebase']['knowledgebase_anonymous_access'].to_i == 1
-	}
-
+  menu :project_menu, :knowledgebase, { :controller => 'knowledgebase', :action => 'index' }, :caption => :knowledgebase_title, :after => :activity, :param => :project_id
+  
+  Redmine::Activity.map do |activity|
+      activity.register :articles, :class_name => 'KbArticle'
+  end
+  
   Redmine::Search.available_search_types << 'kb_articles'
 end

@@ -8,12 +8,12 @@
     <% if @categories.length > 0 %>
       <label for="category_id"><strong><%= l(:label_jump_category) %></strong></label>
       &nbsp;
-      <%= select_tag :category_id, options_for_select([""] + nested_set_options(KbCategory) {|i| "#{'»' * i.level} #{i.title}" }), :onchange => "if (this.value != \'\') { window.location = 'knowledgebase/categories/' + this.value; }" %>
+      <%= select_tag :category_id, options_for_select([""] + nested_set_options(@categories) {|i| "#{'»' * i.level} #{i.title}" }), :onchange => "if (this.value != \'\') { window.location = 'knowledgebase/categories/' + this.value + '?project_id=#{@project.identifier}'; }" %>
     <% end %>
-    <%= link_to_if_authorized_globally l(:title_new_category), { :controller => 'categories', :action => 'new' }, :class => 'icon icon-add' %>
+    <%= link_to_if_authorized l(:title_new_category), { :controller => 'categories', :action => 'new', :project_id => @project}, :class => 'icon icon-add' %>
   </div>
   <h2><%= l(:knowledgebase_title) %></h2>
-  <% if KbArticle.count > 0 %>
+  <% if @project.articles.count > 0 %>
   	<div class="splitcontentleft">
   		<h3><%= l(:title_most_popular_articles) %></h3>
   		<div class="articles most-popular">
@@ -31,7 +31,7 @@
 	    </div>
 	    <div id="taglist">
 		     <% tag_cloud(@tags, ['tag-x-small', 'tag-small', 'tag-medium', 'tag-large', 'tag-x-large']) do |tag, css_class| %>
-	       	<%= link_to(tag.name, {:controller => 'articles', :action => :tagged, :id => tag.name }, :class => "tag #{css_class}") %>
+	       	<%= link_to(tag.name, {:controller => 'articles', :action => :tagged, :id => tag.name, :project_id => @project}, :class => "tag #{css_class}") %>
 	     	<% end %>
 	    </div>
   	</div>

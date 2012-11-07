@@ -2,6 +2,9 @@
 pl: 
   allow_anon_access: "Allow anonymous access?"
   allow_sort_category_tree: "Sort the category tree alphabetically?"
+  field_article_author: "Created by"
+  field_article_destroyer: "Deleted by"
+  field_article_updater: "Updated by"
   field_tag_list: "Słowa kluczowe"
   knowledgebase_title: "Baza Wiedzy"
   label_article_created: "Created article '%{title}'"

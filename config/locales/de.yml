@@ -2,6 +2,9 @@
 de: 
   allow_anon_access: "Anonymen Zugriff erlauben?"
   allow_sort_category_tree: "Den Katgegoriebaum alphabetisch sortieren?"
+  field_article_author: "Created by"
+  field_article_destroyer: "Deleted by"
+  field_article_updater: "Updated by"
   field_tag_list: "Tag Liste"
   knowledgebase_title: Wissensbasis
   label_article_created: "Artikel '%{title}' erstellt"

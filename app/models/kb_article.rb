@@ -6,7 +6,7 @@ class KbArticle < ActiveRecord::Base
   validates_presence_of :title
   validates_presence_of :category_id
 
-  belongs_to :project # XXX association added to allow searching to work
+  belongs_to :project
   belongs_to :category, :class_name => "KbCategory"
   belongs_to :author,   :class_name => 'User', :foreign_key => 'author_id'
   belongs_to :updater,  :class_name => 'User', :foreign_key => 'updater_id'
@@ -15,18 +15,24 @@ class KbArticle < ActiveRecord::Base
   acts_as_rated :no_rater => true
   acts_as_taggable
   acts_as_attachable
-
+  acts_as_watchable
   acts_as_searchable :columns => [ "kb_articles.title", "kb_articles.content"],
                      :include => [ :project ],
                      :order_column => "kb_articles.id",
                      :date_column => "kb_articles.created_at",
                      :permission => nil
 
-  acts_as_event :title => Proc.new { |o| "#{l(:label_title_articles)} ##{o.id}: #{o.title}" },
-                :description => Proc.new { |o| "#{o.content}" },
-                :datetime => :created_at,
+  acts_as_event :title => Proc.new {|o| status = (o.new_status ? "(#{l(:label_new_article)})" : "(#{l(:label_article_updated)})"); "#{status} #{l(:label_title_articles)} ##{o.id} - #{o.title}" },
+                :description => :summary,
+				:datetime => :updated_at,
                 :type => 'articles',
-                :url => Proc.new { |o| {:controller => 'articles', :action => 'show', :id => nil, :article_id => o.id} }
+                :url => Proc.new { |o| {:controller => 'articles', :action => 'show', :id => o.id, :project_id => o.project} }
+
+  acts_as_activity_provider :find_options => {:include => :project},
+							:author_key => :author_id,
+							:type => 'articles',
+                            :timestamp => :updated_at,
+                            :permission => :view_articles
 
   has_many :comments, :as => :commented, :dependent => :delete_all, :order => "created_on"
 
@@ -38,13 +44,20 @@ class KbArticle < ActiveRecord::Base
   def attachments_deletable?(user=User.current)
     user.logged?
   end
-
-  # XXX this is required by acts_as_attachable. Without this, trying to download
-  # a file throws the following:
-  # "NoMethodError (undefined method 'project' for #(ActiveRecord::Associations::BelongsToPolymorphicAssociation))"
-  def project
-    nil
+  
+  def recipients
+    notified = []
+    # Author and assignee are always notified unless they have been
+    # locked or don't want to be notified
+    notified << author if author
+    notified = notified.select {|u| u.active? && u.notify_about?(self)}
+    notified.uniq!
+    notified.collect(&:mail)
   end
-
+  
+  def new_status
+    if self.updater_id == 0
+		true
+	end
+  end
 end
-

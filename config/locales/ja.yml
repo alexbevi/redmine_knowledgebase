@@ -2,6 +2,9 @@
 ja: 
   allow_anon_access: 匿名アクセス許可
   allow_sort_category_tree: カテゴリをアルファベット順に並び替える
+  field_article_author: "Created by"
+  field_article_destroyer: "Deleted by"
+  field_article_updater: "Updated by"
   field_tag_list: タグリスト
   knowledgebase_title: 知識DB
   label_article_created: "'%{title}'の記事を作成しました．"

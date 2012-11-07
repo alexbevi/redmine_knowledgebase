@@ -1,14 +1,17 @@
----
-ru:
+--- 
+ru: 
   allow_anon_access: "Разрешить анонимный доступ?"
   allow_sort_category_tree: "Сортировать дерево каталогов по алфавиту?"
+  field_article_author: "Created by"
+  field_article_destroyer: "Deleted by"
+  field_article_updater: "Updated by"
   field_tag_list: "Список меток"
   knowledgebase_title: "База знаний"
   label_article_created: "Создана статья '%{title}'"
   label_article_plural: Статьи
   label_article_removed: "Статья удалена"
   label_article_updated: "Статья обновлена"
-  label_article_viewed:
+  label_article_viewed: 
     one: "Просмотрена один раз"
     other: "Просмотрена %{count} раз"
   label_category: Раздел
@@ -17,7 +20,7 @@ ru:
   label_category_not_empty_cannot_delete: "Раздел содержит статьи и не может быть удален."
   label_category_plural: Разделы
   label_category_updated: "Раздел обновлен"
-  label_content: Текст статьи
+  label_content: "Текст статьи"
   label_delete_article: "Удалить статью"
   label_delete_category: "Удалить Раздел"
   label_description: Описание
@@ -34,10 +37,10 @@ ru:
   label_subcategories: Подразделы
   label_summary: Описание
   label_summary_newest_articles: "Создан %{ago} в разделе %{category}"
-  label_summary_popular_articles:
+  label_summary_popular_articles: 
     one: "Один просмотр с %{created}"
     other: "Было %{count} просмотров с %{created}"
-  label_summary_toprated_articles:
+  label_summary_toprated_articles: 
     one: "Рейтинг: %{rating_avg}/%{rating_max} после одного голоса"
     other: "Rating: %{rating_avg}/%{rating_max} после %{count} голосов"
   label_summary_updated_articles: "Обновлено %{ago}"
@@ -63,7 +66,7 @@ ru:
   title_tagged_articles: "Статьи отмеченные тегом %{tag}"
   title_tags: Тэг
   title_top_rated_articles: "Статьи с наибольшим рейтингом"
-  title_votes:
+  title_votes: 
     one: "один голос"
     other: "%{count} голосов"
     zero: "голосов нет"

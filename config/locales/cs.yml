@@ -2,6 +2,9 @@
 cs: 
   allow_anon_access: "Dovolit anonymní přístup?"
   allow_sort_category_tree: "Řadit strom kategorií podle abecedy?"
+  field_article_author: "Created by"
+  field_article_destroyer: "Deleted by"
+  field_article_updater: "Updated by"
   field_tag_list: "Seznam štítků"
   knowledgebase_title: "Znalostní databáze"
   label_article_created: "Byl vytvořen článek %{title}"

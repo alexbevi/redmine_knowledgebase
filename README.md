@@ -50,16 +50,12 @@ need to restart Redmine for the plugin to be available.
 
 ### Overview
 
-Once the Redmine Knowledgebase Plugin is installed, there will be a
-Knowledgebase link in the Redmine navigation header. Unlike the Redmine
-Wiki, which is only available at the per-project or subproject level,
-the Knowledgebase is available at the root level of the Redmine
-application.
+Once the Redmine Knowledgebase Plugin is installed, you will need to add the knowledgebase module to an existing or new project. Once you do so, there will be a Knowledgebase link in the Project menu bar.
 
 ### Configuration
 
 To start using the Knowledgebase plugin, click on the Knowledgebase link
-in the Redmine navigation header.
+in the Project menu bar.
 
 This takes you to the default page for
 the Knowledgebase, with this text: *"No articles have been added to the
