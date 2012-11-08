@@ -8,6 +8,7 @@ class ArticlesController < KnowledgebaseController
   before_filter :get_article, :only => [:add_attachment, :show, :edit, :update, :add_comment, :destroy, :destroy_comment]
 
   def find_project
+    # TODO refactor
     if !params[:project_id].nil?
         @project=Project.find(params[:project_id])
     elsif !params[:category_id].nil?
@@ -21,12 +22,13 @@ class ArticlesController < KnowledgebaseController
   
   def new
     @article = KbArticle.new
-	@categories=@project.categories.find(:all)
+    @categories = @project.categories.find(:all)
     @default_category = params[:category_id]
     @article.category_id = params[:category_id]
   end
   
   def rate
+    binding.pry
     @article = KbArticle.find(params[:id])
     rating = params[:rating].to_i
     @article.rate rating if rating > 0

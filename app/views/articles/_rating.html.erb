@@ -12,7 +12,7 @@ $(function(){
     callback: function(value, link) {
       $.ajax({
         type: "POST",
-        url: "<%= rate_article_url(@article) %>",
+        url: "<%= rate_article_url(@project, @article) %>",
         data: {
           rating: value
         }
