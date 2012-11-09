@@ -28,7 +28,6 @@ class ArticlesController < KnowledgebaseController
   end
   
   def rate
-    binding.pry
     @article = KbArticle.find(params[:id])
     rating = params[:rating].to_i
     @article.rate rating if rating > 0
