@@ -1,5 +1,9 @@
-class CategoriesController < KnowledgebaseController
-	unloadable
+class CategoriesController < ApplicationController
+  unloadable
+  
+  menu_item :articles
+  helper :knowledgebase
+  include KnowledgebaseHelper
 
   before_filter :find_project, :authorize
 
@@ -57,7 +61,7 @@ class CategoriesController < KnowledgebaseController
     if @category.articles.size == 0
 	  @category.destroy
       flash[:notice] = l(:label_category_deleted)
-      redirect_to({ :controller => :knowledgebase, :action => 'index', :project_id => @project})
+      redirect_to({ :controller => :articles, :action => 'index', :project_id => @project})
     else
       @articles = @category.articles.find(:all)
       flash[:error] = l(:label_category_not_empty_cannot_delete)
@@ -82,4 +86,3 @@ class CategoriesController < KnowledgebaseController
   end
 
 end
-
