@@ -8,7 +8,7 @@
     <% if @categories.length > 0 %>
       <label for="category_id"><strong><%= l(:label_jump_category) %></strong></label>
       &nbsp;
-      <%= select_tag :category_id, options_for_select([""] + nested_set_options(@categories) {|i| "#{'»' * i.level} #{i.title}" }), :onchange => "if (this.value != \'\') { window.location = 'knowledgebase/categories/' + this.value + '?project_id=#{@project.identifier}'; }" %>
+      <%= select_tag :category_id, options_for_select([""] + nested_set_options(@categories) {|i| "#{'»' * i.level} #{i.title}" }), :onchange => "if (this.value != \'\') { window.location = 'categories/' + this.value; }" %>
     <% end %>
     <%= link_to_if_authorized l(:title_new_category), { :controller => 'categories', :action => 'new', :project_id => @project}, :class => 'icon icon-add' %>
   </div>
