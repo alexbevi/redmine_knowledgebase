@@ -24,7 +24,7 @@ class KbArticle < ActiveRecord::Base
   acts_as_event :title => Proc.new {|o| status = (o.new_status ? "(#{l(:label_new_article)})" : nil ); "#{status} #{l(:label_title_articles)} ##{o.id} - #{o.title}" },
                 :description => :summary,
                 :datetime => :updated_at,
-                :type => 'kb_articles',
+                :type => Proc.new { |o| 'article-' + (o.new_status ? 'add' : 'edit') },
                 :url => Proc.new { |o| {:controller => 'articles', :action => 'show', :id => o.id, :project_id => o.project} }
 
   acts_as_activity_provider :find_options => {:include => :project},

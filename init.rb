@@ -66,9 +66,14 @@ Redmine::Plugin.register :redmine_knowledgebase do
   
   menu :project_menu, :articles, { :controller => 'articles', :action => 'index' }, :caption => :knowledgebase_title, :after => :activity, :param => :project_id
   
-  Redmine::Activity.map do |activity|
-      activity.register :kb_articles
-  end
-  
-  Redmine::Search.available_search_types << 'kb_articles'
 end
+
+Redmine::Activity.map do |activity|
+    activity.register :kb_articles
+end
+  
+Redmine::Search.available_search_types << 'kb_articles'
+
+class RedmineKnowledgebaseHookListener < Redmine::Hook::ViewListener
+    render_on :view_layouts_base_html_head, :inline => "<%= stylesheet_link_tag 'knowledgebase', :plugin => :redmine_knowledgebase %>"
+end 
