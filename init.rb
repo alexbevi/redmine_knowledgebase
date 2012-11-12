@@ -21,8 +21,9 @@ Redmine::Plugin.register :redmine_knowledgebase do
     'knowledgebase_summary_limit' => "5"
   }, :partial => 'settings/knowledgebase_settings'
 
+  #Global permissions
   project_module :knowledgebase do
-    permission :view_articles, {
+    permission :view_kb_articles, {
       :articles      => [:index, :show, :tagged],
       :categories    => [:index, :show]
     }
@@ -66,7 +67,7 @@ Redmine::Plugin.register :redmine_knowledgebase do
   menu :project_menu, :articles, { :controller => 'articles', :action => 'index' }, :caption => :knowledgebase_title, :after => :activity, :param => :project_id
   
   Redmine::Activity.map do |activity|
-      activity.register :articles, :class_name => 'KbArticle'
+      activity.register :kb_articles
   end
   
   Redmine::Search.available_search_types << 'kb_articles'

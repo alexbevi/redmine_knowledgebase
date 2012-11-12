@@ -27,6 +27,7 @@ it:
   label_edit_article: Edit
   label_edit_category: "Edit Category"
   label_jump_category: "Vai alla categoria"
+  label_kb_article_plural: "Knowledgebase articles"
   label_kb_home: Home
   label_kb_link: "KB#%{kb_id}"
   label_new_article: "New Article"

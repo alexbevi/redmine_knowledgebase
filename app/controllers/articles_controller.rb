@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   unloadable
-
+  default_search_scope :kb_articles
   helper :attachments
   include AttachmentsHelper
   helper :knowledgebase
