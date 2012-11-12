@@ -28,6 +28,7 @@ zh:
   label_edit_category: 编辑类型
   label_home: Home
   label_jump_category: 移至类别
+  label_kb_article_plural: "Knowledgebase articles"
   label_kb_home: Home
   label_kb_link: "KB#%{kb_id}"
   label_new_article: 新建文章

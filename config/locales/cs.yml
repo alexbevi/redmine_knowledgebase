@@ -28,6 +28,7 @@ cs:
   label_edit_category: "Upravit kategorii"
   label_home: Úvodní
   label_jump_category: "Skočit na kategorii"
+  label_kb_article_plural: "Knowledgebase articles"
   label_kb_home: Home
   label_kb_link: "KB#%{kb_id}"
   label_new_article: "Nový článek"

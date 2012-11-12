@@ -1,19 +1,11 @@
-class CategoriesController < KnowledgebaseController
-	unloadable
+class CategoriesController < ApplicationController
+  unloadable
+  
+  menu_item :articles
+  helper :knowledgebase
+  include KnowledgebaseHelper
 
-  before_filter :find_project, :authorize
-
-  def find_project
-    if !params[:project_id].nil?
-        @project=Project.find(params[:project_id])
-    elsif !params[:category_id].nil?
-        @project=KbCategory.find(params[:category_id]).project
-    elsif !params[:parent_id].nil?
-        @project=KbCategory.find(params[:parent_id]).project
-    elsif !params[:id].nil?
-        @project=KbCategory.find(params[:id]).project
-    end
-  end
+  before_filter :find_project_by_project_id, :authorize
   
   def show
     @category = KbCategory.find(params[:id])
@@ -57,7 +49,7 @@ class CategoriesController < KnowledgebaseController
     if @category.articles.size == 0
 	  @category.destroy
       flash[:notice] = l(:label_category_deleted)
-      redirect_to({ :controller => :knowledgebase, :action => 'index', :project_id => @project})
+      redirect_to({ :controller => :articles, :action => 'index', :project_id => @project})
     else
       @articles = @category.articles.find(:all)
       flash[:error] = l(:label_category_not_empty_cannot_delete)
@@ -82,4 +74,3 @@ class CategoriesController < KnowledgebaseController
   end
 
 end
-

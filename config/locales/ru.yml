@@ -27,6 +27,7 @@ ru:
   label_edit_article: Редактировать
   label_edit_category: "Редактировать раздел"
   label_jump_category: "Перейти к разделу"
+  label_kb_article_plural: "Knowledgebase articles"
   label_kb_home: Начало
   label_kb_link: "KB#%{kb_id}"
   label_new_article: "Новая статья"

@@ -28,7 +28,7 @@
 <% end %>
 
 <p id="category-crumbs" class="breadcrumb">
-	<%= link_to l(:label_kb_home), { :controller => 'knowledgebase', :action => 'index', :project_id => @project} %>
+	<%= link_to l(:label_kb_home), { :controller => 'articles', :action => 'index', :project_id => @project} %>
 	<% @article.category.ancestors.each do |ancestor| %>
 	&nbsp;&raquo;&nbsp; 
 	<%= link_to ancestor.title, { :controller => 'categories', :action => 'show', :id => ancestor.id, :project_id => @project} %>
