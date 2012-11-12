@@ -4,8 +4,6 @@ class ArticlesController < KnowledgebaseController
   helper :attachments
   include AttachmentsHelper
 
-  #Authorize against global permissions defined in init.rb
-  before_filter :authorize_global
   before_filter :get_article, :only => [:add_attachment, :show, :edit, :update, :add_comment, :destroy, :destroy_comment]
   
   def new

@@ -1,9 +1,6 @@
 class CategoriesController < KnowledgebaseController
 	unloadable
 
-  #Authorize against global permissions defined in init.rb
-  before_filter :authorize_global
-
   def show
     @category = KbCategory.find(params[:id])
     @articles = @category.articles.find(:all)

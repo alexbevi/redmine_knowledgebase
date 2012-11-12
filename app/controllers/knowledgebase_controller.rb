@@ -2,7 +2,8 @@ class KnowledgebaseController < ApplicationController
   unloadable
   
   #Authorize against global permissions defined in init.rb
-  before_filter :authorize_global, :unless => :allow_anonymous_access?
+  before_filter :authorize_global, :except => [:index, :show]
+  before_filter :authorize_global, :only   => [:index, :show], :unless => :allow_anonymous_access?
   
   rescue_from ActionView::MissingTemplate, :with => :force_404
   rescue_from ActiveRecord::RecordNotFound, :with => :force_404
