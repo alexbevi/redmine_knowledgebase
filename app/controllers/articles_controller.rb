@@ -6,24 +6,11 @@ class ArticlesController < ApplicationController
   helper :knowledgebase
   include KnowledgebaseHelper
 
-  before_filter :find_project, :authorize
+  before_filter :find_project_by_project_id, :authorize
   before_filter :get_article, :only => [:add_attachment, :show, :edit, :update, :add_comment, :destroy, :destroy_comment]
 
   rescue_from ActionView::MissingTemplate, :with => :force_404
   rescue_from ActiveRecord::RecordNotFound, :with => :force_404
-
-  def find_project
-    # TODO refactor
-    if !params[:project_id].nil?
-        @project=Project.find(params[:project_id])
-    elsif !params[:category_id].nil?
-        @project=KbCategory.find(params[:category_id]).project
-    elsif !params[:id].nil?
-        @project=KbArticle.find(params[:id]).category.project
-    elsif !params[:article_id].nil?
-        @project=KbArticle.find(params[:article_id]).category.project
-    end
-  end
 
   def index
     begin
