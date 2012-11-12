@@ -16,25 +16,26 @@ class KbArticle < ActiveRecord::Base
   acts_as_taggable
   acts_as_attachable
   acts_as_watchable
-  acts_as_searchable :columns => [ "kb_articles.title", "kb_articles.content"],
+  acts_as_searchable :columns => [ "#{table_name}.title", "#{table_name}.content"],
                      :include => [ :project ],
-                     :order_column => "kb_articles.id",
-                     :date_column => "kb_articles.created_at",
-                     :permission => nil
+                     :order_column => "#{table_name}.id",
+                     :date_column => "#{table_name}.created_at"
 
-  acts_as_event :title => Proc.new {|o| status = (o.new_status ? "(#{l(:label_new_article)})" : "(#{l(:label_article_updated)})"); "#{status} #{l(:label_title_articles)} ##{o.id} - #{o.title}" },
+  acts_as_event :title => Proc.new {|o| status = (o.new_status ? "(#{l(:label_new_article)})" : nil ); "#{status} #{l(:label_title_articles)} ##{o.id} - #{o.title}" },
                 :description => :summary,
-				:datetime => :updated_at,
-                :type => 'articles',
+                :datetime => :updated_at,
+                :type => Proc.new { |o| 'article-' + (o.new_status ? 'add' : 'edit') },
                 :url => Proc.new { |o| {:controller => 'articles', :action => 'show', :id => o.id, :project_id => o.project} }
 
   acts_as_activity_provider :find_options => {:include => :project},
-							:author_key => :author_id,
-							:type => 'articles',
-                            :timestamp => :updated_at,
-                            :permission => :view_articles
+                            :author_key => :author_id, 
+                            :type => 'kb_articles',
+                            :timestamp => :updated_at
 
   has_many :comments, :as => :commented, :dependent => :delete_all, :order => "created_on"
+
+  scope :visible, lambda {|*args| { :include => :project,
+                                        :conditions => Project.allowed_to_condition(args.shift || User.current, :view_kb_articles, *args) } }
 
   # This overrides the instance method in acts_as_attachable
   def attachments_visible?(user=User.current)
@@ -57,7 +58,7 @@ class KbArticle < ActiveRecord::Base
   
   def new_status
     if self.updater_id == 0
-		true
-	end
+        true
+    end
   end
 end

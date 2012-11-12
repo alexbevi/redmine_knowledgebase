@@ -1,6 +1,5 @@
 RedmineApp::Application.routes.draw do
 	scope "/projects/:project_id/knowledgebase" do
-		get '/' => 'knowledgebase#index'
 		resources :categories, :via => [:get, :post]
 		resources :articles do
 			collection do

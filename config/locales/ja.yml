@@ -28,6 +28,7 @@ ja:
   label_edit_category: カテゴリを編集
   label_home: ホーム
   label_jump_category: カテゴリー選択
+  label_kb_article_plural: "Knowledgebase articles"
   label_kb_home: Home
   label_kb_link: "KB#%{kb_id}"
   label_new_article: 新しい記事

@@ -28,6 +28,7 @@ ko:
   label_edit_category: "카테고리 수정"
   label_home: Home
   label_jump_category: "카테고리 선택"
+  label_kb_article_plural: "Knowledgebase articles"
   label_kb_home: Home
   label_kb_link: "KB#{{kb_id}}"
   label_new_article: "새로운 지식"

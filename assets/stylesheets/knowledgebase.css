@@ -99,3 +99,7 @@ div.star-rating-readonly a{cursor:default !important}
 /* Partial Star CSS */
 div.star-rating{background:transparent!important;overflow:hidden!important}
 /* END jQuery.Rating Plugin CSS */
+
+/* Add icons to activity page */
+dt.article-add { background-image: url(../images/page_add.png); }
+dt.article-edit { background-image: url(../images/page_edit.png); }
