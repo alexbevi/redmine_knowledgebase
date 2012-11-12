@@ -5,7 +5,6 @@
 <% end %>
 
 <% content_for :sidebar do %>
-	<h3><%= l(:title_edit_article) %></h3>
 	<ul id="options">
 		<li><%= link_to_if_authorized_globally l(:label_edit_article), { :controller => 'articles', :action => 'edit', :id => @article.id }, :class => 'icon icon-edit' %></li>
 		<li><%= link_to_if_authorized_globally l(:label_delete_article), { :controller => 'articles', :action => 'destroy', :id => @article.id }, :confirm => l(:text_are_you_sure), :method => :delete, :class => 'icon icon-del' %></li>
