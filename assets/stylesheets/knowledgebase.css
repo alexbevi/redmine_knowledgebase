@@ -106,6 +106,11 @@ dt.article-edit { background-image: url(../images/page_edit.png); }
 
 div.articles h3 { background: url(../images/page.png) no-repeat 0% 50%; padding-left: 20px; }
 
+/* Table styling */
 td.title {width: 50%; text-align: left;}
 td.created_at, td.updated_at {text-align: center;}
 div.summary {font-style: italic; padding: 2px 5px 2px 5px; font-size: 10px;}
+
+th .current { padding-right: 16px; background-position: 100% 50%; background-repeat: no-repeat; }
+th .asc  { background-image: url(../../../images/sort_asc.png); }
+th .desc { background-image: url(../../../images/sort_desc.png); }
