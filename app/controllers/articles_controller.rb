@@ -74,6 +74,11 @@ class ArticlesController < ApplicationController
     @article.view request.remote_addr, User.current
     @attachments = @article.attachments.find(:all, :order => "created_on DESC")
     @comments = @article.comments
+    respond_to do |format|
+      format.html { render :template => 'articles/show', :layout => !request.xhr? }
+      format.atom { render_feed(@article, :title => "#{l(:label_article)}: #{@article.title}") }
+	  format.pdf  { send_data(article_to_pdf(@article, @project), :type => 'application/pdf', :filename => 'export.pdf') }
+    end
   end
   
   def edit

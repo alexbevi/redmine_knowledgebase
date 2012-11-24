@@ -6,11 +6,16 @@ class CategoriesController < ApplicationController
   include KnowledgebaseHelper
 
   before_filter :find_project_by_project_id, :authorize
+  accept_rss_auth :show
   
   def show
     @category = KbCategory.find(params[:id])
-    @articles = @category.articles.find(:all)
+    @articles = @category.articles.order(sort_column + " " + sort_direction)
 	@categories=@project.categories.find(:all)
+	respond_to do |format|
+	  format.html { render :template => 'categories/show', :layout => !request.xhr? }
+	  format.atom { render_feed(@articles, :title => "#{l(:knowledgebase_title)}: #{l(:label_category)}: #{@category.title}") }
+	end
   end
 
   def new

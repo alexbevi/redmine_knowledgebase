@@ -35,11 +35,14 @@
   </div>
 <% end %>
 
-<% if @project.articles.length > 0%>
-  <h3><%= l(:label_article_plural) %></h3>
+<% if @category.articles.length > 0%>
   <div class="articles category-articles">
   <%= render :partial => 'articles/list_table', :locals => { :articles => @articles } %>
   </div>
+<% end %>
+
+<% other_formats_links do |f| %>
+  <%= f.link_to 'Atom', :url => { :key => User.current.rss_key } %>
 <% end %>
 
 <% content_for :header_tags do %>

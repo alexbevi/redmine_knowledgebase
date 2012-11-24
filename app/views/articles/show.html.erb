@@ -57,6 +57,10 @@
   <div class="wiki"><%= textilizable @article, :content, :attachments => @article.attachments %></div>
 </div>
 
+<% other_formats_links do |f| %>
+  <%= f.link_to 'PDF', :url => params %>
+<% end %>
+
 <% unless @article.attachments.empty? %>
 <div id="section-title" class="attachments infobox"><%= l(:label_attachment_plural) %></div>
 <%= render :partial => 'attachments/links', :locals => {:attachments => @article.attachments, :options => { :deletable => User.current.logged? } } %>
