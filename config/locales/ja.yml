@@ -55,11 +55,13 @@ ja:
   label_updated_who: "Updated by %{updater} %{age} ago"
   message_no_articles: 知識データベースに追加された記事はありません．早速作りましょう！
   message_no_categories: "Unfortunately, there aren't any Categories defined, and you need to be logged in to create new categories."
+  message_no_permissions: "You do not have permission to view any articles or categories. Please contact your administrator."
   show_category_totals: ツリーの全てのカテゴリを表示する
   summary_item_limit: 知識データベースに表示する記事数
   title_add_comment: コメントを追加
   title_article_rating: 評価レート
   title_browse_by_category: カテゴリ別一覧
+  title_browse_by_tags: "Browse by Tags"
   title_create_article: 新規記事発行
   title_create_category: カテゴリを追加
   title_edit_article: 記事を編集

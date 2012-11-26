@@ -55,11 +55,13 @@ ko:
   label_updated_who: "Updated by %{updater} %{age} ago"
   message_no_articles: "지식 데이터베이스에 추가된 지식이 없습니다."
   message_no_categories: "Unfortunately, there aren't any Categories defined, and you need to be logged in to create new categories."
+  message_no_permissions: "You do not have permission to view any articles or categories. Please contact your administrator."
   show_category_totals: "모든 카테고리 표시"
   summary_item_limit: "지식자료에 표시되는 지식수"
   title_add_comment: "댓글 추가"
   title_article_rating: 평가순위
   title_browse_by_category: "카테고리 목록"
+  title_browse_by_tags: "Browse by Tags"
   title_create_article: "새로운 지식 작성"
   title_create_category: "카테고리 추가"
   title_edit_article: "지식 수정"

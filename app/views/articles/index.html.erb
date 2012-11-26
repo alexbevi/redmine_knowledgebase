@@ -1,19 +1,34 @@
 <% html_title l(:knowledgebase_title) %>
 
-<% if @categories.length == 0 and !User.current.logged? %>
-	<p><%= l(:message_no_categories) %></p>
-<% else %>
-
+<% if @project.categories.count == 0 %>
+  <div class="contextual">
+    <%= link_to_if_authorized l(:title_create_category), { :controller => 'categories', :action => 'new', :project_id => @project}, :class => 'icon icon-add' %>
+  </div>
+  </br>
+  <p class="nodata"><%= l(:message_no_categories) %></p>
+  
+<% elsif @project.articles.count == 0 %>
   <div class="contextual">
     <%= link_to_if_authorized l(:title_create_category), { :controller => 'categories', :action => 'new', :project_id => @project}, :class => 'icon icon-add' %>
     <% if @categories.length > 0 %>	
       <%= link_to_if_authorized l(:title_create_article), { :controller => 'articles', :action => 'new', :project_id => @project}, :class => 'icon icon-add' %>
 	<% end %>
   </div>
+  </br>
+  <p class="nodata"><%= l(:message_no_articles) %></p>
+  
+<% elsif @project.articles.count > 0 %>
+  <div class="contextual">
+    <%= link_to_if_authorized l(:title_create_category), { :controller => 'categories', :action => 'new', :project_id => @project}, :class => 'icon icon-add' %>
+    <% if @categories.length > 0 %>	
+      <%= link_to_if_authorized l(:title_create_article), { :controller => 'articles', :action => 'new', :project_id => @project}, :class => 'icon icon-add' %>
+	<% end %>
+  </div>
+  
   <% if !User.current.allowed_to?(:view_recent_articles, @project) && !User.current.allowed_to?(:view_most_popular_articles,@project) && !User.current.allowed_to?(:view_top_rated_articles, @project) %>
-     <p><%=l(:no_sections_enabled)%></p>
-  <% elsif @project.articles.count > 0 %>
-	
+     <p class="nodata"><%=l(:message_no_permissions)%></p>
+  <% else %>
+  
 	<div class="splitcontentleft">
         <h2><%=l(:label_overview)%></h2>
         <div class="articles box">
@@ -60,8 +75,6 @@
 	     	<% end %>
 	    </div>
 	<% end %>
-  <% else %>
-    <p class="nodata"><%= t :message_no_articles %></p>
   <% end %>
 <% end %>
 

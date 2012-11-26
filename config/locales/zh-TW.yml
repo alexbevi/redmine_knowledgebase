@@ -54,11 +54,13 @@ zh-TW:
   label_updated_who: "Updated by %{updater} %{age} ago"
   message_no_articles: 目前尚未有任何文章
   message_no_categories: "Unfortunately, there aren't any Categories defined, and you need to be logged in to create new categories."
+  message_no_permissions: "You do not have permission to view any articles or categories. Please contact your administrator."
   show_category_totals: "Show category totals in tree?"
   summary_item_limit: "Knowledgebase summary page article limit"
   title_add_comment: "Add Comment"
   title_article_rating: 文章評比
   title_browse_by_category: 根據分類瀏覽
+  title_browse_by_tags: "Browse by Tags"
   title_create_article: 建立文章
   title_create_category: 建立類別
   title_edit_article: 編輯文章
