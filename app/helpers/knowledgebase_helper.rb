@@ -40,6 +40,10 @@ module KnowledgebaseHelper
      l(:label_updated_who, :updater => link_to_user(updater), :age => time_tag(updated)).html_safe
   end
 
+  def sort_column
+    KbArticle.column_names.include?(params[:sort]) ? params[:sort] : "title"
+  end
+
   def sort_direction
     %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
