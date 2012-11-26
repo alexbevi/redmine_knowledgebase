@@ -34,6 +34,9 @@ ja:
   label_new_article: 新しい記事
   label_new_category: 新しいカテゴリ
   label_new_comment: コメントする
+  label_overview_my_articles: "Articles written by me: %{total_articles_by_me}"
+  label_overview_total_articles: "Total number of articles: %{total_articles}"
+  label_overview_total_categories: "Total number of categories: %{total_categories}"
   label_parent_category: 親カテゴリ
   label_root_category: 最上位カテゴリ
   label_subcategories: サブカテゴリ群
@@ -64,6 +67,7 @@ ja:
   title_most_popular_articles: 人気の記事
   title_new_category: 新規カテゴリ
   title_newest_articles: 最新の記事
+  title_overview_summary: "Knowledgebase Summary"
   title_recently_updated_articles: 最近更新された記事
   title_tagged_articles: "Articles tagged with %{tag}"
   title_tags: タグ

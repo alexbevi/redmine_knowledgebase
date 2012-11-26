@@ -33,9 +33,9 @@ en:
   label_new_article: "New Article"
   label_new_category: "New Category"
   label_new_comment: "New Comment"
-  label_overview_total_categories: "Total number of categories: %{total_categories}"
-  label_overview_total_articles: "Total number of articles: %{total_articles}"
   label_overview_my_articles: "Articles written by me: %{total_articles_by_me}"
+  label_overview_total_articles: "Total number of articles: %{total_articles}"
+  label_overview_total_categories: "Total number of categories: %{total_categories}"
   label_parent_category: "Parent Category"
   label_root_category: "Root Category"
   label_subcategories: Sub-categories

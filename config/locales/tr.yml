@@ -33,6 +33,9 @@ tr:
   label_new_article: "Yeni Makale"
   label_new_category: "Yeni Kategori"
   label_new_comment: "Yeni Yorum"
+  label_overview_my_articles: "Articles written by me: %{total_articles_by_me}"
+  label_overview_total_articles: "Total number of articles: %{total_articles}"
+  label_overview_total_categories: "Total number of categories: %{total_categories}"
   label_parent_category: "Üst Kategori"
   label_root_category: "Temel Kategori"
   label_subcategories: Alt-kategoriler
@@ -63,6 +66,7 @@ tr:
   title_most_popular_articles: "En Beğenilen Makaleler"
   title_new_category: "Yeni Kategori"
   title_newest_articles: "En Yeni Makaleler"
+  title_overview_summary: "Knowledgebase Summary"
   title_recently_updated_articles: "Yakın zamanda Güncellenmiş Makaleler"
   title_tagged_articles: "%{tag} ile etiketlenmiş makaleler"
   title_tags: Etiketler

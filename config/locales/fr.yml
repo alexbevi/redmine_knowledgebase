@@ -33,6 +33,9 @@ fr:
   label_new_article: "Nouvel article"
   label_new_category: "Nouvelle catégorie"
   label_new_comment: "Nouveau commentaire"
+  label_overview_my_articles: "Articles written by me: %{total_articles_by_me}"
+  label_overview_total_articles: "Total number of articles: %{total_articles}"
+  label_overview_total_categories: "Total number of categories: %{total_categories}"
   label_parent_category: "Catégorie parente"
   label_root_category: "Catégorie racine"
   label_subcategories: Sous-catégories
@@ -63,6 +66,7 @@ fr:
   title_most_popular_articles: "Articles les plus populaires"
   title_new_category: "Nouvelle catégorie"
   title_newest_articles: "Derniers articles"
+  title_overview_summary: "Knowledgebase Summary"
   title_recently_updated_articles: "Articles récemment modifiés"
   title_tagged_articles: "Articles associés au tag « %{tag} »"
   title_tags: Tags

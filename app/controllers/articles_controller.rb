@@ -27,13 +27,8 @@ class ArticlesController < ApplicationController
 
     @articles_newest   = @project.articles.find(:all, :limit => summary_limit, :order => 'created_at DESC')
     @articles_latest  = @project.articles.find(:all, :limit => summary_limit, :order => 'updated_at DESC')
-    
-    a = @project.articles.find(:all, :include => :viewings).sort_by(&:view_count)
-    a = a.drop(a.count - summary_limit) if a.count > summary_limit
-    @articles_popular  = a.reverse
-    a = @project.articles.find(:all, :include => :ratings).sort_by(&:rated_count)
-    a = a.drop(a.count - summary_limit) if a.count > summary_limit
-    @articles_toprated = a.reverse
+    @articles_popular = @project.articles.find(:all, :limit => summary_limit, :include => :viewings).sort_by(&:view_count).reverse
+    @articles_toprated = @project.articles.find(:all, :limit => summary_limit, :include => :ratings).sort_by(&:rated_count).reverse
 
     @tags = @project.articles.tag_counts
   end

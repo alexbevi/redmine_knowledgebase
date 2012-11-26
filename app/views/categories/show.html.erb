@@ -22,7 +22,7 @@
   <%= render :partial => "categories/tree" %>
 <% end %>
 
-<div class="wiki"><%= textilizable @category.description unless @category.description.nil? %></div>
+<div class="category-summary"><%= textilizable @category.description unless @category.description.nil? %></div>
 
 <% @kids = @category.children %>
 <% if @kids.length > 0 %>
