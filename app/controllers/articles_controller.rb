@@ -19,17 +19,16 @@ class ArticlesController < ApplicationController
       summary_limit = 5
     end
     
+	@total_categories = @project.categories.count
+	@total_articles = @project.articles.count
+	@total_articles_by_me = @project.articles.where(:author_id => User.current.id).count
+	
     @categories = @project.categories.find(:all)
 
     @articles_newest   = @project.articles.find(:all, :limit => summary_limit, :order => 'created_at DESC')
-    @articles_updated  = @project.articles.find(:all, :limit => summary_limit, :conditions => ['created_at <> updated_at'], :order => 'updated_at DESC')
-    
-    a = @project.articles.find(:all, :include => :viewings).sort_by(&:view_count)
-    a = a.drop(a.count - summary_limit) if a.count > summary_limit
-    @articles_popular  = a.reverse
-    a = @project.articles.find(:all, :include => :ratings).sort_by(&:rated_count)
-    a = a.drop(a.count - summary_limit) if a.count > summary_limit
-    @articles_toprated = a.reverse
+    @articles_latest  = @project.articles.find(:all, :limit => summary_limit, :order => 'updated_at DESC')
+    @articles_popular = @project.articles.find(:all, :limit => summary_limit, :include => :viewings).sort_by(&:view_count).reverse
+    @articles_toprated = @project.articles.find(:all, :limit => summary_limit, :include => :ratings).sort_by(&:rated_count).reverse
 
     @tags = @project.articles.tag_counts
   end
@@ -70,6 +69,11 @@ class ArticlesController < ApplicationController
     @article.view request.remote_addr, User.current
     @attachments = @article.attachments.find(:all, :order => "created_on DESC")
     @comments = @article.comments
+    respond_to do |format|
+      format.html { render :template => 'articles/show', :layout => !request.xhr? }
+      format.atom { render_feed(@article, :title => "#{l(:label_article)}: #{@article.title}") }
+	  format.pdf  { send_data(article_to_pdf(@article, @project), :type => 'application/pdf', :filename => 'export.pdf') }
+    end
   end
   
   def edit

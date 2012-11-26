@@ -33,6 +33,9 @@ el:
   label_new_article: "Νέο Άρθρο"
   label_new_category: "Νέα Κατηγορία"
   label_new_comment: "Νέο Σχόλιο"
+  label_overview_my_articles: "Articles written by me: %{total_articles_by_me}"
+  label_overview_total_articles: "Total number of articles: %{total_articles}"
+  label_overview_total_categories: "Total number of categories: %{total_categories}"
   label_parent_category: "Μητρική Κατηγορία"
   label_root_category: "Αρχική Κατηγορία"
   label_subcategories: Υποκατηγορείες
@@ -63,6 +66,7 @@ el:
   title_most_popular_articles: "Δημοφιλέστερα Άρθρα"
   title_new_category: "Νέα Κατηγορία"
   title_newest_articles: "Νεότερα Άρθρα"
+  title_overview_summary: "Knowledgebase Summary"
   title_recently_updated_articles: "Πρόσφατα ενημερωμένα άρθρα"
   title_tagged_articles: "Άρθα επισημασμένα με %{tag}"
   title_tags: Ετικέτες

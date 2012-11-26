@@ -62,6 +62,15 @@ Redmine::Plugin.register :redmine_knowledgebase do
     permission :watch_categories, {
       :watchers => [:new, :destroy]
     }
+    permission :view_recent_articles, {
+      :articles => :index
+    }
+    permission :view_most_popular_articles, {
+      :articles => :index
+    }
+    permission :view_top_rated_articles, {
+      :articles => :index
+    }
   end
   
   menu :project_menu, :articles, { :controller => 'articles', :action => 'index' }, :caption => :knowledgebase_title, :after => :activity, :param => :project_id

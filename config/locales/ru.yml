@@ -33,6 +33,9 @@ ru:
   label_new_article: "Новая статья"
   label_new_category: "Новый раздел"
   label_new_comment: "Создать комментарий"
+  label_overview_my_articles: "Articles written by me: %{total_articles_by_me}"
+  label_overview_total_articles: "Total number of articles: %{total_articles}"
+  label_overview_total_categories: "Total number of categories: %{total_categories}"
   label_parent_category: "Родительский раздел"
   label_root_category: "Корневой раздел"
   label_subcategories: Подразделы
@@ -63,6 +66,7 @@ ru:
   title_most_popular_articles: "Наиболее популярные статьи"
   title_new_category: "Новый раздел"
   title_newest_articles: "Свежие статьи"
+  title_overview_summary: "Knowledgebase Summary"
   title_recently_updated_articles: "Недавно обновлённые статьи"
   title_tagged_articles: "Статьи отмеченные тегом %{tag}"
   title_tags: Тэг

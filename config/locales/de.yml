@@ -33,6 +33,9 @@ de:
   label_new_article: "Artikel erstellen"
   label_new_category: "Kategorie erstellen"
   label_new_comment: "Neuer Kommentar"
+  label_overview_my_articles: "Articles written by me: %{total_articles_by_me}"
+  label_overview_total_articles: "Total number of articles: %{total_articles}"
+  label_overview_total_categories: "Total number of categories: %{total_categories}"
   label_parent_category: "Übergeordnete Kategorie"
   label_root_category: "Root Kategorie"
   label_subcategories: Unterkategorien
@@ -63,6 +66,7 @@ de:
   title_most_popular_articles: "Beliebteste Artikel"
   title_new_category: "Neue Kategorie"
   title_newest_articles: "Neueste Artikel"
+  title_overview_summary: "Knowledgebase Summary"
   title_recently_updated_articles: "Artikel zuletzt aktualisiert"
   title_tagged_articles: "Artikel getaggt mit %{tag}"
   title_tags: Tags

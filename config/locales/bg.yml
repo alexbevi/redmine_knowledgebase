@@ -33,6 +33,9 @@ bg:
   label_new_article: "Нова статия"
   label_new_category: "Нова категория"
   label_new_comment: "Нов коментар"
+  label_overview_my_articles: "Articles written by me: %{total_articles_by_me}"
+  label_overview_total_articles: "Total number of articles: %{total_articles}"
+  label_overview_total_categories: "Total number of categories: %{total_categories}"
   label_parent_category: "Родителска категория"
   label_root_category: "Коренна категория"
   label_subcategories: Под-категории
@@ -63,6 +66,7 @@ bg:
   title_most_popular_articles: "Най-популярни статии"
   title_new_category: "Нова категория"
   title_newest_articles: "Нови статии"
+  title_overview_summary: "Knowledgebase Summary"
   title_recently_updated_articles: "Наскоро обновени статии"
   title_tagged_articles: "Статии, маркирани с %{tag}"
   title_tags: Маркери

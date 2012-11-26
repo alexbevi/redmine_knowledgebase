@@ -1,0 +1,20 @@
+<div class="autoscroll">
+<table class="list">
+  <thead>
+	<tr>
+	  <th><%= sortable "title" %></th>
+	  <th><%= sortable "created_at", "Created" %></th>
+	  <th><%= sortable "updated_at", "Updated" %></th>
+	</tr>
+  </thead>
+  <tbody>
+    <% articles.each do |article| %>
+    <tr id="article-<%= article %>" class="<%= cycle('odd', 'even') %>">
+       <td class="title"><%= link_to article.title, { :controller => 'articles', :action => 'show', :id => article.id, :project_id => @project}%> </br> <div class="summary"><%= article.summary %></div></td>
+       <td class="created_at"><%= article.created_at %></td>
+       <td class="updated_at"><%= article.updated_at %></td>
+	</tr>
+	<% end %>
+  </tbody>
+</table>
+</div>

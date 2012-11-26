@@ -34,6 +34,9 @@ ko:
   label_new_article: "새로운 지식"
   label_new_category: "새로운 카테고리"
   label_new_comment: 댓글달기
+  label_overview_my_articles: "Articles written by me: %{total_articles_by_me}"
+  label_overview_total_articles: "Total number of articles: %{total_articles}"
+  label_overview_total_categories: "Total number of categories: %{total_categories}"
   label_parent_category: "상위 카테고리"
   label_root_category: "최상위 카테고리"
   label_subcategories: "하위 카테고리들"
@@ -64,6 +67,7 @@ ko:
   title_most_popular_articles: "인기 지식"
   title_new_category: "새로운 카테고리"
   title_newest_articles: "최근 지식"
+  title_overview_summary: "Knowledgebase Summary"
   title_recently_updated_articles: "최근에 수정된 지식"
   title_tagged_articles: "이 지식은 %{tag}로 태그됨"
   title_tags: 태그

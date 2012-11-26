@@ -1,5 +1,6 @@
 module KnowledgebaseHelper
- 
+  include Redmine::Export::PDF
+
   def format_article_summary(article, format, options = {})
     output = nil
     case format
@@ -38,4 +39,56 @@ module KnowledgebaseHelper
   def updated_by(updated, updater)
      l(:label_updated_who, :updater => link_to_user(updater), :age => time_tag(updated)).html_safe
   end
+
+  def sort_column
+    KbArticle.column_names.include?(params[:sort]) ? params[:sort] : "title"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
+
+  def sortable(column, title = nil)
+    title ||= column.titleize
+    css_class = column == sort_column ? "current #{sort_direction}" : nil
+    direction = column == sort_column && sort_direction == "asc" ? "desc" : "asc"
+    link_to title, {:sort => column, :direction => direction}, {:class => css_class}
+  end
+
+    def article_to_pdf(article, project)
+    pdf = ITCPDF.new(current_language)
+    pdf.SetTitle("#{project} - #{article.title}")
+    pdf.alias_nb_pages
+    pdf.footer_date = format_date(Date.today)
+    pdf.AddPage
+    pdf.SetFontStyle('B',11)
+    pdf.RDMMultiCell(190,5,
+          "#{project} - #{article.title}")
+    pdf.Ln
+    # Set resize image scale
+    pdf.SetImageScale(1.6)
+    pdf.SetFontStyle('',9)
+    write_article(pdf, article)
+    pdf.Output
+  end
+
+  def write_article(pdf, article)
+    pdf.RDMwriteHTMLCell(190,5,0,0,
+          article.content.to_s, article.attachments, 0)
+    if article.attachments.any?
+      pdf.Ln
+      pdf.SetFontStyle('B',9)
+      pdf.RDMCell(190,5, l(:label_attachment_plural), "B")
+      pdf.Ln
+      for attachment in article.attachments
+        pdf.SetFontStyle('',8)
+        pdf.RDMCell(80,5, attachment.filename)
+        pdf.RDMCell(20,5, number_to_human_size(attachment.filesize),0,0,"R")
+        pdf.RDMCell(25,5, format_date(attachment.created_on),0,0,"R")
+        pdf.RDMCell(65,5, attachment.author.name,0,0,"R")
+        pdf.Ln
+      end
+    end
+  end
+  
 end

@@ -1,7 +1,7 @@
 <% html_title @category.title %>
 
 <p id="category-crumbs" class="breadcrumb">
-	<%= link_to l(:label_kb_home), { :controller => 'knowledgebase', :action => 'index', :project_id => @project } %>
+	<%= link_to l(:label_kb_home), { :controller => 'articles', :action => 'index', :project_id => @project } %>
 	<% @category.ancestors.each do |ancestor| %>
 	&nbsp;&raquo;&nbsp;
 	<%= link_to ancestor.title, { :controller => 'categories', :action => 'show', :id => ancestor.id, :project_id=>@project } %>
@@ -22,7 +22,7 @@
   <%= render :partial => "categories/tree" %>
 <% end %>
 
-<div class="wiki"><%= textilizable @category.description unless @category.description.nil? %></div>
+<div class="category-summary"><%= textilizable @category.description unless @category.description.nil? %></div>
 
 <% @kids = @category.children %>
 <% if @kids.length > 0 %>
@@ -34,12 +34,17 @@
     <% end %>
   </div>
 <% end %>
-<% if @project.articles.length > 0%>
-  <h3><%= l(:label_article_plural) %></h3>
+
+<% if @category.articles.length > 0%>
   <div class="articles category-articles">
-  <%= render :partial => 'articles/list', :locals => { :summary_format => "normal", :articles => @articles, :default_icon => 'normal', :truncate_length => nil } %>
+  <%= render :partial => 'articles/list_table', :locals => { :articles => @articles } %>
   </div>
 <% end %>
+
+<% other_formats_links do |f| %>
+  <%= f.link_to 'Atom', :url => { :key => User.current.rss_key } %>
+<% end %>
+
 <% content_for :header_tags do %>
     <%= stylesheet_link_tag 'knowledgebase', :plugin => 'redmine_knowledgebase' %>
 <% end %>

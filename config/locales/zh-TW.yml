@@ -33,6 +33,9 @@ zh-TW:
   label_new_article: "New Article"
   label_new_category: "New Category"
   label_new_comment: "New Comment"
+  label_overview_my_articles: "Articles written by me: %{total_articles_by_me}"
+  label_overview_total_articles: "Total number of articles: %{total_articles}"
+  label_overview_total_categories: "Total number of categories: %{total_categories}"
   label_parent_category: 父層類別
   label_root_category: 根類別
   label_subcategories: Sub-categories
@@ -63,6 +66,7 @@ zh-TW:
   title_most_popular_articles: 最熱門文章
   title_new_category: 新分類
   title_newest_articles: 最新文章
+  title_overview_summary: "Knowledgebase Summary"
   title_recently_updated_articles: 最近更新的文章
   title_tagged_articles: "Articles tagged with %{tag}"
   title_tags: Tags
