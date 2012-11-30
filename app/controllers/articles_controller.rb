@@ -55,6 +55,7 @@ class ArticlesController < ApplicationController
     @article.category_id = params[:category_id]
     @article.author_id = User.current.id
     @article.project_id=KbCategory.find(params[:category_id]).project_id
+    @categories = @project.categories.find(:all)
     if @article.save
       attachments = attach(@article, params[:attachments])
       flash[:notice] = l(:label_article_created, :title => @article.title)
@@ -83,6 +84,7 @@ class ArticlesController < ApplicationController
   def update
     @article.updater_id = User.current.id
     params[:article][:category_id] = params[:category_id]
+    @categories = @project.categories.find(:all)
     if @article.update_attributes(params[:article])
       attachments = attach(@article, params[:attachments])
       flash[:notice] = l(:label_article_updated)
