@@ -2,9 +2,9 @@
 zh: 
   allow_anon_access: 是否允许匿名访问？
   allow_sort_category_tree: 类别树按字母排序？
-  field_article_author: "Created by"
-  field_article_destroyer: "Deleted by"
-  field_article_updater: "Updated by"
+  field_article_author: "创建人"
+  field_article_destroyer: "删除人"
+  field_article_updater: "更新人"
   field_tag_list: 标签列表
   knowledgebase_title: 知识库
   label_article_created: "文章【'%{title}'】已创建"
@@ -26,17 +26,16 @@ zh:
   label_description: 描述
   label_edit_article: 编辑
   label_edit_category: 编辑类型
-  label_home: Home
   label_jump_category: 移至类别
-  label_kb_article_plural: "Knowledgebase articles"
-  label_kb_home: Home
+  label_kb_article_plural: "知识库文章"
+  label_kb_home: 知识库主页
   label_kb_link: "KB#%{kb_id}"
   label_new_article: 新建文章
   label_new_category: 新建类型
   label_new_comment: 新增批注
-  label_overview_my_articles: "Articles written by me: %{total_articles_by_me}"
-  label_overview_total_articles: "Total number of articles: %{total_articles}"
-  label_overview_total_categories: "Total number of categories: %{total_categories}"
+  label_overview_my_articles: "我所编写的文章：%{total_articles_by_me}"
+  label_overview_total_articles: "文章总量：%{total_articles}"
+  label_overview_total_categories: "知识分类总数：%{total_categories}"
   label_parent_category: 父类别
   label_root_category: 根类别
   label_subcategories: 子类型
@@ -52,9 +51,9 @@ zh:
   label_title: 标题
   label_title_articles: 文章
   label_title_category: 类别
-  label_updated_who: "Updated by %{updater} %{age} ago"
+  label_updated_who: "由 %{updater} 更新于 %{age} 前"
   message_no_articles: 目前尚未有任何文章
-  message_no_categories: "Unfortunately, there aren't any Categories defined, and you need to be logged in to create new categories."
+  message_no_categories: "目前未定义任何类别。您需要至少创建一个知识类别。"
   show_category_totals: 在类别树中显示数量？
   summary_item_limit: 知识库主页文章限制
   title_add_comment: 新增批注
@@ -67,7 +66,7 @@ zh:
   title_most_popular_articles: 最热门文章
   title_new_category: 新分类
   title_newest_articles: 最新文章
-  title_overview_summary: "Knowledgebase Summary"
+  title_overview_summary: "知识库概述"
   title_recently_updated_articles: 最近更新的文章
   title_tagged_articles: "含【%{tag}】标签的文章"
   title_tags: 标签
