@@ -10,12 +10,13 @@ class CategoriesController < ApplicationController
   
   def show
     @category = KbCategory.find(params[:id])
-    @articles = @category.articles.order(sort_column + " " + sort_direction)
-	@categories=@project.categories.find(:all)
-	respond_to do |format|
-	  format.html { render :template => 'categories/show', :layout => !request.xhr? }
-	  format.atom { render_feed(@articles, :title => "#{l(:knowledgebase_title)}: #{l(:label_category)}: #{@category.title}") }
-	end
+    @articles = @category.articles.order("#{sort_column} #{sort_direction}")
+    @categories = @project.categories.where(:parent_id => nil)
+    
+    respond_to do |format|
+      format.html { render :template => 'categories/show', :layout => !request.xhr? }
+      format.atom { render_feed(@articles, :title => "#{l(:knowledgebase_title)}: #{l(:label_category)}: #{@category.title}") }
+    end
   end
 
   def new
