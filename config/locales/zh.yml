@@ -2,9 +2,9 @@
 zh: 
   allow_anon_access: 是否允许匿名访问？
   allow_sort_category_tree: 类别树按字母排序？
-  field_article_author: "创建人"
-  field_article_destroyer: "删除人"
-  field_article_updater: "更新人"
+  field_article_author: 创建人
+  field_article_destroyer: 删除人
+  field_article_updater: 更新人
   field_tag_list: 标签列表
   knowledgebase_title: 知识库
   label_article_created: "文章【'%{title}'】已创建"
@@ -27,7 +27,7 @@ zh:
   label_edit_article: 编辑
   label_edit_category: 编辑类型
   label_jump_category: 移至类别
-  label_kb_article_plural: "知识库文章"
+  label_kb_article_plural: 知识库文章
   label_kb_home: 知识库主页
   label_kb_link: "KB#%{kb_id}"
   label_new_article: 新建文章
@@ -53,7 +53,7 @@ zh:
   label_title_category: 类别
   label_updated_who: "由 %{updater} 更新于 %{age} 前"
   message_no_articles: 目前尚未有任何文章
-  message_no_categories: "目前未定义任何类别。您需要至少创建一个知识类别。"
+  message_no_categories: 目前未定义任何类别。您需要至少创建一个知识类别。
   message_no_permissions: "You do not have permission to view any articles or categories. Please contact your administrator."
   show_category_totals: 在类别树中显示数量？
   summary_item_limit: 知识库主页文章限制
@@ -68,7 +68,7 @@ zh:
   title_most_popular_articles: 最热门文章
   title_new_category: 新分类
   title_newest_articles: 最新文章
-  title_overview_summary: "知识库概述"
+  title_overview_summary: 知识库概述
   title_recently_updated_articles: 最近更新的文章
   title_tagged_articles: "含【%{tag}】标签的文章"
   title_tags: 标签
