@@ -6,11 +6,15 @@ bg:
   field_article_destroyer: "Deleted by"
   field_article_updater: "Updated by"
   field_tag_list: "Сипсък на маркерите"
+  field_updated_at: "Updated at"
+  field_version: Version
+  field_version_comments: "Change comments"
   knowledgebase_title: "База знания"
   label_article_created: "Създадена статия '%{title}'"
   label_article_plural: Статии
   label_article_removed: "Статията е премахната"
   label_article_updated: "Статията е обновена"
+  label_article_version: "Article version: %{version} - "
   label_article_viewed: 
     one: "Разглеждана един път"
     other: "Разглеждана %{count} пъти"
@@ -57,6 +61,8 @@ bg:
   message_no_permissions: "You do not have permission to view any articles or categories. Please contact your administrator."
   show_category_totals: "Показване на информацията за категориите в дървовидна структура?"
   summary_item_limit: "Knowledgebase summary page article limit"
+  text_confirm_versions_delete: "This will revert and delete any newer versions of this document that may exist. Are you sure?"
+  text_current_version: Current
   title_add_comment: "Добавяне на коментар"
   title_article_rating: "Рейтинг на статията"
   title_browse_by_category: "Разглеждане по категории"

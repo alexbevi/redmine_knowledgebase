@@ -6,11 +6,15 @@ zh-TW:
   field_article_destroyer: "Deleted by"
   field_article_updater: "Updated by"
   field_tag_list: 標籤列表
+  field_updated_at: "Updated at"
+  field_version: Version
+  field_version_comments: "Change comments"
   knowledgebase_title: 知識庫
   label_article_created: "Created article '%{title}'"
   label_article_plural: 文章
   label_article_removed: "Article removed"
   label_article_updated: "Article updated"
+  label_article_version: "Article version: %{version} - "
   label_article_viewed: 
     one: "Viewed once"
     other: "Viewed %{count} times"
@@ -57,6 +61,8 @@ zh-TW:
   message_no_permissions: "You do not have permission to view any articles or categories. Please contact your administrator."
   show_category_totals: "Show category totals in tree?"
   summary_item_limit: "Knowledgebase summary page article limit"
+  text_confirm_versions_delete: "This will revert and delete any newer versions of this document that may exist. Are you sure?"
+  text_current_version: Current
   title_add_comment: "Add Comment"
   title_article_rating: 文章評比
   title_browse_by_category: 根據分類瀏覽

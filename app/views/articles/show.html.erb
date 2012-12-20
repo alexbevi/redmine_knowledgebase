@@ -36,17 +36,25 @@
 	&nbsp;&raquo;&nbsp; 
 	<%= link_to @article.category.title, { :controller => 'categories', :action => 'show', :id => @article.category.id, :project_id => @project} %>
 </p>
+
 <% html_title @article.title %>
 
 <h1><%= @article.title %></h1>
 
 <div class="article-info">
+<% unless @article.versions.size == 0 %>
+<%= l(:label_article_version, :version => @article.version) %>
+<% end %>
 <%= authoring @article.created_at, @article.author %>
 <% if @article.created_at != @article.updated_at %>
 | <%= updated_by @article.updated_at, @article.updater %>.
 <% end %>
 | <%= l(:label_article_viewed, :count => @article.view_count) %>
 </div>
+
+<% unless @article.versions.size == 0 %>
+  <%= render :partial => 'history', :locals => {:article_id => @article, :project_id => @project } %>
+<% end %>
 
 <div id="section-subtitle" ><%= l(:label_summary) %></div>
 <div class="article-summary"><%= @article.summary %></div>

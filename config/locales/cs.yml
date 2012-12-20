@@ -6,11 +6,15 @@ cs:
   field_article_destroyer: "Deleted by"
   field_article_updater: "Updated by"
   field_tag_list: "Seznam štítků"
+  field_updated_at: "Updated at"
+  field_version: Version
+  field_version_comments: "Change comments"
   knowledgebase_title: "Znalostní databáze"
   label_article_created: "Byl vytvořen článek %{title}"
   label_article_plural: Články
   label_article_removed: "Článek byl smazán"
   label_article_updated: "Článek byl aktualizován"
+  label_article_version: "Article version: %{version} - "
   label_article_viewed: 
     one: "Zobrazeno jednou"
     other: "Zobrazeno %{count} krát"
@@ -66,6 +70,8 @@ cs:
   permission_view_articles: "Zobrazit články"
   show_category_totals: "Zobrazit součty pro kategorie ve stromě?"
   summary_item_limit: "Limit pro délku souhrnu"
+  text_confirm_versions_delete: "This will revert and delete any newer versions of this document that may exist. Are you sure?"
+  text_current_version: Current
   title_add_comment: "Přidat komentář"
   title_article_rating: "Hodnocení článku"
   title_browse_by_category: "Procházet podle kategorie"

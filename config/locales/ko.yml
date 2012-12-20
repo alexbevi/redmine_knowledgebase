@@ -6,11 +6,15 @@ ko:
   field_article_destroyer: "Deleted by"
   field_article_updater: "Updated by"
   field_tag_list: 태그목록
+  field_updated_at: "Updated at"
+  field_version: Version
+  field_version_comments: "Change comments"
   knowledgebase_title: 지식자료
   label_article_created: "'%{title}' 지식을 작성했습니다."
   label_article_plural: 지식자료
   label_article_removed: "지식을 삭제했습니다．"
   label_article_updated: "지식을 수정했습니다.．"
+  label_article_version: "Article version: %{version} - "
   label_article_viewed: 
     one: "1회 조회"
     other: "%{count}회 조회"
@@ -58,6 +62,8 @@ ko:
   message_no_permissions: "You do not have permission to view any articles or categories. Please contact your administrator."
   show_category_totals: "모든 카테고리 표시"
   summary_item_limit: "지식자료에 표시되는 지식수"
+  text_confirm_versions_delete: "This will revert and delete any newer versions of this document that may exist. Are you sure?"
+  text_current_version: Current
   title_add_comment: "댓글 추가"
   title_article_rating: 평가순위
   title_browse_by_category: "카테고리 목록"

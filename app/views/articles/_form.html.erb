@@ -8,6 +8,7 @@
 <p><%= f.text_area :summary, :cols => 60, :rows => 5, :label => l(:label_summary) %></p>
 <p><%= f.text_area :content, :cols => 60, :rows => 15, :class => 'wiki-edit', :label => l(:label_content) %></p>
 <p><%= f.text_field :tag_list, :size => 80 %></p>
+<p><%= f.text_field :version_comments, :size => 120, :label => l(:field_version_comments) %></p>
 </div>
 <div class="box">
 <p><label><%=l(:label_attachment_plural)%></label><%= render :partial => 'attachments/form' %></p>
