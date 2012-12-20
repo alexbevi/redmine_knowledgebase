@@ -1,0 +1,3 @@
+<% unless @article.versions.size == 0 %>
+  <%= render :partial => 'articles/history', :locals => {:article_id => @article, :project_id => @project } %>
+<% end %>

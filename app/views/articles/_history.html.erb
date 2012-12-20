@@ -1,23 +1,4 @@
-<script type="text/javascript">
-function display(action, id)
-  {
-    if (action == 'show')
-      {
-        document.getElementById("histtable").style.display = "block";
-        document.getElementById("link").href= "javascript:display('hide', histtable)";
-      }
-
-    if (action == 'hide')
-      {
-        document.getElementById("histtable").style.display = "none";
-        document.getElementById("link").href= "javascript:display('show', histtable)";
-      }
-}
-</script>
-
-<div id="section-subtitle" ><a id="link" href="javascript:display('show', histtable)"><%= l(:label_history) %></a></div>
-
-<div id="histtable" style="display:none">
+<div id="histtable">
   <%= form_tag({:controller => 'articles', :action => 'diff',
                 :project_id => @project, :id => @article.id},
                 :method => :get) do %>
