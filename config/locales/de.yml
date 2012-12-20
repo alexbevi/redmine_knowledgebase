@@ -6,11 +6,15 @@ de:
   field_article_destroyer: "Deleted by"
   field_article_updater: "Updated by"
   field_tag_list: "Tag Liste"
+  field_updated_at: "Updated at"
+  field_version: Version
+  field_version_comments: "Change comments"
   knowledgebase_title: Wissensbasis
   label_article_created: "Artikel '%{title}' erstellt"
   label_article_plural: Artikel
   label_article_removed: "Artikel entfernt"
   label_article_updated: "Artikel aktualisiert"
+  label_article_version: "Article version: %{version} - "
   label_article_viewed: 
     one: "Einmal gesehen"
     other: "%{count} Views"
@@ -57,6 +61,8 @@ de:
   message_no_permissions: "You do not have permission to view any articles or categories. Please contact your administrator."
   show_category_totals: "Anzahl der Artikel pro Katgeorie im Katgeoriebaum anzeigen?"
   summary_item_limit: "Maximale Artikel in der Übersicht"
+  text_confirm_versions_delete: "This will revert and delete any newer versions of this document that may exist. Are you sure?"
+  text_current_version: Current
   title_add_comment: "Kommentar hinzufügen"
   title_article_rating: "Artikel Rating"
   title_browse_by_category: "Nach Kategorie"

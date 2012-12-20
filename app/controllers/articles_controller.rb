@@ -1,13 +1,13 @@
 class ArticlesController < ApplicationController
   unloadable
-  default_search_scope :kb_articles
+
   helper :attachments
   include AttachmentsHelper
   helper :knowledgebase
   include KnowledgebaseHelper
 
   before_filter :find_project_by_project_id, :authorize
-  before_filter :get_article, :only => [:add_attachment, :show, :edit, :update, :add_comment, :destroy, :destroy_comment]
+  before_filter :get_article, :except => [:index, :new, :create, :rate, :tagged, :preview, :comment]
 
   rescue_from ActionView::MissingTemplate, :with => :force_404
   rescue_from ActiveRecord::RecordNotFound, :with => :force_404
@@ -38,6 +38,8 @@ class ArticlesController < ApplicationController
     @categories = @project.categories.find(:all)
     @default_category = params[:category_id]
     @article.category_id = params[:category_id]
+    @article.version_comments = nil
+    @article.version = params[:version]
   end
   
   def rate
@@ -50,16 +52,19 @@ class ArticlesController < ApplicationController
     end
   end
   
-  def create    
+  def create
     @article = KbArticle.new(params[:article])
     @article.category_id = params[:category_id]
     @article.author_id = User.current.id
     @article.project_id=KbCategory.find(params[:category_id]).project_id
     @categories = @project.categories.find(:all)
+    # don't keep previous comment
+    @article.version_comments = nil
+    @article.version_comments = params[:article][:version_comments]
     if @article.save
       attachments = attach(@article, params[:attachments])
       flash[:notice] = l(:label_article_created, :title => @article.title)
-      redirect_to({ :controller => 'categories', :action => 'show', :id=>KbCategory.find(params[:category_id]), :project_id => @project})
+      redirect_to({ :action => 'show', :id => @article.id, :project_id => @project })
       KbMailer.article_create(@article).deliver
     else
       render(:action => 'new')
@@ -70,6 +75,9 @@ class ArticlesController < ApplicationController
     @article.view request.remote_addr, User.current
     @attachments = @article.attachments.find(:all, :order => "created_on DESC")
     @comments = @article.comments
+    @versions = @article.versions.find :all, 
+                                       :select => "id, author_id, version_comments, updated_at, version",
+                                       :order => 'version DESC'
     respond_to do |format|
       format.html { render :template => 'articles/show', :layout => !request.xhr? }
       format.atom { render_feed(@article, :title => "#{l(:label_article)}: #{@article.title}") }
@@ -79,12 +87,18 @@ class ArticlesController < ApplicationController
   
   def edit
     @categories=@project.categories.find(:all)
+    # don't keep previous comment
+    @article.version_comments = nil
+    @article.version = params[:version]
   end
   
   def update
     @article.updater_id = User.current.id
     params[:article][:category_id] = params[:category_id]
     @categories = @project.categories.find(:all)
+    # don't keep previous comment
+    @article.version_comments = nil
+    @article.version_comments = params[:article][:version_comments]
     if @article.update_attributes(params[:article])
       attachments = attach(@article, params[:attachments])
       flash[:notice] = l(:label_article_updated)
@@ -96,21 +110,25 @@ class ArticlesController < ApplicationController
   end
   
   def add_comment
-    @comment = Comment.new(params[:comment])
-    @comment.author = User.current || nil
-    if @article.comments << @comment
-      flash[:notice] = l(:label_comment_added)
-      redirect_to :action => 'show', :id => @article, :project_id => @project
-      KbMailer.article_comment(@article, @comment).deliver
-    else
-      show
-      render :action => 'show'
-    end
+    @article.without_locking do
+      @comment = Comment.new(params[:comment])
+      @comment.author = User.current || nil
+      if @article.comments << @comment
+        flash[:notice] = l(:label_comment_added)
+        redirect_to :action => 'show', :id => @article, :project_id => @project
+        KbMailer.article_comment(@article, @comment).deliver
+      else
+        show
+        render :action => 'show'
+      end
+	end
   end
 
   def destroy_comment
-    @article.comments.find(params[:comment_id]).destroy
-    redirect_to :action => 'show', :id => @article, :project_id => @project
+    @article.without_locking do
+      @article.comments.find(params[:comment_id]).destroy
+      redirect_to :action => 'show', :id => @article, :project_id => @project
+	end
   end
   
   def destroy
@@ -144,6 +162,21 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def version
+    @articleversion = @article.content_for_version(params[:version])
+  end
+  
+  def diff
+    @diff = @article.diff(params[:version], params[:version_from])
+    render_404 unless @diff
+    @articleversion = @article.content_for_version(params[:version])
+  end
+
+  def revert
+    @article.revert_to! params[:version]
+    @article.clear_newer_versions
+    redirect_to :action => 'show', :id => @article, :project_id => @project
+  end  
 #######
 private
 #######

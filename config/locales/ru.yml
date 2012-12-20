@@ -6,11 +6,15 @@ ru:
   field_article_destroyer: "Deleted by"
   field_article_updater: "Updated by"
   field_tag_list: "Список меток"
+  field_updated_at: "Updated at"
+  field_version: Version
+  field_version_comments: "Change comments"
   knowledgebase_title: "База знаний"
   label_article_created: "Создана статья '%{title}'"
   label_article_plural: Статьи
   label_article_removed: "Статья удалена"
   label_article_updated: "Статья обновлена"
+  label_article_version: "Article version: %{version} - "
   label_article_viewed: 
     one: "Просмотрена один раз"
     other: "Просмотрена %{count} раз"
@@ -57,6 +61,8 @@ ru:
   message_no_permissions: "You do not have permission to view any articles or categories. Please contact your administrator."
   show_category_totals: "Показать все разделы в виде дерева?"
   summary_item_limit: "Лимит количества разделов Базы Знаний"
+  text_confirm_versions_delete: "This will revert and delete any newer versions of this document that may exist. Are you sure?"
+  text_current_version: Current
   title_add_comment: "Добавить комментарий"
   title_article_rating: "Рейтинг статьи"
   title_browse_by_category: "Просмотр по разделам"

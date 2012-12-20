@@ -71,6 +71,12 @@ Redmine::Plugin.register :redmine_knowledgebase do
     permission :view_top_rated_articles, {
       :articles => :index
     }
+    permission :view_article_history, {
+      :articles => [:diff, :version]
+    }
+    permission :manage_article_history, {
+      :articles => [:diff, :version, :revert]
+    }
   end
   
   menu :project_menu, :articles, { :controller => 'articles', :action => 'index' }, :caption => :knowledgebase_title, :after => :activity, :param => :project_id

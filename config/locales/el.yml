@@ -6,11 +6,15 @@ el:
   field_article_destroyer: "Deleted by"
   field_article_updater: "Updated by"
   field_tag_list: "Λίστα ετικετών"
+  field_updated_at: "Updated at"
+  field_version: Version
+  field_version_comments: "Change comments"
   knowledgebase_title: "Γνωσιακή βάση"
   label_article_created: "Δημιουργηθέν άρθρο '%{title}'"
   label_article_plural: Άρθρα
   label_article_removed: "Το άρθρο διαγράφηκε"
   label_article_updated: "Το άρθρο επικαιροποιήθηκε"
+  label_article_version: "Article version: %{version} - "
   label_article_viewed: 
     one: "Προβλήθηκε μία φορά"
     other: "Προβλήθηκε %{count} φορές"
@@ -57,6 +61,8 @@ el:
   message_no_permissions: "You do not have permission to view any articles or categories. Please contact your administrator."
   show_category_totals: "Εμφάνιση συνόλων κατηγοριών στο δέντρο;"
   summary_item_limit: "Όριο σύνοψης σελίδας της Γνωσιακής Βάσης"
+  text_confirm_versions_delete: "This will revert and delete any newer versions of this document that may exist. Are you sure?"
+  text_current_version: Current
   title_add_comment: "Προσθήκη Σχολίου"
   title_article_rating: "Βαθμολογία Άρθρου"
   title_browse_by_category: "Περιήγηση στην Κατηγορία"
