@@ -10,7 +10,7 @@
 		<li><%= link_to_if_authorized l(:label_edit_article), { :controller => 'articles', :action => 'edit', :id => @article.id, :project_id => @project}, :class => 'icon icon-edit' %></li>
 		<li><%= link_to_if_authorized l(:label_delete_article), { :controller => 'articles', :action => 'destroy', :id => @article.id, :project_id => @project}, :confirm => l(:text_are_you_sure), :method => :delete, :class => 'icon icon-del' %></li>
 		<li><%= link_to_if_authorized l(:label_new_comment), { :controller => "articles", :action => "comment", :article_id => @article.id, :project_id => @project}, :class => "icon icon-comment", :remote => true, :method => :get %></li>
-		<li><%= watcher_tag(@article, User.current) %></li>
+		<li><!--%= watcher_tag(@article, User.current) %--></li>
 	</ul>
 	<br />
   <div id='rating-container'>
