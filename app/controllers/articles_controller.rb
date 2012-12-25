@@ -5,7 +5,9 @@ class ArticlesController < ApplicationController
   include AttachmentsHelper
   helper :knowledgebase
   include KnowledgebaseHelper
-
+  helper :watchers
+  include WatchersHelper
+  
   before_filter :find_project_by_project_id, :authorize
   before_filter :get_article, :except => [:index, :new, :create, :rate, :tagged, :preview, :comment]
 
@@ -24,6 +26,8 @@ class ArticlesController < ApplicationController
     @total_articles_by_me = @project.articles.where(:author_id => User.current.id).count
 
     @categories = @project.categories.where(:parent_id => nil)
+    #for jump to category box
+    @allcategories = @project.categories.find(:all)
 
     @articles_newest = @project.articles.find(:all, :limit => summary_limit, :order => 'created_at DESC')
     @articles_latest = @project.articles.find(:all, :limit => summary_limit, :order => 'updated_at DESC')
