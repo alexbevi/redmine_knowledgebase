@@ -6,6 +6,10 @@
   <%= javascript_include_tag 'jquery.form.js', 'jquery.MetaData.js', 'jquery.rating.pack.js', :plugin => 'redmine_knowledgebase' %>
 <% end %>
 
+<div class="contextual">
+  <%= render :partial => "categories/jump_box" %>
+</div>
+
 <% content_for :sidebar do %>
 	<h3><%= l(:title_edit_article) %></h3>
 	<ul id="options">
