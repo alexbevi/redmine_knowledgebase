@@ -26,9 +26,7 @@ class ArticlesController < ApplicationController
     @total_articles_by_me = @project.articles.where(:author_id => User.current.id).count
 
     @categories = @project.categories.where(:parent_id => nil)
-    #for jump to category box
-    @allcategories = @project.categories.find(:all)
-
+    
     @articles_newest = @project.articles.find(:all, :limit => summary_limit, :order => 'created_at DESC')
     @articles_latest = @project.articles.find(:all, :limit => summary_limit, :order => 'updated_at DESC')
     @articles_popular = @project.articles.find(:all, :limit => summary_limit, :include => :viewings).sort_by(&:view_count).reverse

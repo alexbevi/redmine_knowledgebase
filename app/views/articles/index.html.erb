@@ -1,11 +1,7 @@
 <% html_title l(:knowledgebase_title) %>
 
 <div class="contextual">
-  <% if @categories.length > 0 %>
-    <label for="category_id"><strong><%= l(:label_jump_category) %></strong></label>
-    &nbsp;
-    <%= select_tag :category_id, options_for_select([""] + nested_set_options(@allcategories) {|i| "#{'\xc2\xbb' * i.level} #{i.title}" }), :onchange => "if (this.value != \'\') { window.location = 'categories/' + this.value; }" %>
-  <% end %>
+  <%= render :partial => "categories/jump_box" %>
   <%= link_to_if_authorized l(:title_create_category), { :controller => 'categories', :action => 'new', :project_id => @project}, :class => 'icon icon-add' %>
   <% if @project.categories.length > 0 %>	
     <%= link_to_if_authorized l(:title_create_article), { :controller => 'articles', :action => 'new', :project_id => @project}, :class => 'icon icon-add' %>
