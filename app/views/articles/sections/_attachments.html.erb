@@ -1,0 +1,1 @@
+<%= render :partial => 'attachments/links', :locals => {:attachments => @article.attachments, :options => { :deletable => User.current.logged? } } %>

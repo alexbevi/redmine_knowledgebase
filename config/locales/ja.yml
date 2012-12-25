@@ -6,11 +6,15 @@ ja:
   field_article_destroyer: "Deleted by"
   field_article_updater: "Updated by"
   field_tag_list: タグリスト
+  field_updated_at: "Updated at"
+  field_version: Version
+  field_version_comments: "Change comments"
   knowledgebase_title: 知識DB
   label_article_created: "'%{title}'の記事を作成しました．"
   label_article_plural: 知識DB記事
   label_article_removed: 記事を削除しました．
   label_article_updated: 記事を更新しました．
+  label_article_version: "Article version: %{version} - "
   label_article_viewed: 
     one: "Viewed once"
     other: "Viewed %{count} times"
@@ -58,6 +62,8 @@ ja:
   message_no_permissions: "You do not have permission to view any articles or categories. Please contact your administrator."
   show_category_totals: ツリーの全てのカテゴリを表示する
   summary_item_limit: 知識データベースに表示する記事数
+  text_confirm_versions_delete: "This will revert and delete any newer versions of this document that may exist. Are you sure?"
+  text_current_version: Current
   title_add_comment: コメントを追加
   title_article_rating: 評価レート
   title_browse_by_category: カテゴリ別一覧

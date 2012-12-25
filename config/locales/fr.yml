@@ -6,11 +6,15 @@ fr:
   field_article_destroyer: "Deleted by"
   field_article_updater: "Updated by"
   field_tag_list: "Liste des tags (séparés par une virgule)"
+  field_updated_at: "Updated at"
+  field_version: Version
+  field_version_comments: "Change comments"
   knowledgebase_title: "Base de Connaissance"
   label_article_created: "Article '%{title}' créé"
   label_article_plural: Articles
   label_article_removed: "Article supprimé"
   label_article_updated: "Article mis à jour"
+  label_article_version: "Article version: %{version} - "
   label_article_viewed: 
     one: "Consulté une fois"
     other: "Consulté %{count} fois"
@@ -57,6 +61,8 @@ fr:
   message_no_permissions: "You do not have permission to view any articles or categories. Please contact your administrator."
   show_category_totals: "Afficher le total par catégorie dans l'arbre ?"
   summary_item_limit: "Nombre maximum d'articles dans la page de résumé de la base de connaissance"
+  text_confirm_versions_delete: "This will revert and delete any newer versions of this document that may exist. Are you sure?"
+  text_current_version: Current
   title_add_comment: "Ajouter un commentaire"
   title_article_rating: "Évaluation de l'article"
   title_browse_by_category: "Parcourir par catégorie"

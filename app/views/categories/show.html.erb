@@ -16,7 +16,7 @@
     <li><%= link_to_if_authorized l(:label_new_category), { :controller => 'categories', :action => 'new', :parent_id => @category.id, :project_id => @project}, :class => 'icon icon-add' %></li>
     <li><%= link_to_if_authorized l(:label_edit_category), { :controller => 'categories', :action => 'edit', :id => @category.id, :project_id => @project}, :class => 'icon icon-edit' %></li>
     <li><%= link_to_if_authorized l(:label_delete_category), { :controller => 'categories', :action => 'destroy', :id => @category.id, :project_id => @project}, :confirm => l(:text_are_you_sure), :method => :delete, :class => 'icon icon-del' %></li>
-	<li><%= watcher_tag(@category, User.current) %></li>
+	<li><!-- watcher_tag(@category, User.current) --></li>
 	</ul>
 	<h3><%= l(:title_browse_by_category) %></h3>
   <%= render :partial => "categories/tree" %>

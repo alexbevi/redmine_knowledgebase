@@ -6,11 +6,15 @@ tr:
   field_article_destroyer: "Deleted by"
   field_article_updater: "Updated by"
   field_tag_list: "Etiket Listesi"
+  field_updated_at: "Updated at"
+  field_version: Version
+  field_version_comments: "Change comments"
   knowledgebase_title: "Bilgi Bankası"
   label_article_created: "'%{title} makalesi oluşturuldu'"
   label_article_plural: Makaleler
   label_article_removed: "Makale kaldırıldı"
   label_article_updated: "Makale güncellendi"
+  label_article_version: "Article version: %{version} - "
   label_article_viewed: 
     one: "Bir kez görüntülendi"
     other: "%{count} defa görüntülendi"
@@ -57,6 +61,8 @@ tr:
   message_no_permissions: "You do not have permission to view any articles or categories. Please contact your administrator."
   show_category_totals: "Kategori toplamını ağaç yapısnda göster?"
   summary_item_limit: "Bilgi bankası özet sayfası makale sınırı"
+  text_confirm_versions_delete: "This will revert and delete any newer versions of this document that may exist. Are you sure?"
+  text_current_version: Current
   title_add_comment: "Yorum ekle"
   title_article_rating: "Makale Derecelendirmesi"
   title_browse_by_category: Kategoriler
