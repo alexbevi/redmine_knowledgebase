@@ -4,6 +4,8 @@ class CategoriesController < ApplicationController
   menu_item :articles
   helper :knowledgebase
   include KnowledgebaseHelper
+  helper :watchers
+  include WatchersHelper
 
   before_filter :find_project_by_project_id, :authorize
   accept_rss_auth :show
