@@ -1,8 +1,3 @@
-[![Flattr this][2]][1]
-
-[1]: http://flattr.com/thing/890708/alexbeviredmineknowledgebase
-[2]: http://api.flattr.com/button/button-static-50x60.png
-
 This plugin adds generic knowledgebase funcationlity to the redmine project management application.
 
 ## Compatibility
@@ -183,6 +178,14 @@ Now that categories and articles have been created, the Home page of the Knowled
 
 ### About
 
-Copyright (c) 2010-2012 Alex Bevilacqua, released under the MIT license
+Copyright (c) 2010-2013 Alex Bevilacqua, released under the MIT license
 
 Though I initially wrote this plugin, it would not be possible without the many contributions from the community. See [AUTHORS](https://github.com/alexbevi/redmine_knowledgebase/blob/master/AUTHORS) for the full list.
+
+#### Shameless Plug(s)
+
+[![endorse](http://api.coderwall.com/alexbevi/endorsecount.png)](http://coderwall.com/alexbevi)
+[![Flattr this][2]][1]
+
+[1]: http://flattr.com/thing/890708/alexbeviredmineknowledgebase
+[2]: http://api.flattr.com/button/button-static-50x60.png
