@@ -188,4 +188,4 @@ Though I initially wrote this plugin, it would not be possible without the many 
 [![Flattr this][2]][1]
 
 [1]: http://flattr.com/thing/890708/alexbeviredmineknowledgebase
-[2]: http://api.flattr.com/button/button-static-50x60.png
+[2]: http://api.flattr.com/button/flattr-badge-large.png
