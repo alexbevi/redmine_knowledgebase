@@ -40,6 +40,14 @@ To install the knowledgebase, execute the following commands from the root of yo
     bundle install
     rake redmine:plugins:migrate NAME=redmine_knowledgebase
 
+Note that this plugin relies on [acts-as-taggable-on](https://github.com/mbleigh/acts-as-taggable-on) being installed.
+
+If another plugin has been installed that is using this library for tagging, the following step can be skipped.
+
+To add the tables that acts-as-taggable-on needs, run the following:
+
+    rails generate acts_as_taggable_on:migration
+
 More information on installing Redmine plugins can be found here: [http://www.redmine.org/wiki/redmine/Plugins](http://www.redmine.org/wiki/redmine/Plugins "Redmine Plugins")
 
 After the plugin is installed and the db migration completed, you will
