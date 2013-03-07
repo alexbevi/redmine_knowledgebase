@@ -49,4 +49,13 @@ module KnowledgebaseHelper
   def updated_by(updated, updater)
      l(:label_updated_who, :updater => link_to_user(updater), :age => time_tag(updated)).html_safe
   end
+
+  def create_preview_link
+    v = Redmine::VERSION.to_a
+    if v[0] == 2 && v[1] <= 1
+      link_to_remote(l(:label_preview), { :url => { :controller => 'articles', :action => 'preview' }, :method => 'post', :update => 'preview', :with => "Form.serialize('articles-form')")
+    else
+      preview_link({ :controller => 'articles', :action => 'preview' }, 'articles-form')
+    end
+  end
 end
