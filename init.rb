@@ -1,6 +1,7 @@
 require 'redmine'
 require 'acts_as_viewed'
 require 'acts_as_rated'
+require 'redmine_acts_as_taggable_on/initialize'
 
 #Register KB macro
 require 'macros'
@@ -13,6 +14,7 @@ Redmine::Plugin.register :redmine_knowledgebase do
   version     '2.2.0'
 
   requires_redmine :version_or_higher => '2.0.0'
+  requires_acts_as_taggable_on
   
   settings :default => {
     'knowledgebase_anonymous_access' => "1",
