@@ -44,11 +44,11 @@ bg:
   label_title: Заглавие
   label_title_articles: Статия
   label_title_category: Категория
-  label_updated_who: "Updated by %{updater} %{age} ago"
+  label_updated_who: "Обновено от %{updater} преди %{age}"
   message_no_articles: "Все още няма добавени статии в базата знания. Може би сега ще започнете с първата ..."
-  message_no_categories: "Unfortunately, there aren't any Categories defined, and you need to be logged in to create new categories."
+  message_no_categories: "За съжаление няма дефинирани категории, и вие трябва да влезете в Redmine за да създадете нови категории."
   show_category_totals: "Показване на информацията за категориите в дървовидна структура?"
-  summary_item_limit: "Knowledgebase summary page article limit"
+  summary_item_limit: "Ограничение на анотациите по размер"
   title_add_comment: "Добавяне на коментар"
   title_article_rating: "Рейтинг на статията"
   title_browse_by_category: "Разглеждане по категории"
@@ -63,4 +63,7 @@ bg:
   title_tagged_articles: "Статии, маркирани с %{tag}"
   title_tags: Маркери
   title_top_rated_articles: "Статии с най-голям рейтинг"
-  title_votes: гласа
+  title_votes:
+    one: "един глас"
+    other: "%{count} гласа"
+    zero: "гласа"
