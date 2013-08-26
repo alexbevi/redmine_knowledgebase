@@ -65,3 +65,11 @@ de:
   title_tags: Tags
   title_top_rated_articles: "Bestbewertete Artikel"
   title_votes: Stimmen
+  permission_view_articles: Artikel anzeigen
+  permission_comment_and_rate_articles: Artikel kommentieren und bewerten
+  permission_create_articles: Artikel erstellen
+  permission_edit_articles: Artikel bearbeiten
+  permission_manage_articles: Artikel verwalten
+  permission_manage_articles_comments: Artikelkommentare verwalten
+  permission_create_article_categories: Artikelkategorien erstellen
+  permission_manage_article_categories: Artikelkategorien verwalten
