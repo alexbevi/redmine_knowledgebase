@@ -9,11 +9,7 @@ class KnowledgebaseController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, :with => :force_404
   
   def index
-    begin
-      summary_limit = Setting['plugin_redmine_knowledgebase']['knowledgebase_summary_limit'].to_i
-    rescue
-      summary_limit = 5
-    end
+    summary_limit = Setting['plugin_redmine_knowledgebase']['knowledgebase_summary_limit'].to_i || 5
     
     @categories = KbCategory.find(:all)
     @articles_newest   = KbArticle.find(:all, :limit => summary_limit, :order => 'created_at DESC')
@@ -36,9 +32,7 @@ protected
 #########
 
   def is_user_logged_in
-    if !User.current.logged?
-      render_403
-    end
+    render_403 unless User.current.logged?
   end
   
   def allow_anonymous_access?
