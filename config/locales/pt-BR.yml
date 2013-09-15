@@ -64,3 +64,11 @@ pt-BR:
   title_tags: Tags
   title_top_rated_articles: "Artigos Mais Bem Classificados"
   title_votes: Votos
+  permission_view_articles: View articles
+  permission_comment_and_rate_articles: Comment and rate articles
+  permission_create_articles: Create articles
+  permission_edit_articles: Edit articles
+  permission_manage_articles: Manage articles
+  permission_manage_articles_comments: Manage articles comments
+  permission_create_article_categories: Create article categories
+  permission_manage_article_categories: Manage article categories
