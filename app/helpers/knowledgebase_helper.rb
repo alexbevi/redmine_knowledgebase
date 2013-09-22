@@ -12,27 +12,28 @@ module KnowledgebaseHelper
   end
  
   def format_article_summary(article, format, options = {})
-    output = nil
-    case format
+    output = case format
     when "normal"
-      output = truncate article.summary, :length => options[:truncate]
+       truncate article.summary, :length => options[:truncate]
     when "newest"
-      output = l(:label_summary_newest_articles,
+      l(:label_summary_newest_articles,
         :ago => time_ago_in_words(article.created_at),
         :category => link_to(article.category.title, {:controller => 'categories', :action => 'show', :id => article.category_id}))
     when "updated"
-      output = l(:label_summary_updated_articles,
+      l(:label_summary_updated_articles,
         :ago =>time_ago_in_words(article.updated_at),
         :category => link_to(article.category.title, {:controller => 'categories', :action => 'show', :id => article.category_id}))
     when "popular"
-      output = l(:label_summary_popular_articles,
+      l(:label_summary_popular_articles,
         :count => article.view_count,
         :created => article.created_at.to_formatted_s(:rfc822))
     when "toprated"
-      output = l(:label_summary_toprated_articles,
+      l(:label_summary_toprated_articles,
         :rating_avg => article.rating_average.to_s,
         :rating_max => "5",
         :count => article.rated_count)
+    else 
+      nil
     end
     
     content_tag(:div, raw(output), :class => "summary")
