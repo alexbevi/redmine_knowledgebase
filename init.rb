@@ -9,6 +9,7 @@ require 'macros'
 Redmine::Plugin.register :redmine_knowledgebase do
   name        'Knowledgebase'
   author      'Alex Bevilacqua'
+  author_url  "http://www.alexbevi.com"
   description 'A plugin for Redmine that adds knowledgebase functionality'
   url         'https://github.com/alexbevi/redmine_knowledgebase'
   version     '2.3.0'
