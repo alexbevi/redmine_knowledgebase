@@ -2,6 +2,7 @@ require 'redmine'
 require 'acts_as_viewed'
 require 'acts_as_rated'
 require 'project_patch'
+require 'redmine_acts_as_taggable_on/initialize'
 
 #Register KB macro
 require 'macros'
@@ -9,11 +10,13 @@ require 'macros'
 Redmine::Plugin.register :redmine_knowledgebase do
   name        'Knowledgebase'
   author      'Alex Bevilacqua'
+  author_url  "http://www.alexbevi.com"
   description 'A plugin for Redmine that adds knowledgebase functionality'
   url         'https://github.com/alexbevi/redmine_knowledgebase'
   version     '3.0.0-devel1'
 
   requires_redmine :version_or_higher => '2.0.0'
+  requires_acts_as_taggable_on
   
   settings :default => {
     'knowledgebase_sort_category_tree' => "1",

@@ -7,6 +7,8 @@ class ArticlesController < ApplicationController
   include KnowledgebaseHelper
   helper :watchers
   include WatchersHelper
+
+  before_filter :get_article, :only => [:add_attachment, :show, :edit, :update, :add_comment, :destroy, :destroy_comment]
   
   before_filter :find_project_by_project_id, :authorize
   before_filter :get_article, :except => [:index, :new, :create, :rate, :tagged, :preview, :comment]
@@ -75,7 +77,7 @@ class ArticlesController < ApplicationController
   
   def show
     @article.view request.remote_addr, User.current
-    @attachments = @article.attachments.find(:all, :order => "created_on DESC")
+    @attachments = @article.attachments.find(:all).sort_by(&:created_on)
     @comments = @article.comments
     @versions = @article.versions.find :all, 
                                        :select => "id, author_id, version_comments, updated_at, version",

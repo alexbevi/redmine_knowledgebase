@@ -11,7 +11,6 @@
 </div>
 
 <% content_for :sidebar do %>
-	<h3><%= l(:title_edit_article) %></h3>
 	<ul id="options">
 		<li><%= link_to_if_authorized l(:label_edit_article), { :controller => 'articles', :action => 'edit', :id => @article.id, :project_id => @project}, :class => 'icon icon-edit' %></li>
 		<li><%= link_to_if_authorized l(:label_delete_article), { :controller => 'articles', :action => 'destroy', :id => @article.id, :project_id => @project}, :confirm => l(:text_are_you_sure), :method => :delete, :class => 'icon icon-del' %></li>

@@ -1,4 +1,4 @@
-source :rubygems
+source 'https://rubygems.org'
 
-gem 'acts-as-taggable-on', '~> 2.3.1'
+gem 'redmine_acts_as_taggable_on', '~> 1.0'
 gem 'ya2yaml'

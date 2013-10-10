@@ -15,7 +15,6 @@
 <h2><%= @category.title %></h2>
 
 <% content_for :sidebar do %>
-	<h3><%= l(:title_edit_category) %></h3>
 	<ul id="options">
 		<li><%= link_to_if_authorized l(:label_new_article), { :controller => 'articles', :action => 'new', :category_id => @category.id, :project_id => @project}, :class => 'icon icon-add' %></li>
     <li><%= link_to_if_authorized l(:label_new_category), { :controller => 'categories', :action => 'new', :parent_id => @category.id, :project_id => @project}, :class => 'icon icon-add' %></li>

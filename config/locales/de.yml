@@ -17,7 +17,7 @@ de:
   label_article_version: "Article version: %{version} - "
   label_article_viewed: 
     one: "Einmal gesehen"
-    other: "%{count} Views"
+    other: "%{count} mal gesehen"
   label_category: Kategorie
   label_category_created: "Kategorie '%{title}' erstellt"
   label_category_deleted: "Kategorie gelöscht"
@@ -47,7 +47,7 @@ de:
   label_summary_newest_articles: "Erstellt vor %{ago} in %{category}"
   label_summary_popular_articles: 
     one: "Einmal angezeigt seit %{created}"
-    other: "%{count} Views seit %{created}"
+    other: "%{count} mal angezeigt seit %{created}"
   label_summary_toprated_articles: 
     one: "Rating: %{rating_avg}/%{rating_max} aus einer Stimme"
     other: "Rating: %{rating_avg}/%{rating_max} aus %{count} Stimmen"
@@ -57,7 +57,7 @@ de:
   label_title_category: Kategorie
   label_updated_who: "Updated by %{updater} %{age} ago"
   message_no_articles: "Es wurde noch kein Artikel eingegeben. Beginnen Sie mit einem Artikel zum Thema..."
-  message_no_categories: "Unfortunately, there aren't any Categories defined, and you need to be logged in to create new categories."
+  message_no_categories: "Leider sind keine Kategorien definiert und Sie müssen eingeloggt sein um neue Kategoren zu erstellen."
   message_no_permissions: "You do not have permission to view any articles or categories. Please contact your administrator."
   show_category_totals: "Anzahl der Artikel pro Katgeorie im Katgeoriebaum anzeigen?"
   summary_item_limit: "Maximale Artikel in der Übersicht"
@@ -79,4 +79,12 @@ de:
   title_tagged_articles: "Artikel getaggt mit %{tag}"
   title_tags: Tags
   title_top_rated_articles: "Bestbewertete Artikel"
-  title_votes: Votes
+  title_votes: Stimmen
+  permission_view_articles: Artikel anzeigen
+  permission_comment_and_rate_articles: Artikel kommentieren und bewerten
+  permission_create_articles: Artikel erstellen
+  permission_edit_articles: Artikel bearbeiten
+  permission_manage_articles: Artikel verwalten
+  permission_manage_articles_comments: Artikelkommentare verwalten
+  permission_create_article_categories: Artikelkategorien erstellen
+  permission_manage_article_categories: Artikelkategorien verwalten
