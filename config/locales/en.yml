@@ -59,6 +59,14 @@ en:
   message_no_articles: "No articles have been added yet. Click Create Article to get started."
   message_no_categories: "No categories have been created. Click Create Category to get started."
   message_no_permissions: "You do not have permission to view any articles or categories. Please contact your administrator."
+  permission_comment_and_rate_articles: "Comment and rate articles"
+  permission_create_article_categories: "Create article categories"
+  permission_create_articles: "Create articles"
+  permission_edit_articles: "Edit articles"
+  permission_manage_article_categories: "Manage article categories"
+  permission_manage_articles: "Manage articles"
+  permission_manage_articles_comments: "Manage articles comments"
+  permission_view_articles: "View articles"
   show_category_totals: "Show category totals in tree?"
   summary_item_limit: "Knowledgebase summary page article limit"
   text_confirm_versions_delete: "This will revert and delete any newer versions of this document that may exist. Are you sure?"
@@ -83,11 +91,3 @@ en:
     one: "one vote"
     other: "%{count} votes"
     zero: "no votes"
-  permission_view_articles: View articles
-  permission_comment_and_rate_articles: Comment and rate articles
-  permission_create_articles: Create articles
-  permission_edit_articles: Edit articles
-  permission_manage_articles: Manage articles
-  permission_manage_articles_comments: Manage articles comments
-  permission_create_article_categories: Create article categories
-  permission_manage_article_categories: Manage article categories

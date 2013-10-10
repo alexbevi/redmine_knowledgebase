@@ -59,6 +59,14 @@ it:
   message_no_articles: "Nessun articolo è stato ancora aggiunto alla knowledgebase."
   message_no_categories: "Unfortunately, there aren't any Categories defined, and you need to be logged in to create new categories."
   message_no_permissions: "You do not have permission to view any articles or categories. Please contact your administrator."
+  permission_comment_and_rate_articles: "Comment and rate articles"
+  permission_create_article_categories: "Create article categories"
+  permission_create_articles: "Create articles"
+  permission_edit_articles: "Edit articles"
+  permission_manage_article_categories: "Manage article categories"
+  permission_manage_articles: "Manage articles"
+  permission_manage_articles_comments: "Manage articles comments"
+  permission_view_articles: "View articles"
   show_category_totals: "Show category totals in tree?"
   summary_item_limit: "Knowledgebase summary page article limit"
   text_confirm_versions_delete: "This will revert and delete any newer versions of this document that may exist. Are you sure?"
@@ -80,11 +88,3 @@ it:
   title_tags: Tags
   title_top_rated_articles: "Articoli più votati"
   title_votes: Voti
-  permission_view_articles: View articles
-  permission_comment_and_rate_articles: Comment and rate articles
-  permission_create_articles: Create articles
-  permission_edit_articles: Edit articles
-  permission_manage_articles: Manage articles
-  permission_manage_articles_comments: Manage articles comments
-  permission_create_article_categories: Create article categories
-  permission_manage_article_categories: Manage article categories

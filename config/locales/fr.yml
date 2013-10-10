@@ -59,6 +59,14 @@ fr:
   message_no_articles: "Aucun article n'a été ajouté à la base de connaissance."
   message_no_categories: "Il n'y a aucune catégorie pour l'instant, connectez-vous pour en créer une."
   message_no_permissions: "You do not have permission to view any articles or categories. Please contact your administrator."
+  permission_comment_and_rate_articles: "Comment and rate articles"
+  permission_create_article_categories: "Create article categories"
+  permission_create_articles: "Create articles"
+  permission_edit_articles: "Edit articles"
+  permission_manage_article_categories: "Manage article categories"
+  permission_manage_articles: "Manage articles"
+  permission_manage_articles_comments: "Manage articles comments"
+  permission_view_articles: "View articles"
   show_category_totals: "Afficher le total par catégorie dans l'arbre ?"
   summary_item_limit: "Nombre maximum d'articles dans la page de résumé de la base de connaissance"
   text_confirm_versions_delete: "This will revert and delete any newer versions of this document that may exist. Are you sure?"
@@ -80,11 +88,3 @@ fr:
   title_tags: Tags
   title_top_rated_articles: "Articles les mieux notés"
   title_votes: Votes
-  permission_view_articles: View articles
-  permission_comment_and_rate_articles: Comment and rate articles
-  permission_create_articles: Create articles
-  permission_edit_articles: Edit articles
-  permission_manage_articles: Manage articles
-  permission_manage_articles_comments: Manage articles comments
-  permission_create_article_categories: Create article categories
-  permission_manage_article_categories: Manage article categories

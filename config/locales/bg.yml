@@ -59,6 +59,14 @@ bg:
   message_no_articles: "Все още няма добавени статии в базата знания. Може би сега ще започнете с първата ..."
   message_no_categories: "За съжаление няма дефинирани категории, и вие трябва да влезете в Redmine за да създадете нови категории."
   message_no_permissions: "You do not have permission to view any articles or categories. Please contact your administrator."
+  permission_comment_and_rate_articles: "Comment and rate articles"
+  permission_create_article_categories: "Create article categories"
+  permission_create_articles: "Create articles"
+  permission_edit_articles: "Edit articles"
+  permission_manage_article_categories: "Manage article categories"
+  permission_manage_articles: "Manage articles"
+  permission_manage_articles_comments: "Manage articles comments"
+  permission_view_articles: "View articles"
   show_category_totals: "Показване на информацията за категориите в дървовидна структура?"
   summary_item_limit: "Ограничение на анотациите по размер"
   text_confirm_versions_delete: "This will revert and delete any newer versions of this document that may exist. Are you sure?"
@@ -79,15 +87,7 @@ bg:
   title_tagged_articles: "Статии, маркирани с %{tag}"
   title_tags: Маркери
   title_top_rated_articles: "Статии с най-голям рейтинг"
-  title_votes:
+  title_votes: 
     one: "един глас"
     other: "%{count} гласа"
-    zero: "гласа"
-  permission_view_articles: View articles
-  permission_comment_and_rate_articles: Comment and rate articles
-  permission_create_articles: Create articles
-  permission_edit_articles: Edit articles
-  permission_manage_articles: Manage articles
-  permission_manage_articles_comments: Manage articles comments
-  permission_create_article_categories: Create article categories
-  permission_manage_article_categories: Manage article categories
+    zero: гласа

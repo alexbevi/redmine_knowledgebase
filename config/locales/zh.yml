@@ -59,6 +59,14 @@ zh:
   message_no_articles: 目前尚未有任何文章
   message_no_categories: 目前未定义任何类别。您需要至少创建一个知识类别。
   message_no_permissions: "You do not have permission to view any articles or categories. Please contact your administrator."
+  permission_comment_and_rate_articles: "Comment and rate articles"
+  permission_create_article_categories: "Create article categories"
+  permission_create_articles: "Create articles"
+  permission_edit_articles: "Edit articles"
+  permission_manage_article_categories: "Manage article categories"
+  permission_manage_articles: "Manage articles"
+  permission_manage_articles_comments: "Manage articles comments"
+  permission_view_articles: "View articles"
   show_category_totals: 在类别树中显示数量？
   summary_item_limit: 知识库主页文章限制
   text_confirm_versions_delete: "This will revert and delete any newer versions of this document that may exist. Are you sure?"
@@ -80,11 +88,3 @@ zh:
   title_tags: 标签
   title_top_rated_articles: 评分最高的文章
   title_votes: 评分
-  permission_view_articles: View articles
-  permission_comment_and_rate_articles: Comment and rate articles
-  permission_create_articles: Create articles
-  permission_edit_articles: Edit articles
-  permission_manage_articles: Manage articles
-  permission_manage_articles_comments: Manage articles comments
-  permission_create_article_categories: Create article categories
-  permission_manage_article_categories: Manage article categories
