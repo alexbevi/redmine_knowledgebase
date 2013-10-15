@@ -4,6 +4,16 @@ This plugin adds generic knowledgebase funcationlity to the redmine project mana
 
 The plugin is available in two (2) versions, which track the Redmine versions to reflect their level of compatibility. If you're using Redmine 1.x.x, use a 0.x.x or 1.x.x version of the Knowledgebase; if you're using Redmine 2+, use a Knowledgebase version >= 2.
 
+If you are upgrading from previous releases, for example from 1.x.x branches then:
+
+First install version from git tag v.2.2.1, run migration script after installing.
+Second install latest version, for example 2.x-stable, run migration script after installing.
+
+This is because migration scripts doesn't work when switch from very old release to the latests.
+Plugin cannot find column `taggings.context` in data base 
+Problem in the migrate script:
+(https://github.com/alexbevi/redmine_knowledgebase/blob/2.x-stable/db/migrate/20130513154700_add_tags_and_taggings.rb)
+
 This plugin also incorporates the following libraries directly. 
 
 * [acts_as_viewed](http://rubyforge.org/projects/acts-as-viewed)
