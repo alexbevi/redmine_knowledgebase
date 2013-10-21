@@ -24,7 +24,6 @@ Redmine::Plugin.register :redmine_knowledgebase do
     'knowledgebase_summary_limit' => "5"
   }, :partial => 'settings/knowledgebase_settings'
 
-  #Global permissions
   project_module :knowledgebase do
     permission :view_kb_articles, {
       :articles      => [:index, :show, :tagged],
