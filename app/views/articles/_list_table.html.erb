@@ -10,9 +10,20 @@
   <tbody>
     <% articles.each do |article| %>
     <tr id="article-<%= article %>" class="<%= cycle('odd', 'even') %>">
-       <td class="title"><%= link_to article.title, { :controller => 'articles', :action => 'show', :id => article.id, :project_id => @project}%> </br> <div class="summary"><%= article.summary %></div></td>
-       <td class="created_at"><%= article.created_at %></td>
-       <td class="updated_at"><%= article.updated_at %></td>
+      <td class="title">
+        <%= link_to article.title, { :controller => 'articles', 
+                                     :action => 'show', 
+                                     :id => article.id, 
+                                     :project_id => @project} %> 
+        <% unless Setting['plugin_redmine_knowledgebase']['disable_article_summaries'].to_i %>
+          <br/> 
+          <div class="summary">
+            <%= article.summary %>
+          </div>
+        <% end %>
+      </td>
+      <td class="created_at"><%= article.created_at %></td>
+      <td class="updated_at"><%= article.updated_at %></td>
 	</tr>
 	<% end %>
   </tbody>
