@@ -2,6 +2,7 @@
 ja: 
   allow_anon_access: 匿名アクセス許可
   allow_sort_category_tree: カテゴリをアルファベット順に並び替える
+  disable_article_summaries: "Disable Article Summaries"
   field_article_author: "Created by"
   field_article_destroyer: "Deleted by"
   field_article_updater: "Updated by"

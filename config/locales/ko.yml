@@ -2,6 +2,7 @@
 ko: 
   allow_anon_access: "익명 접근허가"
   allow_sort_category_tree: "카테고리를 알파벳순 정렬"
+  disable_article_summaries: "Disable Article Summaries"
   field_article_author: "Created by"
   field_article_destroyer: "Deleted by"
   field_article_updater: "Updated by"

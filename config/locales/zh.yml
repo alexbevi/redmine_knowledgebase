@@ -2,6 +2,7 @@
 zh: 
   allow_anon_access: 是否允许匿名访问？
   allow_sort_category_tree: 类别树按字母排序？
+  disable_article_summaries: "Disable Article Summaries"
   field_article_author: 创建人
   field_article_destroyer: 删除人
   field_article_updater: 更新人
