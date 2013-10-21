@@ -2,6 +2,7 @@
 fr: 
   allow_anon_access: "Consultation anonyme ?"
   allow_sort_category_tree: "Trier les catégories par ordre alphabétique ?"
+  disable_article_summaries: "Disable Article Summaries"
   field_article_author: "Created by"
   field_article_destroyer: "Deleted by"
   field_article_updater: "Updated by"

@@ -2,6 +2,7 @@
 tr: 
   allow_anon_access: "Anonim erişime izin ver?"
   allow_sort_category_tree: "Kategori ağacını alfabetik olarak sırala?"
+  disable_article_summaries: "Disable Article Summaries"
   field_article_author: "Created by"
   field_article_destroyer: "Deleted by"
   field_article_updater: "Updated by"

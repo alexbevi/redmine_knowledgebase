@@ -94,7 +94,6 @@ module KnowledgebaseHelper
   
   def article_tabs
     tabs = [{:name => 'content', :action => :content, :partial => 'articles/sections/content', :label => :label_content},
-            {:name => 'summary', :action => :summary, :partial => 'articles/sections/summary', :label => :label_summary},
             {:name => 'comments', :action => :comments, :partial => 'articles/sections/comments', :label => :label_comment_plural},
             {:name => 'attachments', :action => :attachments, :partial => 'articles/sections/attachments', :label => :label_attachment_plural},
             {:name => 'history', :action => :history, :partial => 'articles/sections/history', :label => :label_history}

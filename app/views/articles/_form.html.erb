@@ -5,7 +5,11 @@
 <%= select_tag :category_id, options_for_select(nested_set_options(@categories) {|i| "#{'»' * i.level} #{i.title}" }, @article.category_id) %><br />
 </p>
 <p><%= f.text_field :title, :size => 60, :label => l(:label_title), :required => true %></p>
-<p><%= f.text_area :summary, :cols => 60, :rows => 5, :label => l(:label_summary) %></p>
+
+<% if Setting['plugin_redmine_knowledgebase']['disable_article_summaries'] == "0" %>
+  <p><%= f.text_area :summary, :cols => 60, :rows => 5, :label => l(:label_summary) %></p>
+<% end %>
+
 <p><%= f.text_area :content, :cols => 60, :rows => 15, :class => 'wiki-edit', :label => l(:label_content) %></p>
 <p><%= f.text_field :tag_list, :size => 80 %></p>
 <p><%= f.text_field :version_comments, :size => 120, :label => l(:field_version_comments) %></p>

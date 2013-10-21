@@ -2,6 +2,7 @@
 de: 
   allow_anon_access: "Anonymen Zugriff erlauben?"
   allow_sort_category_tree: "Den Katgegoriebaum alphabetisch sortieren?"
+  disable_article_summaries: "Disable Article Summaries"
   field_article_author: "Created by"
   field_article_destroyer: "Deleted by"
   field_article_updater: "Updated by"
