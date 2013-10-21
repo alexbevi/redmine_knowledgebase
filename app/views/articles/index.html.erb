@@ -17,11 +17,12 @@
   <p class="nodata"><%= l(:message_no_articles) %></p>
   
 <% elsif @project.articles.count > 0 %>
-  
-  <% if !User.current.allowed_to?(:view_recent_articles, @project) && !User.current.allowed_to?(:view_most_popular_articles,@project) && !User.current.allowed_to?(:view_top_rated_articles, @project) %>
+  <%- # TODO deprecate (see https://github.com/alexbevi/redmine_knowledgebase/issues/183) %>
+  <% if !User.current.allowed_to?(:view_recent_articles, @project) && 
+        !User.current.allowed_to?(:view_most_popular_articles, @project) && 
+        !User.current.allowed_to?(:view_top_rated_articles, @project) %>
      <p class="nodata"><%=l(:message_no_permissions)%></p>
   <% else %>
-  
     <div class="splitcontentleft">
         <h2><%=l(:label_overview)%></h2>
         <div class="articles box">
