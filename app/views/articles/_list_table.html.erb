@@ -15,7 +15,7 @@
                                      :action => 'show', 
                                      :id => article.id, 
                                      :project_id => @project} %> 
-        <% unless Setting['plugin_redmine_knowledgebase']['disable_article_summaries'].to_i %>
+        <% if Setting['plugin_redmine_knowledgebase']['disable_article_summaries'] == "0" %>
           <br/> 
           <div class="summary">
             <%= article.summary %>
