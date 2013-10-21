@@ -17,3 +17,8 @@
   <%= text_field_tag("settings[knowledgebase_summary_limit]", @settings["knowledgebase_summary_limit"] || defaults["knowledgebase_summary_limit"]) %>
 </p>
 
+<p>
+  <label><%= l(:disable_article_summaries) %></label>
+  <%= hidden_field_tag 'settings[disable_article_summaries]', 0 %>
+  <%= check_box_tag 'settings[disable_article_summaries]', 1, @settings['disable_article_summaries'].to_i == 1 %>
+</p>

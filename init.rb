@@ -21,7 +21,8 @@ Redmine::Plugin.register :redmine_knowledgebase do
   settings :default => {
     'knowledgebase_sort_category_tree' => "1",
     'knowledgebase_show_category_totals' => "1",
-    'knowledgebase_summary_limit' => "5"
+    'knowledgebase_summary_limit' => "5",
+    'disable_article_summaries' => "0"
   }, :partial => 'settings/knowledgebase_settings'
 
   project_module :knowledgebase do
