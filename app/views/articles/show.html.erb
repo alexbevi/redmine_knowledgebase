@@ -43,5 +43,8 @@
 </p>
 
 <h1><%= @article.title %></h1>
+<% if Setting['plugin_redmine_knowledgebase']['disable_article_summaries'] == "0" %>
+  <div class="article-summary"><%= @article.summary %></div>
+<% end %>
 
 <%= render_tabs article_tabs %>
