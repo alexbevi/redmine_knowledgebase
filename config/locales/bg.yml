@@ -67,6 +67,7 @@ bg:
   permission_manage_article_categories: "Управление на категориите"
   permission_manage_articles: "Управление на статии"
   permission_manage_articles_comments: "Управление на коментарите"
+  permission_manage_category_whitelist: "Manage category whitelist"
   permission_view_articles: "Разглеждане на статии"
   show_category_totals: "Показване на информацията за категориите в дървовидна структура?"
   summary_item_limit: "Ограничение на анотациите по размер"

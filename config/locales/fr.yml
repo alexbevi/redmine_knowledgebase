@@ -67,6 +67,7 @@ fr:
   permission_manage_article_categories: "Manage article categories"
   permission_manage_articles: "Manage articles"
   permission_manage_articles_comments: "Manage articles comments"
+  permission_manage_category_whitelist: "Manage category whitelist"
   permission_view_articles: "View articles"
   show_category_totals: "Afficher le total par catégorie dans l'arbre ?"
   summary_item_limit: "Nombre maximum d'articles dans la page de résumé de la base de connaissance"

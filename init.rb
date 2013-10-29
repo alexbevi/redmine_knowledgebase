@@ -80,6 +80,10 @@ Redmine::Plugin.register :redmine_knowledgebase do
     permission :manage_article_history, {
       :articles => [:diff, :version, :revert]
     }
+    permission :manage_category_whitelist, {
+      :articles      => :index,
+      :categories    => [:index, :show, :edit, :update]    
+    }
   end
   
   menu :project_menu, :articles, { :controller => 'articles', :action => 'index' }, :caption => :knowledgebase_title, :after => :activity, :param => :project_id
