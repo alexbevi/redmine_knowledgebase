@@ -206,3 +206,7 @@ Though I initially wrote this plugin, it would not be possible without the many 
 
 [1]: http://flattr.com/thing/890708/alexbeviredmineknowledgebase
 [2]: http://api.flattr.com/button/flattr-badge-large.png
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/alexbevi/redmine_knowledgebase/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
