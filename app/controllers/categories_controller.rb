@@ -66,12 +66,15 @@ class CategoriesController < ApplicationController
   end
 
   def update
+    binding.pry
     @category = KbCategory.find(params[:id])
     if params[:root_category] == "yes"
       @category.parent_id = nil
     else
       @category.move_to_child_of(KbCategory.find(params[:parent_id]))
     end
+
+    @category.user_whitelist = params["user_whitelist"].join(",")
 
     if @category.update_attributes(params[:category])
       flash[:notice] = l(:label_category_updated)

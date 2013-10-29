@@ -57,6 +57,7 @@ el:
   label_title_articles: Άρθρο
   label_title_category: Κατηγορία
   label_updated_who: "Updated by %{updater} %{age} ago"
+  label_user_whitelist: "User whitelist"
   message_no_articles: "Δεν έχουν προστεθέι άρθρα στην Γνωσιακή Βάση για την ώρα. Ίσως θέλετε να κάνετε την αρχή ..."
   message_no_categories: "Δυστυχώς, δεν έχουν καθοριστεί κατηγορίες, πρέπει να να συνδεθεί για να δημιουργήσετε νέες κατηγορίες."
   message_no_permissions: "You do not have permission to view any articles or categories. Please contact your administrator."

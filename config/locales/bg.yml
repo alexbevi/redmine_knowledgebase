@@ -57,6 +57,7 @@ bg:
   label_title_articles: Статия
   label_title_category: Категория
   label_updated_who: "Обновено от %{updater} преди %{age}"
+  label_user_whitelist: "User whitelist"
   message_no_articles: "Все още няма добавени статии в базата знания. Може би сега ще започнете с първата ..."
   message_no_categories: "За съжаление няма дефинирани категории, и вие трябва да влезете в Redmine за да създадете нови категории."
   message_no_permissions: "You do not have permission to view any articles or categories. Please contact your administrator."

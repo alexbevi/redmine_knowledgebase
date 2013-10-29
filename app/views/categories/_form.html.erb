@@ -20,4 +20,8 @@ else
   <%= hidden_field_tag 'project_id', @project.id %>
   <p><%= f.text_field :title, :label => l(:label_title), :required => true %></p>
   <p><%= f.text_area :description, :cols => 60, :rows => 10, :label => l(:label_description) %></p>
+
+  <% if User.current.allowed_to?(:manage_category_whitelist, @project) %>
+    <%= render :partial => "categories/members" %>
+  <% end %>
 </div>

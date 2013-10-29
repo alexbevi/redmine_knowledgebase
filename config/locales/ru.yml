@@ -57,6 +57,7 @@ ru:
   label_title_articles: Статьи
   label_title_category: Раздел
   label_updated_who: "Обновлено %{updater} %{age} назад"
+  label_user_whitelist: "User whitelist"
   message_no_articles: "Пока что не было создано ни одной статьи в Базе Знаний. Может быть, вы захотите стать первым..."
   message_no_categories: "Пока что категории отсутствуют. Войдите, чтобы создать новый раздел."
   message_no_permissions: "You do not have permission to view any articles or categories. Please contact your administrator."

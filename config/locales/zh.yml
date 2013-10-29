@@ -57,6 +57,7 @@ zh:
   label_title_articles: 文章
   label_title_category: 类别
   label_updated_who: "由 %{updater} 更新于 %{age} 前"
+  label_user_whitelist: "User whitelist"
   message_no_articles: 目前尚未有任何文章
   message_no_categories: 目前未定义任何类别。您需要至少创建一个知识类别。
   message_no_permissions: "You do not have permission to view any articles or categories. Please contact your administrator."
