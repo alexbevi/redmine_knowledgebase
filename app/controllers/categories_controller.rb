@@ -66,7 +66,6 @@ class CategoriesController < ApplicationController
   end
 
   def update
-    binding.pry
     @category = KbCategory.find(params[:id])
     if params[:root_category] == "yes"
       @category.parent_id = nil
