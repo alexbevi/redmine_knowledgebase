@@ -13,7 +13,7 @@ class CategoriesController < ApplicationController
   def show
     @category = KbCategory.find(params[:id])
     @articles = @category.articles.order("#{sort_column} #{sort_direction}")
-    @categories = @project.categories.where(:parent_id => nil)
+    @categories = @project.categories.where(:parent_id => nil).delete_if { |cat| cat.blacklisted?(User.current) }
     
     respond_to do |format|
       format.html { render :template => 'categories/show', :layout => !request.xhr? }

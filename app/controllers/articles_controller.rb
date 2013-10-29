@@ -27,7 +27,7 @@ class ArticlesController < ApplicationController
     @total_articles = @project.articles.count
     @total_articles_by_me = @project.articles.where(:author_id => User.current.id).count
 
-    @categories = @project.categories.where(:parent_id => nil)
+    @categories = @project.categories.where(:parent_id => nil).delete_if { |cat| cat.blacklisted?(User.current) }
     
     @articles_newest = @project.articles.find(:all, :limit => summary_limit, :order => 'created_at DESC')
     @articles_latest = @project.articles.find(:all, :limit => summary_limit, :order => 'updated_at DESC')

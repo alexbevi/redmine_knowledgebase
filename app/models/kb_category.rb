@@ -13,4 +13,12 @@ class KbCategory < ActiveRecord::Base
 
   acts_as_watchable
   
+  # check the category whitelist (if it's defined) to see if the
+  # provided user is explicetly allowed to access content
+  def blacklisted?(user)
+    return false if self.user_whitelist.blank?
+
+    whitelisted = self.user_whitelist.split(",").include?(user.id.to_s)
+    !whitelisted
+  end
 end
