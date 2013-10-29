@@ -73,7 +73,11 @@ class CategoriesController < ApplicationController
       @category.move_to_child_of(KbCategory.find(params[:parent_id]))
     end
 
-    @category.user_whitelist = params["user_whitelist"].join(",")
+    @category.user_whitelist = if params["user_whitelist"].blank? 
+      "" 
+    else
+      params["user_whitelist"].join(",")
+    end
 
     if @category.update_attributes(params[:category])
       flash[:notice] = l(:label_category_updated)
