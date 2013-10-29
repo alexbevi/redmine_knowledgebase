@@ -76,6 +76,11 @@ class ArticlesController < ApplicationController
   end
   
   def show
+    if @article.category.blacklisted?(User.current)
+      render_403
+      return false
+    end
+
     @article.view request.remote_addr, User.current
     @attachments = @article.attachments.find(:all).sort_by(&:created_on)
     @comments = @article.comments

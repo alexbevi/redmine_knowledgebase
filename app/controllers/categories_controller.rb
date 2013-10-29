@@ -12,9 +12,15 @@ class CategoriesController < ApplicationController
   
   def show
     @category = KbCategory.find(params[:id])
+
+    if @category.blacklisted?(User.current)
+      render_403
+      return false
+    end
+    
     @articles = @category.articles.order("#{sort_column} #{sort_direction}")
     @categories = @project.categories.where(:parent_id => nil).delete_if { |cat| cat.blacklisted?(User.current) }
-    
+
     respond_to do |format|
       format.html { render :template => 'categories/show', :layout => !request.xhr? }
       format.atom { render_feed(@articles, :title => "#{l(:knowledgebase_title)}: #{l(:label_category)}: #{@category.title}") }
