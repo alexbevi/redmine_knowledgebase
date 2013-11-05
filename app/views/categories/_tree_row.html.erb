@@ -7,7 +7,7 @@
   </td>
 </tr>
 
-<% subs = category.children %>
+<% subs = category.children.delete_if { |cat| cat.blacklisted?(User.current) } %>
 <% subs = subs.sort_by(&:title) if sort_categories? %>
 <% subs.each do |subcat| %>
   <%= render :partial => 'categories/tree_row', :locals => { :category => subcat } %>

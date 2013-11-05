@@ -1,0 +1,7 @@
+<%  whitelisted = @category.user_whitelist.split(",") %>
+<p>
+  <label><%= l(:label_user_whitelist) %></label>
+<% @project.users.sort.each do |user| %>
+  <%= check_box_tag 'user_whitelist[]', user.id, whitelisted.include?(user.id.to_s) %> <%= h user %><br/>
+<% end %>
+</p>

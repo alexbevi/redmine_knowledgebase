@@ -57,6 +57,7 @@ de:
   label_title_articles: Artikel
   label_title_category: Kategorie
   label_updated_who: "Updated by %{updater} %{age} ago"
+  label_user_whitelist: "User whitelist"
   message_no_articles: "Es wurde noch kein Artikel eingegeben. Beginnen Sie mit einem Artikel zum Thema..."
   message_no_categories: "Leider sind keine Kategorien definiert und Sie müssen eingeloggt sein um neue Kategoren zu erstellen."
   message_no_permissions: "You do not have permission to view any articles or categories. Please contact your administrator."
@@ -67,6 +68,7 @@ de:
   permission_manage_article_categories: "Artikelkategorien verwalten"
   permission_manage_articles: "Artikel verwalten"
   permission_manage_articles_comments: "Artikelkommentare verwalten"
+  permission_manage_category_whitelist: "Manage category whitelist"
   permission_view_articles: "Artikel anzeigen"
   show_category_totals: "Anzahl der Artikel pro Katgeorie im Katgeoriebaum anzeigen?"
   summary_item_limit: "Maximale Artikel in der Übersicht"

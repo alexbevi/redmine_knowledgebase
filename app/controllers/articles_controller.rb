@@ -27,7 +27,7 @@ class ArticlesController < ApplicationController
     @total_articles = @project.articles.count
     @total_articles_by_me = @project.articles.where(:author_id => User.current.id).count
 
-    @categories = @project.categories.where(:parent_id => nil)
+    @categories = @project.categories.where(:parent_id => nil).delete_if { |cat| cat.blacklisted?(User.current) }
     
     @articles_newest = @project.articles.find(:all, :limit => summary_limit, :order => 'created_at DESC')
     @articles_latest = @project.articles.find(:all, :limit => summary_limit, :order => 'updated_at DESC')
@@ -76,6 +76,11 @@ class ArticlesController < ApplicationController
   end
   
   def show
+    if @article.category.blacklisted?(User.current)
+      render_403
+      return false
+    end
+
     @article.view request.remote_addr, User.current
     @attachments = @article.attachments.find(:all).sort_by(&:created_on)
     @comments = @article.comments

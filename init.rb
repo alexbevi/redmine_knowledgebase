@@ -1,7 +1,7 @@
 require 'redmine'
 require 'acts_as_viewed'
 require 'acts_as_rated'
-require 'project_patch'
+require 'patches'
 require 'redmine_acts_as_taggable_on/initialize'
 
 #Register KB macro
@@ -79,6 +79,10 @@ Redmine::Plugin.register :redmine_knowledgebase do
     }
     permission :manage_article_history, {
       :articles => [:diff, :version, :revert]
+    }
+    permission :manage_category_whitelist, {
+      :articles      => :index,
+      :categories    => [:index, :show, :edit, :update]    
     }
   end
   
