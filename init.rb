@@ -1,7 +1,7 @@
 require 'redmine'
 require 'acts_as_viewed'
 require 'acts_as_rated'
-require 'project_patch'
+require 'patches'
 require 'redmine_acts_as_taggable_on/initialize'
 
 #Register KB macro
