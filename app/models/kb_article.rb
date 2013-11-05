@@ -23,10 +23,10 @@ class KbArticle < ActiveRecord::Base
   acts_as_versioned :if_changed => [:title, :content, :summary]
   self.non_versioned_columns << 'comments_count'
   
-  acts_as_searchable :columns => [ "#{table_name}.title", "#{table_name}.content"],
-                     :include => [ :project ],
+  acts_as_searchable :columns      => [ "#{table_name}.title", "#{table_name}.content"],
+                     :include      => [ :project ],
                      :order_column => "#{table_name}.id",
-                     :date_column => "#{table_name}.created_at"
+                     :date_column  => "#{table_name}.created_at"
 
   acts_as_event :title => Proc.new {|o| status = (o.new_status ? "(#{l(:label_new_article)})" : nil ); "#{status} #{l(:label_title_articles)} ##{o.id} - #{o.title}" },
                 :description => :summary,
@@ -41,9 +41,6 @@ class KbArticle < ActiveRecord::Base
 
   has_many :comments, :as => :commented, :dependent => :delete_all, :order => "created_on"
 
-  scope :visible, lambda {|*args| { :include => :project,
-                                        :conditions => Project.allowed_to_condition(args.shift || User.current, :view_kb_articles, *args) } }
-  
   def recipients
     notified = []
     # Author and assignee are always notified unless they have been
