@@ -28,6 +28,22 @@ class KbArticle < ActiveRecord::Base
                      :order_column => "#{table_name}.id",
                      :date_column  => "#{table_name}.created_at"
 
+  # override the acts_as_searchable search method in order to filter the results
+  # by category permissions
+  def self.search(tokens, projects=nil, options={})
+    # the results are presented as an array with two entries:
+    # [0] => an array of the models returned in the search result
+    # [1] => the count of the results
+    result = super(tokens, projects, options)
+    # first we want to check if any of the results shoudln't be
+    # visible to the current user
+    result[0].delete_if { |article| article.category.blacklisted?(User.current) }
+    # update the total count just in case the results were further filtered
+    result[1] = result[0].length
+
+    result
+  end
+
   acts_as_event :title => Proc.new {|o| status = (o.new_status ? "(#{l(:label_new_article)})" : nil ); "#{status} #{l(:label_title_articles)} ##{o.id} - #{o.title}" },
                 :description => :summary,
                 :datetime => :updated_at,
