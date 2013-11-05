@@ -32,10 +32,10 @@ class KbArticle < ActiveRecord::Base
   # by category permissions
   def self.search(tokens, projects=nil, options={})
     # the results are presented as an array with two entries:
-    # [0] => an array of the models returned in the search result
-    # [1] => the count of the results
+    #   [0] => an array of the models returned in the search result
+    #   [1] => the count of the results
     result = super(tokens, projects, options)
-    # first we want to check if any of the results shoudln't be
+    # first we want to check if any of the results shouldn't be
     # visible to the current user
     result[0].delete_if { |article| article.category.blacklisted?(User.current) }
     # update the total count just in case the results were further filtered
