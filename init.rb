@@ -86,10 +86,7 @@ Redmine::Plugin.register :redmine_knowledgebase do
   
 end
 
-Redmine::Activity.map do |activity|
-    activity.register :kb_articles
-end
-  
+Redmine::Activity.register :kb_articles
 Redmine::Search.available_search_types << 'kb_articles'
 
 class RedmineKnowledgebaseHookListener < Redmine::Hook::ViewListener
