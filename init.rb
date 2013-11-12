@@ -19,9 +19,9 @@ Redmine::Plugin.register :redmine_knowledgebase do
   requires_acts_as_taggable_on
   
   settings :default => {
-    'knowledgebase_sort_category_tree' => "1",
-    'knowledgebase_show_category_totals' => "1",
-    'knowledgebase_summary_limit' => "5",
+    'sort_category_tree' => "1",
+    'show_category_totals' => "1",
+    'summary_limit' => "5",
     'disable_article_summaries' => "0"
   }, :partial => 'settings/knowledgebase_settings'
 

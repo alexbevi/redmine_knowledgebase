@@ -30,11 +30,11 @@ module KnowledgebaseHelper
   end
 
   def sort_categories?
-    Setting['plugin_redmine_knowledgebase']['knowledgebase_sort_category_tree'].to_i == 1
+    Setting['plugin_redmine_knowledgebase']['sort_category_tree'].to_i == 1
   end
   
   def show_category_totals?
-    Setting['plugin_redmine_knowledgebase']['knowledgebase_show_category_totals'].to_i == 1
+    Setting['plugin_redmine_knowledgebase']['show_category_totals'].to_i == 1
   end
   
   def updated_by(updated, updater)
