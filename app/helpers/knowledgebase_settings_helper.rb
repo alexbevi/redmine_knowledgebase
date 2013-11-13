@@ -6,10 +6,6 @@ module KnowledgebaseSettingsHelper
     value = nil if value.blank?
     value ||= defaults[key]
 
-    begin
-      Integer(value)
-    rescue
-      value
-    end
+    value
   end
 end

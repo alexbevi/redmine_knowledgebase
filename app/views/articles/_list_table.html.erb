@@ -15,7 +15,7 @@
                                      :action => 'show', 
                                      :id => article.id, 
                                      :project_id => @project} %> 
-        <% unless settings_value(:disable_article_summaries) == 1 %>
+        <% unless settings_value(:disable_article_summaries) %>
           <br/> 
           <div class="summary">
             <%= article.summary %>

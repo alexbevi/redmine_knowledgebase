@@ -19,10 +19,10 @@ Redmine::Plugin.register :redmine_knowledgebase do
   requires_acts_as_taggable_on
   
   settings :default => {
-    :sort_category_tree => 1,
-    :show_category_totals => 1,
+    :sort_category_tree => true,
+    :show_category_totals => true,
     :summary_limit => 5,
-    :disable_article_summaries => 0
+    :disable_article_summaries => false
   }, :partial => 'settings/knowledgebase_settings'
 
   project_module :knowledgebase do
@@ -91,7 +91,4 @@ Redmine::Search.available_search_types << 'kb_articles'
 
 class RedmineKnowledgebaseHookListener < Redmine::Hook::ViewListener
     render_on :view_layouts_base_html_head, :inline => "<%= stylesheet_link_tag 'knowledgebase', :plugin => :redmine_knowledgebase %>"
-end 
-
-# Include our plugin helper methods in Redmine's SettingsHelper
-SettingsHelper.send :include, KnowledgebaseSettingsHelper
+end

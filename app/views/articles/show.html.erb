@@ -43,7 +43,7 @@
 </p>
 
 <h1><%= @article.title %></h1>
-<% unless settings_value(:disable_article_summaries) == 0 %>
+<% unless settings_value(:disable_article_summaries) %>
   <div class="article-summary"><%= @article.summary %></div>
 <% end %>
 
