@@ -17,18 +17,14 @@ class ArticlesController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, :with => :force_404
 
   def index
-    begin
-      summary_limit = Setting['plugin_redmine_knowledgebase']['knowledgebase_summary_limit'].to_i
-    rescue
-      summary_limit = 5
-    end
+    summary_limit = settings_value(:summary_limit)
 
     @total_categories = @project.categories.count
     @total_articles = @project.articles.count
     @total_articles_by_me = @project.articles.where(:author_id => User.current.id).count
 
     @categories = @project.categories.where(:parent_id => nil)
-    
+
     @articles_newest = @project.articles.find(:all, :limit => summary_limit, :order => 'created_at DESC')
     @articles_latest = @project.articles.find(:all, :limit => summary_limit, :order => 'updated_at DESC')
     @articles_popular = @project.articles.find(:all, :limit => summary_limit, :include => :viewings).sort_by(&:view_count).reverse

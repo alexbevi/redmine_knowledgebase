@@ -1,5 +1,7 @@
 module KnowledgebaseHelper
   include Redmine::Export::PDF
+  include KnowledgebaseSettingsHelper
+
 
   def format_article_summary(article, format, options = {})
     output = case format
@@ -30,11 +32,11 @@ module KnowledgebaseHelper
   end
 
   def sort_categories?
-    Setting['plugin_redmine_knowledgebase']['sort_category_tree'].to_i == 1
+    Setting['plugin_redmine_knowledgebase'][:sort_category_tree]
   end
   
   def show_category_totals?
-    Setting['plugin_redmine_knowledgebase']['show_category_totals'].to_i == 1
+    Setting['plugin_redmine_knowledgebase'][:show_category_totals]
   end
   
   def updated_by(updated, updater)
