@@ -2,7 +2,6 @@ module KnowledgebaseHelper
   include Redmine::Export::PDF
   include KnowledgebaseSettingsHelper
 
-
   def format_article_summary(article, format, options = {})
     output = case format
     when "normal"

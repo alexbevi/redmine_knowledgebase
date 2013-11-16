@@ -16,4 +16,5 @@
 <p>
   <label><%= l(:disable_article_summaries) %></label>
   <%= check_box_tag 'settings[disable_article_summaries]', 1, @settings[:disable_article_summaries] %>
+  <%= count_article_summaries %>
 </p>

@@ -88,6 +88,7 @@ end
 
 Redmine::Activity.register :kb_articles
 Redmine::Search.available_search_types << 'kb_articles'
+SettingsHelper.send :include, KnowledgebaseSettingsHelper
 
 class RedmineKnowledgebaseHookListener < Redmine::Hook::ViewListener
     render_on :view_layouts_base_html_head, :inline => "<%= stylesheet_link_tag 'knowledgebase', :plugin => :redmine_knowledgebase %>"
