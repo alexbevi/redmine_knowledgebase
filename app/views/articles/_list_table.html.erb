@@ -22,8 +22,8 @@
           </div>
         <% end %>
       </td>
-      <td class="created_at"><%= article.created_at %></td>
-      <td class="updated_at"><%= article.updated_at %></td>
+      <td class="created_at"><%= time_ago_in_words article.created_at %> ago</td>
+      <td class="updated_at"><%= time_ago_in_words article.updated_at %> ago</td>
 	</tr>
 	<% end %>
   </tbody>

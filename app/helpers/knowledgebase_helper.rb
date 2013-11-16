@@ -12,7 +12,7 @@ module KnowledgebaseHelper
         :category => link_to(article.category.title, {:controller => 'categories', :action => 'show', :id => article.category_id}))
     when "updated"
       l(:label_summary_updated_articles,
-        :ago =>time_ago_in_words(article.updated_at),
+        :ago => time_ago_in_words(article.updated_at),
         :category => link_to(article.category.title, {:controller => 'categories', :action => 'show', :id => article.category_id}))
     when "popular"
       l(:label_summary_popular_articles,
