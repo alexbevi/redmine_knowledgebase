@@ -1,5 +1,18 @@
 # Load the normal Rails helper
-require File.expand_path(File.dirname(__FILE__) + '/../../../../test/test_helper')
+require File.expand_path(File.dirname(__FILE__) + '/../../../test/test_helper')
 
-# Ensure that we are using the temporary fixture path
-Engines::Testing.set_fixture_path
+module Redmine
+  module PluginFixturesLoader
+    def self.included(base)
+      base.class_eval do
+        def self.plugin_fixtures(*symbols)
+          ActiveRecord::Fixtures.create_fixtures(File.dirname(__FILE__) + '/fixtures/', symbols)
+        end
+      end
+    end
+  end
+end
+
+unless ActionController::TestCase.included_modules.include?(Redmine::PluginFixturesLoader)
+  ActionController::TestCase.send :include, Redmine::PluginFixturesLoader
+end
