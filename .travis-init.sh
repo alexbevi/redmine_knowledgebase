@@ -36,6 +36,8 @@ case $REDMINE_VERSION in
           ;;
 esac
 
+export BUNDLE_GEMFILE=$PATH_TO_REDMINE/Gemfile
+
 clone_redmine() {
   set -e # exit if clone fails
   rm -rf $PATH_TO_REDMINE
@@ -95,7 +97,7 @@ run_install() {
   # install gems
   mkdir -p vendor/bundle
   bundle install --path vendor/bundle
-  
+
   bundle exec rake db:migrate $TRACE
   bundle exec rake redmine:load_default_data REDMINE_LANG=en $TRACE
   bundle exec rake $GENERATE_SECRET $TRACE
