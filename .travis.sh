@@ -42,6 +42,7 @@ clone_redmine() {
   if [ ! "$VERBOSE" = "yes" ]; then
     QUIET=--quiet
   fi
+  if [ -n "${REDMINE_GIT_TAG}" ]; then
     git clone -b $REDMINE_GIT_TAG --depth=100 $QUIET $REDMINE_GIT_REPO $PATH_TO_REDMINE
     cd $PATH_TO_REDMINE
     git checkout $REDMINE_GIT_TAG
