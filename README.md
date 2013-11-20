@@ -1,7 +1,5 @@
-[![Flattr this][2]][1]
+[![Build Status](https://travis-ci.org/[YOUR_GITHUB_USERNAME]/[YOUR_PROJECT_NAME].png)](https://travis-ci.org/alexbevi/redmine_knowledgebase)
 
-[1]: http://flattr.com/thing/890708/alexbeviredmineknowledgebase
-[2]: http://api.flattr.com/button/button-static-50x60.png
 
 This plugin adds professional knowledgebase functionality to the Redmine project management application.
 
