@@ -8,11 +8,11 @@ class ArticlesControllerTest < ActionController::TestCase
     Project.find(1).enable_module! :knowledgebase
   end
 
-  def test_index
-    @request.session[:user_id] = 1
+  test "should show index" do
     get :index, :project_id => 1
 
     assert_response :success
     assert_template 'index'
   end
+
 end
