@@ -64,7 +64,7 @@ run_tests() {
     TRACE=--trace
   fi
 
-  script -e -c "rake redmine:plugins:test NAME="$PLUGIN
+  script -e -c "rake redmine:plugins:test NAME="$PLUGIN $VERBOSE
 }
 
 uninstall() {
