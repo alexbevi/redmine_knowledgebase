@@ -64,7 +64,7 @@ run_tests() {
     TRACE=--trace
   fi
 
-  script -e -c "rake redmine:plugins:test NAME="$PLUGIN $VERBOSE
+  script -e -c "bundle exec rake redmine:plugins:test NAME="$PLUGIN $VERBOSE
 }
 
 uninstall() {
