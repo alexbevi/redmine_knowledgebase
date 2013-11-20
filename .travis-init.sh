@@ -92,6 +92,10 @@ run_install() {
 
   cp $PATH_TO_PLUGINS/$PLUGIN/.travis-database.yml config/database.yml
 
+  # install gems
+  mkdir -p vendor/bundle
+  bundle install --path vendor/bundle
+  
   bundle exec rake db:migrate $TRACE
   bundle exec rake redmine:load_default_data REDMINE_LANG=en $TRACE
   bundle exec rake $GENERATE_SECRET $TRACE
