@@ -2,10 +2,6 @@ language: ruby
 rvm:
   - 2.0.0
   - 1.9.3
-
-branches:
-  only:
-    - testing
 env:
   - REDMINE_VERSION=2.3.3 VERBOSE=yes
 script:
