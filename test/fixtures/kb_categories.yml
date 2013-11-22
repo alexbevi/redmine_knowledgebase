@@ -1,9 +1,19 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 one:
   id: 1
-  title: MyString
+  title: First Category
   description: MyText
+  parent_id: nil #Root Category
+  lft: nil
+  rgt: 2
+  project_id: 1
+  user_whitelist: ""
 two:
   id: 2
-  title: MyString
-  description: MyText
+  title: Second Category
+  description: Contains a user_whitelist
+  parent_id: nil # Root Category
+  lft: 1
+  rgt: nil
+  project_id: 1
+  user_whitelist: "1"

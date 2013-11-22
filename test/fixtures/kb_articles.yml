@@ -1,13 +1,19 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-one:
+article_001:
   id: 1
   category_id: 1
   title: MyString
   summary: MyText
   content: MyText
-two:
+article_002:
   id: 2
   category_id: 1
+  title: MyString
+  summary: MyText
+  content: MyText
+article_003:
+  id: 3
+  category_id: 2
   title: MyString
   summary: MyText
   content: MyText
