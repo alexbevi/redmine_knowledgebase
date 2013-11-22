@@ -1,5 +1,6 @@
 module KnowledgebaseHelper
   include Redmine::Export::PDF
+  include KnowledgebaseSettingsHelper
 
   def format_article_summary(article, format, options = {})
     output = case format
@@ -11,7 +12,7 @@ module KnowledgebaseHelper
         :category => link_to(article.category.title, {:controller => 'categories', :action => 'show', :id => article.category_id}))
     when "updated"
       l(:label_summary_updated_articles,
-        :ago =>time_ago_in_words(article.updated_at),
+        :ago => time_ago_in_words(article.updated_at),
         :category => link_to(article.category.title, {:controller => 'categories', :action => 'show', :id => article.category_id}))
     when "popular"
       l(:label_summary_popular_articles,
@@ -30,11 +31,11 @@ module KnowledgebaseHelper
   end
 
   def sort_categories?
-    Setting['plugin_redmine_knowledgebase']['knowledgebase_sort_category_tree'].to_i == 1
+    Setting['plugin_redmine_knowledgebase'][:sort_category_tree]
   end
   
   def show_category_totals?
-    Setting['plugin_redmine_knowledgebase']['knowledgebase_show_category_totals'].to_i == 1
+    Setting['plugin_redmine_knowledgebase'][:show_category_totals]
   end
   
   def updated_by(updated, updater)

@@ -17,11 +17,7 @@ class ArticlesController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, :with => :force_404
 
   def index
-    begin
-      summary_limit = Setting['plugin_redmine_knowledgebase']['knowledgebase_summary_limit'].to_i
-    rescue
-      summary_limit = 5
-    end
+    summary_limit = settings_value(:summary_limit)
 
     @total_categories = @project.categories.count
     @total_articles = @project.articles.count
