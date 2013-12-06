@@ -1,11 +1,16 @@
 require 'redmine'
-require 'acts_as_viewed'
-require 'acts_as_rated'
-require 'project_patch'
 require 'redmine_acts_as_taggable_on/initialize'
 
-#Register KB macro
-require 'macros'
+Rails.configuration.to_prepare do
+  require 'acts_as_viewed'
+  require 'acts_as_rated'
+  require 'project_patch'
+  require 'macros'
+
+  Redmine::Activity.register :kb_articles
+  Redmine::Search.available_search_types << 'kb_articles'
+  SettingsHelper.send :include, KnowledgebaseSettingsHelper
+end
 
 Redmine::Plugin.register :redmine_knowledgebase do
   name        'Knowledgebase'
@@ -86,10 +91,6 @@ Redmine::Plugin.register :redmine_knowledgebase do
   
 end
 
-Redmine::Activity.register :kb_articles
-Redmine::Search.available_search_types << 'kb_articles'
-SettingsHelper.send :include, KnowledgebaseSettingsHelper
-
 class RedmineKnowledgebaseHookListener < Redmine::Hook::ViewListener
-    render_on :view_layouts_base_html_head, :inline => "<%= stylesheet_link_tag 'knowledgebase', :plugin => :redmine_knowledgebase %>"
+  render_on :view_layouts_base_html_head, :inline => "<%= stylesheet_link_tag 'knowledgebase', :plugin => :redmine_knowledgebase %>"
 end

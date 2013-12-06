@@ -10,7 +10,6 @@ module KnowledgeBase
   end
 end
 
-Rails.configuration.to_prepare do
-  require_dependency 'project'
+unless Project.included_modules.include?(KnowledgeBase::ProjectPatch)
   Project.send(:include, KnowledgeBase::ProjectPatch)
 end
