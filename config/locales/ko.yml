@@ -1,5 +1,5 @@
---- 
-ko: 
+---
+ko:
   allow_anon_access: "익명 접근허가"
   allow_sort_category_tree: "카테고리를 알파벳순 정렬"
   disable_article_summaries: "Disable Article Summaries"
@@ -16,7 +16,7 @@ ko:
   label_article_removed: "지식을 삭제했습니다．"
   label_article_updated: "지식을 수정했습니다.．"
   label_article_version: "Article version: %{version} - "
-  label_article_viewed: 
+  label_article_viewed:
     one: "1회 조회"
     other: "%{count}회 조회"
   label_category: 카테고리
@@ -47,28 +47,19 @@ ko:
   label_subcategories: "하위 카테고리들"
   label_summary: 개요
   label_summary_newest_articles: "%{ago}전에 작성 in %{category}"
-  label_summary_popular_articles: 
+  label_summary_popular_articles:
     one: "1회 조회 %{created}"
     other: "%{count}회 조회 %{created}부터"
-  label_summary_toprated_articles: 
+  label_summary_toprated_articles:
     one: "평가: %{rating_avg}/%{rating_max} from 1표"
     other: "평가: %{rating_avg}/%{rating_max} from %{count}표"
   label_summary_updated_articles: "%{ago}전에 수정"
   label_title: 제목
   label_title_articles: 지식명
   label_title_category: 카테고리명
-  label_updated_who: "Updated by %{updater} %{age} ago"
+  label_updated_who: "%{updater}이(가) %{age}전에 수정했습니다."
   message_no_articles: "지식 데이터베이스에 추가된 지식이 없습니다."
-  message_no_categories: "Unfortunately, there aren't any Categories defined, and you need to be logged in to create new categories."
-  message_no_permissions: "You do not have permission to view any articles or categories. Please contact your administrator."
-  permission_comment_and_rate_articles: "Comment and rate articles"
-  permission_create_article_categories: "Create article categories"
-  permission_create_articles: "Create articles"
-  permission_edit_articles: "Edit articles"
-  permission_manage_article_categories: "Manage article categories"
-  permission_manage_articles: "Manage articles"
-  permission_manage_articles_comments: "Manage articles comments"
-  permission_view_articles: "View articles"
+  message_no_categories: "죄송합니다. 등록된 카테고리가 없습니다. 새로운 카테고리를 작성하시려면 로그인이 필요합니다."
   show_category_totals: "모든 카테고리 표시"
   summary_item_limit: "지식자료에 표시되는 지식수"
   text_confirm_versions_delete: "This will revert and delete any newer versions of this document that may exist. Are you sure?"
@@ -90,3 +81,11 @@ ko:
   title_tags: 태그
   title_top_rated_articles: "평가가 높은 지식"
   title_votes: 투표수
+  permission_view_articles: 지식 보기
+  permission_comment_and_rate_articles: 지식에 댓글과 평가
+  permission_create_articles: 지식 생성
+  permission_edit_articles: 지식 수정
+  permission_manage_articles: 지식 관리
+  permission_manage_articles_comments: 지식 댓글 관리
+  permission_create_article_categories: 지식 카테고리 생성
+  permission_manage_article_categories: 지식 카테고리 관리
