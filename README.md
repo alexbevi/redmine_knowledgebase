@@ -174,7 +174,7 @@ Now that categories and articles have been created, the home page of the Knowled
 
 ### About
 
-Copyright (c) 2010-2013 Alex Bevilacqua, released under the MIT license
+Copyright (c) 2010-2014 Alex Bevilacqua, released under the MIT license
 
 Though I initially wrote this plugin, it would not be possible without the many contributions from the community. See [AUTHORS](https://github.com/alexbevi/redmine_knowledgebase/blob/master/AUTHORS) for the full list.
 
