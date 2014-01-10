@@ -3,17 +3,6 @@
 
 This plugin adds professional knowledgebase functionality to the Redmine project management application.
 
-## Compatibility
-
-The plugin is available in two (2) versions, which track the Redmine versions to reflect their level of compatibility. If you're using Redmine 1.x.x, use a 0.x.x or 1.x.x version of the Knowledgebase; if you're using Redmine 2+, use a Knowledgebase version >= 2.
-
-This plugin also incorporates the following libraries directly. 
-
-* [acts_as_viewed](http://rubyforge.org/projects/acts-as-viewed)
-* [acts_as_rated](http://rubyforge.org/projects/acts-as-rated)
-
-They do _NOT_ need to be installed manually as they have been [patched](https://github.com/alexbevi/redmine_knowledgebase/commit/18c6fd1dff134e8c1f8578b643dc9ba920b7d854) to include Rails 3+ support.
-
 ## Introduction
 
 [Redmine](http://www.redmine.org) is just plain awesome, and has proven to provide 90% of the functionality I need. The one feature that was missing was a usable knowledgebase component. I've looked at some of the open source solutions available, but couldn't find anything that fit my needs exactly. Seeing as Redmine is so easily extended, I figured why not create it for this platform instead of starting yet another project from scratch :P
@@ -37,14 +26,6 @@ To install the knowledgebase, execute the following commands from the root of yo
     git clone git://github.com/alexbevi/redmine_knowledgebase.git plugins/redmine_knowledgebase
     bundle install
     rake redmine:plugins:migrate NAME=redmine_knowledgebase
-
-Note that this plugin relies on [acts-as-taggable-on](https://github.com/mbleigh/acts-as-taggable-on) being installed.
-
-If another plugin has been installed that is using this library for tagging, the following step can be skipped.
-
-To add the tables that acts-as-taggable-on needs, run the following:
-
-    rails generate acts_as_taggable_on:migration
 
 More information on installing Redmine plugins can be found here: [http://www.redmine.org/wiki/redmine/Plugins](http://www.redmine.org/wiki/redmine/Plugins "Redmine Plugins")
 
