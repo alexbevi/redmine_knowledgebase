@@ -50,7 +50,7 @@ ja:
   label_summary_popular_articles: 
     one: "作成日:%{created} / 閲覧者数:1"
     other: "作成日:%{created} / 閲覧者数:%{count}"
-  label_summary_toprated_articles:
+  label_summary_toprated_articles: 
     one: "評価: %{rating_avg}/%{rating_max} from 1票"
     other: "評価: %{rating_avg}/%{rating_max} from %{count} 票"
   label_summary_updated_articles: "%{ago}前に更新"
