@@ -90,6 +90,10 @@ class KbArticle < ActiveRecord::Base
       self.class.versioned_class.connection.execute sql
     end
   end
+
+  def self.count_article_summaries
+    KbArticle.where("summary is not null and summary <> ''").count
+  end
   
   class Version
 

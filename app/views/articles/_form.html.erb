@@ -6,7 +6,7 @@
 </p>
 <p><%= f.text_field :title, :size => 60, :label => l(:label_title), :required => true %></p>
 
-<% unless settings_value(:disable_article_summaries) %>
+<% unless redmine_knowledgebase_settings_value(:disable_article_summaries) %>
   <p><%= f.text_area :summary, :cols => 60, :rows => 5, :label => l(:label_summary) %></p>
 <% end %>
 

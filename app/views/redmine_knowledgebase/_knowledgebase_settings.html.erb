@@ -13,5 +13,5 @@
 <p>
   <%= label_tag :settings_disable_article_summaries, l(:disable_article_summaries) %>
   <%= check_box_tag 'settings[disable_article_summaries]', 1, @settings[:disable_article_summaries] %>
-  <%= count_article_summaries %>
+  <%= redmine_knowledgebase_count_article_summaries %>
 </p>
