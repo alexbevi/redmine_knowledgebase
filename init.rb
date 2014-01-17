@@ -4,11 +4,14 @@ require 'redmine_acts_as_taggable_on/initialize'
 Rails.configuration.to_prepare do
   require 'acts_as_viewed'
   require 'acts_as_rated'
-  require 'project_patch'
   require 'macros'
 
   Redmine::Activity.register :kb_articles
   Redmine::Search.available_search_types << 'kb_articles'
+end
+
+ActionDispatch::Reloader.to_prepare do
+  require 'project_patch'
   SettingsHelper.send :include, KnowledgebaseSettingsHelper
 end
 
