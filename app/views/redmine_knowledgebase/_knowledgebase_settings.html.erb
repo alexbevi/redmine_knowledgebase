@@ -1,20 +1,17 @@
 <p>
-  <label><%= l(:allow_sort_category_tree) %></label>
+  <%= label_tag :settings_sort_category_tree, l(:allow_sort_category_tree) %>
   <%= check_box_tag 'settings[sort_category_tree]', 1, @settings[:sort_category_tree] %>
 </p>
-
 <p>
-  <label><%= l(:show_category_totals) %></label>
+  <%= label_tag :settings_show_category_totals, l(:show_category_totals) %>
   <%= check_box_tag 'settings[show_category_totals]', 1, @settings[:show_category_totals] %>
 </p>
-
 <p>
-  <label><%= l(:summary_item_limit) %>:</label>
+  <%= label_tag :settings_summary_limit, l(:summary_item_limit) %>
   <%= text_field_tag "settings[summary_limit]", @settings[:summary_limit] %>
 </p>
-
 <p>
-  <label><%= l(:disable_article_summaries) %></label>
+  <%= label_tag :settings_disable_article_summaries, l(:disable_article_summaries) %>
   <%= check_box_tag 'settings[disable_article_summaries]', 1, @settings[:disable_article_summaries] %>
   <%= count_article_summaries %>
 </p>

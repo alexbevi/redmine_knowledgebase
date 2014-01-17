@@ -28,7 +28,7 @@ Redmine::Plugin.register :redmine_knowledgebase do
     :show_category_totals => true,
     :summary_limit => 5,
     :disable_article_summaries => false
-  }, :partial => 'settings/knowledgebase_settings'
+  }, :partial => 'redmine_knowledgebase/knowledgebase_settings'
 
   project_module :knowledgebase do
     permission :view_kb_articles, {
