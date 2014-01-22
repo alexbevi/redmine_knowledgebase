@@ -9,10 +9,10 @@ de:
   field_tag_list: "Tag Liste"
   field_updated_at: "Aktualisiert am"
   field_version: Version
-  field_version_comments: "Änderungskommentare"
-  knowledgebase_title: "Wissensbasis"
+  field_version_comments: Änderungskommentare
+  knowledgebase_title: Wissensbasis
   label_article_created: "Artikel '%{title}' erstellt"
-  label_article_plural: "Artikel"
+  label_article_plural: Artikel
   label_article_removed: "Artikel entfernt"
   label_article_updated: "Artikel aktualisiert"
   label_article_version: "Article version: %{version} - "
@@ -23,13 +23,13 @@ de:
   label_category_created: "Kategorie '%{title}' erstellt"
   label_category_deleted: "Kategorie gelöscht"
   label_category_not_empty_cannot_delete: "Dieser Kategorie sind noch Artikel zugewiesen und kann nicht gelöscht werden,"
-  label_category_plural: "Kategorien"
+  label_category_plural: Kategorien
   label_category_updated: "Kategorie aktualisiert"
   label_content: Inhalt
-  label_delete_article: "Löschen"
+  label_delete_article: Löschen
   label_delete_category: "Kategorie entfernen"
-  label_description: "Beschreibung"
-  label_edit_article: "Bearbeiten"
+  label_description: Beschreibung
+  label_edit_article: Bearbeiten
   label_edit_category: "Kategorie bearbeiten"
   label_jump_category: "Zur Kategorie wechseln "
   label_kb_article_plural: "Wissensbasis Artikel"
@@ -43,8 +43,8 @@ de:
   label_overview_total_categories: "Kategorieanzahl: %{total_categories}"
   label_parent_category: "Übergeordnete Kategorie"
   label_root_category: "Root Kategorie"
-  label_subcategories: "Unterkategorien"
-  label_summary: "Zusammenfassung"
+  label_subcategories: Unterkategorien
+  label_summary: Zusammenfassung
   label_summary_newest_articles: "Erstellt vor %{ago} in %{category}"
   label_summary_popular_articles: 
     one: "Einmal angezeigt seit %{created}"
@@ -53,9 +53,9 @@ de:
     one: "Rating: %{rating_avg}/%{rating_max} aus einer Stimme"
     other: "Rating: %{rating_avg}/%{rating_max} aus %{count} Stimmen"
   label_summary_updated_articles: "Vor %{ago} aktualisiert"
-  label_title: "Titel"
-  label_title_articles: "Artikel"
-  label_title_category: "Kategorie"
+  label_title: Titel
+  label_title_articles: Artikel
+  label_title_category: Kategorie
   label_updated_who: "Aktualisiert von %{updater} vor %{age}"
   message_no_articles: "Es wurde noch kein Artikel eingegeben. Beginnen Sie mit einem Artikel zum Thema..."
   message_no_categories: "Leider sind keine Kategorien definiert und Sie müssen eingeloggt sein um neue Kategoren zu erstellen."
@@ -71,7 +71,7 @@ de:
   show_category_totals: "Anzahl der Artikel pro Katgeorie im Katgeoriebaum anzeigen?"
   summary_item_limit: "Maximale Artikel in der Übersicht"
   text_confirm_versions_delete: "Diese Aktion wird alle eventuell vorliegenden neueren Versionen dieses Dokumentes revidieren und löschen. Sind Sie sicher?"
-  text_current_version: "Aktuell"
+  text_current_version: Aktuell
   title_add_comment: "Kommentar hinzufügen"
   title_article_rating: "Artikel Rating"
   title_browse_by_category: "Nach Kategorie"
@@ -86,6 +86,6 @@ de:
   title_overview_summary: "Wissensbasis Zusammenfassung"
   title_recently_updated_articles: "Artikel zuletzt aktualisiert"
   title_tagged_articles: "Artikel getaggt mit %{tag}"
-  title_tags: "Tags"
+  title_tags: Tags
   title_top_rated_articles: "Bestbewertete Artikel"
-  title_votes: "Stimmen"
+  title_votes: Stimmen
