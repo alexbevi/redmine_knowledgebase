@@ -2,14 +2,13 @@ module KnowledgebaseSettingsHelper
   def redmine_knowledgebase_settings_value(key)
     defaults = Redmine::Plugin::registered_plugins[:redmine_knowledgebase].settings[:default]
 
-    begin
-      value = Setting['plugin_redmine_knowledgebase'][key]
-      value = nil if value.blank?
+    value = begin 
+      Setting['plugin_redmine_knowledgebase'][key]
     rescue
-      value ||= defaults[key]
+      nil
     end
 
-    value
+    value.blank? ? defaults[key] : value
   end
   
   def redmine_knowledgebase_count_article_summaries
