@@ -32,6 +32,19 @@ More information on installing Redmine plugins can be found here: [http://www.re
 After the plugin is installed and the db migration completed, you will
 need to restart Redmine for the plugin to be available.
 
+### Updating from v 2.3.0 (Should work for all 2.x versions but has not been tested)
+
+To update redmine from v2.3.0 to 3.x-devel you will first want to delete redmine_knowledgebase from the the /plugins directory and /public/plugin_assets directory. Once those two directories have been removed, run the following commands (as though you were performing a fresh installation):
+
+    git clone git://github.com/alexbevi/redmine_knowledgebase.git plugins/redmine_knowledgebase
+    bundle install
+    rake redmine:plugins:migrate NAME=redmine_knowledgebase
+	
+Upon restarting Redmine, the Knowledgebase entry will no longer appear as a :top_menu entry.
+
+The knowledgebase is now project-specific, and therefore must be included in at least one project to work properly. If you wish to use it like v2.x, you can make a public project that will only be used to store knowledgebase articles.
+You will need to go into your database now and change the kb_articles and kb_categories project_id to the project id of the knowledgebase project you just created. You can find the id in the projects table.
+
 ### Uninstall
 
 `rake redmine:plugins:migrate NAME=redmine_knowledgebase VERSION=0`
