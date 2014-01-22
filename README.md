@@ -23,7 +23,7 @@ This plugin adds professional knowledgebase functionality to the Redmine project
 
 To install the knowledgebase, execute the following commands from the root of your redmine directory, assuming that your RAILS_ENV enviroment variable is set to "production":
 
-    git clone -b 3.x-devel git://github.com/alexbevi/redmine_knowledgebase.git plugins/redmine_knowledgebase
+    git clone git://github.com/alexbevi/redmine_knowledgebase.git plugins/redmine_knowledgebase
     bundle install
     rake redmine:plugins:migrate NAME=redmine_knowledgebase
 
@@ -34,9 +34,9 @@ need to restart Redmine for the plugin to be available.
 
 ### Updating from v 2.3.0 (Should work for all 2.x versions but has not been tested)
 
-To update redmine from v2.3.0 to 3.x-devel you will first want to delete redmine_knowledgebase from the the /plugins directory and /public/plugin_assets directory. After this run the following steps like you are doing a normal install.
+To update redmine from v2.3.0 to 3.x-devel you will first want to delete redmine_knowledgebase from the the /plugins directory and /public/plugin_assets directory. Once those two directories have been removed, run the following commands (as though you were performing a fresh installation):
 
-    git clone -b 3.x-devel git://github.com/alexbevi/redmine_knowledgebase.git plugins/redmine_knowledgebase
+    git clone git://github.com/alexbevi/redmine_knowledgebase.git plugins/redmine_knowledgebase
     bundle install
     rake redmine:plugins:migrate NAME=redmine_knowledgebase
 	
