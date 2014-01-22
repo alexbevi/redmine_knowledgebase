@@ -40,7 +40,9 @@ To update redmine from v2.3.0 to 3.x-devel you will first want to delete redmine
     bundle install
     rake redmine:plugins:migrate NAME=redmine_knowledgebase
 	
-Upon restarting redmine the Knowledgebase tab will no longer show as one of the tabs on redmine. The knowledgebase is now project specific but if you wish to use it like v2.x you can make a project that will just hold knowledgebase articeles.
+Upon restarting Redmine, the Knowledgebase entry will no longer appear as a :top_menu entry.
+
+The knowledgebase is now project-specific, and therefore must be included in at least one project to work properly. If you wish to use it like v2.x, you can make a public project that will only be used to store knowledgebase articles.
 You will need to go into your database now and change the kb_articles and kb_categories project_id to the project id of the knowledgebase project you just created. You can find the id in the projects table.
 
 ### Uninstall
