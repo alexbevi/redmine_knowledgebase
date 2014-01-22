@@ -29,7 +29,7 @@ Redmine::Plugin.register :redmine_knowledgebase do
   settings :default => {
     :sort_category_tree => true,
     :show_category_totals => true,
-    :summary_limit => 5,
+    :summary_limit => 25,
     :disable_article_summaries => false
   }, :partial => 'redmine_knowledgebase/knowledgebase_settings'
 
