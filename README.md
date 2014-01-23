@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/alexbevi/redmine_knowledgebase.png)](https://travis-ci.org/alexbevi/redmine_knowledgebase)
-
+[![Build Status](https://travis-ci.org/alexbevi/redmine_knowledgebase.png)](https://travis-ci.org/alexbevi/redmine_knowledgebase) [![endorse](http://api.coderwall.com/alexbevi/endorsecount.png)](http://coderwall.com/alexbevi)
+[![Flattr this][2]][1][![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/alexbevi/redmine_knowledgebase/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 This plugin adds professional knowledgebase functionality to the Redmine project management application.
 
@@ -212,13 +212,5 @@ Copyright (c) 2010-2014 Alex Bevilacqua, released under the MIT license
 
 Though I initially wrote this plugin, it would not be possible without the many contributions from the community. See [AUTHORS](https://github.com/alexbevi/redmine_knowledgebase/blob/master/AUTHORS) for the full list.
 
-#### Shameless Plug(s)
-
-[![endorse](http://api.coderwall.com/alexbevi/endorsecount.png)](http://coderwall.com/alexbevi)
-[![Flattr this][2]][1]
-
 [1]: http://flattr.com/thing/890708/alexbeviredmineknowledgebase
 [2]: http://api.flattr.com/button/flattr-badge-large.png
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/alexbevi/redmine_knowledgebase/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
