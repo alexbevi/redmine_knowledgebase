@@ -34,7 +34,7 @@ need to restart Redmine for the plugin to be available.
 
 ### Updating from v2.3.0 (Should work for all 2.x versions but has not been tested)
 
-To update redmine from v2.3.0 to 3.x-devel you will first want to delete ``redmine_knowledgebase`` from the the ``/plugins`` and ``/public/plugin_assets`` directories. 
+To update redmine from v2.3.0 to 3.0+ you will first want to delete ``redmine_knowledgebase`` from the the ``/plugins`` and ``/public/plugin_assets`` directories. 
 
 Once those two directories have been removed, run the following commands (as though you were performing a fresh installation):
 
