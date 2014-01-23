@@ -32,18 +32,40 @@ More information on installing Redmine plugins can be found here: [http://www.re
 After the plugin is installed and the db migration completed, you will
 need to restart Redmine for the plugin to be available.
 
-### Updating from v 2.3.0 (Should work for all 2.x versions but has not been tested)
+### Updating from v2.3.0 (Should work for all 2.x versions but has not been tested)
 
 To update redmine from v2.3.0 to 3.x-devel you will first want to delete redmine_knowledgebase from the the /plugins directory and /public/plugin_assets directory. Once those two directories have been removed, run the following commands (as though you were performing a fresh installation):
 
     git clone git://github.com/alexbevi/redmine_knowledgebase.git plugins/redmine_knowledgebase
     bundle install
     rake redmine:plugins:migrate NAME=redmine_knowledgebase
-	
-Upon restarting Redmine, the Knowledgebase entry will no longer appear as a :top_menu entry.
+  
+Upon restarting Redmine, the Knowledgebase entry will no longer appear as a [:top_menu](http://www.redmine.org/projects/redmine/wiki/Plugin_Tutorial#Extending-menus) entry.
 
-The knowledgebase is now project-specific, and therefore must be included in at least one project to work properly. If you wish to use it like v2.x, you can make a public project that will only be used to store knowledgebase articles.
-You will need to go into your database now and change the kb_articles and kb_categories project_id to the project id of the knowledgebase project you just created. You can find the id in the projects table.
+The knowledgebase is now project-specific, and therefore must be included in at least one project to work properly. If you wish to use it like v2.x, you can make a [public project](http://www.redmine.org/projects/redmine/wiki/RedmineProjectSettings#General-settings) that will only be used to store knowledgebase articles.
+
+You will need to go into your database now and change the ``kb_articles`` and ``kb_categories`` ``project_id`` to the project id of the knowledgebase project you just created. 
+
+You can find the id in the projects table.
+
+To generate the full project list from the command line, you can run the following from the root of your Redmine installation: 
+
+```ruby
+rails runner "Project.all.map { |p| puts \"#{p.id}\t#{p.name}\" }"
+```
+
+This will produce a list similar to:
+
+    3    Plugin Development
+    4    KB 2.x
+    5    Global
+
+If you want to move all existing categories to the above "Global" project, you could do this via:
+
+```ruby
+rails runner "KbCategory.update_all(\"project_id = 5\")"
+rails runner "KbArticle.update_all(\"project_id = 5\")"
+```
 
 ### Uninstall
 
@@ -94,7 +116,6 @@ Once you have added categories to the Knowledgebase, there will be a
 use that to navigate to any category or sub-category. You can also
 navigate to categories (not sub-categories) by clicking on the category
 name in the right hand *Browse by Category* side bar.
-
 
 ### Using the Knowledgebase
 
@@ -201,4 +222,3 @@ Though I initially wrote this plugin, it would not be possible without the many 
 
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/alexbevi/redmine_knowledgebase/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
