@@ -69,7 +69,7 @@ rails runner "KbArticle.update_all(\"project_id = 5\")"
 
 ### Uninstall
 
-`rake redmine:plugins:migrate NAME=redmine_knowledgebase VERSION=0`
+    rake redmine:plugins:migrate NAME=redmine_knowledgebase VERSION=0
 
 ## User Guide
 
