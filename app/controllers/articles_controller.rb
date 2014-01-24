@@ -9,9 +9,7 @@ class ArticlesController < ApplicationController
   include WatchersHelper
 
   before_filter :get_article, :only => [:add_attachment, :show, :edit, :update, :add_comment, :destroy, :destroy_comment]
-  
   before_filter :find_project_by_project_id, :authorize
-  before_filter :get_article, :except => [:index, :new, :create, :rate, :tagged, :preview, :comment]
 
   rescue_from ActionView::MissingTemplate, :with => :force_404
   rescue_from ActiveRecord::RecordNotFound, :with => :force_404
