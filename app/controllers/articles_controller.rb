@@ -38,7 +38,6 @@ class ArticlesController < ApplicationController
     @categories = @project.categories.find(:all)
     @default_category = params[:category_id]
     @article.category_id = params[:category_id]
-    @article.version_comments = nil
     @article.version = params[:version]
   end
   
@@ -59,7 +58,6 @@ class ArticlesController < ApplicationController
     @article.project_id=KbCategory.find(params[:category_id]).project_id
     @categories = @project.categories.find(:all)
     # don't keep previous comment
-    @article.version_comments = nil
     @article.version_comments = params[:article][:version_comments]
     if @article.save
       attachments = attach(@article, params[:attachments])
