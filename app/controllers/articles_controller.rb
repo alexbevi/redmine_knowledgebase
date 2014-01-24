@@ -23,10 +23,10 @@ class ArticlesController < ApplicationController
 
     @categories = @project.categories.where(:parent_id => nil)
 
-    @articles_newest = @project.articles.find(:all, :limit => summary_limit, :order => 'created_at DESC')
-    @articles_latest = @project.articles.find(:all, :limit => summary_limit, :order => 'updated_at DESC')
-    @articles_popular = @project.articles.find(:all, :limit => summary_limit, :include => :viewings).sort_by(&:view_count).reverse
-    @articles_toprated = @project.articles.find(:all, :limit => summary_limit, :include => :ratings).sort_by(&:rated_count).reverse
+    @articles_newest = @project.articles.order("created_at DESC").first(summary_limit)
+    @articles_latest = @project.articles.order("updated_at DESC").first(summary_limit)
+    @articles_popular = @project.articles.includes(:viewings).limit(summary_limit).sort_by(&:view_count).reverse
+    @articles_toprated = @project.articles.includes(:ratings).limit(summary_limit).sort_by(&:rated_count).reverse
 
     @tags = @project.articles.tag_counts
   end
@@ -71,9 +71,8 @@ class ArticlesController < ApplicationController
     @article.view request.remote_addr, User.current
     @attachments = @article.attachments.find(:all).sort_by(&:created_on)
     @comments = @article.comments
-    @versions = @article.versions.find :all, 
-                                       :select => "id, author_id, version_comments, updated_at, version",
-                                       :order => 'version DESC'
+    @versions = @article.versions.all.select("id, author_id, version_comments, updated_at, version").order('version DESC')
+
     respond_to do |format|
       format.html { render :template => 'articles/show', :layout => !request.xhr? }
       format.atom { render_feed(@article, :title => "#{l(:label_article)}: #{@article.title}") }
