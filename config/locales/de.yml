@@ -88,4 +88,7 @@ de:
   title_tagged_articles: "Artikel getaggt mit %{tag}"
   title_tags: Tags
   title_top_rated_articles: "Bestbewertete Artikel"
-  title_votes: Stimmen
+  title_votes: 
+    one: "Eine Stimme"
+    other: "%{count} Stimmen"
+    zero: "Keine Stimmen"
