@@ -190,8 +190,7 @@ private
   end
 
   def get_article
-    @article = KbArticle.where(:id => params[:id])
-    @article = @article.first if @article.is_a?(ActiveRecord::Relation)
+    @article = KbArticle.where(:id => params[:id]).first
   end
 
   def force_404
