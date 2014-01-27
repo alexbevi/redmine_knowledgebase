@@ -71,7 +71,7 @@ class ArticlesController < ApplicationController
     @article.view request.remote_addr, User.current
     @attachments = @article.attachments.find(:all).sort_by(&:created_on)
     @comments = @article.comments
-    @versions = @article.versions.all.select("id, author_id, version_comments, updated_at, version").order('version DESC')
+    @versions = @article.versions.select("id, author_id, version_comments, updated_at, version").order('version DESC')
 
     respond_to do |format|
       format.html { render :template => 'articles/show', :layout => !request.xhr? }
