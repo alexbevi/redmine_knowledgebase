@@ -69,6 +69,7 @@ ko:
   permission_manage_articles: "지식 관리"
   permission_manage_articles_comments: "지식 댓글 관리"
   permission_view_articles: "지식 보기"
+  project_module_knowledgebase: "Knowledgebase"
   show_category_totals: "모든 카테고리 표시"
   summary_item_limit: "지식자료에 표시되는 지식수"
   text_confirm_versions_delete: "This will revert and delete any newer versions of this document that may exist. Are you sure?"

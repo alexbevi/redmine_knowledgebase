@@ -68,6 +68,7 @@ zh-TW:
   permission_manage_articles: "Manage articles"
   permission_manage_articles_comments: "Manage articles comments"
   permission_view_articles: "View articles"
+  project_module_knowledgebase: "Knowledgebase"
   show_category_totals: "Show category totals in tree?"
   summary_item_limit: "Knowledgebase summary page article limit"
   text_confirm_versions_delete: "This will revert and delete any newer versions of this document that may exist. Are you sure?"
