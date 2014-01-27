@@ -68,6 +68,7 @@ bg:
   permission_manage_articles: "Управление на статии"
   permission_manage_articles_comments: "Управление на коментарите"
   permission_view_articles: "Разглеждане на статии"
+  project_module_knowledgebase: "Knowledgebase"
   show_category_totals: "Показване на информацията за категориите в дървовидна структура?"
   summary_item_limit: "Ограничение на анотациите по размер"
   text_confirm_versions_delete: "This will revert and delete any newer versions of this document that may exist. Are you sure?"

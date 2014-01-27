@@ -68,6 +68,7 @@ de:
   permission_manage_articles: "Artikel verwalten"
   permission_manage_articles_comments: "Artikelkommentare verwalten"
   permission_view_articles: "Artikel anzeigen"
+  project_module_knowledgebase: "Wissensbasis"
   show_category_totals: "Anzahl der Artikel pro Katgeorie im Katgeoriebaum anzeigen?"
   summary_item_limit: "Maximale Artikel in der Übersicht"
   text_confirm_versions_delete: "Diese Aktion wird alle eventuell vorliegenden neueren Versionen dieses Dokumentes revidieren und löschen. Sind Sie sicher?"

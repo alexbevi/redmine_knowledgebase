@@ -69,6 +69,7 @@ cs:
   permission_manage_articles: "Spravovat články"
   permission_manage_articles_comments: "Spravovat komentáře"
   permission_view_articles: "Zobrazit články"
+  project_module_knowledgebase: "Knowledgebase"
   show_category_totals: "Zobrazit součty pro kategorie ve stromě?"
   summary_item_limit: "Limit pro délku souhrnu"
   text_confirm_versions_delete: "This will revert and delete any newer versions of this document that may exist. Are you sure?"
