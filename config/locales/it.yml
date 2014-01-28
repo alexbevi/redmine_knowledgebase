@@ -91,3 +91,10 @@ it:
   title_tags: Tags
   title_top_rated_articles: "Articoli più votati"
   title_votes: Voti
+  permission_watch_articles: "Watch articles"
+  permission_watch_categories: "Watch categories"
+  permission_view_recent_articles: "View recent articles"
+  permission_view_most_popular_articles: "view most popular articles"
+  permission_view_top_rated_articles: "view top rated articles"
+  permission_view_article_history: "view article history"
+  permission_manage_article_history: "manage article history"

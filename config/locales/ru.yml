@@ -70,7 +70,6 @@ ru:
   permission_manage_articles: "Управление статьями"
   permission_manage_articles_comments: "Управление комментариями"
   permission_view_article_history: "Просмтаривать историю статей"
-  permission_view_articles: "Просмотр статей"
   permission_view_kb_articles: "Просмотр статей"
   permission_view_most_popular_articles: "Просматривать натболее популярные"
   permission_view_recent_articles: "Просмтаривать недавно обновленные"
