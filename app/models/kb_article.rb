@@ -1,3 +1,5 @@
+require 'acts_as_viewed'
+require 'acts_as_rated'
 require 'diff'
 
 class KbArticle < ActiveRecord::Base

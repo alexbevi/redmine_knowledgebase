@@ -2,8 +2,6 @@ require 'redmine'
 require 'redmine_acts_as_taggable_on/initialize'
 
 Rails.configuration.to_prepare do
-  require 'acts_as_viewed'
-  require 'acts_as_rated'
   require 'macros'
 
   Redmine::Activity.register :kb_articles
