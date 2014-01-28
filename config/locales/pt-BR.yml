@@ -66,9 +66,17 @@ pt-BR:
   permission_create_articles: "Create articles"
   permission_edit_articles: "Edit articles"
   permission_manage_article_categories: "Manage article categories"
+  permission_manage_article_history: "manage article history"
   permission_manage_articles: "Manage articles"
   permission_manage_articles_comments: "Manage articles comments"
+  permission_view_article_history: "view article history"
   permission_view_articles: "View articles"
+  permission_view_kb_articles: "View articles"
+  permission_view_most_popular_articles: "view most popular articles"
+  permission_view_recent_articles: "View recent articles"
+  permission_view_top_rated_articles: "view top rated articles"
+  permission_watch_articles: "Watch articles"
+  permission_watch_categories: "Watch categories"
   project_module_knowledgebase: Knowledgebase
   show_category_totals: "Show category totals in tree?"
   summary_item_limit: "Knowledgebase summary page article limit"
@@ -91,10 +99,3 @@ pt-BR:
   title_tags: Tags
   title_top_rated_articles: "Artigos Mais Bem Classificados"
   title_votes: Votos
-  permission_watch_articles: "Watch articles"
-  permission_watch_categories: "Watch categories"
-  permission_view_recent_articles: "View recent articles"
-  permission_view_most_popular_articles: "view most popular articles"
-  permission_view_top_rated_articles: "view top rated articles"
-  permission_view_article_history: "view article history"
-  permission_manage_article_history: "manage article history"
