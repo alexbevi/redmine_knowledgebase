@@ -60,6 +60,7 @@ tr:
   message_no_articles: "Henüz bilgi bankasına hiç bir makale eklenmedi. Belki  bir kaç tane eklemek istersiniz..."
   message_no_categories: "Unfortunately, there aren't any Categories defined, and you need to be logged in to create new categories."
   message_no_permissions: "You do not have permission to view any articles or categories. Please contact your administrator."
+  message_summary_count_not_available: "Summary Count Not Available!"
   permission_comment_and_rate_articles: "Comment and rate articles"
   permission_create_article_categories: "Create article categories"
   permission_create_articles: "Create articles"
@@ -68,7 +69,7 @@ tr:
   permission_manage_articles: "Manage articles"
   permission_manage_articles_comments: "Manage articles comments"
   permission_view_articles: "View articles"
-  project_module_knowledgebase: "Knowledgebase"
+  project_module_knowledgebase: Knowledgebase
   show_category_totals: "Kategori toplamını ağaç yapısnda göster?"
   summary_item_limit: "Bilgi bankası özet sayfası makale sınırı"
   text_confirm_versions_delete: "This will revert and delete any newer versions of this document that may exist. Are you sure?"

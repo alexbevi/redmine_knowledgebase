@@ -61,6 +61,7 @@ cs:
   message_no_articles: "Zatím nejsou ve znalostní databázi žádné články. Asi byste měli začít něco dělat..."
   message_no_categories: "Unfortunately, there aren't any Categories defined, and you need to be logged in to create new categories."
   message_no_permissions: "You do not have permission to view any articles or categories. Please contact your administrator."
+  message_summary_count_not_available: "Summary Count Not Available!"
   permission_comment_and_rate_articles: "Komentovat a hodnotit články"
   permission_create_article_categories: "Vytvářet kategorie"
   permission_create_articles: "Vytvářet články"
@@ -69,7 +70,7 @@ cs:
   permission_manage_articles: "Spravovat články"
   permission_manage_articles_comments: "Spravovat komentáře"
   permission_view_articles: "Zobrazit články"
-  project_module_knowledgebase: "Knowledgebase"
+  project_module_knowledgebase: Knowledgebase
   show_category_totals: "Zobrazit součty pro kategorie ve stromě?"
   summary_item_limit: "Limit pro délku souhrnu"
   text_confirm_versions_delete: "This will revert and delete any newer versions of this document that may exist. Are you sure?"

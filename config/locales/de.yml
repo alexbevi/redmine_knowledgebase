@@ -60,6 +60,7 @@ de:
   message_no_articles: "Es wurde noch kein Artikel eingegeben. Beginnen Sie mit einem Artikel zum Thema..."
   message_no_categories: "Leider sind keine Kategorien definiert und Sie müssen eingeloggt sein um neue Kategoren zu erstellen."
   message_no_permissions: "Sie haben nicht die Berechtigungen Artikel oder Kategorien zu sehen. Bitte kontaktieren Sie ihren Administrator."
+  message_summary_count_not_available: "Summary Count Not Available!"
   permission_comment_and_rate_articles: "Artikel kommentieren und bewerten"
   permission_create_article_categories: "Artikelkategorien erstellen"
   permission_create_articles: "Artikel erstellen"
@@ -68,7 +69,7 @@ de:
   permission_manage_articles: "Artikel verwalten"
   permission_manage_articles_comments: "Artikelkommentare verwalten"
   permission_view_articles: "Artikel anzeigen"
-  project_module_knowledgebase: "Wissensbasis"
+  project_module_knowledgebase: Wissensbasis
   show_category_totals: "Anzahl der Artikel pro Katgeorie im Katgeoriebaum anzeigen?"
   summary_item_limit: "Maximale Artikel in der Übersicht"
   text_confirm_versions_delete: "Diese Aktion wird alle eventuell vorliegenden neueren Versionen dieses Dokumentes revidieren und löschen. Sind Sie sicher?"

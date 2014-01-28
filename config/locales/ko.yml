@@ -61,6 +61,7 @@ ko:
   message_no_articles: "지식 데이터베이스에 추가된 지식이 없습니다."
   message_no_categories: "죄송합니다. 등록된 카테고리가 없습니다. 새로운 카테고리를 작성하시려면 로그인이 필요합니다."
   message_no_permissions: "You do not have permission to view any articles or categories. Please contact your administrator."
+  message_summary_count_not_available: "Summary Count Not Available!"
   permission_comment_and_rate_articles: "지식에 댓글과 평가"
   permission_create_article_categories: "지식 카테고리 생성"
   permission_create_articles: "지식 생성"
@@ -69,7 +70,7 @@ ko:
   permission_manage_articles: "지식 관리"
   permission_manage_articles_comments: "지식 댓글 관리"
   permission_view_articles: "지식 보기"
-  project_module_knowledgebase: "Knowledgebase"
+  project_module_knowledgebase: Knowledgebase
   show_category_totals: "모든 카테고리 표시"
   summary_item_limit: "지식자료에 표시되는 지식수"
   text_confirm_versions_delete: "This will revert and delete any newer versions of this document that may exist. Are you sure?"

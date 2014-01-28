@@ -60,6 +60,7 @@ bg:
   message_no_articles: "Все още няма добавени статии в базата знания. Може би сега ще започнете с първата ..."
   message_no_categories: "За съжаление няма дефинирани категории, и вие трябва да влезете в Redmine за да създадете нови категории."
   message_no_permissions: "You do not have permission to view any articles or categories. Please contact your administrator."
+  message_summary_count_not_available: "Summary Count Not Available!"
   permission_comment_and_rate_articles: "Коментиране и оценка на статии"
   permission_create_article_categories: "Създаване на категории"
   permission_create_articles: "Създаване на статии"
@@ -68,7 +69,7 @@ bg:
   permission_manage_articles: "Управление на статии"
   permission_manage_articles_comments: "Управление на коментарите"
   permission_view_articles: "Разглеждане на статии"
-  project_module_knowledgebase: "Knowledgebase"
+  project_module_knowledgebase: Knowledgebase
   show_category_totals: "Показване на информацията за категориите в дървовидна структура?"
   summary_item_limit: "Ограничение на анотациите по размер"
   text_confirm_versions_delete: "This will revert and delete any newer versions of this document that may exist. Are you sure?"
