@@ -68,6 +68,7 @@ zh:
   permission_manage_articles: "Manage articles"
   permission_manage_articles_comments: "Manage articles comments"
   permission_view_articles: "View articles"
+  project_module_knowledgebase: "Knowledgebase"
   show_category_totals: 在类别树中显示数量？
   summary_item_limit: 知识库主页文章限制
   text_confirm_versions_delete: "This will revert and delete any newer versions of this document that may exist. Are you sure?"

@@ -69,6 +69,7 @@ ja:
   permission_manage_articles: 記事の管理
   permission_manage_articles_comments: 記事のコメント管理
   permission_view_articles: 記事の閲覧
+  project_module_knowledgebase: "Knowledgebase"
   show_category_totals: ツリーの全てのカテゴリを表示する
   summary_item_limit: ナレッジベースに表示する記事数
   text_confirm_versions_delete: このドキュメントの新しいバージョンが存在する場合、記事は逆戻りして削除されます．よろしいですか?
