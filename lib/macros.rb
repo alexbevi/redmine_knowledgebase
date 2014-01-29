@@ -1,6 +1,6 @@
+include KnowledgebaseLinkHelper
 module Macros
-  include KnowledgebaseLinkHelper
-  
+
   Redmine::WikiFormatting::Macros.register do
 
     #A macro named KB in upper case will be considered as an acronym and will break the macro
