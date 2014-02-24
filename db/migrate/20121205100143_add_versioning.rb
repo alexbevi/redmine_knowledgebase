@@ -4,7 +4,7 @@ class AddVersioning < ActiveRecord::Migration
     KbArticle.create_versioned_table
     add_index KbArticle.versioned_table_name, :kb_article_id, :name => :kb_article_versions_kbaid
     add_index KbArticle.versioned_table_name, :updated_at, :name => :index_kb_article_versions_on_updated_at
-    KbArticle.update_all version: '0'
+    KbArticle.update_all('version = 0')
   end
 
   def self.down
