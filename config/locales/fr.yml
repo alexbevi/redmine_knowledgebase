@@ -24,13 +24,13 @@ fr:
   label_category_created: "Categorie '%{title}' créée"
   label_category_deleted: "Catégorie supprimée"
   label_category_not_empty_cannot_delete: "Cette catégorie contient des articles et ne peut être supprimée."
-  label_category_plural: Catégories
+  label_category_plural: "Catégories"
   label_category_updated: "Catégorie mise à jour"
-  label_content: Contenu
-  label_delete_article: Supprimer
+  label_content: "Contenu"
+  label_delete_article: "Supprimer"
   label_delete_category: "Supprimer la catégorie"
-  label_description: Description
-  label_edit_article: Éditer
+  label_description: "Description"
+  label_edit_article: "Éditer"
   label_edit_category: "Modifier la catégorie"
   label_jump_category: "Aller à la catégorie"
   label_kb_article_plural: "Articles de la base de connaissance"
@@ -95,7 +95,7 @@ fr:
   title_most_popular_articles: "Articles les plus populaires"
   title_new_category: "Nouvelle catégorie"
   title_newest_articles: "Derniers articles"
-  title_overview_summary: " Sommaire de la base de connaissance"
+  title_overview_summary: "Sommaire de la base de connaissance"
   title_recently_updated_articles: "Articles récemment modifiés"
   title_tagged_articles: "Articles associés au mot clé « %{tag} »"
   title_tags: "Mots clés"
