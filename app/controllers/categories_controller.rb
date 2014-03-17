@@ -8,10 +8,12 @@ class CategoriesController < ApplicationController
   include WatchersHelper
 
   before_filter :find_project_by_project_id, :authorize
+  before_filter :get_category, :only => [:show, :edit, :update, :destroy]
   accept_rss_auth :show
+
+  rescue_from ActiveRecord::RecordNotFound, :with => :force_404
   
   def show
-    @category = KbCategory.find(params[:id])
     @articles = @category.articles.order("#{sort_column} #{sort_direction}")
     @categories = @project.categories.where(:parent_id => nil)
     
@@ -46,14 +48,12 @@ class CategoriesController < ApplicationController
   end
 
   def edit
-    @category = KbCategory.find(params[:id])
     @parent_id = @category.parent_id
     @categories=@project.categories.find(:all)
   end
 
   def destroy
-    @category = KbCategory.find(params[:id])
-	@categories=@project.categories.find(:all)
+	  @categories=@project.categories.find(:all)
     if @category.articles.size == 0
 	  @category.destroy
       flash[:notice] = l(:label_category_deleted)
@@ -66,7 +66,6 @@ class CategoriesController < ApplicationController
   end
 
   def update
-    @category = KbCategory.find(params[:id])
     if params[:root_category] == "yes"
       @category.parent_id = nil
     else
@@ -81,4 +80,15 @@ class CategoriesController < ApplicationController
     end
   end
 
+#######
+private
+#######
+  
+  def get_category
+    @category = @project.categories.find(params[:id])
+  end
+
+  def force_404
+    render_404
+  end
 end
