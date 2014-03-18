@@ -8,8 +8,8 @@ class ArticlesController < ApplicationController
   helper :watchers
   include WatchersHelper
 
-  before_filter :get_article, :only => [:add_attachment, :show, :edit, :update, :add_comment, :destroy, :destroy_comment, :diff, :revert, :version]
   before_filter :find_project_by_project_id, :authorize
+  before_filter :get_article, :only => [:add_attachment, :show, :edit, :update, :add_comment, :destroy, :destroy_comment, :diff, :revert, :version]
 
   rescue_from ActionView::MissingTemplate, :with => :force_404
   rescue_from ActiveRecord::RecordNotFound, :with => :force_404
@@ -196,7 +196,7 @@ private
   end
 
   def get_article
-    @article = KbArticle.where(:id => params[:id]).first
+    @article = @project.articles.find(params[:id])
   end
 
   def force_404
