@@ -8,7 +8,8 @@ end
 
 ActionDispatch::Reloader.to_prepare do
   require 'macros'
-  require 'project_patch'
+  require 'concerns/knowledgebase_project_extension'
+  Project.send :include, KnowledgebaseProjectExtension
   SettingsHelper.send :include, KnowledgebaseSettingsHelper
 end
 
