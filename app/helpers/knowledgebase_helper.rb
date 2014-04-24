@@ -17,7 +17,7 @@ module KnowledgebaseHelper
     when "popular"
       l(:label_summary_popular_articles,
         :count => article.view_count,
-        :created => article.created_at.to_formatted_s(:rfc822))
+        :created => article.created_at.to_date.to_formatted_s(:rfc822))
     when "toprated"
       l(:label_summary_toprated_articles,
         :rating_avg => article.rating_average.to_s,
@@ -105,7 +105,7 @@ module KnowledgebaseHelper
 
   def create_preview_link
     v = Redmine::VERSION.to_a
-    if v[0] == 2 && v[1] <= 1
+    if v[0] == 2 && v[1] <= 1 && v[2] <= 0
       link_to_remote l(:label_preview), 
                      { :url => { :controller => 'articles', :action => 'preview' }, 
                        :method => 'post', 
