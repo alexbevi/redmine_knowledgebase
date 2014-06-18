@@ -140,13 +140,10 @@ class ArticlesController < ApplicationController
   
   def tagged
     @tag = params[:id]
-    my_direction = params[:direction]
-    my_sort = params[:sort]
-    if my_sort && my_direction
-      my_order = "#{my_sort} #{my_direction}"
-      @list = @project.articles.order(my_order).tagged_with(@tag)	
+    @list = if params[:sort] && params[:direction]
+      @project.articles.order("#{params[:sort]} #{params[:direction]}").tagged_with(@tag)	
     else
-      @list = @project.articles.tagged_with(@tag)	
+      @project.articles.tagged_with(@tag)	
     end
   end
 
