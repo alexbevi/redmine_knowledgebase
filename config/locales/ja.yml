@@ -57,7 +57,7 @@ ja:
   label_title: 件名
   label_title_articles: 記事
   label_title_category: カテゴリ
-  label_updated_who: "%{updater}によって%{age}前に更新"
+  label_updated_who: "%{updater}によって%{age}に更新"
   message_no_articles: ナレッジベースに追加された記事はありません．早速作りましょう！
   message_no_categories: 定義されたカテゴリがありません．新しいカテゴリを作成するにはログインする必要があります．
   message_no_permissions: 記事やカテゴリの閲覧権限がありません．管理者にお問い合わせください．
