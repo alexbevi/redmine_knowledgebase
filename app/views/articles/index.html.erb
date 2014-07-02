@@ -9,11 +9,11 @@
 </div>
 
 <% if @project.categories.count == 0 %>
-  </br>
+  <h2><%= l(:knowledgebase_title) %></h2>
   <p class="nodata"><%= l(:message_no_categories) %></p>
   
 <% elsif @project.articles.count == 0 %>
-  </br>
+  <h2><%= l(:knowledgebase_title) %></h2>
   <p class="nodata"><%= l(:message_no_articles) %></p>
   
 <% else %>
