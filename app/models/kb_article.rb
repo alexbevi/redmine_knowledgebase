@@ -55,6 +55,14 @@ class KbArticle < ActiveRecord::Base
     notified.uniq!
     notified.collect(&:mail)
   end
+
+  def editable_by?(user)
+    user.allowed_to?(:edit_articles, self.project)
+  end
+  
+  def attachments_deletable?(user = User.current)
+    editable_by?(user) || super(user)
+  end
   
   def new_status
     if self.updater_id == 0
