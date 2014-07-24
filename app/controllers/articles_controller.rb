@@ -9,7 +9,7 @@ class ArticlesController < ApplicationController
   include WatchersHelper
 
   before_filter :find_project_by_project_id, :authorize
-  before_filter :get_article, :only => [:add_attachment, :show, :edit, :update, :add_comment, :destroy, :destroy_comment, :diff, :revert, :version]
+  before_filter :get_article, :except => [:index, :new, :create, :preview, :comment, :tagged, :rate]
 
   rescue_from ActionView::MissingTemplate, :with => :force_404
   rescue_from ActiveRecord::RecordNotFound, :with => :force_404
@@ -53,7 +53,7 @@ class ArticlesController < ApplicationController
     @article = KbArticle.new(params[:article])
     @article.category_id = params[:category_id]
     @article.author_id = User.current.id
-    @article.project_id=KbCategory.find(params[:category_id]).project_id
+    @article.project_id = KbCategory.find(params[:category_id]).project_id
     @categories = @project.categories.find(:all)
     # don't keep previous comment
     @article.version_comments = params[:article][:version_comments]
@@ -116,14 +116,14 @@ class ArticlesController < ApplicationController
         show
         render :action => 'show'
       end
-	end
+    end
   end
 
   def destroy_comment
     @article.without_locking do
       @article.comments.find(params[:comment_id]).destroy
       redirect_to :action => 'show', :id => @article, :project_id => @project
-	end
+    end
   end
   
   def destroy
@@ -140,13 +140,10 @@ class ArticlesController < ApplicationController
   
   def tagged
     @tag = params[:id]
-    my_direction = params[:direction]
-    my_sort = params[:sort]
-    if my_sort && my_direction
-      my_order = "#{my_sort} #{my_direction}"
-      @list = @project.articles.order(my_order).tagged_with(@tag)	
+    @list = if params[:sort] && params[:direction]
+      @project.articles.order("#{params[:sort]} #{params[:direction]}").tagged_with(@tag)	
     else
-      @list = @project.articles.tagged_with(@tag)	
+      @project.articles.tagged_with(@tag)	
     end
   end
 
