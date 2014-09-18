@@ -68,7 +68,7 @@ class ArticlesController < ApplicationController
   end
   
   def show
-    @article.view request.remote_addr, User.current
+    @article.view request.remote_ip, User.current
     @attachments = @article.attachments.find(:all).sort_by(&:created_on)
     @comments = @article.comments
     @versions = @article.versions.select("id, author_id, version_comments, updated_at, version").order('version DESC')
