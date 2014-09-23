@@ -60,7 +60,7 @@ de:
   message_no_articles: "Es wurde noch kein Artikel eingegeben. Beginnen Sie mit einem Artikel zum Thema..."
   message_no_categories: "Leider sind keine Kategorien definiert und Sie müssen eingeloggt sein um neue Kategorien zu erstellen."
   message_no_permissions: "Sie haben nicht die Berechtigungen Artikel oder Kategorien zu sehen. Bitte kontaktieren Sie ihren Administrator."
-  message_summary_count_not_available: "Summary Count Not Available!"
+  message_summary_count_not_available: "Additionsnummer nicht verfügbar!"
   permission_comment_and_rate_articles: "Artikel kommentieren und bewerten"
   permission_create_article_categories: "Artikelkategorien erstellen"
   permission_create_articles: "Artikel erstellen"
@@ -84,7 +84,7 @@ de:
   text_current_version: Aktuell
   title_add_comment: "Kommentar hinzufügen"
   title_article_rating: "Artikel Rating"
-  title_browse_by_category: "Nach Kategorie"
+  title_browse_by_category: "Nach Kategorie filtern"
   title_browse_by_tags: "Nach Tags filtern"
   title_create_article: "Artikel erstellen"
   title_create_category: "Kategorie erzeugen"
