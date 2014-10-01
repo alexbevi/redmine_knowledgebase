@@ -2,14 +2,14 @@
 zh: 
   allow_anon_access: 是否允许匿名访问？
   allow_sort_category_tree: 分类树按字母排序？
-  disable_article_summaries: "禁止文章汇总"
+  disable_article_summaries: 禁止文章汇总
   field_article_author: 创建者
   field_article_destroyer: 删除者
   field_article_updater: 更新者
   field_tag_list: 标签列表
-  field_updated_at: "更新于"
+  field_updated_at: 更新于
   field_version: 版本
-  field_version_comments: "变更注释"
+  field_version_comments: 变更注释
   knowledgebase_title: 知识库
   label_article_created: "文章【'%{title}'】已创建"
   label_article_plural: 文章
@@ -59,33 +59,33 @@ zh:
   label_updated_who: "由 %{updater} 更新于 %{age} 前"
   message_no_articles: 目前尚未有任何文章
   message_no_categories: 目前未定义任何分类。您需要至少创建一个知识分类。
-  message_no_permissions: "你无权查看任何文章或分类，请联系管理员。"
-  message_summary_count_not_available: "汇总不可用"
-  permission_comment_and_rate_articles: "文章评论和打分"
-  permission_create_article_categories: "创建文章分类"
-  permission_create_articles: "创建文章"
-  permission_edit_articles: "编辑文章"
-  permission_manage_article_categories: "管理文章分类"
-  permission_manage_article_history: "管理文章历史"
-  permission_manage_articles: "管理文章"
-  permission_manage_articles_comments: "管理文章评论"
-  permission_view_article_history: "查看文章历史"
-  permission_view_articles: "查看文章"
-  permission_view_kb_articles: "查看文章"
-  permission_view_most_popular_articles: "查看人气最高文章"
-  permission_view_recent_articles: "查看最近文章"
-  permission_view_top_rated_articles: "查看最高分文章"
-  permission_watch_articles: "关注文章"
-  permission_watch_categories: "关注分类"
+  message_no_permissions: 你无权查看任何文章或分类，请联系管理员。
+  message_summary_count_not_available: 汇总不可用
+  permission_comment_and_rate_articles: 文章评论和打分
+  permission_create_article_categories: 创建文章分类
+  permission_create_articles: 创建文章
+  permission_edit_articles: 编辑文章
+  permission_manage_article_categories: 管理文章分类
+  permission_manage_article_history: 管理文章历史
+  permission_manage_articles: 管理文章
+  permission_manage_articles_comments: 管理文章评论
+  permission_view_article_history: 查看文章历史
+  permission_view_articles: 查看文章
+  permission_view_kb_articles: 查看文章
+  permission_view_most_popular_articles: 查看人气最高文章
+  permission_view_recent_articles: 查看最近文章
+  permission_view_top_rated_articles: 查看最高分文章
+  permission_watch_articles: 关注文章
+  permission_watch_categories: 关注分类
   project_module_knowledgebase: 知识库
   show_category_totals: 在分类树中显示数量？
   summary_item_limit: 知识库主页文章限制
-  text_confirm_versions_delete: "文章所有改动将丢失，是否继续？"
+  text_confirm_versions_delete: 文章所有改动将丢失，是否继续？
   text_current_version: 当前
   title_add_comment: 新增批注
   title_article_rating: 文章评比
   title_browse_by_category: 根据分类浏览
-  title_browse_by_tags: "根据标签浏览"
+  title_browse_by_tags: 根据标签浏览
   title_create_article: 建立文章
   title_create_category: 建立分类
   title_edit_article: 编辑文章
