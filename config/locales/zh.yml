@@ -1,37 +1,37 @@
 --- 
 zh: 
   allow_anon_access: 是否允许匿名访问？
-  allow_sort_category_tree: 类别树按字母排序？
-  disable_article_summaries: "Disable Article Summaries"
-  field_article_author: 创建人
-  field_article_destroyer: 删除人
-  field_article_updater: 更新人
+  allow_sort_category_tree: 分类树按字母排序？
+  disable_article_summaries: "禁止文章汇总"
+  field_article_author: 创建者
+  field_article_destroyer: 删除者
+  field_article_updater: 更新者
   field_tag_list: 标签列表
-  field_updated_at: "Updated at"
-  field_version: Version
-  field_version_comments: "Change comments"
+  field_updated_at: "更新于"
+  field_version: 版本
+  field_version_comments: "变更注释"
   knowledgebase_title: 知识库
   label_article_created: "文章【'%{title}'】已创建"
   label_article_plural: 文章
   label_article_removed: 文章已移除
   label_article_updated: 文章已更新
-  label_article_version: "Article version: %{version} - "
+  label_article_version: "文章版本: %{version} - "
   label_article_viewed: 
     one: "已阅 1 次"
     other: "已阅 %{count} 次"
-  label_category: 类别
-  label_category_created: "类别【'%{title}'】已创建"
-  label_category_deleted: 类别已删除
-  label_category_not_empty_cannot_delete: 当前类别下有文章，不能删除
-  label_category_plural: 类别
-  label_category_updated: 类别已更新
+  label_category: 分类
+  label_category_created: "分类【'%{title}'】已创建"
+  label_category_deleted: 分类已删除
+  label_category_not_empty_cannot_delete: 当前分类下有文章，不能删除
+  label_category_plural: 分类
+  label_category_updated: 分类已更新
   label_content: 内容
   label_delete_article: 删除
   label_delete_category: 删除类型
   label_description: 描述
   label_edit_article: 编辑
-  label_edit_category: 编辑类型
-  label_jump_category: 移至类别
+  label_edit_category: 编辑分类
+  label_jump_category: 跳转到分类
   label_kb_article_plural: 知识库文章
   label_kb_home: 知识库主页
   label_kb_link: "KB#%{kb_id}"
@@ -41,11 +41,11 @@ zh:
   label_overview_my_articles: "我所编写的文章：%{total_articles_by_me}"
   label_overview_total_articles: "文章总量：%{total_articles}"
   label_overview_total_categories: "知识分类总数：%{total_categories}"
-  label_parent_category: 父类别
-  label_root_category: 根类别
+  label_parent_category: 父分类
+  label_root_category: 根分类
   label_subcategories: 子类型
   label_summary: 摘要
-  label_summary_newest_articles: "位于【%{category}】类别，创建于 %{ago} 之前"
+  label_summary_newest_articles: "位于【%{category}】分类，创建于 %{ago} 之前"
   label_summary_popular_articles: 
     one: "自 %{created} 起，已阅 1 次"
     other: "自 %{created} 起，已阅 %{count} 次"
@@ -55,41 +55,41 @@ zh:
   label_summary_updated_articles: "更新于 %{ago} 之前"
   label_title: 标题
   label_title_articles: 文章
-  label_title_category: 类别
+  label_title_category: 分类
   label_updated_who: "由 %{updater} 更新于 %{age} 前"
   message_no_articles: 目前尚未有任何文章
-  message_no_categories: 目前未定义任何类别。您需要至少创建一个知识类别。
-  message_no_permissions: "You do not have permission to view any articles or categories. Please contact your administrator."
-  message_summary_count_not_available: "Summary Count Not Available!"
-  permission_comment_and_rate_articles: "Comment and rate articles"
-  permission_create_article_categories: "Create article categories"
-  permission_create_articles: "Create articles"
-  permission_edit_articles: "Edit articles"
-  permission_manage_article_categories: "Manage article categories"
-  permission_manage_article_history: "manage article history"
-  permission_manage_articles: "Manage articles"
-  permission_manage_articles_comments: "Manage articles comments"
-  permission_view_article_history: "view article history"
-  permission_view_articles: "View articles"
-  permission_view_kb_articles: "View articles"
-  permission_view_most_popular_articles: "view most popular articles"
-  permission_view_recent_articles: "View recent articles"
-  permission_view_top_rated_articles: "view top rated articles"
-  permission_watch_articles: "Watch articles"
-  permission_watch_categories: "Watch categories"
-  project_module_knowledgebase: Knowledgebase
-  show_category_totals: 在类别树中显示数量？
+  message_no_categories: 目前未定义任何分类。您需要至少创建一个知识分类。
+  message_no_permissions: "你无权查看任何文章或分类，请联系管理员。"
+  message_summary_count_not_available: "汇总不可用"
+  permission_comment_and_rate_articles: "文章评论和打分"
+  permission_create_article_categories: "创建文章分类"
+  permission_create_articles: "创建文章"
+  permission_edit_articles: "编辑文章"
+  permission_manage_article_categories: "管理文章分类"
+  permission_manage_article_history: "管理文章历史"
+  permission_manage_articles: "管理文章"
+  permission_manage_articles_comments: "管理文章评论"
+  permission_view_article_history: "查看文章历史"
+  permission_view_articles: "查看文章"
+  permission_view_kb_articles: "查看文章"
+  permission_view_most_popular_articles: "查看人气最高文章"
+  permission_view_recent_articles: "查看最近文章"
+  permission_view_top_rated_articles: "查看最高分文章"
+  permission_watch_articles: "关注文章"
+  permission_watch_categories: "关注分类"
+  project_module_knowledgebase: 知识库
+  show_category_totals: 在分类树中显示数量？
   summary_item_limit: 知识库主页文章限制
-  text_confirm_versions_delete: "This will revert and delete any newer versions of this document that may exist. Are you sure?"
-  text_current_version: Current
+  text_confirm_versions_delete: "文章所有改动将丢失，是否继续？"
+  text_current_version: 当前
   title_add_comment: 新增批注
   title_article_rating: 文章评比
   title_browse_by_category: 根据分类浏览
-  title_browse_by_tags: "Browse by Tags"
+  title_browse_by_tags: "根据标签浏览"
   title_create_article: 建立文章
-  title_create_category: 建立类别
+  title_create_category: 建立分类
   title_edit_article: 编辑文章
-  title_edit_category: 编辑类别
+  title_edit_category: 编辑分类
   title_most_popular_articles: 最热门文章
   title_new_category: 新分类
   title_newest_articles: 最新文章
