@@ -1,101 +1,104 @@
---- 
-es: 
-  allow_anon_access: "Allow anonymous access?"
-  allow_sort_category_tree: "Sort the category tree alphabetically?"
-  disable_article_summaries: "Disable Article Summaries"
-  field_article_author: "Created by"
-  field_article_destroyer: "Deleted by"
-  field_article_updater: "Updated by"
-  field_tag_list: "Lista de Etiquetas"
-  field_updated_at: "Updated at"
-  field_version: Version
-  field_version_comments: "Change comments"
+---
+es:
+  allow_anon_access: "¿Permitir acceso anónimo?"
+  allow_sort_category_tree: "¿Ordenar el árbol de categorías alfabéticamente?"
+  disable_article_summaries: "Resumen de artículos desactivado"
+  field_article_author: "Creado por"
+  field_article_destroyer: "Eliminado por"
+  field_article_updater: "Actualizado por"
+  field_tag_list: "Lista de etiquetas"
+  field_updated_at: "Actualizado en "
+  field_version: Versión
+  field_version_comments: "Cambiar comentarios"
   knowledgebase_title: "Base de conocimientos"
-  label_article_created: "Created article '%{title}'"
-  label_article_plural: Articles
-  label_article_removed: "Article removed"
-  label_article_updated: "Article updated"
-  label_article_version: "Article version: %{version} - "
-  label_article_viewed: 
-    one: "Viewed once"
-    other: "Viewed %{count} times"
+  label_article_created: "Creado el artículo '%{title}'"
+  label_article_plural: Artículos
+  label_article_removed: "Artículo eliminado"
+  label_article_updated: "Artículo actualizado"
+  label_article_version: "Versión del artículo: %{version} - "
+  label_article_viewed:
+    one: "Visto una vez"
+    other: "Visto %{count} veces"
   label_category: Categoría
-  label_category_created: "Created category '%{title}'"
-  label_category_deleted: "Category deleted"
-  label_category_not_empty_cannot_delete: "Category is assigned to articles and could not be deleted."
-  label_category_plural: Categories
-  label_category_updated: "Category updated"
+  label_category_created: "Creada la categoría '%{title}'"
+  label_category_deleted: "Categoría eliminada"
+  label_category_not_empty_cannot_delete: "La categoría está asignada a artículos y no se puede borrar."
+  label_category_plural: Categorías
+  label_category_updated: "Categoría actualizada"
   label_content: Contenido
-  label_delete_article: Delete
-  label_delete_category: "Delete Category"
+  label_delete_article: Borrar
+  label_delete_category: "Borrar categoría"
   label_description: Descripción
-  label_edit_article: Edit
-  label_edit_category: "Edit Category"
-  label_jump_category: "Saltar Categoría"
-  label_kb_article_plural: "Knowledgebase articles"
+  label_edit_article: Editar
+  label_edit_category: "Editar categoría"
+  label_jump_category: "Saltar categoría"
+  label_kb_article_plural: "Artículos de Conocimiento"
   label_kb_home: Inicio
   label_kb_link: "KB#%{kb_id}"
-  label_new_article: "New Article"
-  label_new_category: "New Category"
-  label_new_comment: "New Comment"
-  label_overview_my_articles: "Articles written by me: %{total_articles_by_me}"
-  label_overview_total_articles: "Total number of articles: %{total_articles}"
-  label_overview_total_categories: "Total number of categories: %{total_categories}"
-  label_parent_category: "Categoría Principal"
-  label_root_category: "Categoría Raiz"
-  label_subcategories: Sub-categories
+  label_new_article: "Nuevo artículo"
+  label_new_category: "Nueva categoría"
+  label_new_comment: "Nuevo comentario"
+  label_overview_my_articles: "Artículos escritos por mí: %{total_articles_by_me}"
+  label_overview_total_articles: "Número total de artículos: %{total_articles}"
+  label_overview_total_categories: "Número total de categorías: %{total_categories}"
+  label_parent_category: "Categoría principal"
+  label_root_category: "Categoría raíz"
+  label_subcategories: Sub-categorías
   label_summary: Resumen
-  label_summary_newest_articles: "Created %{ago} ago in %{category}"
-  label_summary_popular_articles: 
-    one: "Viewed once since %{created}"
-    other: "Viewed %{count} times since %{created}"
-  label_summary_toprated_articles: 
-    one: "Rating: %{rating_avg}/%{rating_max} from one vote"
-    other: "Rating: %{rating_avg}/%{rating_max} from %{count} votes"
-  label_summary_updated_articles: "Updated %{ago} ago"
+  label_summary_newest_articles: "Creadho hace %{ago} en %{category}"
+  label_summary_popular_articles:
+    one: "Visto una vez desde %{created}"
+    other: "Visto %{count} veces desde %{created}"
+  label_summary_toprated_articles:
+    one: "Valoración: %{rating_avg}/%{rating_max} de un voto"
+    other: "Valoración: %{rating_avg}/%{rating_max} de %{count} votos"
+  label_summary_updated_articles: "Actualizado hace %{ago}"
   label_title: Título
-  label_title_articles: Article
-  label_title_category: Category
-  label_updated_who: "Updated by %{updater} %{age} ago"
-  message_no_articles: "No hay artículos agregados... Empieza cuando quieras..."
-  message_no_categories: "Unfortunately, there aren't any Categories defined, and you need to be logged in to create new categories."
-  message_no_permissions: "You do not have permission to view any articles or categories. Please contact your administrator."
-  message_summary_count_not_available: "Summary Count Not Available!"
-  permission_comment_and_rate_articles: "Comment and rate articles"
-  permission_create_article_categories: "Create article categories"
-  permission_create_articles: "Create articles"
-  permission_edit_articles: "Edit articles"
-  permission_manage_article_categories: "Manage article categories"
-  permission_manage_article_history: "manage article history"
-  permission_manage_articles: "Manage articles"
-  permission_manage_articles_comments: "Manage articles comments"
-  permission_view_article_history: "view article history"
-  permission_view_articles: "View articles"
-  permission_view_kb_articles: "View articles"
-  permission_view_most_popular_articles: "view most popular articles"
-  permission_view_recent_articles: "View recent articles"
-  permission_view_top_rated_articles: "view top rated articles"
-  permission_watch_articles: "Watch articles"
-  permission_watch_categories: "Watch categories"
-  project_module_knowledgebase: Knowledgebase
-  show_category_totals: "Show category totals in tree?"
-  summary_item_limit: "Knowledgebase summary page article limit"
-  text_confirm_versions_delete: "This will revert and delete any newer versions of this document that may exist. Are you sure?"
-  text_current_version: Current
-  title_add_comment: "Add Comment"
-  title_article_rating: "Valoración del Artículo"
-  title_browse_by_category: "Explorar por Categoría"
-  title_browse_by_tags: "Browse by Tags"
-  title_create_article: "Crear Artículo"
-  title_create_category: "Crear Categoría"
-  title_edit_article: "Editar Artículo"
-  title_edit_category: "Editar Categoría"
-  title_most_popular_articles: "Artículos Populares"
-  title_new_category: "Nueva Categoría"
-  title_newest_articles: "Articulos más Recientes"
-  title_overview_summary: "Knowledgebase Summary"
-  title_recently_updated_articles: "Artículos Actualizados"
-  title_tagged_articles: "Articles tagged with %{tag}"
-  title_tags: Tags
-  title_top_rated_articles: "Artículos de más Valor"
-  title_votes: Votos
+  label_title_articles: Artículo
+  label_title_category: Categoría
+  label_updated_who: "Actualizado por %{updater} hace %{age}"
+  message_no_articles: "No hay artículos agregados. Empieza cuando quieras..."
+  message_no_categories: "No hay ninguna categoría definida y necesitas estar validado para crear una nueva."
+  message_no_permissions: "No tienes permisos para ver ningún artículo o categoría. Por favor, contacta con el administrador."
+  message_summary_count_not_available: "El resumen podría no estar disponible!"
+  permission_comment_and_rate_articles: "Comentar y valorar artículos"
+  permission_create_article_categories: "Crear categorías de artículos"
+  permission_create_articles: "Crear artículos"
+  permission_edit_articles: "Editar artículos"
+  permission_manage_article_categories: "Gestionar categorías de artículos"
+  permission_manage_article_history: "Gestionar historia de los artículos"
+  permission_manage_articles: "Gestionar artículos"
+  permission_manage_articles_comments: "Gestionar comentarios de los artículos"
+  permission_view_article_history: "Ver historia de los artículos"
+  permission_view_articles: "Ver artículos"
+  permission_view_kb_articles: "Ver artículos"
+  permission_view_most_popular_articles: "ver artículos más populares"
+  permission_view_recent_articles: "Ver artículos recientes"
+  permission_view_top_rated_articles: "ver los artículos más valorados"
+  permission_watch_articles: "Monitorizar artículos"
+  permission_watch_categories: "Monitorizar categorías"
+  project_module_knowledgebase: Base de conocimientos
+  show_category_totals: "¿Mostrar los totales de categorías en el árbol?"
+  summary_item_limit: "Límite de artículos por página en el resumen de Conocimientos"
+  text_confirm_versions_delete: "Esta acción revertirá y eliminará cualquier versión más nueva que pudiera existir de este documento.¿Estás seguro?"
+  text_current_version: Actual
+  title_add_comment: "Nuevo comentario"
+  title_article_rating: "Valoración del artículo"
+  title_browse_by_category: "Explorar por categoría"
+  title_browse_by_tags: "Navegar por etiquetas"
+  title_create_article: "Crear artículo"
+  title_create_category: "Crear categoría"
+  title_edit_article: "Editar artículo"
+  title_edit_category: "Editar categoría"
+  title_most_popular_articles: "Artículos populares"
+  title_new_category: "Nueva categoría"
+  title_newest_articles: "Articulos más recientes"
+  title_overview_summary: "Resumen de Conocimientos"
+  title_recently_updated_articles: "Artículos actualizados"
+  title_tagged_articles: "Artículos etiquetados con %{tag}"
+  title_tags: Etiquetas
+  title_top_rated_articles: "Artículos de más valor"
+  title_votes: 
+    one: "un voto"
+    other: "%{count} votos"
+    zero: "sin votos"
