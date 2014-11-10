@@ -7,7 +7,7 @@ pl:
   field_article_destroyer: "Usunięte przez"
   field_article_updater: "Zaktualizowane przez"
   field_tag_list: "Słowa kluczowe"
-  field_updated_at: "Zaktualizowane"
+  field_updated_at: Zaktualizowane
   field_version: Wersja
   field_version_comments: "Zmień komentarze"
   knowledgebase_title: "Baza Wiedzy"
@@ -77,7 +77,7 @@ pl:
   permission_view_top_rated_articles: "Przeglądaj najlepiej oceniane artykuły"
   permission_watch_articles: "Obserwuj artykuły"
   permission_watch_categories: "Obserwuj kategorie"
-  project_module_knowledgebase: Baza wiedzy
+  project_module_knowledgebase: "Baza wiedzy"
   show_category_totals: "Pokazywać podsumowania kategorii w drzewie?"
   summary_item_limit: "Ograniczenie strony podsumowania artykułu bazy wiedzy"
   text_confirm_versions_delete: "To cofnie i usunie wszystkie nowsze wersje tego dokumentu, które mogą istnieć. Jesteś pewien?"
@@ -96,10 +96,9 @@ pl:
   title_overview_summary: "Podsumowanie bazy wiedzy"
   title_recently_updated_articles: "Ostatnio zaktualizowane artykuły"
   title_tagged_articles: "Artykuły z słowem kluczowym %{tag}"
-  title_tags: Słowa kluczowe
+  title_tags: "Słowa kluczowe"
   title_top_rated_articles: "Najlepiej ocenione artykuły"
   title_votes: 
     one: "jeden głos"
     other: "%{count} głosów"
     zero: "brak głosów"
-	
