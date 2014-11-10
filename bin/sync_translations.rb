@@ -47,6 +47,7 @@ ctrl = YAML::load(File.open(PATH + CONTROL))
 
 # iterate over each YAML file in the target directory
 Dir["#{PATH}*.yml"].each do |lang|  
+  puts "Processing #{lang} ..."
   data = YAML::load(File.open(lang))
   
   unless lang == CONTROL
