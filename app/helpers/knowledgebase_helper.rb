@@ -75,7 +75,7 @@ module KnowledgebaseHelper
   end
 
   def write_article(pdf, article)
-    pdf.RDMwriteHTMLCell(190,5,0,0,
+    pdf.RDMwriteHTMLCell(190,5,'','',
           article.content.to_s, article.attachments, 0)
     if article.attachments.any?
       pdf.Ln
