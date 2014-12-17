@@ -19,11 +19,11 @@ Redmine::Plugin.register :redmine_knowledgebase do
   author_url  "http://www.alexbevi.com"
   description 'A plugin for Redmine that adds knowledgebase functionality'
   url         'https://github.com/alexbevi/redmine_knowledgebase'
-  version     '3.0.4'
+  version     '3.0.7'
 
   requires_redmine :version_or_higher => '2.0.0'
   requires_acts_as_taggable_on
-  
+
   settings :default => {
     :sort_category_tree => true,
     :show_category_totals => true,
@@ -49,7 +49,7 @@ Redmine::Plugin.register :redmine_knowledgebase do
       :categories    => [:index, :show]
     }
     permission :manage_articles, {
-      :articles      => [:index, :show, :new, :create, :edit, :update, :destroy, :add_attachment, 
+      :articles      => [:index, :show, :new, :create, :edit, :update, :destroy, :add_attachment,
                          :preview, :comment, :add_comment, :destroy_comment, :tagged],
       :categories    => [:index, :show]
     }
@@ -87,9 +87,9 @@ Redmine::Plugin.register :redmine_knowledgebase do
       :articles => [:diff, :version, :revert]
     }
   end
-  
+
   menu :project_menu, :articles, { :controller => 'articles', :action => 'index' }, :caption => :knowledgebase_title, :after => :activity, :param => :project_id
-  
+
 end
 
 class RedmineKnowledgebaseHookListener < Redmine::Hook::ViewListener
