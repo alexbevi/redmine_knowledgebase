@@ -48,3 +48,20 @@
 <% end %>
 
 <%= render_tabs article_tabs %>
+
+<script type="text/javascript">
+$(function(){
+  var el;
+
+  el = $("#tab-comments");
+  el.text(el.text()+"("+<%= @comments.length %>+")");
+
+  el = $("#tab-attachments");
+  el.text(el.text()+"("+<%= @attachments.length %>+")");
+
+  el = $("#tab-history");
+  el.text(el.text()+"("+<%= @versions.length %>+")");
+
+  displayTabsButtons();
+});
+</script>
