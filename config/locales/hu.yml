@@ -3,16 +3,16 @@ hu:
   allow_anon_access: "Anonymous hozzáférése engedélyezett?"
   allow_sort_category_tree: "Kategória-fa ABC sorrend szerint legyen rendezve?"
   disable_article_summaries: "Cikk összesítő letiltása"
-  field_article_author: "Létrehozta"
-  field_article_destroyer: "Törölte"
-  field_article_updater: "Frissítette"
+  field_article_author: Létrehozta
+  field_article_destroyer: Törölte
+  field_article_updater: Frissítette
   field_tag_list: "Cimke lista"
-  field_updated_at: "Frissítve"
-  field_version: "Verzió"
+  field_updated_at: Frissítve
+  field_version: Verzió
   field_version_comments: "Hozzászólások módosítása"
-  knowledgebase_title: "Tudásbázis"
+  knowledgebase_title: Tudásbázis
   label_article_created: "Cikk létrehozva '%{title}'"
-  label_article_plural: "Cikkek"
+  label_article_plural: Cikkek
   label_article_removed: "Cikk törölve"
   label_article_updated: "Cikk frissítve"
   label_article_version: "Cikk verzió: %{version} - "
@@ -26,14 +26,14 @@ hu:
   label_category_plural: Kategóriák
   label_category_updated: "Kategória frissítve"
   label_content: Tartalom
-  label_delete_article: "Törlés"
+  label_delete_article: Törlés
   label_delete_category: "Kategória törlése"
-  label_description: "Leírás"
-  label_edit_article: "Szerkesztés"
+  label_description: Leírás
+  label_edit_article: Szerkesztés
   label_edit_category: "Kategória szerkesztése"
   label_jump_category: "Ugrás kategóriára"
   label_kb_article_plural: "Tudásbázis cikkek"
-  label_kb_home: "_"
+  label_kb_home: _
   label_kb_link: "KB#%{kb_id}"
   label_new_article: "Új cikk"
   label_new_category: "Új kategória"
@@ -43,8 +43,8 @@ hu:
   label_overview_total_categories: "Összes kategória száma: %{total_categories}"
   label_parent_category: "Szülő kategória"
   label_root_category: "Fő kategória"
-  label_subcategories: "Alkategóriák"
-  label_summary: "Összesítő"
+  label_subcategories: Alkategóriák
+  label_summary: Összesítő
   label_summary_newest_articles: "Létrehozva %{ago} itt:  %{category}"
   label_summary_popular_articles: 
     one: "Egyszer megtekintve %{created} óta"
@@ -53,9 +53,9 @@ hu:
     one: "Minősítés: %{rating_avg}/%{rating_max} egy szavazat alapján"
     other: "Minősítés: %{rating_avg}/%{rating_max} %{count} szavazat alapján"
   label_summary_updated_articles: "Frissítve %{ago}"
-  label_title: "Cím"
+  label_title: Cím
   label_title_articles: Cikkek
-  label_title_category: "Kategória"
+  label_title_category: Kategória
   label_updated_who: "Frissítve %{updater} által %{age}"
   message_no_articles: "Még nem lettek cikkek létrehozva. Kattints a Cikkek létrehozására."
   message_no_categories: "Még nem lettek kategóriák létrehozva. Kattints a Kategóriák létrehozására."
@@ -77,12 +77,12 @@ hu:
   permission_view_top_rated_articles: "A legjobb minősítésű cikkek megtekintése"
   permission_watch_articles: "Cikkek megfigyelése"
   permission_watch_categories: "Kategóriák megfigyelése"
-  project_module_knowledgebase: "Tudásbázis"
+  project_module_knowledgebase: Tudásbázis
   show_category_totals: "Mutassuk a kategória összesítőket a fában?"
   summary_item_limit: "Tudásbázis összesítőben megjelenített cikkek száma"
   text_confirm_versions_delete: "A művelet visszaállítja és törli az összes újabb verzióját ennek a dokumentumnak. Biztos vagy benne?"
-  text_current_version: "Aktuális"
-  title_add_comment: "Hozzászólás"
+  text_current_version: Aktuális
+  title_add_comment: Hozzászólás
   title_article_rating: "Cikk minősítése"
   title_browse_by_category: "Tallózás kategória alapján"
   title_browse_by_tags: "Tallózás cimke alapján"
@@ -96,7 +96,7 @@ hu:
   title_overview_summary: "Tudásbázis összesítés"
   title_recently_updated_articles: "Legújabb cikkek"
   title_tagged_articles: "Cikkek megjelölve: %{tag}"
-  title_tags: "Cimkék"
+  title_tags: Cimkék
   title_top_rated_articles: "A legjobb minősítésű cikkek"
   title_votes: 
     one: "egy szavazat"
