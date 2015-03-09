@@ -33,12 +33,12 @@ class ArticlesController < ApplicationController
 
   def new
     @article = KbArticle.new
-    @categories = @project.categories.find(:all)
+    @categories = @project.categories.all
     @default_category = params[:category_id]
     @article.category_id = params[:category_id]
     @article.version = params[:version]
   end
-  
+
   def rate
     @article = KbArticle.find(params[:id])
     rating = params[:rating].to_i
@@ -48,13 +48,13 @@ class ArticlesController < ApplicationController
       f.js
     end
   end
-  
+
   def create
     @article = KbArticle.new(params[:article])
     @article.category_id = params[:category_id]
     @article.author_id = User.current.id
     @article.project_id = KbCategory.find(params[:category_id]).project_id
-    @categories = @project.categories.find(:all)
+    @categories = @project.categories.all
     # don't keep previous comment
     @article.version_comments = params[:article][:version_comments]
     if @article.save
@@ -66,10 +66,10 @@ class ArticlesController < ApplicationController
       render(:action => 'new')
     end
   end
-  
+
   def show
     @article.view request.remote_ip, User.current
-    @attachments = @article.attachments.find(:all).sort_by(&:created_on)
+    @attachments = @article.attachments.sort_by(&:created_on)
     @comments = @article.comments
     @versions = @article.versions.select("id, author_id, version_comments, updated_at, version").order('version DESC')
 
@@ -79,14 +79,14 @@ class ArticlesController < ApplicationController
 	  format.pdf  { send_data(article_to_pdf(@article, @project), :type => 'application/pdf', :filename => 'export.pdf') }
     end
   end
-  
+
   def edit
     @categories=@project.categories.find(:all)
     # don't keep previous comment
     @article.version_comments = nil
     @article.version = params[:version]
   end
-  
+
   def update
     @article.updater_id = User.current.id
     params[:article][:category_id] = params[:category_id]
@@ -103,7 +103,7 @@ class ArticlesController < ApplicationController
       render({:action => 'edit', :id => @article.id})
     end
   end
-  
+
   def add_comment
     @article.without_locking do
       @comment = Comment.new(params[:comment])
@@ -125,7 +125,7 @@ class ArticlesController < ApplicationController
       redirect_to :action => 'show', :id => @article, :project_id => @project
     end
   end
-  
+
   def destroy
     KbMailer.article_destroy(@article).deliver
     @article.destroy
@@ -134,16 +134,16 @@ class ArticlesController < ApplicationController
   end
 
   def add_attachment
-    attachments = attach(@article, params[:attachments])    
+    attachments = attach(@article, params[:attachments])
     redirect_to({ :action => 'show', :id => @article.id, :project_id => @project })
   end
-  
+
   def tagged
     @tag = params[:id]
     @list = if params[:sort] && params[:direction]
-      @project.articles.order("#{params[:sort]} #{params[:direction]}").tagged_with(@tag)	
+      @project.articles.order("#{params[:sort]} #{params[:direction]}").tagged_with(@tag)
     else
-      @project.articles.tagged_with(@tag)	
+      @project.articles.tagged_with(@tag)
     end
   end
 
@@ -152,7 +152,7 @@ class ArticlesController < ApplicationController
     @content = (params[:article] ? params[:article][:content] : nil)
     render :layout => false
   end
-  
+
   def comment
     @article_id = params[:article_id]
 
@@ -164,7 +164,7 @@ class ArticlesController < ApplicationController
   def version
     @articleversion = @article.content_for_version(params[:version])
   end
-  
+
   def diff
     @diff = @article.diff(params[:version], params[:version_from])
     render_404 unless @diff
@@ -175,7 +175,7 @@ class ArticlesController < ApplicationController
     @article.revert_to! params[:version]
     @article.clear_newer_versions
     redirect_to :action => 'show', :id => @article, :project_id => @project
-  end  
+  end
 #######
 private
 #######
@@ -199,5 +199,5 @@ private
   def force_404
     render_404
   end
-  
+
 end

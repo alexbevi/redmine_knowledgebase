@@ -42,7 +42,7 @@ class KbArticle < ActiveRecord::Base
                             :timestamp => :updated_at
 
   has_many :comments,
-           -> { order 'created_at' },
+           -> { order 'created_on' },
            :as => :commented,
            :dependent => :delete_all
 

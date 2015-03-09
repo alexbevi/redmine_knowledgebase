@@ -1,6 +1,5 @@
 require 'redmine'
 require 'redmine_acts_as_taggable_on/initialize'
-require 'engine'
 
 Rails.configuration.to_prepare do
   Redmine::Activity.register :kb_articles
