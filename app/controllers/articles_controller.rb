@@ -81,7 +81,7 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @categories=@project.categories.find(:all)
+    @categories=@project.categories
     # don't keep previous comment
     @article.version_comments = nil
     @article.version = params[:version]
@@ -90,7 +90,7 @@ class ArticlesController < ApplicationController
   def update
     @article.updater_id = User.current.id
     params[:article][:category_id] = params[:category_id]
-    @categories = @project.categories.find(:all)
+    @categories = @project.categories
     # don't keep previous comment
     @article.version_comments = nil
     @article.version_comments = params[:article][:version_comments]
