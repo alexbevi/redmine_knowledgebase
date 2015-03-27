@@ -46,8 +46,7 @@ class KbArticle < ActiveRecord::Base
            :as => :commented,
            :dependent => :delete_all
 
-  scope :visible, lambda {|*args| { :include => :project,
-                                        :conditions => Project.allowed_to_condition(args.shift || User.current, :view_kb_articles, *args) } }
+  scope :visible, ->(*args) { joins(:project).where(Project.allowed_to_condition(args.shift || User.current, :view_kb_articles, *args)) }
 
   def recipients
     notified = []
