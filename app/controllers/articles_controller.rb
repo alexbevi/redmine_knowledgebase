@@ -14,12 +14,7 @@ class ArticlesController < ApplicationController
   rescue_from ActionView::MissingTemplate, :with => :force_404
   rescue_from ActiveRecord::RecordNotFound, :with => :force_404
 
-  module TypeCastPatch
-    def type_cast(value)
-      self.type_cast_from_database(value)
-    end
-  end
-  ActiveRecord::ConnectionAdapters::Column.send(:prepend, TypeCastPatch)
+  ActiveRecord::ConnectionAdapters::Column.send(:alias_method, :type_cast, :type_cast_for_database)
 
   def index
     summary_limit = redmine_knowledgebase_settings_value(:summary_limit).to_i
