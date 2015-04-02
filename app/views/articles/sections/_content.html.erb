@@ -12,7 +12,3 @@
 <div id="article">
   <div class="wiki"><%= textilizable @article, :content, :attachments => @article.attachments %></div>
 </div>
-
-<% other_formats_links do |f| %>
-  <%= f.link_to 'PDF', :url => params %>
-<% end %>
