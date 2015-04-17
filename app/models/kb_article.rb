@@ -26,8 +26,9 @@ class KbArticle < ActiveRecord::Base
   self.non_versioned_columns << 'comments_count'
   
   acts_as_searchable :columns => [ "#{table_name}.title", "#{table_name}.content"],
-                     :include => [ :project ],
-                     :order_column => "#{table_name}.id",
+                     #:include => [ :project ],
+                     :scope => preload(:project),
+                     #:order_column => "#{table_name}.id",
                      :date_column => "#{table_name}.created_at"
 
   acts_as_event :title => Proc.new {|o| status = (o.new_status ? "(#{l(:label_new_article)})" : nil ); "#{status} #{l(:label_title_articles)} ##{o.id} - #{o.title}" },
@@ -36,12 +37,13 @@ class KbArticle < ActiveRecord::Base
                 :type => Proc.new { |o| 'article-' + (o.new_status ? 'add' : 'edit') },
                 :url => Proc.new { |o| {:controller => 'articles', :action => 'show', :id => o.id, :project_id => o.project} }
 
-  acts_as_activity_provider :find_options => {:include => :project},
+  acts_as_activity_provider :scope => preload(:project),
+  #:find_options => {:include => :project},
                             :author_key => :author_id, 
                             :type => 'kb_articles',
                             :timestamp => :updated_at
 
-  has_many :comments, :as => :commented, :dependent => :delete_all, :order => "created_on"
+  has_many :comments, -> { order 'created_on DESC' }, :as => :commented, :dependent => :delete_all
 
   scope :visible, lambda {|*args| { :include => :project,
                                         :conditions => Project.allowed_to_condition(args.shift || User.current, :view_kb_articles, *args) } }
