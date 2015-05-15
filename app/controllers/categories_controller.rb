@@ -26,7 +26,7 @@ class CategoriesController < ApplicationController
   def new
     @category = KbCategory.new
     @parent_id = params[:parent_id]
-    @categories=@project.categories.find(:all)
+    @categories=@project.categories.all #find(:all)
   end
 
   def create
@@ -49,17 +49,17 @@ class CategoriesController < ApplicationController
 
   def edit
     @parent_id = @category.parent_id
-    @categories=@project.categories.find(:all)
+    @categories=@project.categories.all #find(:all)
   end
 
   def destroy
-	  @categories=@project.categories.find(:all)
+	  @categories=@project.categories.all #find(:all)
     if @category.articles.size == 0
 	  @category.destroy
       flash[:notice] = l(:label_category_deleted)
       redirect_to({ :controller => :articles, :action => 'index', :project_id => @project})
     else
-      @articles = @category.articles.find(:all)
+      @articles = @category.articles.all #find(:all)
       flash[:error] = l(:label_category_not_empty_cannot_delete)
       render(:action => 'show')
     end
