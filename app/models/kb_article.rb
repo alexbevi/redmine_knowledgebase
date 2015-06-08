@@ -27,7 +27,7 @@ class KbArticle < ActiveRecord::Base
 
   # valid_optionsに入っていないものは一旦削除
   acts_as_searchable :columns => [ "#{table_name}.title", "#{table_name}.content"],
-                     :date_column => "#{table_name}.created_at",
+                     :date_column => "created_at",
                      :preload => [ :project ]
 
   acts_as_event :title => Proc.new {|o| status = (o.new_status ? "(#{l(:label_new_article)})" : nil ); "#{status} #{l(:label_title_articles)} ##{o.id} - #{o.title}" },
