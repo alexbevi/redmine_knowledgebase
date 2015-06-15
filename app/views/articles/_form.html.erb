@@ -11,7 +11,7 @@
 <% end %>
 
 <p><%= f.text_area :content, :cols => 60, :rows => 15, :class => 'wiki-edit', :label => l(:label_content) %></p>
-<p><%= f.text_field :tag_list, :size => 80 %></p>
+<p><%= f.text_field :tag_list, :size => 80, :value => "#{@article.tag_list.join(",")}" %></p>
 <p><%= f.text_field :version_comments, :size => 120, :label => l(:field_version_comments) %></p>
 </div>
 <div class="box">
