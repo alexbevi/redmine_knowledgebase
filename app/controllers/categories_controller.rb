@@ -53,7 +53,7 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
-	  @categories=@project.categories.all
+	  @categories=@project.categories
     if @category.articles.size == 0
 	  @category.destroy
       flash[:notice] = l(:label_category_deleted)
