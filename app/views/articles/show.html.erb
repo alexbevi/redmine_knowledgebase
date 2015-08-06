@@ -15,28 +15,28 @@
 		<li><%= link_to_if_authorized l(:label_edit_article), { :controller => 'articles', :action => 'edit', :id => @article.id, :project_id => @project}, :class => 'icon icon-edit' %></li>
 		<li><%= link_to_if_authorized l(:label_delete_article), { :controller => 'articles', :action => 'destroy', :id => @article.id, :project_id => @project}, :confirm => l(:text_are_you_sure), :method => :delete, :class => 'icon icon-del' %></li>
 		<li><%= link_to_if_authorized l(:label_new_comment), { :controller => "articles", :action => "comment", :article_id => @article.id, :project_id => @project}, :class => "icon icon-comment", :remote => true, :method => :get %></li>
-		<li><%= watcher_tag(@article, User.current) %></li>
+		<li><%= watcher_link(@article, User.current) %></li>
 	</ul>
 	<br />
   <div id='rating-container'>
     <%= render :partial => "rating" %>
   </div>
 	<% unless @article.tag_list.empty? %>
-  	<br /><br /><br />
-    <div class="rating-title"><%= l(:title_tags) %></div>
-  	<ul id="taglist">
-  	  <% @article.tag_list.each do |tag| %>
-        <li><%= link_to tag, { :action => "tagged", :id => tag, :project_id => @project }, :class => "tag" %></li>
-      <% end %>
-  	</ul>
+	<br /><br /><br />
+	<div class="rating-title"><%= l(:title_tags) %></div>
+	<ul id="taglist">
+	  <% @article.tag_list.each do |tag| %>
+     <li><%= link_to tag, { :action => "tagged", :id => tag, :project_id => @project }, :class => "tag" %></li>
+    <% end %>
+	</ul>
   <% end %>
 <% end %>
 
 <p id="category-crumbs" class="breadcrumb">
 	<%= link_to l(:label_kb_home), { :controller => 'articles', :action => 'index', :project_id => @project} %>
 	<% @article.category.ancestors.each do |ancestor| %>
-  	&nbsp;&raquo;&nbsp;
-  	<%= link_to ancestor.title, { :controller => 'categories', :action => 'show', :id => ancestor.id, :project_id => @project} %>
+	&nbsp;&raquo;&nbsp;
+	<%= link_to ancestor.title, { :controller => 'categories', :action => 'show', :id => ancestor.id, :project_id => @project} %>
 	<% end %>
 	&nbsp;&raquo;&nbsp;
 	<%= link_to @article.category.title, { :controller => 'categories', :action => 'show', :id => @article.category.id, :project_id => @project} %>
