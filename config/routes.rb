@@ -12,7 +12,7 @@ RedmineApp::Application.routes.draw do
 			get "comment"
 			
 			member do
-				put  "preview"
+				patch  "preview"
 				post "add_comment"
 				post "destroy_comment"
 				post "rate"
