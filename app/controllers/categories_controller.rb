@@ -49,11 +49,11 @@ class CategoriesController < ApplicationController
 
   def edit
     @parent_id = @category.parent_id
-    @categories=@project.categories.find(:all)
+    @categories=@project.categories.all
   end
 
   def destroy
-	  @categories=@project.categories.find(:all)
+	  @categories=@project.categories.all
     if @category.articles.size == 0
 	  @category.destroy
       flash[:notice] = l(:label_category_deleted)

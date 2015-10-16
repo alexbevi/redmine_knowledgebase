@@ -54,7 +54,7 @@ class ArticlesController < ApplicationController
     @article.category_id = params[:category_id]
     @article.author_id = User.current.id
     @article.project_id = KbCategory.find(params[:category_id]).project_id
-    @categories = @project.categories.find(:all)
+    @categories = @project.categories.all
     # don't keep previous comment
     @article.version_comments = params[:article][:version_comments]
     if @article.save
