@@ -33,7 +33,7 @@ class ArticlesController < ApplicationController
 
   def new
     @article = KbArticle.new
-    @categories = @project.categories.find(:all)
+    @categories = @project.categories.all
     @default_category = params[:category_id]
     @article.category_id = params[:category_id]
     @article.version = params[:version]
@@ -69,7 +69,7 @@ class ArticlesController < ApplicationController
   
   def show
     @article.view request.remote_ip, User.current
-    @attachments = @article.attachments.find(:all).sort_by(&:created_on)
+    @attachments = @article.attachments.all.sort_by(&:created_on)
     @comments = @article.comments
     @versions = @article.versions.select("id, author_id, version_comments, updated_at, version").order('version DESC')
 
@@ -81,7 +81,7 @@ class ArticlesController < ApplicationController
   end
   
   def edit
-    @categories=@project.categories.find(:all)
+    @categories=@project.categories.all
     # don't keep previous comment
     @article.version_comments = nil
     @article.version = params[:version]
@@ -90,7 +90,7 @@ class ArticlesController < ApplicationController
   def update
     @article.updater_id = User.current.id
     params[:article][:category_id] = params[:category_id]
-    @categories = @project.categories.find(:all)
+    @categories = @project.categories.all
     # don't keep previous comment
     @article.version_comments = nil
     @article.version_comments = params[:article][:version_comments]

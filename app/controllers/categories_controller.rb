@@ -26,7 +26,7 @@ class CategoriesController < ApplicationController
   def new
     @category = KbCategory.new
     @parent_id = params[:parent_id]
-    @categories=@project.categories.find(:all)
+    @categories=@project.categories.all
   end
 
   def create
