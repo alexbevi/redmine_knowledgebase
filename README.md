@@ -3,6 +3,10 @@
 
 This plugin adds professional knowledgebase functionality to the Redmine project management application.
 
+## Warning
+
+The latest version of this plugin is for Redmine 3.x and up. If you're still using Redmine 2.x, you should checkout the `redmine-2.x` branch.
+
 ## Introduction
 
 [![Join the chat at https://gitter.im/alexbevi/redmine_knowledgebase](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/alexbevi/redmine_knowledgebase?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
@@ -218,7 +222,7 @@ Now that categories and articles have been created, the home page of the Knowled
 
 ### About
 
-Copyright (c) 2010-2014 Alex Bevilacqua, released under the MIT license
+Copyright (c) 2010-2015 Alex Bevilacqua, released under the MIT license
 
 Though I initially wrote this plugin, it would not be possible without the many contributions from the community. See [AUTHORS](https://github.com/alexbevi/redmine_knowledgebase/blob/master/AUTHORS) for the full list.
 
