@@ -18,8 +18,8 @@
   
 <% else %>
   <% if User.current.allowed_to?(:view_kb_articles, @project) %>
+    <h2><%=l(:label_overview)%></h2>
     <div class="splitcontentleft">
-        <h2><%=l(:label_overview)%></h2>
         <div class="articles box">
         <h3><%= l(:title_overview_summary) %></h3>
         <ul>
