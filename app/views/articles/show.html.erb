@@ -42,7 +42,7 @@
 	<%= link_to @article.category.title, { :controller => 'categories', :action => 'show', :id => @article.category.id, :project_id => @project} %>
 </p>
 
-<h1><%= @article.title %></h1>
+<div class="wiki"><h1><%= @article.title %></h1></div>
 <% unless redmine_knowledgebase_settings_value(:disable_article_summaries) %>
   <div class="article-summary"><%= @article.summary %></div>
 <% end %>
