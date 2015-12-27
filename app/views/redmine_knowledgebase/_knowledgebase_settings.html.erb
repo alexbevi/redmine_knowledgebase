@@ -15,3 +15,24 @@
   <%= check_box_tag 'settings[disable_article_summaries]', 1, @settings[:disable_article_summaries] %>
   <%= redmine_knowledgebase_count_article_summaries rescue I18n.t(:message_summary_count_not_available) %>
 </p>
+
+<p>
+  <%= label_tag :settings_show_article_without_tabs, l(:show_article_without_tabs) %>
+  <%= check_box_tag 'settings[show_article_without_tabs]', 1, @settings[:show_article_without_tabs] %>
+</p>
+
+<p>
+  <%= label_tag :settings_show_attachments_first, l(:show_attachments_first) %>
+  <%= check_box_tag 'settings[show_attachments_first]', 1, @settings[:show_attachments_first] %>
+</p>
+
+<p>
+  <%= label_tag :settings_show_thumbnails_for_articles, l(:show_thumbnails_for_articles) %>
+  <%= check_box_tag 'settings[show_thumbnails_for_articles]', 1, @settings[:show_thumbnails_for_articles] %>
+</p>
+
+<p>
+  <%= label_tag :settings_show_breadcrumbs_for_article_lists, l(:show_breadcrumbs_for_article_lists) %>
+  <%= check_box_tag 'settings[show_breadcrumbs_for_article_lists]', 1, @settings[:show_breadcrumbs_for_article_lists] %>
+</p>
+

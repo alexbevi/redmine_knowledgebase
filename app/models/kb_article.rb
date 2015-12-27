@@ -25,7 +25,7 @@ class KbArticle < ActiveRecord::Base
   acts_as_versioned :if_changed => [:title, :content, :summary]
   self.non_versioned_columns << 'comments_count'
 
-  acts_as_searchable :columns => [ "#{table_name}.title", "#{table_name}.content"],
+  acts_as_searchable :columns => [ "#{table_name}.title", "#{table_name}.summary", "#{table_name}.content"],
                      :scope => preload(:project),
                      :date_column => "created_at"
 

@@ -1,1 +1,6 @@
-<%= render :partial => 'attachments/links', :locals => {:attachments => @article.attachments, :options => { :deletable => User.current.logged? } } %>
+
+<%= link_to_attachments @article,
+:thumbnails => true,
+:author => false %>
+
+
