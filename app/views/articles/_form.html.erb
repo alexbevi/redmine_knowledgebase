@@ -14,8 +14,17 @@
 <p><%= f.text_field :tag_list, :size => 80 %></p>
 <p><%= f.text_field :version_comments, :size => 120, :label => l(:field_version_comments) %></p>
 </div>
+
+<% if @article.attachments.exists? %>
 <div class="box">
-<p><label><%=l(:label_attachment_plural)%></label><%= render :partial => 'attachments/form' %></p>
+  <p><label><%= l(:label_attachment_plural) %></label>
+    <%= render :partial => "articles/sections/attachments" %>
+  </p>
+</div>
+<% end %>
+
+<div class="box">
+<p><label><%=l(:label_attachment_add)%></label><%= render :partial => 'attachments/form' %></p>
 </div>
 
 <%= wikitoolbar_for 'article_content' %>

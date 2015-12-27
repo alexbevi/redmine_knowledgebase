@@ -39,7 +39,7 @@ class KbArticle < ActiveRecord::Base
                               :type => 'kb_articles',
                               :timestamp => :updated_at
 
-    acts_as_searchable :columns => [ "#{table_name}.title", "#{table_name}.content"],
+    acts_as_searchable :columns => [ "#{table_name}.title", "#{table_name}.summary", "#{table_name}.content"],
                        :preload => [ :project ],
                        :date_column => "#{table_name}.created_at"
   else
@@ -48,7 +48,7 @@ class KbArticle < ActiveRecord::Base
                               :type => 'kb_articles',
                               :timestamp => :updated_at
 
-    acts_as_searchable :columns => [ "#{table_name}.title", "#{table_name}.content"],
+    acts_as_searchable :columns => [ "#{table_name}.title", "#{table_name}.summary", "#{table_name}.content"],
                        :include => [ :project ],
                        :order_column => "#{table_name}.id",
                        :date_column => "#{table_name}.created_at"

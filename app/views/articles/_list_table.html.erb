@@ -2,7 +2,12 @@
 <table class="list">
   <thead>
 	<tr>
+	  <% if redmine_knowledgebase_settings_value(:show_thumbnails_for_articles) %>
+	  <th><%= "Thumbnail" %></th>
+	  <% end %>
 	  <th><%= sortable "title" %></th>
+	  <th><%= "Rating" %></th>
+	  <th><%= sortable "author_id", "Author" %></th>
 	  <th><%= sortable "created_at", "Created" %></th>
 	  <th><%= sortable "updated_at", "Updated" %></th>
 	</tr>
@@ -10,6 +15,13 @@
   <tbody>
     <% articles.each do |article| %>
     <tr id="article-<%= article %>" class="<%= cycle('odd', 'even') %>">
+
+      <% if redmine_knowledgebase_settings_value(:show_thumbnails_for_articles) %>
+      <td class="thumbnail">
+	<%= render :partial => "articles/thumbnail", :locals => { :article => article, :imgclass => 'thumbnail-table', :project_id => @project } %>
+      </td>
+      <% end %>
+
       <td class="title">
         <%= link_to article.title, { :controller => 'articles', 
                                      :action => 'show', 
@@ -22,6 +34,9 @@
           </div>
         <% end %>
       </td>
+
+      <td class="rating"><% rating = article.rating_average.to_i %><%= rating != 0 ? "#{rating} / 5" : "-" %></td>
+      <td class="author_id"><%= (link_to_user(article.author)).html_safe %></td>
       <td class="created_at"><%= time_ago_in_words article.created_at %> ago</td>
       <td class="updated_at"><%= time_ago_in_words article.updated_at %> ago</td>
 	</tr>
@@ -29,3 +44,4 @@
   </tbody>
 </table>
 </div>
+

@@ -91,7 +91,7 @@ h3.cattitle {
 
 #taglist ul { font-family: "Courier"; font-size: 10px; line-height: 2em; }
 #taglist li { margin-left: -40px; list-style-type: none; margin-bottom: 10px; }
-#taglist a { color:#060; background-color:#E1FFD1; border:solid 1px #C5F8AC; -moz-border-radius: 5px; -webkit-border-radius: 5px; padding: 3px; border-radius: 5px; }
+#taglist a { color:#060; background-color:#E1FFD1; border:solid 1px #C5F8AC; -moz-border-radius: 5px; -webkit-border-radius: 5px; padding: 3px; border-radius: 5px; white-space: nowrap; line-height: 2em; }
 #taglist a:hover { text-decoration:underline;}
 
 .tag-x-small { font-size:  80%; }

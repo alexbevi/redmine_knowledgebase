@@ -5,7 +5,8 @@ module KnowledgebaseHelper
   def format_article_summary(article, format, options = {})
     output = case format
     when "normal"
-       truncate article.summary, :length => options[:truncate]
+               ""
+               #truncate article.summary, :length => options[:truncate]
     when "newest"
       l(:label_summary_newest_articles,
         :ago => time_ago_in_words(article.created_at),
@@ -19,15 +20,24 @@ module KnowledgebaseHelper
         :count => article.view_count,
         :created => article.created_at.to_date.to_formatted_s(:rfc822))
     when "toprated"
-      l(:label_summary_toprated_articles,
-        :rating_avg => article.rating_average.to_s,
-        :rating_max => "5",
-        :count => article.rated_count)
+      if article.rating_average.to_i == 0
+        l(:label_unrated_article)
+      else
+        l(:label_summary_toprated_articles,
+          :rating_avg => article.rating_average.to_s,
+          :rating_max => "5",
+          :count => article.rated_count)
+      end
     else 
       nil
     end
     
-    content_tag(:div, raw(output), :class => "summary")
+    sum = ""
+    unless redmine_knowledgebase_settings_value(:disable_article_summaries)
+      sum = "<p>" + (truncate article.summary, :length => options[:truncate]) + "</p>"
+    end
+
+    content_tag(:div, raw(sum + output), :class => "summary")
   end
 
   def sort_categories?
@@ -94,11 +104,23 @@ module KnowledgebaseHelper
   end
   
   def article_tabs
-    tabs = [{:name => 'content', :action => :content, :partial => 'articles/sections/content', :label => :label_content},
-            {:name => 'comments', :action => :comments, :partial => 'articles/sections/comments', :label => :label_comment_plural},
-            {:name => 'attachments', :action => :attachments, :partial => 'articles/sections/attachments', :label => :label_attachment_plural},
-            {:name => 'history', :action => :history, :partial => 'articles/sections/history', :label => :label_history}
-            ]
+
+    unless redmine_knowledgebase_settings_value(:show_attachments_first)
+
+      tabs = [{:name => 'content', :action => :content, :partial => 'articles/sections/content', :label => :label_content},
+              {:name => 'comments', :action => :comments, :partial => 'articles/sections/comments', :label => :label_comment_plural},
+              {:name => 'attachments', :action => :attachments, :partial => 'articles/sections/attachments', :label => :label_attachment_plural},
+              {:name => 'history', :action => :history, :partial => 'articles/sections/history', :label => :label_history}
+             ]
+
+    else
+      tabs = [ {:name => 'attachments', :action => :attachments, :partial => 'articles/sections/attachments', :label => :label_attachment_plural},
+               {:name => 'content', :action => :content, :partial => 'articles/sections/content', :label => :label_content},
+               {:name => 'comments', :action => :comments, :partial => 'articles/sections/comments', :label => :label_comment_plural},
+               {:name => 'history', :action => :history, :partial => 'articles/sections/history', :label => :label_history}
+             ]
+    end
+
     # TODO permissions?            
     # tabs.select {|tab| User.current.allowed_to?(tab[:action], @project)}
   end

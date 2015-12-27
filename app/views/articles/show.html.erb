@@ -53,4 +53,33 @@
   <%= f.link_to 'PDF', :url => params %>
 <% end %>
 
-<%= render_tabs article_tabs %>
+<% unless redmine_knowledgebase_settings_value(:show_article_without_tabs) %>
+  <%= render_tabs article_tabs %>
+
+<% else %>
+
+  <hr>
+
+  <% if redmine_knowledgebase_settings_value(:show_attachments_first) %>
+    <h2><%= l(:label_attachment_plural) %></h2>
+    <%= render :partial => "articles/sections/attachments" %>
+    <hr>
+  <% end %>
+
+  <h2><%= l(:label_description) %></h2>
+  <%= render :partial => "articles/sections/content" %>
+  <hr>
+  <h2><%= l(:label_comment_plural) %></h2>
+  <%= render :partial => "articles/sections/comments" %>
+  <hr>
+
+  <% unless redmine_knowledgebase_settings_value(:show_attachments_first) %>
+    <h2><%= l(:label_attachment_plural) %></h2>
+    <%= render :partial => "articles/sections/attachments" %>
+    <hr>
+  <% end %>
+
+  <h2><%= l(:label_history) %></h2>
+  <%= render :partial => "articles/sections/history" %>
+
+<% end %>
