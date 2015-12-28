@@ -1,7 +1,9 @@
 <% html_title @category.title %>
 
 <div class="contextual">
+<% if User.current.allowed_to?(:view_kb_articles, @project) %>
   <%= render :partial => "categories/jump_box" %>
+<% end %>
 </div>
 
 <p id="category-crumbs" class="breadcrumb">
@@ -12,6 +14,7 @@
 	<% end %>
 </p>
 
+<% if User.current.allowed_to?(:view_kb_articles, @project) %>
 <h2><%= @category.title %></h2>
 
 <% content_for :sidebar do %>
@@ -47,6 +50,7 @@
 
 <% other_formats_links do |f| %>
   <%= f.link_to 'Atom', :url => { :key => User.current.rss_key } %>
+<% end %>
 <% end %>
 
 <% content_for :header_tags do %>
