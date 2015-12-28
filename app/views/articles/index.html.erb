@@ -48,7 +48,7 @@
         <% if User.current.allowed_to?(:view_top_rated_articles, @project) %>
           <h3><%= l(:title_top_rated_articles) %></h3>
           <div class="articles index-summary">
-              <%= render :partial => 'articles/list', :locals => { :summary_format => "toprated", :articles => @articles_latest, :default_icon => 'top-rated' } %>
+              <%= render :partial => 'articles/list', :locals => { :summary_format => "toprated", :articles => @articles_toprated, :default_icon => 'top-rated' } %>
           </div>
         <% end %>
     </div>
