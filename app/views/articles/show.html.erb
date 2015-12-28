@@ -7,9 +7,12 @@
 <% end %>
 
 <div class="contextual">
+<% if User.current.allowed_to?(:view_kb_articles, @project) %>
   <%= render :partial => "categories/jump_box" %>
+<% end %>
 </div>
 
+<% if User.current.allowed_to?(:view_kb_articles, @project) %>
 <% content_for :sidebar do %>
 	<ul id="options">
 		<li><%= link_to_if_authorized l(:label_edit_article), { :controller => 'articles', :action => 'edit', :id => @article.id, :project_id => @project}, :class => 'icon icon-edit' %></li>
@@ -52,3 +55,4 @@
 <% end %>
 
 <%= render_tabs article_tabs %>
+<% end %>
