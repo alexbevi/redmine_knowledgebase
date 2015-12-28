@@ -1,6 +1,6 @@
 
 
-<% article.attachments.each do |attach| %>
+<% article.attachments.reverse_each do |attach| %>
   <% if attach.thumbnailable? %>
     <!-- how should relative URL be included here? -->
     <%= link_to raw("<img class='#{imgclass}' src='/attachments/thumbnail/#{attach.id}'>"), { :controller => 'articles', :action => 'show', :id => article.id, :project_id => project_id}, :title => article.title %>
