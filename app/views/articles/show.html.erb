@@ -78,7 +78,9 @@
     <hr>
   <% end %>
 
-  <h2><%= l(:label_history) %></h2>
-  <%= render :partial => "articles/sections/history" %>
+  <% if User.current.allowed_to?(:view_article_history, @project) %>
+    <h2><%= l(:label_history) %></h2>
+    <%= render :partial => "articles/sections/history" %>
+  <% end %>
 
 <% end %>

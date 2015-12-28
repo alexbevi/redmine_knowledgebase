@@ -105,24 +105,28 @@ module KnowledgebaseHelper
   
   def article_tabs
 
+    content = {:name => 'content', :action => :content, :partial => 'articles/sections/content', :label => :label_content}
+    comments = {:name => 'comments', :action => :comments, :partial => 'articles/sections/comments', :label => :label_comment_plural}
+    attachments = {:name => 'attachments', :action => :attachments, :partial => 'articles/sections/attachments', :label => :label_attachment_plural}
+    history = {:name => 'history', :action => :history, :partial => 'articles/sections/history', :label => :label_history}
+    
     unless redmine_knowledgebase_settings_value(:show_attachments_first)
 
-      tabs = [{:name => 'content', :action => :content, :partial => 'articles/sections/content', :label => :label_content},
-              {:name => 'comments', :action => :comments, :partial => 'articles/sections/comments', :label => :label_comment_plural},
-              {:name => 'attachments', :action => :attachments, :partial => 'articles/sections/attachments', :label => :label_attachment_plural},
-              {:name => 'history', :action => :history, :partial => 'articles/sections/history', :label => :label_history}
-             ]
-
+      tabs = [content, comments, attachments, history]
     else
-      tabs = [ {:name => 'attachments', :action => :attachments, :partial => 'articles/sections/attachments', :label => :label_attachment_plural},
-               {:name => 'content', :action => :content, :partial => 'articles/sections/content', :label => :label_content},
-               {:name => 'comments', :action => :comments, :partial => 'articles/sections/comments', :label => :label_comment_plural},
-               {:name => 'history', :action => :history, :partial => 'articles/sections/history', :label => :label_history}
-             ]
+
+      tabs = [attachments, content, comments, history]
+    end
+
+    # Do not show History if no permission
+    unless User.current.allowed_to?(:view_article_history, @project)
+      tabs.pop(1)
     end
 
     # TODO permissions?            
     # tabs.select {|tab| User.current.allowed_to?(tab[:action], @project)}
+
+    return tabs
   end
 
   def create_preview_link
