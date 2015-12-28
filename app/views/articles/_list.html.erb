@@ -26,15 +26,13 @@
     </p>
   <% end %>
 
-  
-  <%= format_article_summary(article, summary_format, :truncate => truncate_length ) %>
-
-
   <% if redmine_knowledgebase_settings_value(:show_thumbnails_for_articles) %>
   <div class="article-list-thumbnail">
     <%= render :partial => "articles/thumbnail", :locals => { :article => article, :imgclass => 'thumbnail-list', :project_id => @project } %>
   </div>
   <% end %>
+  
+  <%= format_article_summary(article, summary_format, :truncate => truncate_length ) %>
 
 </div>	
 <% end %>

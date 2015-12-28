@@ -30,6 +30,7 @@ h3.cattitle {
 	line-height: 20px;
 	padding: 6px 0 6px 40px;
 	min-height: 40px;
+	overflow: hidden;
 	}
 .article-icon .summary {
 	font-size: 80%;
@@ -37,6 +38,11 @@ h3.cattitle {
 	color: #666;
 	line-height: 16px;
 }
+.article-list-thumbnail {
+	float: right;
+	margin-left: 3px;
+}
+
 
 .category-articles .article-icon {
 	width: 28%;
