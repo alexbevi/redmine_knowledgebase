@@ -24,6 +24,16 @@
 	</ul>
 	<h3><%= l(:title_browse_by_category) %></h3>
   <%= render :partial => "categories/tree" %>
+
+
+  <div id="taglist">
+    <h3><%= l(:label_filter_by_tag) %></h3>
+
+    <% tag_cloud(@tags, ['tag-x-small', 'tag-small', 'tag-medium', 'tag-large', 'tag-x-large']) do |tag, css_class| %>
+    <%= link_to(tag.name, {:controller => 'categories', :action => 'show', :id => @category.id, :project_id => @project, :tag => tag.name }, :class => "tag #{css_class}") %>
+    <% end %>
+  </div>
+
 <% end %>
 
 <div class="category-summary"><%= textilizable @category.description unless @category.description.nil? %></div>
@@ -37,6 +47,12 @@
       <%= link_to subs.title + " (" + subs.articles.length.to_s + ")", { :controller => 'categories', :action => 'show', :id => subs.id, :project_id => @project }, :class => 'category-title' %>
     <% end %>
   </div>
+<% end %>
+
+<% if @tag %>
+<div class="category-tag-filter"><p><%= l(:label_filtered_by_tag) %> <%= @tag %> &nbsp;
+<%= link_to("", {:controller => 'categories', :action => 'show', :id => @category.id, :project_id => @project }, :class => "icon icon-delete") %>
+</p></div>
 <% end %>
 
 <% if @category.articles.length > 0%>
