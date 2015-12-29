@@ -32,6 +32,8 @@ en:
   label_description: Description
   label_edit_article: Edit
   label_edit_category: "Edit Category"
+  label_filtered_by_tag: "Filtered by tag:"
+  label_filter_by_tag: "Filter by Tag"
   label_jump_category: "Jump Category"
   label_kb_article_plural: "Knowledgebase articles"
   label_kb_home: Home

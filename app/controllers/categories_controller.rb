@@ -14,13 +14,23 @@ class CategoriesController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, :with => :force_404
 
   def show
+
     @articles = @category.articles.order("#{sort_column} #{sort_direction}")
+
+    if params[:tag]
+      @tag = params[:tag]
+      @articles = @articles.tagged_with(@tag)
+    end
+
     @categories = @project.categories.where(:parent_id => nil)
+
+    @tags = @articles.tag_counts.sort { |a, b| a.name.downcase <=> b.name.downcase }
 
     respond_to do |format|
       format.html { render :template => 'categories/show', :layout => !request.xhr? }
       format.atom { render_feed(@articles, :title => "#{l(:knowledgebase_title)}: #{l(:label_category)}: #{@category.title}") }
     end
+
   end
 
   def new

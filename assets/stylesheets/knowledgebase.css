@@ -106,6 +106,9 @@ h3.cattitle {
 .tag-large   { font-size: 120%; }
 .tag-x-large { font-size: 150%; }
 
+a.icon-delete {background:url(../images/delete.gif) no-repeat 0 -16px}
+
+
 /* jQuery.Rating Plugin CSS - http://www.fyneworks.com/jquery/star-rating/ */
 div.rating-cancel,div.star-rating{float:left;width:17px;height:15px;text-indent:-999em;cursor:pointer;display:block;background:transparent;overflow:hidden}
 div.rating-cancel,div.rating-cancel a{background:url(../images/delete.gif) no-repeat 0 -16px}
