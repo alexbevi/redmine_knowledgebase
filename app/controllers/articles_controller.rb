@@ -32,7 +32,7 @@ class ArticlesController < ApplicationController
     toprated = @project.articles.includes(:ratings).sort_by { |a| [a.rating_average, a.rated_count] }.reverse
     @articles_toprated = toprated.shift(summary_limit)
 
-    @tags = @project.articles.tag_counts
+    @tags = @project.articles.tag_counts.sort { |a, b| a.name.downcase <=> b.name.downcase }
   end
 
   def new
