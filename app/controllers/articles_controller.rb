@@ -26,7 +26,9 @@ class ArticlesController < ApplicationController
     @articles_newest = @project.articles.order("created_at DESC").first(summary_limit)
     @articles_latest = @project.articles.order("updated_at DESC").first(summary_limit)
     @articles_popular = @project.articles.includes(:viewings).limit(summary_limit).sort_by(&:view_count).reverse
-    @articles_toprated = @project.articles.includes(:ratings).limit(summary_limit).sort_by(&:rated_count).reverse
+
+    toprated = @project.articles.includes(:ratings).sort_by { |a| [a.rating_average, a.rated_count] }.reverse
+    @articles_toprated = toprated.shift(summary_limit)
 
     @tags = @project.articles.tag_counts
   end
