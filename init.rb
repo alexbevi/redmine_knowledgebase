@@ -53,6 +53,10 @@ Redmine::Plugin.register :redmine_knowledgebase do
                          :preview, :comment, :add_comment, :destroy_comment, :tagged],
       :categories    => [:index, :show]
     }
+    permission :manage_own_articles, {
+      :articles      => [:index, :show, :edit, :update, :destroy, :add_attachment, :preview, :tagged],
+      :categories    => [:index, :show]
+    }
     permission :manage_articles_comments, {
       :articles      => [:index, :show, :comment, :add_comment, :destroy_comment],
       :categories    => [:index, :show]
