@@ -85,6 +85,12 @@ class ArticlesController < ApplicationController
   end
 
   def edit
+
+    if not @article.editable_by?(User.current)
+      render_403
+      return false
+    end
+
     @categories=@project.categories
     # don't keep previous comment
     @article.version_comments = nil
@@ -92,6 +98,12 @@ class ArticlesController < ApplicationController
   end
 
   def update
+
+    if not @article.editable_by?(User.current)
+      render_403
+      return false
+    end
+
     @article.updater_id = User.current.id
     params[:article][:category_id] = params[:category_id]
     @categories = @project.categories
@@ -131,6 +143,12 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
+
+    if not @article.editable_by?(User.current)
+      render_403
+      return false
+    end
+
     KbMailer.article_destroy(@article).deliver
     @article.destroy
     flash[:notice] = l(:label_article_removed)
@@ -138,6 +156,12 @@ class ArticlesController < ApplicationController
   end
 
   def add_attachment
+
+    if not @article.editable_by?(User.current)
+      render_403
+      return false
+    end
+
     attachments = attach(@article, params[:attachments])
     redirect_to({ :action => 'show', :id => @article.id, :project_id => @project })
   end

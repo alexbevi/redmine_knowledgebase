@@ -54,8 +54,10 @@ class KbArticle < ActiveRecord::Base
     notified.collect(&:mail)
   end
 
-  def editable_by?(user)
-    user.allowed_to?(:edit_articles, self.project)
+  def editable_by?(user = User.current)
+    return user.allowed_to?(:edit_articles, self.project) ||
+      user.allowed_to?(:manage_articles, self.project) ||
+      (user.allowed_to?(:manage_own_articles, self.project) && self.author_id == user.id)
   end
 
   def attachments_deletable?(user = User.current)
