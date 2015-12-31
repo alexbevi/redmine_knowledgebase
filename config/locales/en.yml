@@ -20,6 +20,7 @@ en:
     one: "Viewed once"
     other: "Viewed %{count} times"
   label_attachment_add: "Add files"
+  label_authored_by: "Authored by"
   label_category: Category
   label_category_created: "Created category '%{title}'"
   label_category_deleted: "Category deleted"

@@ -64,7 +64,7 @@ module KnowledgebaseHelper
     title ||= column.titleize
     css_class = column == sort_column ? "current #{sort_direction}" : nil
     direction = column == sort_column && sort_direction == "asc" ? "desc" : "asc"
-    link_to title, {:id => params[:id], :sort => column, :direction => direction }, {:class => css_class}
+    link_to title, {:id => params[:id], :tag => params[:tag], :author_id => params[:author_id], :sort => column, :direction => direction }, {:class => css_class}
   end
 
   def article_to_pdf(article, project)

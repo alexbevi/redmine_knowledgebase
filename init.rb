@@ -33,7 +33,7 @@ Redmine::Plugin.register :redmine_knowledgebase do
 
   project_module :knowledgebase do
     permission :view_kb_articles, {
-      :articles      => [:index, :show, :tagged],
+      :articles      => [:index, :show, :tagged, :authored],
       :categories    => [:index, :show]
     }
     permission :comment_and_rate_articles, {
