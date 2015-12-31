@@ -9,7 +9,7 @@ class ArticlesController < ApplicationController
   include WatchersHelper
 
   before_filter :find_project_by_project_id, :authorize
-  before_filter :get_article, :except => [:index, :new, :create, :preview, :comment, :tagged, :rate]
+  before_filter :get_article, :except => [:index, :new, :create, :preview, :comment, :tagged, :rate, :authored]
 
   rescue_from ActionView::MissingTemplate, :with => :force_404
   rescue_from ActiveRecord::RecordNotFound, :with => :force_404
@@ -31,6 +31,21 @@ class ArticlesController < ApplicationController
     @articles_toprated = toprated.shift(summary_limit)
 
     @tags = @project.articles.tag_counts.sort { |a, b| a.name.downcase <=> b.name.downcase }
+  end
+
+  def authored
+
+    @author_id = params[:author_id]
+    @articles = @project.articles.where(:author_id => @author_id).order("kb_articles.#{sort_column} #{sort_direction}")
+
+    if params[:tag]
+      @tag = params[:tag]
+      @articles = @articles.tagged_with(@tag)
+    end
+
+    @categories = @project.categories.where(:parent_id => nil)
+
+    @tags = @articles.tag_counts.sort { |a, b| a.name.downcase <=> b.name.downcase }
   end
 
   def new

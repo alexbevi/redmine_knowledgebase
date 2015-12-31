@@ -1,0 +1,39 @@
+
+<div class="contextual">
+  <%= render :partial => "categories/jump_box" %>
+</div>
+
+<h3><%= l(:label_authored_by) %> <%= link_to_user(User.find(@author_id)) %></h3>
+
+
+<% content_for :sidebar do %>
+
+	<h3><%= l(:title_browse_by_category) %></h3>
+  <%= render :partial => "categories/tree" %>
+
+
+  <div id="taglist">
+    <h3><%= l(:label_filter_by_tag) %></h3>
+
+    <% tag_cloud(@tags, ['tag-x-small', 'tag-small', 'tag-medium', 'tag-large', 'tag-x-large']) do |tag, css_class| %>
+    <%= link_to(tag.name, {:controller => 'articles', :action => 'authored', :project_id => @project, :author_id => @author_id, :tag => tag.name }, :class => "tag #{css_class}") %>
+    <% end %>
+  </div>
+
+<% end %>
+
+<% if @tag %>
+<div class="category-tag-filter"><p><%= l(:label_filtered_by_tag) %> <%= @tag %> &nbsp;
+<%= link_to("", {:controller => 'articles', :action => 'authored', :author_id => @author_id, :project_id => @project }, :class => "icon icon-delete") %>
+</p></div>
+<% end %>
+
+<% if @articles.length > 0%>
+  <div class="articles">
+  <%= render :partial => 'articles/list_table', :locals => { :articles => @articles } %>
+  </div>
+<% end %>
+
+<% content_for :header_tags do %>
+    <%= stylesheet_link_tag 'knowledgebase', :plugin => 'redmine_knowledgebase' %>
+<% end %>
