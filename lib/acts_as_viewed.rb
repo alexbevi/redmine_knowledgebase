@@ -176,9 +176,9 @@ module ActiveRecord #:nodoc:
             raise ViewedError, "the viewer object must be the one used when defining acts_as_viewed (or a descendent of it). other objects are not acceptable"
           end
           if viewer && !viewer.id.nil? 
-            return viewings.count(:conditions => ["viewer_id = '#{viewer.id}' or ip = '#{ip}'"]) > 0
+            return viewings.where(['viewer_id = ? or ip = ?', viewer.id, ip]).count > 0
           else
-            return viewings.count(:conditions => ["ip = '#{ip}'"]) > 0
+            return viewings.where(['ip = ?', ip]).count > 0
           end
         end
             

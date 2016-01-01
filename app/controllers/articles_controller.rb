@@ -27,10 +27,8 @@ class ArticlesController < ApplicationController
 
     @articles_newest = @project.articles.order("created_at DESC").first(summary_limit)
     @articles_latest = @project.articles.order("updated_at DESC").first(summary_limit)
-    @articles_popular = @project.articles.includes(:viewings).limit(summary_limit).sort_by(&:view_count).reverse
-
-    toprated = @project.articles.includes(:ratings).sort_by { |a| [a.rating_average, a.rated_count] }.reverse
-    @articles_toprated = toprated.shift(summary_limit)
+    @articles_popular = @project.articles.includes(:viewings).sort_by(&:view_count).reverse.first(summary_limit)
+    @articles_toprated = @project.articles.includes(:ratings).sort_by { |a| [a.rating_average, a.rated_count] }.reverse.first(summary_limit)
 
     @tags = @project.articles.tag_counts.sort { |a, b| a.name.downcase <=> b.name.downcase }
   end
@@ -38,7 +36,7 @@ class ArticlesController < ApplicationController
   def authored
 
     @author_id = params[:author_id]
-    @articles = @project.articles.where(:author_id => @author_id).order("kb_articles.#{sort_column} #{sort_direction}")
+    @articles = @project.articles.where(:author_id => @author_id).order("#{KbArticle.table_name}.#{sort_column} #{sort_direction}")
 
     if params[:tag]
       @tag = params[:tag]
