@@ -54,7 +54,7 @@ class KbArticle < ActiveRecord::Base
                        :date_column => "#{table_name}.created_at"
   end
 
-  has_many :comments, -> { order 'created_on DESC' }, :as => :commented, :dependent => :delete_all
+  has_many :comments, -> { order 'created_on DESC' }, :as => :commented, :dependent => :destroy
 
   scope :visible, lambda {|*args| { :include => :project,
                                         :conditions => Project.allowed_to_condition(args.shift || User.current, :view_kb_articles, *args) } }
