@@ -40,7 +40,7 @@ class KbArticle < ActiveRecord::Base
                             :type => 'kb_articles',
                             :timestamp => :updated_at
 
-  has_many :comments, -> { order 'created_on DESC' }, :as => :commented, :dependent => :delete_all
+  has_many :comments, -> { order 'created_on DESC' }, :as => :commented, :dependent => :destroy
 
   scope :visible, ->(*args) { joins(:project).where(Project.allowed_to_condition(args.shift || User.current, :view_kb_articles, *args)) }
 
