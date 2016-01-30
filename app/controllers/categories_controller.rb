@@ -63,16 +63,23 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
-	  @categories=@project.categories.all
+    @categories = @project.categories.all
 
-    if @category.articles.size == 0
-	  @category.destroy
-      flash[:notice] = l(:label_category_deleted)
-      redirect_to({ :controller => :articles, :action => 'index', :project_id => @project})
-    else
-      @articles = @category.articles.all #find(:all)
+    # Do not allow deletion of categories with existing subcategories
+    @subcategories = @project.categories.where(:parent_id => @category.id)
+
+    if @subcategories.size != 0
+      @articles = @category.articles.all
+      flash[:error] = l(:label_category_has_subcategory_cannot_delete)
+      render(:action => 'show')
+    elsif @category.articles.size != 0
+      @articles = @category.articles.all
       flash[:error] = l(:label_category_not_empty_cannot_delete)
       render(:action => 'show')
+    else
+      @category.destroy
+      flash[:notice] = l(:label_category_deleted)
+      redirect_to({ :controller => :articles, :action => 'index', :project_id => @project})
     end
   end
 

@@ -26,7 +26,7 @@
 	<h3><%= l(:title_browse_by_category) %></h3>
   <%= render :partial => "categories/tree" %>
 
-
+  <% if @tags %>
   <div id="taglist">
     <h3><%= l(:label_filter_by_tag) %></h3>
 
@@ -34,6 +34,7 @@
     <%= link_to(tag.name, {:controller => 'categories', :action => 'show', :id => @category.id, :project_id => @project, :tag => tag.name }, :class => "tag #{css_class}") %>
     <% end %>
   </div>
+  <% end %>
 
 <% end %>
 
