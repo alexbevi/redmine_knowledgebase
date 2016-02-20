@@ -52,6 +52,7 @@ ru:
   label_summary_toprated_articles: 
     one: "Рейтинг: %{rating_avg}/%{rating_max} после одного голоса"
     other: "Рейтинг: %{rating_avg}/%{rating_max} после %{count} голосов"
+    zero: "Голосов нет"
   label_summary_updated_articles: "Обновлено %{ago}"
   label_title: Заголовок
   label_title_articles: Статьи
