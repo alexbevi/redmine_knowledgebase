@@ -192,7 +192,7 @@ module ActiveRecord #:nodoc:
           end
 
           # last is the one where we don't keep the statistics - go direct to the db
-          !ratings.find(:first).nil? 
+          !ratings.first.nil? 
         end
         
         # Get the number of ratings for this object based on the special fields, 
@@ -225,7 +225,7 @@ module ActiveRecord #:nodoc:
             raise RateError, "the rater object must be the one used when defining acts_as_rated (or a descendent of it). other objects are not acceptable"
           end
           raise RateError, "rating with rater must receive a rater as parameter" if with_rater && (rater.nil? || rater.id.nil?)
-          r = with_rater ? ratings.find(:first, :conditions => ['rater_id = ?', rater.id]) : nil
+          r = with_rater ? ratings.where(:conditions => ['rater_id = ?', rater.id]).first : nil
           raise RateError, "value is out of range!" unless acts_as_rated_options[:rating_range].nil? || acts_as_rated_options[:rating_range] === value
           
           # Find the place to store the rating statistics if any...
@@ -273,7 +273,7 @@ module ActiveRecord #:nodoc:
           end
           raise RateError, "Rater must be a valid and existing object" if rater.nil? || rater.id.nil?
           raise RateError, 'Cannot unrate if not using a rater' if !rating_class.column_names.include? "rater_id"
-          r = ratings.find(:first, :conditions => ['rater_id = ?', rater.id])
+          r = ratings.where(:conditions => ['rater_id = ?', rater.id]).first
           if !r.nil?
             target = self if attributes.has_key? 'rating_total'
             target ||= self.rating_statistic if acts_as_rated_options[:stats_class]
@@ -406,7 +406,7 @@ module ActiveRecord #:nodoc:
           raise RateError, "Rater must be an existing object with an id" if rater.id.nil?
           rated_class = ActiveRecord::Base.send(:class_name_of_active_record_descendant, self).to_s
           conds = [ 'rated_type = ? AND rater_id = ?', rated_class, rater.id ]
-          acts_as_rated_options[:rating_class].constantize.find(:all, :conditions => conds).collect {|r| r.rated_type.constantize.find_by_id r.rated.id }
+          acts_as_rated_options[:rating_class].constantize.where(:conditions => conds).collect {|r| r.rated_type.constantize.find_by_id r.rated.id }
         end
 
        

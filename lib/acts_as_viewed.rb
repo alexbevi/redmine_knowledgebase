@@ -258,7 +258,7 @@ module ActiveRecord #:nodoc:
           raise ViewedError, 'Viewer must be a valid viewer' if !viewing_class.column_names.include? "viewer_id"  
           viewed_class = ActiveRecord::Base.send(:class_name_of_active_record_descendant, self).to_s
           conds = [ 'viewed_type = ? AND viewer_id = ?', viewed_class, viewer.id ]
-          acts_as_viewed_options[:viewing_class].constantize.find(:all, :conditions => conds).collect {|r| r.viewed_type.constantize.find_by_id r.viewed.id }
+          acts_as_viewed_options[:viewing_class].constantize.where(:conditions => conds).collect {|r| r.viewed_type.constantize.find_by_id r.viewed.id }
         end
       end
     end
