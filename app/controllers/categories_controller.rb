@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   unloadable
-  
+
   menu_item :articles
   helper :knowledgebase
   include KnowledgebaseHelper
@@ -12,11 +12,11 @@ class CategoriesController < ApplicationController
   accept_rss_auth :show
 
   rescue_from ActiveRecord::RecordNotFound, :with => :force_404
-  
+
   def show
     @articles = @category.articles.order("#{sort_column} #{sort_direction}")
     @categories = @project.categories.where(:parent_id => nil)
-    
+
     respond_to do |format|
       format.html { render :template => 'categories/show', :layout => !request.xhr? }
       format.atom { render_feed(@articles, :title => "#{l(:knowledgebase_title)}: #{l(:label_category)}: #{@category.title}") }
@@ -26,7 +26,7 @@ class CategoriesController < ApplicationController
   def new
     @category = KbCategory.new
     @parent_id = params[:parent_id]
-    @categories=@project.categories.all #find(:all)
+    @categories=@project.categories.all
   end
 
   def create
@@ -49,11 +49,12 @@ class CategoriesController < ApplicationController
 
   def edit
     @parent_id = @category.parent_id
-    @categories=@project.categories.all #find(:all)
+    @categories=@project.categories.all
   end
 
   def destroy
-	  @categories=@project.categories.all #find(:all)
+	  @categories=@project.categories.all
+
     if @category.articles.size == 0
 	  @category.destroy
       flash[:notice] = l(:label_category_deleted)
@@ -83,7 +84,7 @@ class CategoriesController < ApplicationController
 #######
 private
 #######
-  
+
   def get_category
     @category = @project.categories.find(params[:id])
   end

@@ -21,15 +21,9 @@ class KbArticle < ActiveRecord::Base
   acts_as_taggable
   acts_as_attachable
   acts_as_watchable
-  
+
   acts_as_versioned :if_changed => [:title, :content, :summary]
   self.non_versioned_columns << 'comments_count'
-  
-  acts_as_searchable :columns => [ "#{table_name}.title", "#{table_name}.content"],
-                     #:include => [ :project ],
-                     :scope => preload(:project),
-                     #:order_column => "#{table_name}.id",
-                     :date_column => "#{table_name}.created_at"
 
   acts_as_event :title => Proc.new {|o| status = (o.new_status ? "(#{l(:label_new_article)})" : nil ); "#{status} #{l(:label_title_articles)} ##{o.id} - #{o.title}" },
                 :description => :content,
@@ -37,17 +31,34 @@ class KbArticle < ActiveRecord::Base
                 :type => Proc.new { |o| 'article-' + (o.new_status ? 'add' : 'edit') },
                 :url => Proc.new { |o| {:controller => 'articles', :action => 'show', :id => o.id, :project_id => o.project} }
 
-  acts_as_activity_provider :scope => preload(:project),
-  #:find_options => {:include => :project},
-                            :author_key => :author_id, 
-                            :type => 'kb_articles',
-                            :timestamp => :updated_at
+  # Redmine 3.1.X
+  if ActiveRecord::VERSION::MAJOR >= 4
+    acts_as_activity_provider :scope => joins(:project),
+                              :permission => :view_kb_articles,
+                              :author_key => :author_id,
+                              :type => 'kb_articles',
+                              :timestamp => :updated_at
+
+    acts_as_searchable :columns => [ "#{table_name}.title", "#{table_name}.content"],
+                       :preload => [ :project ],
+                       :date_column => "#{table_name}.created_at"
+  else
+    acts_as_activity_provider :find_options => {:include => :project},
+                              :author_key => :author_id,
+                              :type => 'kb_articles',
+                              :timestamp => :updated_at
+
+    acts_as_searchable :columns => [ "#{table_name}.title", "#{table_name}.content"],
+                       :include => [ :project ],
+                       :order_column => "#{table_name}.id",
+                       :date_column => "#{table_name}.created_at"
+  end
 
   has_many :comments, -> { order 'created_on DESC' }, :as => :commented, :dependent => :delete_all
 
   scope :visible, lambda {|*args| { :include => :project,
                                         :conditions => Project.allowed_to_condition(args.shift || User.current, :view_kb_articles, *args) } }
-  
+
   def recipients
     notified = []
     # Author and assignee are always notified unless they have been
@@ -61,11 +72,11 @@ class KbArticle < ActiveRecord::Base
   def editable_by?(user)
     user.allowed_to?(:edit_articles, self.project)
   end
-  
+
   def attachments_deletable?(user = User.current)
     editable_by?(user) || super(user)
   end
-  
+
   def new_status
     if self.updater_id == 0
         true
@@ -77,7 +88,7 @@ class KbArticle < ActiveRecord::Base
     result ||= self
     result
   end
-  
+
   def diff(version_to=nil, version_from=nil)
     version_to = version_to ? version_to.to_i : self.version
     version_from = version_from ? version_from.to_i : version_to - 1
@@ -106,7 +117,7 @@ class KbArticle < ActiveRecord::Base
   def self.count_article_summaries
     KbArticle.where("summary is not null and summary <> ''").count
   end
-  
+
   class Version
 
     belongs_to :author,   :class_name => 'User', :foreign_key => 'author_id'
