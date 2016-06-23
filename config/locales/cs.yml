@@ -19,9 +19,12 @@ cs:
   label_article_viewed: 
     one: "Zobrazeno jednou"
     other: "Zobrazeno %{count} krát"
+  label_attachment_add: "Add files"
+  label_authored_by: "Articles authored by"
   label_category: Kategorie
   label_category_created: "Byla vytvořena kategorie %{title}"
   label_category_deleted: "Kategorie byla smazána"
+  label_category_has_subcategory_cannot_delete: "Category can not be deleted because it contains a subcategory."
   label_category_not_empty_cannot_delete: "Kategorie obsahuje články a nemůže být smazána."
   label_category_plural: Kategorie
   label_category_updated: "Kategorie byla aktualizována"
@@ -31,6 +34,8 @@ cs:
   label_description: Popis
   label_edit_article: Upravit
   label_edit_category: "Upravit kategorii"
+  label_filter_by_tag: "Filter by Tag"
+  label_filtered_by_tag: "Filtered by tag:"
   label_home: Úvodní
   label_jump_category: "Skočit na kategorii"
   label_kb_article_plural: "Knowledgebase articles"
@@ -57,6 +62,7 @@ cs:
   label_title: Název
   label_title_articles: Články
   label_title_category: Kategorie
+  label_unrated_article: Unrated
   label_updated_who: "Updated by %{updater} %{age} ago"
   message_no_articles: "Zatím nejsou ve znalostní databázi žádné články. Asi byste měli začít něco dělat..."
   message_no_categories: "Unfortunately, there aren't any Categories defined, and you need to be logged in to create new categories."
@@ -70,6 +76,7 @@ cs:
   permission_manage_article_history: "manage article history"
   permission_manage_articles: "Spravovat články"
   permission_manage_articles_comments: "Spravovat komentáře"
+  permission_manage_own_articles: "Manage own articles"
   permission_view_article_history: "view article history"
   permission_view_articles: "Zobrazit články"
   permission_view_kb_articles: "View articles"
@@ -79,7 +86,11 @@ cs:
   permission_watch_articles: "Watch articles"
   permission_watch_categories: "Watch categories"
   project_module_knowledgebase: Knowledgebase
+  show_article_without_tabs: "Show articles without tabs?"
+  show_attachments_first: "Show attachments before article content?"
+  show_breadcrumbs_for_article_lists: "Show breadcrumbs for articles in lists?"
   show_category_totals: "Zobrazit součty pro kategorie ve stromě?"
+  show_thumbnails_for_articles: "Show thumbnails for articles in lists?"
   summary_item_limit: "Limit pro délku souhrnu"
   text_confirm_versions_delete: "This will revert and delete any newer versions of this document that may exist. Are you sure?"
   text_current_version: Current

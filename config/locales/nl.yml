@@ -19,9 +19,12 @@ nl:
   label_article_viewed: 
     one: "Eenmaal gezien"
     other: "Gezien: %{count} keer"
+  label_attachment_add: "Add files"
+  label_authored_by: "Articles authored by"
   label_category: Categorie
   label_category_created: "Aangemaakt categorie '%{title}'"
   label_category_deleted: "Categorie verwijderd"
+  label_category_has_subcategory_cannot_delete: "Category can not be deleted because it contains a subcategory."
   label_category_not_empty_cannot_delete: "De categorie is aan een of meerdere artikelen toegewezen en kan nu niet worden verwijderd."
   label_category_plural: Categoriën
   label_category_updated: "Categorie bijgewerkt"
@@ -31,6 +34,8 @@ nl:
   label_description: Beschrijving
   label_edit_article: Bewerken
   label_edit_category: "Bewerk categorie"
+  label_filter_by_tag: "Filter by Tag"
+  label_filtered_by_tag: "Filtered by tag:"
   label_jump_category: "Snel naar categorie"
   label_kb_article_plural: "Kennisbank artikelen"
   label_kb_home: Home
@@ -56,6 +61,7 @@ nl:
   label_title: Titel
   label_title_articles: Artikel
   label_title_category: Categorie
+  label_unrated_article: Unrated
   label_updated_who: "Bijgewerkt door %{updater} %{age} geleden"
   message_no_articles: "Er zijn nog geen artikelen toegevoegd. Klik op 'Maak artikel' om er een te beginnen."
   message_no_categories: "Er zijn nog geen categoriën toegevoegd. Klik op 'Maak categorie' om er een te beginnen."
@@ -69,6 +75,7 @@ nl:
   permission_manage_article_history: "Beheer artikelgeschiedenis"
   permission_manage_articles: "Beheer artikelen"
   permission_manage_articles_comments: "Beheer gebruikersreacties"
+  permission_manage_own_articles: "Manage own articles"
   permission_view_article_history: "Weergeven artikelgeschiedenis"
   permission_view_articles: "Weergeven artikelen"
   permission_view_kb_articles: "Weergeven artikelen"
@@ -78,7 +85,11 @@ nl:
   permission_watch_articles: "Bekijk artikelen"
   permission_watch_categories: "Bekijk categoriën"
   project_module_knowledgebase: Kennisbank
+  show_article_without_tabs: "Show articles without tabs?"
+  show_attachments_first: "Show attachments before article content?"
+  show_breadcrumbs_for_article_lists: "Show breadcrumbs for articles in lists?"
   show_category_totals: "Totalen categorie in hierarchie?"
+  show_thumbnails_for_articles: "Show thumbnails for articles in lists?"
   summary_item_limit: "KB samenvatting artikel limiet per pagina"
   text_confirm_versions_delete: "Dit zal nieuwere versies en recente wijzigingen mogelijk verwijderen. Weet je dat zeker?"
   text_current_version: Huidige

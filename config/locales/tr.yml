@@ -19,9 +19,12 @@ tr:
   label_article_viewed: 
     one: "Bir kez görüntülendi"
     other: "%{count} defa görüntülendi"
+  label_attachment_add: "Add files"
+  label_authored_by: "Articles authored by"
   label_category: Kategori
   label_category_created: "'%{title}' kategorisi oluşturuldu"
   label_category_deleted: "Kategori silindi"
+  label_category_has_subcategory_cannot_delete: "Category can not be deleted because it contains a subcategory."
   label_category_not_empty_cannot_delete: "Bu kategoride makaleler var ve silinemez."
   label_category_plural: Kategoriler
   label_category_updated: "Kategori güncellendi"
@@ -31,6 +34,8 @@ tr:
   label_description: Açıklama
   label_edit_article: Düzenle
   label_edit_category: "Kategoriyi düzenle"
+  label_filter_by_tag: "Filter by Tag"
+  label_filtered_by_tag: "Filtered by tag:"
   label_jump_category: "Kategoriye git"
   label_kb_article_plural: "Knowledgebase articles"
   label_kb_home: Anasayfa
@@ -56,6 +61,7 @@ tr:
   label_title: Başlık
   label_title_articles: Makale
   label_title_category: Kategori
+  label_unrated_article: Unrated
   label_updated_who: "Updated by %{updater} %{age} ago"
   message_no_articles: "Henüz bilgi bankasına hiç bir makale eklenmedi. Belki  bir kaç tane eklemek istersiniz..."
   message_no_categories: "Unfortunately, there aren't any Categories defined, and you need to be logged in to create new categories."
@@ -69,6 +75,7 @@ tr:
   permission_manage_article_history: "manage article history"
   permission_manage_articles: "Manage articles"
   permission_manage_articles_comments: "Manage articles comments"
+  permission_manage_own_articles: "Manage own articles"
   permission_view_article_history: "view article history"
   permission_view_articles: "View articles"
   permission_view_kb_articles: "View articles"
@@ -78,7 +85,11 @@ tr:
   permission_watch_articles: "Watch articles"
   permission_watch_categories: "Watch categories"
   project_module_knowledgebase: Knowledgebase
+  show_article_without_tabs: "Show articles without tabs?"
+  show_attachments_first: "Show attachments before article content?"
+  show_breadcrumbs_for_article_lists: "Show breadcrumbs for articles in lists?"
   show_category_totals: "Kategori toplamını ağaç yapısnda göster?"
+  show_thumbnails_for_articles: "Show thumbnails for articles in lists?"
   summary_item_limit: "Bilgi bankası özet sayfası makale sınırı"
   text_confirm_versions_delete: "This will revert and delete any newer versions of this document that may exist. Are you sure?"
   text_current_version: Current
