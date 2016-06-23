@@ -18,15 +18,16 @@
   
 <% else %>
   <% if User.current.allowed_to?(:view_kb_articles, @project) %>
+    <h2><%=l(:label_overview)%></h2>
     <div class="splitcontentleft">
-        <h2><%=l(:label_overview)%></h2>
         <div class="articles box">
         <h3><%= l(:title_overview_summary) %></h3>
         <ul>
             <li><%= l(:label_overview_total_categories, :total_categories => @total_categories.to_i) %></li>
             <li><%= l(:label_overview_total_articles, :total_articles => @total_articles.to_i) %></li>
+
             <% if User.current.allowed_to?(:create_articles, @project) %>
-              <li><%= l(:label_overview_my_articles, :total_articles_by_me => @total_articles_by_me.to_i) %></li>
+	    <li><%= link_to_if_authorized l(:label_overview_my_articles, :total_articles_by_me => @total_articles_by_me.to_i), { :controller => 'articles', :action => 'authored', :project_id => @project, :author_id => User.current.id} %></li>
             <% end %>
         </ul>
         </div>
@@ -48,7 +49,7 @@
         <% if User.current.allowed_to?(:view_top_rated_articles, @project) %>
           <h3><%= l(:title_top_rated_articles) %></h3>
           <div class="articles index-summary">
-              <%= render :partial => 'articles/list', :locals => { :summary_format => "toprated", :articles => @articles_latest, :default_icon => 'top-rated' } %>
+              <%= render :partial => 'articles/list', :locals => { :summary_format => "toprated", :articles => @articles_toprated, :default_icon => 'top-rated' } %>
           </div>
         <% end %>
     </div>

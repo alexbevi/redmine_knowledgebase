@@ -30,6 +30,7 @@ h3.cattitle {
 	line-height: 20px;
 	padding: 6px 0 6px 40px;
 	min-height: 40px;
+	overflow: hidden;
 	}
 .article-icon .summary {
 	font-size: 80%;
@@ -37,6 +38,11 @@ h3.cattitle {
 	color: #666;
 	line-height: 16px;
 }
+.article-list-thumbnail {
+	float: right;
+	margin-left: 3px;
+}
+
 
 .category-articles .article-icon {
 	width: 28%;
@@ -91,7 +97,7 @@ h3.cattitle {
 
 #taglist ul { font-family: "Courier"; font-size: 10px; line-height: 2em; }
 #taglist li { margin-left: -40px; list-style-type: none; margin-bottom: 10px; }
-#taglist a { color:#060; background-color:#E1FFD1; border:solid 1px #C5F8AC; -moz-border-radius: 5px; -webkit-border-radius: 5px; padding: 3px; border-radius: 5px; }
+#taglist a { color:#060; background-color:#E1FFD1; border:solid 1px #C5F8AC; -moz-border-radius: 5px; -webkit-border-radius: 5px; padding: 3px; border-radius: 5px; white-space: nowrap; line-height: 2em; }
 #taglist a:hover { text-decoration:underline;}
 
 .tag-x-small { font-size:  80%; }
@@ -99,6 +105,9 @@ h3.cattitle {
 .tag-medium  { font-size: 100%; }
 .tag-large   { font-size: 120%; }
 .tag-x-large { font-size: 150%; }
+
+a.icon-delete {background:url(../images/delete.gif) no-repeat 0 -16px}
+
 
 /* jQuery.Rating Plugin CSS - http://www.fyneworks.com/jquery/star-rating/ */
 div.rating-cancel,div.star-rating{float:left;width:17px;height:15px;text-indent:-999em;cursor:pointer;display:block;background:transparent;overflow:hidden}

@@ -19,9 +19,12 @@ ko:
   label_article_viewed: 
     one: "1회 조회"
     other: "%{count}회 조회"
+  label_attachment_add: "Add files"
+  label_authored_by: "Articles authored by"
   label_category: 카테고리
   label_category_created: "'%{title}' 카테고리를 작성했습니다."
   label_category_deleted: "카테고리를 삭제했습니다.．"
+  label_category_has_subcategory_cannot_delete: "Category can not be deleted because it contains a subcategory."
   label_category_not_empty_cannot_delete: "관련지식이 있는 관계로 카테고리를 삭제할 수 없습니다."
   label_category_plural: "카테고리 목록"
   label_category_updated: "카테고리를 수정했습니다."
@@ -31,6 +34,8 @@ ko:
   label_description: 설명
   label_edit_article: 수정
   label_edit_category: "카테고리 수정"
+  label_filter_by_tag: "Filter by Tag"
+  label_filtered_by_tag: "Filtered by tag:"
   label_home: Home
   label_jump_category: "카테고리 선택"
   label_kb_article_plural: "Knowledgebase articles"
@@ -57,6 +62,7 @@ ko:
   label_title: 제목
   label_title_articles: 지식명
   label_title_category: 카테고리명
+  label_unrated_article: Unrated
   label_updated_who: "%{updater}이(가) %{age}전에 수정했습니다."
   message_no_articles: "지식 데이터베이스에 추가된 지식이 없습니다."
   message_no_categories: "죄송합니다. 등록된 카테고리가 없습니다. 새로운 카테고리를 작성하시려면 로그인이 필요합니다."
@@ -70,6 +76,7 @@ ko:
   permission_manage_article_history: "manage article history"
   permission_manage_articles: "지식 관리"
   permission_manage_articles_comments: "지식 댓글 관리"
+  permission_manage_own_articles: "Manage own articles"
   permission_view_article_history: "view article history"
   permission_view_articles: "지식 보기"
   permission_view_kb_articles: "View articles"
@@ -79,7 +86,11 @@ ko:
   permission_watch_articles: "Watch articles"
   permission_watch_categories: "Watch categories"
   project_module_knowledgebase: Knowledgebase
+  show_article_without_tabs: "Show articles without tabs?"
+  show_attachments_first: "Show attachments before article content?"
+  show_breadcrumbs_for_article_lists: "Show breadcrumbs for articles in lists?"
   show_category_totals: "모든 카테고리 표시"
+  show_thumbnails_for_articles: "Show thumbnails for articles in lists?"
   summary_item_limit: "지식자료에 표시되는 지식수"
   text_confirm_versions_delete: "This will revert and delete any newer versions of this document that may exist. Are you sure?"
   text_current_version: Current

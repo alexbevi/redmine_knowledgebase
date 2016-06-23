@@ -19,9 +19,12 @@ bg:
   label_article_viewed: 
     one: "Разглеждана един път"
     other: "Разглеждана %{count} пъти"
+  label_attachment_add: "Add files"
+  label_authored_by: "Articles authored by"
   label_category: Категория
   label_category_created: "Създадена категория '%{title}'"
   label_category_deleted: "Категорията е премахната"
+  label_category_has_subcategory_cannot_delete: "Category can not be deleted because it contains a subcategory."
   label_category_not_empty_cannot_delete: "В категорията има статии и поради това не може да бъде премахната."
   label_category_plural: Категории
   label_category_updated: "Категорията е обновена"
@@ -31,6 +34,8 @@ bg:
   label_description: Описание
   label_edit_article: Редактиране
   label_edit_category: "Редактиране на категория"
+  label_filter_by_tag: "Filter by Tag"
+  label_filtered_by_tag: "Filtered by tag:"
   label_jump_category: "Преход към категория"
   label_kb_article_plural: "Knowledgebase articles"
   label_kb_home: Начало
@@ -56,6 +61,7 @@ bg:
   label_title: Заглавие
   label_title_articles: Статия
   label_title_category: Категория
+  label_unrated_article: Unrated
   label_updated_who: "Обновено от %{updater} преди %{age}"
   message_no_articles: "Все още няма добавени статии в базата знания. Може би сега ще започнете с първата ..."
   message_no_categories: "За съжаление няма дефинирани категории, и вие трябва да влезете в Redmine за да създадете нови категории."
@@ -69,6 +75,7 @@ bg:
   permission_manage_article_history: "manage article history"
   permission_manage_articles: "Управление на статии"
   permission_manage_articles_comments: "Управление на коментарите"
+  permission_manage_own_articles: "Manage own articles"
   permission_view_article_history: "view article history"
   permission_view_articles: "Разглеждане на статии"
   permission_view_kb_articles: "View articles"
@@ -78,7 +85,11 @@ bg:
   permission_watch_articles: "Watch articles"
   permission_watch_categories: "Watch categories"
   project_module_knowledgebase: Knowledgebase
+  show_article_without_tabs: "Show articles without tabs?"
+  show_attachments_first: "Show attachments before article content?"
+  show_breadcrumbs_for_article_lists: "Show breadcrumbs for articles in lists?"
   show_category_totals: "Показване на информацията за категориите в дървовидна структура?"
+  show_thumbnails_for_articles: "Show thumbnails for articles in lists?"
   summary_item_limit: "Ограничение на анотациите по размер"
   text_confirm_versions_delete: "This will revert and delete any newer versions of this document that may exist. Are you sure?"
   text_current_version: Current

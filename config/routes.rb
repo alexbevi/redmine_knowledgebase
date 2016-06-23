@@ -6,11 +6,12 @@ RedmineApp::Application.routes.draw do
 		resources :articles do
 			collection do
 				get "tagged"
+				get "authored"
 				post "preview"
 			end
-			
+
 			get "comment"
-			
+
 			member do
 				patch "preview"
 				post "add_comment"

@@ -19,9 +19,12 @@ zh:
   label_article_viewed: 
     one: "已阅 1 次"
     other: "已阅 %{count} 次"
+  label_attachment_add: "Add files"
+  label_authored_by: "Articles authored by"
   label_category: 分类
   label_category_created: "分类【'%{title}'】已创建"
   label_category_deleted: 分类已删除
+  label_category_has_subcategory_cannot_delete: "Category can not be deleted because it contains a subcategory."
   label_category_not_empty_cannot_delete: 当前分类下有文章，不能删除
   label_category_plural: 分类
   label_category_updated: 分类已更新
@@ -31,6 +34,8 @@ zh:
   label_description: 描述
   label_edit_article: 编辑
   label_edit_category: 编辑分类
+  label_filter_by_tag: "Filter by Tag"
+  label_filtered_by_tag: "Filtered by tag:"
   label_jump_category: 跳转到分类
   label_kb_article_plural: 知识库文章
   label_kb_home: 知识库主页
@@ -56,6 +61,7 @@ zh:
   label_title: 标题
   label_title_articles: 文章
   label_title_category: 分类
+  label_unrated_article: Unrated
   label_updated_who: "由 %{updater} 更新于 %{age} 前"
   message_no_articles: 目前尚未有任何文章
   message_no_categories: 目前未定义任何分类。您需要至少创建一个知识分类。
@@ -69,6 +75,7 @@ zh:
   permission_manage_article_history: 管理文章历史
   permission_manage_articles: 管理文章
   permission_manage_articles_comments: 管理文章评论
+  permission_manage_own_articles: "Manage own articles"
   permission_view_article_history: 查看文章历史
   permission_view_articles: 查看文章
   permission_view_kb_articles: 查看文章
@@ -78,7 +85,11 @@ zh:
   permission_watch_articles: 关注文章
   permission_watch_categories: 关注分类
   project_module_knowledgebase: 知识库
+  show_article_without_tabs: "Show articles without tabs?"
+  show_attachments_first: "Show attachments before article content?"
+  show_breadcrumbs_for_article_lists: "Show breadcrumbs for articles in lists?"
   show_category_totals: 在分类树中显示数量？
+  show_thumbnails_for_articles: "Show thumbnails for articles in lists?"
   summary_item_limit: 知识库主页文章限制
   text_confirm_versions_delete: 文章所有改动将丢失，是否继续？
   text_current_version: 当前

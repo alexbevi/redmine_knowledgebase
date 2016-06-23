@@ -19,7 +19,7 @@ Redmine::Plugin.register :redmine_knowledgebase do
   author_url  "http://www.alexbevi.com"
   description 'A plugin for Redmine that adds knowledgebase functionality'
   url         'https://github.com/alexbevi/redmine_knowledgebase'
-  version     '3.1.0'
+  version     '3.2.0'
 
   requires_redmine :version_or_higher => '3.0.0'
   requires_acts_as_taggable_on
@@ -33,7 +33,7 @@ Redmine::Plugin.register :redmine_knowledgebase do
 
   project_module :knowledgebase do
     permission :view_kb_articles, {
-      :articles      => [:index, :show, :tagged],
+      :articles      => [:index, :show, :tagged, :authored],
       :categories    => [:index, :show]
     }
     permission :comment_and_rate_articles, {
@@ -51,6 +51,10 @@ Redmine::Plugin.register :redmine_knowledgebase do
     permission :manage_articles, {
       :articles      => [:index, :show, :new, :create, :edit, :update, :destroy, :add_attachment,
                          :preview, :comment, :add_comment, :destroy_comment, :tagged],
+      :categories    => [:index, :show]
+    }
+    permission :manage_own_articles, {
+      :articles      => [:index, :show, :edit, :update, :destroy, :add_attachment, :preview, :tagged],
       :categories    => [:index, :show]
     }
     permission :manage_articles_comments, {
