@@ -19,7 +19,7 @@ Redmine::Plugin.register :redmine_knowledgebase do
   author_url  "http://www.alexbevi.com"
   description 'A plugin for Redmine that adds knowledgebase functionality'
   url         'https://github.com/alexbevi/redmine_knowledgebase'
-  version     '3.0.7'
+  version     '3.2.0'
 
   requires_redmine :version_or_higher => '2.0.0'
   requires_acts_as_taggable_on
