@@ -18,7 +18,9 @@ ru:
   label_article_version: "Версия статьи: %{version} - "
   label_article_viewed: 
     one: "Просмотрена один раз"
-    other: "Просмотрена %{count} раз"
+    few: "Просмотрена %{count} раза"
+    many: "Просмотрена %{count} раз"
+    other: "Просмотрена %{count} раза"
   label_attachment_add: "Add files"
   label_authored_by: "Articles authored by"
   label_category: Категория
@@ -53,9 +55,13 @@ ru:
   label_summary_newest_articles: "Создан %{ago} в категории %{category}"
   label_summary_popular_articles: 
     one: "Один просмотр с %{created}"
+    few: "Было %{count} просмотра с %{created}"
+    many: "Было %{count} просмотров с %{created}"
     other: "Было %{count} просмотров с %{created}"
   label_summary_toprated_articles: 
     one: "Рейтинг: %{rating_avg}/%{rating_max} после одного голоса"
+    few: "Рейтинг: %{rating_avg}/%{rating_max} после %{count} голосов"
+    many: "Рейтинг: %{rating_avg}/%{rating_max} после %{count} голосов"
     other: "Рейтинг: %{rating_avg}/%{rating_max} после %{count} голосов"
     zero: "Голосов нет"
   label_summary_updated_articles: "Обновлено %{ago}"
@@ -112,5 +118,7 @@ ru:
   title_top_rated_articles: "Статьи с наибольшим рейтингом"
   title_votes: 
     one: "один голос"
+    few: "%{count} голоса"
+    many: "%{count} голосов"
     other: "%{count} голосов"
     zero: "голосов нет"
