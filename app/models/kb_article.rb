@@ -41,7 +41,11 @@ class KbArticle < ActiveRecord::Base
 
     acts_as_searchable :columns => [ "#{table_name}.title", "#{table_name}.summary", "#{table_name}.content"],
                        :preload => [ :project ],
-                       :date_column => "#{table_name}.created_at"
+                       :date_column => :created_at
+  
+    scope :visible, lambda {|*args|
+      joins(:project).
+      where(Project.allowed_to_condition(args.shift || User.current, :view_kb_articles, *args))}
   else
     acts_as_activity_provider :find_options => {:include => :project},
                               :author_key => :author_id,
@@ -52,12 +56,14 @@ class KbArticle < ActiveRecord::Base
                        :include => [ :project ],
                        :order_column => "#{table_name}.id",
                        :date_column => "#{table_name}.created_at"
+    
+    scope :visible, lambda {|*args| { :include => :project,
+      :conditions => Project.allowed_to_condition(args.shift || User.current, :view_kb_articles, *args) } }
   end
 
   has_many :comments, -> { order 'created_on DESC' }, :as => :commented, :dependent => :destroy
 
-  scope :visible, lambda {|*args| { :include => :project,
-                                        :conditions => Project.allowed_to_condition(args.shift || User.current, :view_kb_articles, *args) } }
+
 
   def recipients
     notified = []
