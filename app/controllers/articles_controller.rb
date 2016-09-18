@@ -40,8 +40,17 @@ class ArticlesController < ApplicationController
 
     if params[:tag]
       @tag = params[:tag]
+      @tag_array = *@tag.split(',')
+      @tag_hash = Hash[ @tag_array.map{ |tag| [tag, 1] } ]
       @articles = @articles.tagged_with(@tag)
     end
+
+    # Pagination of article lists
+    @limit = redmine_knowledgebase_settings_value( :articles_per_list_page).to_i
+    @article_count = @articles.count
+    @article_pages = Redmine::Pagination::Paginator.new @article_count, @limit, params['page']
+    @offset ||= @article_pages.offset
+    @articles = @articles.offset(@offset).limit(@limit)
 
     @categories = @project.categories.where(:parent_id => nil)
 

@@ -106,6 +106,8 @@ h3.cattitle {
 .tag-large   { font-size: 120%; }
 .tag-x-large { font-size: 150%; }
 
+#taglist a.selected-tag { background-color: #bbb; }
+
 a.icon-delete {background:url(../images/delete.gif) no-repeat 0 -16px}
 
 
@@ -133,6 +135,75 @@ td.title {width: 50%; text-align: left;}
 td.created_at, td.updated_at {text-align: center;}
 div.summary { padding: 5px 10px; font-size: 0.9em; }
 
+th.sortbar { margin-right: 10px; padding-right: 12px;}
 th .current { padding-right: 16px; background-position: 100% 50%; background-repeat: no-repeat; }
 th .asc  { background-image: url(../../../images/sort_asc.png); }
 th .desc { background-image: url(../../../images/sort_desc.png); }
+
+div.flex-container {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+}
+ 
+div.flex-item {
+    position: relative;
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+    background-color:#F1F5F8; 
+    border:solid 1px #D5E2F1; 
+    -moz-border-radius: 5px; 
+    -webkit-border-radius: 5px; 
+    padding: 0px;
+    overflow:hidden;
+    box-shadow: 5px 5px 15px #bbbbbb;
+}
+
+div.tile-overlay {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    max-height: 70px;
+    background-color:#F1F5F8; 
+    padding: 5px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 9pt;
+    z-index: 2;
+}
+		
+div.title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12pt;
+    font-weight: bold;
+    color: #169;
+}
+
+/* Make tiles clickable */
+a.flex-link {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Default article thumbnail */
+div.flex-item { 
+    background-image: url(../images/default-thumbnail.png); 
+    background-repeat: no-repeat;  
+    background-size: cover;  
+}
+
+/* If you want custom default thumbnails by category, add them here! */
+/* div.flex-item.category-1 { background-image: url(../images/categories/category-1.png); } */

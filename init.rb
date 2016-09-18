@@ -28,6 +28,7 @@ Redmine::Plugin.register :redmine_knowledgebase do
     :sort_category_tree => true,
     :show_category_totals => true,
     :summary_limit => 25,
+    :articles_per_list_page => 100,
     :disable_article_summaries => false
   }, :partial => 'redmine_knowledgebase/knowledgebase_settings'
 

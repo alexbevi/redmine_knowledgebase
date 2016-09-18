@@ -25,13 +25,20 @@
 	<h3><%= l(:title_browse_by_category) %></h3>
   <%= render :partial => "categories/tree" %>
 
+
   <% if @tags %>
+  <% @tag ? currentTags = @tag + ',' : currentTags = '' %>
   <div id="taglist">
     <h3><%= l(:label_filter_by_tag) %></h3>
 
     <% tag_cloud(@tags, ['tag-x-small', 'tag-small', 'tag-medium', 'tag-large', 'tag-x-large']) do |tag, css_class| %>
-    <%= link_to(tag.name, {:controller => 'categories', :action => 'show', :id => @category.id, :project_id => @project, :tag => tag.name }, :class => "tag #{css_class}") %>
+
+    <% if @tag && @tag_hash[tag.name] %>
+      <a  class="tag <%= css_class %> selected-tag"><%= tag.name %></a> 
+    <% else %>
+      <%= link_to( tag.name, {:controller => 'categories', :action => 'show', :id => @category.id, :project_id => @project, :tag => currentTags + tag.name }, :class => "tag #{css_class}") %>
     <% end %>
+   <% end %>
   </div>
   <% end %>
 
@@ -51,16 +58,26 @@
 <% end %>
 
 <% if @tag %>
-<div class="category-tag-filter"><p><%= l(:label_filtered_by_tag) %> <%= @tag %> &nbsp;
-<%= link_to("", {:controller => 'categories', :action => 'show', :id => @category.id, :project_id => @project }, :class => "icon icon-delete") %>
+  <div class="category-tag-filter"><p><%= l(:label_filtered_by_tag) %>
+      <% n = 0 %>
+      <% @tag_array.each do |tag| %><%= n >= 1 ? ', ' : '' %><%= tag %><% n += 1 %><% end %>
+      <%= link_to("", {:controller => 'categories', :action => 'show', :id => @category.id, :project_id => @project }, :class => "icon icon-delete") %>
 </p></div>
 <% end %>
 
-<% if @category.articles.length > 0%>
+<% if @articles.length > 0%>
   <div class="articles category-articles">
-  <%= render :partial => 'articles/list_table', :locals => { :articles => @articles } %>
+    <% if redmine_knowledgebase_settings_value(:show_tiled_article_lists) %>
+      <%= render :partial => 'articles/list_tiled', :locals => { :articles => @articles } %>
+    <% else %>
+      <%= render :partial => 'articles/list_table', :locals => { :articles => @articles } %>
+    <% end %>
   </div>
 <% end %>
+
+
+<span class="pagination"><%= pagination_links_full @article_pages, @article_count %></span>
+
 
 <% other_formats_links do |f| %>
   <%= f.link_to 'Atom', :url => { :key => User.current.rss_key } %>

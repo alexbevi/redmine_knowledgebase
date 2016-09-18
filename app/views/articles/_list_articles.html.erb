@@ -1,0 +1,44 @@
+
+<% articles.each do |article| %>
+
+      <% style = '' %>
+      <% article.attachments.reverse_each do |attach| %>
+        <% if attach.thumbnailable? %>
+          <% style = 'background-image: url(' + thumbnail_path(attach) + ');' %>
+          <% break %>
+        <% end %>
+      <% end %>
+
+    <div id="article-<%= article.id %>" class="flex-item category-<% if article.category.ancestors.first %><%= article.category.ancestors.first.id %><% else %><%= article.category.id %><% end %>" style='<%= style %>' >
+
+      <%= link_to '', { :controller => 'articles', 
+      :action => 'show', 
+      :id => article.id, 
+      :project_id => @project}, :class => 'flex-link' %>
+
+      <div class="tile-overlay">
+
+      <div class="title">
+        <%= link_to article.title, { :controller => 'articles', 
+                                     :action => 'show', 
+                                     :id => article.id, 
+                                     :project_id => @project} %> 
+
+      </div>
+
+      <span class="rating"><% rating = article.rating_average.to_i %>
+	<% for i in 1..rating do %> &#9733; <% end %>
+
+      <% unless @author_id %>
+        <span class="author">        
+	  <%= link_to article.author.name, { :controller => 'articles', 
+          :action => 'authored', 
+          :author_id => article.author.id, 
+          :project_id => @project} %> 
+	</span>
+      <% end %>
+
+      </span>
+      </div>
+    </div>
+    <% end %>

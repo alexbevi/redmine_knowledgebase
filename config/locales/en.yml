@@ -1,5 +1,6 @@
 --- 
 en: 
+  articles_per_list_page: "Articles per list page?"
   allow_anon_access: "Allow anonymous access?"
   allow_sort_category_tree: "Sort the category tree alphabetically?"
   disable_article_summaries: "Disable Article Summaries"
@@ -34,7 +35,7 @@ en:
   label_description: Description
   label_edit_article: Edit
   label_edit_category: "Edit Category"
-  label_filtered_by_tag: "Filtered by tag:"
+  label_filtered_by_tag: "Filtered by:"
   label_filter_by_tag: "Filter by Tag"
   label_jump_category: "Jump Category"
   label_kb_article_plural: "Knowledgebase articles"
@@ -90,6 +91,7 @@ en:
   show_attachments_first: "Show attachments before article content?"
   show_breadcrumbs_for_article_lists: "Show breadcrumbs for articles in lists?"
   show_thumbnails_for_articles: "Show thumbnails for articles in lists?"
+  show_tiled_article_lists: "Show tiled article lists?"
   summary_item_limit: "Knowledgebase summary page article limit"
   text_confirm_versions_delete: "This will revert and delete any newer versions of this document that may exist. Are you sure?"
   text_current_version: Current

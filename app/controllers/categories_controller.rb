@@ -8,29 +8,33 @@ class CategoriesController < ApplicationController
   include WatchersHelper
 
   before_filter :find_project_by_project_id, :authorize
-  before_filter :get_category, :only => [:show, :edit, :update, :destroy]
+  before_filter :get_category, :only => [:show, :edit, :update, :destroy, :index]
   accept_rss_auth :show
 
   rescue_from ActiveRecord::RecordNotFound, :with => :force_404
+
+  def index
+
+    @articles = @project.articles.order("#{sort_column} #{sort_direction}")
+
+    prepare
+
+    respond_to do |format|
+      format.html { render :template => 'categories/index', :layout => !request.xhr? }
+    end
+
+  end
 
   def show
 
     @articles = @category.articles.order("#{sort_column} #{sort_direction}")
 
-    if params[:tag]
-      @tag = params[:tag]
-      @articles = @articles.tagged_with(@tag)
-    end
-
-    @categories = @project.categories.where(:parent_id => nil)
-
-    @tags = @articles.tag_counts.sort { |a, b| a.name.downcase <=> b.name.downcase }
+    prepare
 
     respond_to do |format|
       format.html { render :template => 'categories/show', :layout => !request.xhr? }
       format.atom { render_feed(@articles, :title => "#{l(:knowledgebase_title)}: #{l(:label_category)}: #{@category.title}") }
     end
-
   end
 
   def new
@@ -103,10 +107,34 @@ private
 #######
 
   def get_category
-    @category = @project.categories.find(params[:id])
+    if params[:id] != nil
+      @category = @project.categories.find(params[:id])
+    end
   end
 
   def force_404
     render_404
   end
+
+  def prepare
+
+    if params[:tag]
+      @tag = params[:tag]
+      @tag_array = *@tag.split(',')
+      @tag_hash = Hash[ @tag_array.map{ |tag| [tag, 1] } ]
+      @articles = @articles.tagged_with(@tag)
+    end
+
+    # Pagination of article lists
+    @limit = redmine_knowledgebase_settings_value( :articles_per_list_page).to_i
+    @article_count = @articles.count
+    @article_pages = Redmine::Pagination::Paginator.new @article_count, @limit, params['page']
+    @offset ||= @article_pages.offset
+    @articles = @articles.offset(@offset).limit(@limit)
+
+    @categories = @project.categories.where(:parent_id => nil)
+
+    @tags = @articles.tag_counts.sort { |a, b| a.name.downcase <=> b.name.downcase }
+  end
+
 end
