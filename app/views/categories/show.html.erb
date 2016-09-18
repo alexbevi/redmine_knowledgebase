@@ -48,7 +48,7 @@
 
 <% @kids = @category.children %>
 <% if @kids.length > 0 %>
-  <div class="categories">
+  <div class="categories box">
     <div class="category-header"><%= l(:label_subcategories) %></div>
     <br />
     <% @kids.each do |subs| %>
