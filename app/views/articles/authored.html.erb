@@ -36,7 +36,7 @@
   <div class="category-tag-filter"><p><%= l(:label_filtered_by_tag) %>
       <% n = 0 %>
       <% @tag_array.each do |tag| %><%= n >= 1 ? ', ' : '' %><%= tag %><% n += 1 %><% end %>
-      <%= link_to("", {:controller => 'articles', :action => 'authored', :author_id => @author_id, :project_id => @project }, :class => "icon icon-delete") %>
+      <%= link_to("", {:controller => 'articles', :action => 'authored', :author_id => @author_id, :project_id => @project }, :class => "icon icon-del") %>
 </p></div>
 <% end %>
 

@@ -161,7 +161,6 @@ div.flex-item {
     -webkit-border-radius: 5px; 
     padding: 0px;
     overflow:hidden;
-    box-shadow: 5px 5px 15px #bbbbbb;
 }
 
 div.tile-overlay {
