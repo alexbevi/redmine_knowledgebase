@@ -27,11 +27,13 @@
 	<% unless @article.tag_list.empty? %>
 	<br /><br /><br />
 	<div class="rating-title"><%= l(:title_tags) %></div>
-	<ul id="taglist">
+
+	<div id="taglist">
 	  <% @article.tag_list.each do |tag| %>
-     <li><%= link_to tag, { :action => "tagged", :id => tag, :project_id => @project }, :class => "tag" %></li>
+	    <%= link_to tag, { :controller => 'categories', :action => "index", :tag => tag, :project_id => @project }, :class => "tag" %>
     <% end %>
-	</ul>
+	</div>
+
   <% end %>
 <% end %>
 
