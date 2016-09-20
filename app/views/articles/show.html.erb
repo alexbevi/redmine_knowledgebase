@@ -1,7 +1,6 @@
 <% html_title @article.title %>
 
 <% content_for :header_tags do %>
-  <%= stylesheet_link_tag 'knowledgebase', :plugin => 'redmine_knowledgebase' %>
   <%= stylesheet_link_tag 'scm' %>
   <%= javascript_include_tag 'jquery.form.js', 'jquery.MetaData.js', 'jquery.rating.pack.js', :plugin => 'redmine_knowledgebase' %>
 <% end %>
