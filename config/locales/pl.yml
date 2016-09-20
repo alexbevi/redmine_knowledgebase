@@ -19,9 +19,12 @@ pl:
   label_article_viewed: 
     one: "Oglądany raz"
     other: "Oglądany %{count} razy"
+  label_attachment_add: "Add files"
+  label_authored_by: "Articles authored by"
   label_category: Kategoria
   label_category_created: "Kategoria '%{title}' utworzona"
   label_category_deleted: "Kategoria usunięta"
+  label_category_has_subcategory_cannot_delete: "Category can not be deleted because it contains a subcategory."
   label_category_not_empty_cannot_delete: "Kategoria jest przypisana do artykułów, więc nie mogła zostać usunięta."
   label_category_plural: Kategorie
   label_category_updated: "Kategoria zaktualizowana"
@@ -31,6 +34,8 @@ pl:
   label_description: Opis
   label_edit_article: Edytuj
   label_edit_category: "Edytuj kategorię"
+  label_filter_by_tag: "Filter by Tag"
+  label_filtered_by_tag: "Filtered by tag:"
   label_jump_category: "Idź do kategorii"
   label_kb_article_plural: "Artykuły bazy wiedzy"
   label_kb_home: "Strona główna"
@@ -56,6 +61,7 @@ pl:
   label_title: Tytuł
   label_title_articles: Artykuł
   label_title_category: Kategoria
+  label_unrated_article: Unrated
   label_updated_who: "Zaktualizowane przez %{updater} %{age} temu"
   message_no_articles: "W bazie wiedzy nie ma jeszcze żadnych artykułów."
   message_no_categories: "Niestety, niema zdefiniowanych żadnych kategorii. Musisz być zalogowany by utworzyć nowe kategorie."
@@ -69,6 +75,7 @@ pl:
   permission_manage_article_history: "Zarządzaj historią artykułów"
   permission_manage_articles: "Zarządzaj artykułami"
   permission_manage_articles_comments: "Zarządzaj komentarzami artykułów"
+  permission_manage_own_articles: "Manage own articles"
   permission_view_article_history: "Przeglądaj historię artykułu"
   permission_view_articles: "Przeglądaj artykuły"
   permission_view_kb_articles: "Przeglądaj artykuły"
@@ -78,7 +85,11 @@ pl:
   permission_watch_articles: "Obserwuj artykuły"
   permission_watch_categories: "Obserwuj kategorie"
   project_module_knowledgebase: "Baza wiedzy"
+  show_article_without_tabs: "Show articles without tabs?"
+  show_attachments_first: "Show attachments before article content?"
+  show_breadcrumbs_for_article_lists: "Show breadcrumbs for articles in lists?"
   show_category_totals: "Pokazywać podsumowania kategorii w drzewie?"
+  show_thumbnails_for_articles: "Show thumbnails for articles in lists?"
   summary_item_limit: "Ograniczenie strony podsumowania artykułu bazy wiedzy"
   text_confirm_versions_delete: "To cofnie i usunie wszystkie nowsze wersje tego dokumentu, które mogą istnieć. Jesteś pewien?"
   text_current_version: Aktualna

@@ -18,10 +18,15 @@ ru:
   label_article_version: "Версия статьи: %{version} - "
   label_article_viewed: 
     one: "Просмотрена один раз"
-    other: "Просмотрена %{count} раз"
+    few: "Просмотрена %{count} раза"
+    many: "Просмотрена %{count} раз"
+    other: "Просмотрена %{count} раза"
+  label_attachment_add: "Add files"
+  label_authored_by: "Articles authored by"
   label_category: Категория
   label_category_created: "Создана категория '%{title}'"
   label_category_deleted: "Категория удалена"
+  label_category_has_subcategory_cannot_delete: "Category can not be deleted because it contains a subcategory."
   label_category_not_empty_cannot_delete: "Категория содержит статьи и не может быть удалена."
   label_category_plural: Категории
   label_category_updated: "Категория обновлена"
@@ -31,6 +36,8 @@ ru:
   label_description: Описание
   label_edit_article: Редактировать
   label_edit_category: "Редактировать категорию"
+  label_filter_by_tag: "Filter by Tag"
+  label_filtered_by_tag: "Filtered by tag:"
   label_jump_category: "Перейти к категории"
   label_kb_article_plural: "Статьи базы знаний"
   label_kb_home: Начало
@@ -48,14 +55,20 @@ ru:
   label_summary_newest_articles: "Создан %{ago} в категории %{category}"
   label_summary_popular_articles: 
     one: "Один просмотр с %{created}"
+    few: "Было %{count} просмотра с %{created}"
+    many: "Было %{count} просмотров с %{created}"
     other: "Было %{count} просмотров с %{created}"
   label_summary_toprated_articles: 
     one: "Рейтинг: %{rating_avg}/%{rating_max} после одного голоса"
+    few: "Рейтинг: %{rating_avg}/%{rating_max} после %{count} голосов"
+    many: "Рейтинг: %{rating_avg}/%{rating_max} после %{count} голосов"
     other: "Рейтинг: %{rating_avg}/%{rating_max} после %{count} голосов"
+    zero: "Голосов нет"
   label_summary_updated_articles: "Обновлено %{ago}"
   label_title: Заголовок
   label_title_articles: Статьи
   label_title_category: Категория
+  label_unrated_article: Unrated
   label_updated_who: "Обновлено %{updater} %{age} назад"
   message_no_articles: "В базе знаний нет ни одной статьи. Чтобы начать нажмите Создать статью..."
   message_no_categories: "В базе знаний нет ни одной категории. Чтобы начать нажмите Создать категорию..."
@@ -69,6 +82,7 @@ ru:
   permission_manage_article_history: "Управлять историей статей"
   permission_manage_articles: "Управлять статьями"
   permission_manage_articles_comments: "Управлять комментариями к статьям"
+  permission_manage_own_articles: "Manage own articles"
   permission_view_article_history: "Просматривать историю статей"
   permission_view_articles: "Просматривать статьи"
   permission_view_kb_articles: "Просматривать статьи"
@@ -78,7 +92,11 @@ ru:
   permission_watch_articles: "Следить за статьями"
   permission_watch_categories: "Следить за категориями"
   project_module_knowledgebase: Knowledgebase
+  show_article_without_tabs: "Show articles without tabs?"
+  show_attachments_first: "Show attachments before article content?"
+  show_breadcrumbs_for_article_lists: "Show breadcrumbs for articles in lists?"
   show_category_totals: "Показать информацию по категориям в виде дерева?"
+  show_thumbnails_for_articles: "Show thumbnails for articles in lists?"
   summary_item_limit: "Лимит статей на странице сводки"
   text_confirm_versions_delete: "Данное изменение отменит и удалит все возможные новые версии данного докмуента. Вы уверены?"
   text_current_version: Текущая
@@ -100,5 +118,7 @@ ru:
   title_top_rated_articles: "Статьи с наибольшим рейтингом"
   title_votes: 
     one: "один голос"
+    few: "%{count} голоса"
+    many: "%{count} голосов"
     other: "%{count} голосов"
     zero: "голосов нет"

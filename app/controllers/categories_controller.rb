@@ -31,10 +31,13 @@ class CategoriesController < ApplicationController
 
     prepare
 
+    @tags = @articles.tag_counts.sort { |a, b| a.name.downcase <=> b.name.downcase }
+
     respond_to do |format|
       format.html { render :template => 'categories/show', :layout => !request.xhr? }
       format.atom { render_feed(@articles, :title => "#{l(:knowledgebase_title)}: #{l(:label_category)}: #{@category.title}") }
     end
+
   end
 
   def new
@@ -67,8 +70,8 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
-    @categories=@project.categories
-    
+    @categories = @project.categories.all
+
     # Do not allow deletion of categories with existing subcategories
     @subcategories = @project.categories.where(:parent_id => @category.id)
 

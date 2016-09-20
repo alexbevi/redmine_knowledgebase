@@ -19,9 +19,12 @@ pt-BR:
   label_article_viewed: 
     one: "Viewed once"
     other: "Viewed %{count} times"
+  label_attachment_add: "Add files"
+  label_authored_by: "Articles authored by"
   label_category: Categoria
   label_category_created: "Created category '%{title}'"
   label_category_deleted: "Category deleted"
+  label_category_has_subcategory_cannot_delete: "Category can not be deleted because it contains a subcategory."
   label_category_not_empty_cannot_delete: "Category is assigned to articles and could not be deleted."
   label_category_plural: Categorias
   label_category_updated: "Category updated"
@@ -31,6 +34,8 @@ pt-BR:
   label_description: Descrição
   label_edit_article: Edit
   label_edit_category: "Edit Category"
+  label_filter_by_tag: "Filter by Tag"
+  label_filtered_by_tag: "Filtered by tag:"
   label_jump_category: "Ir para Categoria"
   label_kb_article_plural: "Knowledgebase articles"
   label_kb_home: "Página Inicial"
@@ -56,6 +61,7 @@ pt-BR:
   label_title: Título
   label_title_articles: Artigo
   label_title_category: Categoria
+  label_unrated_article: Unrated
   label_updated_who: "Updated by %{updater} %{age} ago"
   message_no_articles: "Nenhum artigo cadastrado ainda, talvez você queira começar..."
   message_no_categories: "Unfortunately, there aren't any Categories defined, and you need to be logged in to create new categories."
@@ -69,6 +75,7 @@ pt-BR:
   permission_manage_article_history: "manage article history"
   permission_manage_articles: "Manage articles"
   permission_manage_articles_comments: "Manage articles comments"
+  permission_manage_own_articles: "Manage own articles"
   permission_view_article_history: "view article history"
   permission_view_articles: "View articles"
   permission_view_kb_articles: "View articles"
@@ -78,7 +85,11 @@ pt-BR:
   permission_watch_articles: "Watch articles"
   permission_watch_categories: "Watch categories"
   project_module_knowledgebase: Knowledgebase
+  show_article_without_tabs: "Show articles without tabs?"
+  show_attachments_first: "Show attachments before article content?"
+  show_breadcrumbs_for_article_lists: "Show breadcrumbs for articles in lists?"
   show_category_totals: "Show category totals in tree?"
+  show_thumbnails_for_articles: "Show thumbnails for articles in lists?"
   summary_item_limit: "Knowledgebase summary page article limit"
   text_confirm_versions_delete: "This will revert and delete any newer versions of this document that may exist. Are you sure?"
   text_current_version: Current

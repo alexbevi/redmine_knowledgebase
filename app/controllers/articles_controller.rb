@@ -95,7 +95,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article.view request.remote_ip, User.current
-    @attachments = @article.attachments.sort_by(&:created_on)
+    @attachments = @article.attachments.all.sort_by(&:created_on)
     @comments = @article.comments
     @versions = @article.versions.select("id, author_id, version_comments, updated_at, version").order('version DESC')
 
@@ -107,13 +107,13 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-
     if not @article.editable_by?(User.current)
       render_403
       return false
     end
 
-    @categories=@project.categories
+    @categories=@project.categories.all
+
     # don't keep previous comment
     @article.version_comments = nil
     @article.version = params[:version]
@@ -128,7 +128,7 @@ class ArticlesController < ApplicationController
 
     @article.updater_id = User.current.id
     params[:article][:category_id] = params[:category_id]
-    @categories = @project.categories
+    @categories = @project.categories.all
     # don't keep previous comment
     @article.version_comments = nil
     @article.version_comments = params[:article][:version_comments]
@@ -178,7 +178,6 @@ class ArticlesController < ApplicationController
   end
 
   def add_attachment
-
     if not @article.editable_by?(User.current)
       render_403
       return false

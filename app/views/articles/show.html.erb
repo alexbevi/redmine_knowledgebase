@@ -17,7 +17,9 @@
   <% end %>
 
 		<li><%= link_to_if_authorized l(:label_new_comment), { :controller => "articles", :action => "comment", :article_id => @article.id, :project_id => @project}, :class => "icon icon-comment", :remote => true, :method => :get %></li>
-		<li><%= watcher_link(@article, User.current) %></li>
+		<li>
+      <%= render :partial => 'watchers/watchers', :locals => {:watched => @article} %>
+    </li>
 	</ul>
 	<br />
   <div id='rating-container'>
@@ -46,7 +48,7 @@
 	<%= link_to @article.category.title, { :controller => 'categories', :action => 'show', :id => @article.category.id, :project_id => @project} %>
 </p>
 
-<h1><%= @article.title %></h1>
+<div class="wiki"><h1><%= @article.title %></h1></div>
 <% unless redmine_knowledgebase_settings_value(:disable_article_summaries) %>
   <div class="article-summary"><%= @article.summary %></div>
 <% end %>
@@ -54,7 +56,6 @@
 <% other_formats_links do |f| %>
   <%= f.link_to 'PDF', :url => params %>
 <% end %>
-
 
 <% unless redmine_knowledgebase_settings_value(:show_article_without_tabs) %>
   <%= render_tabs article_tabs %>

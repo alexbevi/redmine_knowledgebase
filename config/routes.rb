@@ -9,9 +9,9 @@ RedmineApp::Application.routes.draw do
 				get "authored"
 				post "preview"
 			end
-			
+
 			get "comment"
-			
+
 			member do
 				patch "preview"
 				post "add_comment"

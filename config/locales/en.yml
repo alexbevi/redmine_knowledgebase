@@ -35,8 +35,8 @@ en:
   label_description: Description
   label_edit_article: Edit
   label_edit_category: "Edit Category"
-  label_filtered_by_tag: "Filtered by:"
   label_filter_by_tag: "Filter by Tag"
+  label_filtered_by_tag: "Filtered by:"
   label_jump_category: "Jump Category"
   label_kb_article_plural: "Knowledgebase articles"
   label_kb_home: Home
@@ -62,6 +62,7 @@ en:
   label_title: Title
   label_title_articles: Article
   label_title_category: Category
+  label_unrated_article: Unrated
   label_updated_who: "Updated by %{updater} %{age} ago"
   label_unrated_article: "Unrated"
   message_no_articles: "No articles have been added yet. Click Create Article to get started."
@@ -86,6 +87,9 @@ en:
   permission_watch_articles: "Watch articles"
   permission_watch_categories: "Watch categories"
   project_module_knowledgebase: Knowledgebase
+  show_article_without_tabs: "Show articles without tabs?"
+  show_attachments_first: "Show attachments before article content?"
+  show_breadcrumbs_for_article_lists: "Show breadcrumbs for articles in lists?"
   show_category_totals: "Show category totals in tree?"
   show_article_without_tabs: "Show articles without tabs?"
   show_attachments_first: "Show attachments before article content?"

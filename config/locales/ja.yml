@@ -19,9 +19,12 @@ ja:
   label_article_viewed: 
     one: 1人が閲覧
     other: "%{count}人が閲覧"
+  label_attachment_add: "Add files"
+  label_authored_by: "Articles authored by"
   label_category: カテゴリ
   label_category_created: "'%{title}'カテゴリーを作成しました．"
   label_category_deleted: カテゴリーを削除しました．
+  label_category_has_subcategory_cannot_delete: "Category can not be deleted because it contains a subcategory."
   label_category_not_empty_cannot_delete: 関連記事があるため，カテゴリーを削除できません．
   label_category_plural: カテゴリ一覧
   label_category_updated: カテゴリーを更新しました．
@@ -31,6 +34,8 @@ ja:
   label_description: 説明
   label_edit_article: 編集
   label_edit_category: カテゴリを編集
+  label_filter_by_tag: "Filter by Tag"
+  label_filtered_by_tag: "Filtered by tag:"
   label_home: ホーム
   label_jump_category: カテゴリー選択
   label_kb_article_plural: ナレッジベースの記事
@@ -57,6 +62,7 @@ ja:
   label_title: 件名
   label_title_articles: 記事
   label_title_category: カテゴリ
+  label_unrated_article: Unrated
   label_updated_who: "%{updater}によって%{age}に更新"
   message_no_articles: ナレッジベースに追加された記事はありません．早速作りましょう！
   message_no_categories: 定義されたカテゴリがありません．新しいカテゴリを作成するにはログインする必要があります．
@@ -70,6 +76,7 @@ ja:
   permission_manage_article_history: 記事の履歴管理
   permission_manage_articles: 記事の管理
   permission_manage_articles_comments: 記事のコメント管理
+  permission_manage_own_articles: "Manage own articles"
   permission_view_article_history: 記事履歴の閲覧
   permission_view_articles: 記事の閲覧
   permission_view_kb_articles: 記事の閲覧
@@ -79,7 +86,11 @@ ja:
   permission_watch_articles: 記事のウォッチ
   permission_watch_categories: カテゴリのウォッチ
   project_module_knowledgebase: Knowledgebase
+  show_article_without_tabs: "Show articles without tabs?"
+  show_attachments_first: "Show attachments before article content?"
+  show_breadcrumbs_for_article_lists: "Show breadcrumbs for articles in lists?"
   show_category_totals: ツリーの全てのカテゴリを表示する
+  show_thumbnails_for_articles: "Show thumbnails for articles in lists?"
   summary_item_limit: ナレッジベースに表示する記事数
   text_confirm_versions_delete: このドキュメントの新しいバージョンが存在する場合、記事は逆戻りして削除されます．よろしいですか?
   text_current_version: 現在のバージョン

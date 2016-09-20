@@ -25,24 +25,44 @@ class KbArticle < ActiveRecord::Base
   acts_as_versioned :if_changed => [:title, :content, :summary]
   self.non_versioned_columns << 'comments_count'
 
-  acts_as_searchable :columns => [ "#{table_name}.title", "#{table_name}.summary", "#{table_name}.content"],
-                     :scope => preload(:project),
-                     :date_column => "created_at"
-
   acts_as_event :title => Proc.new {|o| status = (o.new_status ? "(#{l(:label_new_article)})" : nil ); "#{status} #{l(:label_title_articles)} ##{o.id} - #{o.title}" },
                 :description => :content,
                 :datetime => :updated_at,
                 :type => Proc.new { |o| 'article-' + (o.new_status ? 'add' : 'edit') },
                 :url => Proc.new { |o| {:controller => 'articles', :action => 'show', :id => o.id, :project_id => o.project} }
 
-  acts_as_activity_provider :scope => preload(:project),
-                            :author_key => :author_id,
-                            :type => 'kb_articles',
-                            :timestamp => :updated_at
+  # Redmine 3.1.X
+  if ActiveRecord::VERSION::MAJOR >= 4
+    acts_as_activity_provider :scope => joins(:project),
+                              :permission => :view_kb_articles,
+                              :author_key => :author_id,
+                              :type => 'kb_articles',
+                              :timestamp => :updated_at
+
+    acts_as_searchable :columns => [ "#{table_name}.title", "#{table_name}.summary", "#{table_name}.content"],
+                       :preload => [ :project ],
+                       :date_column => :created_at
+  
+    scope :visible, lambda {|*args|
+      joins(:project).
+      where(Project.allowed_to_condition(args.shift || User.current, :view_kb_articles, *args))}
+  else
+    acts_as_activity_provider :find_options => {:include => :project},
+                              :author_key => :author_id,
+                              :type => 'kb_articles',
+                              :timestamp => :updated_at
+
+    acts_as_searchable :columns => [ "#{table_name}.title", "#{table_name}.summary", "#{table_name}.content"],
+                       :include => [ :project ],
+                       :order_column => "#{table_name}.id",
+                       :date_column => "#{table_name}.created_at"
+    
+    scope :visible, lambda {|*args| { :include => :project,
+      :conditions => Project.allowed_to_condition(args.shift || User.current, :view_kb_articles, *args) } }
+  end
 
   has_many :comments, -> { order 'created_on DESC' }, :as => :commented, :dependent => :destroy
 
-  scope :visible, ->(*args) { joins(:project).where(Project.allowed_to_condition(args.shift || User.current, :view_kb_articles, *args)) }
 
   def recipients
     notified = []
