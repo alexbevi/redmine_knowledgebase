@@ -163,6 +163,11 @@ div.flex-item {
     -webkit-border-radius: 5px; 
     padding: 0px;
     overflow:hidden;
+    background-repeat: no-repeat;  
+    background-size: cover;  
+    background-position: center;  
+    /* Default article thumbnail */
+    background-image: url(../images/default-thumbnail.png); 
 }
 
 div.tile-overlay {
@@ -197,13 +202,6 @@ a.flex-link {
     width: 100%;
     height: 100%;
     z-index: 1;
-}
-
-/* Default article thumbnail */
-div.flex-item { 
-    background-image: url(../images/default-thumbnail.png); 
-    background-repeat: no-repeat;  
-    background-size: cover;  
 }
 
 /* If you want custom default thumbnails by category, add them here! */
