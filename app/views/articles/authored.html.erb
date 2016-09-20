@@ -11,23 +11,7 @@
 	<h3><%= l(:title_browse_by_category) %></h3>
   <%= render :partial => "categories/tree" %>
 
-
-  <% if @tags %>
-  <% @tag ? currentTags = @tag + ',' : currentTags = '' %>
-  <div id="taglist">
-    <h3><%= l(:label_filter_by_tag) %></h3>
-
-    <% tag_cloud(@tags, ['tag-x-small', 'tag-small', 'tag-medium', 'tag-large', 'tag-x-large']) do |tag, css_class| %>
-
-
-    <% if @tag && @tag_hash[tag.name] %>
-      <a  class="tag <%= css_class %> selected-tag"><%= tag.name %></a> 
-    <% else %>
-      <%= link_to( tag.name, {:controller => 'articles', :action => 'authored', :author_id => @author_id, :project_id => @project, :tag => currentTags + tag.name }, :class => "tag #{css_class}") %>
-    <% end %>
-    <% end %>
-  </div>
-  <% end %>
+  <%= render :partial => "categories/tags", :locals => { :controller => 'articles', :action => 'authored', :author_id => @author_id } %>
 
 <% end %>
 

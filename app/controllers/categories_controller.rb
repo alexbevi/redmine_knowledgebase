@@ -128,6 +128,9 @@ private
       @articles = @articles.tagged_with(@tag)
     end
 
+    @tags = @articles.tag_counts.sort { |a, b| a.name.downcase <=> b.name.downcase }
+    @tags_hash = Hash[ @articles.tag_counts.map{ |tag| [tag.name, 1] } ]
+
     # Pagination of article lists
     @limit = redmine_knowledgebase_settings_value( :articles_per_list_page).to_i
     @article_count = @articles.count
@@ -136,8 +139,6 @@ private
     @articles = @articles.offset(@offset).limit(@limit)
 
     @categories = @project.categories.where(:parent_id => nil)
-
-    @tags = @articles.tag_counts.sort { |a, b| a.name.downcase <=> b.name.downcase }
   end
 
 end

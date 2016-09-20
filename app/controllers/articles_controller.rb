@@ -31,6 +31,8 @@ class ArticlesController < ApplicationController
     @articles_toprated = @project.articles.includes(:ratings).sort_by { |a| [a.rating_average, a.rated_count] }.reverse.first(summary_limit)
 
     @tags = @project.articles.tag_counts.sort { |a, b| a.name.downcase <=> b.name.downcase }
+    @tags_hash = Hash[ @project.articles.tag_counts.map{ |tag| [tag.name, 1] } ]
+
   end
 
   def authored
@@ -45,6 +47,9 @@ class ArticlesController < ApplicationController
       @articles = @articles.tagged_with(@tag)
     end
 
+    @tags = @articles.tag_counts.sort { |a, b| a.name.downcase <=> b.name.downcase }
+    @tags_hash = Hash[ @articles.tag_counts.map{ |tag| [tag.name, 1] } ]
+
     # Pagination of article lists
     @limit = redmine_knowledgebase_settings_value( :articles_per_list_page).to_i
     @article_count = @articles.count
@@ -53,8 +58,6 @@ class ArticlesController < ApplicationController
     @articles = @articles.offset(@offset).limit(@limit)
 
     @categories = @project.categories.where(:parent_id => nil)
-
-    @tags = @articles.tag_counts.sort { |a, b| a.name.downcase <=> b.name.downcase }
   end
 
   def new

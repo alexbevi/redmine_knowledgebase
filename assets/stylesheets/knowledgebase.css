@@ -108,7 +108,8 @@ h3.cattitle {
 .tag-large   { font-size: 120%; }
 .tag-x-large { font-size: 150%; }
 
-#taglist a.selected-tag { background-color: #bbb; }
+#taglist a.selected-tag { background-color: #060; color: #E1FFD1; }
+#taglist a.invalid-tag { background-color: #bbb; }
 a.icon-delete {background:url(../images/delete.gif) no-repeat 0 -16px}
 
 
@@ -201,6 +202,10 @@ a.flex-link {
     width: 100%;
     height: 100%;
     z-index: 1;
+}
+
+#sidebar hr.taglist-divider {
+    margin: 5px 0 5px 0;
 }
 
 /* If you want custom default thumbnails by category, add them here! */

@@ -3,6 +3,7 @@ en:
   articles_per_list_page: "Articles per list page?"
   allow_anon_access: "Allow anonymous access?"
   allow_sort_category_tree: "Sort the category tree alphabetically?"
+  critical_tags: "Critical tags to show first (comma separated)."
   disable_article_summaries: "Disable Article Summaries"
   field_article_author: "Created by"
   field_article_destroyer: "Deleted by"
