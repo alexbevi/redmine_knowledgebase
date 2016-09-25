@@ -1,6 +1,8 @@
 
 <% articles.each do |article| %>
 
+  <div id="article-<%= article.id %>" class="flex-item box category-<% if article.category.ancestors.first %><%= article.category.ancestors.first.id %><% else %><%= article.category.id %><% end %>" >
+
       <% style = '' %>
       <% article.attachments.reverse_each do |attach| %>
         <% if attach.thumbnailable? %>
@@ -9,7 +11,8 @@
         <% end %>
       <% end %>
 
-    <div id="article-<%= article.id %>" class="flex-item category-<% if article.category.ancestors.first %><%= article.category.ancestors.first.id %><% else %><%= article.category.id %><% end %>" style='<%= style %>' >
+      <div class="tile-thumbnail" style='<%= style %>'>
+      </div>
 
       <%= link_to '', { :controller => 'articles', 
       :action => 'show', 
@@ -18,19 +21,10 @@
 
       <div class="tile-overlay">
 
-      <div class="title">
-        <%= link_to article.title, { :controller => 'articles', 
-                                     :action => 'show', 
-                                     :id => article.id, 
-                                     :project_id => @project} %> 
-
-      </div>
-
-      <span class="rating"><% rating = article.rating_average.to_i %>
-	<% for i in 1..rating do %> &#9733; <% end %>
+      <div class="tile-title"><%= article.title %></div>
 
       <% unless @author_id %>
-        <span class="author">        
+        <span class="tile-author">        
 	  <%= link_to article.author.name, { :controller => 'articles', 
           :action => 'authored', 
           :author_id => article.author.id, 
@@ -38,7 +32,10 @@
 	</span>
       <% end %>
 
-      </span>
+      <div class="tile-rating"><% rating = article.rating_average.to_i %>
+	<% for i in 1..rating do %> &#9733; <% end %>
+      </div>
+
       </div>
     </div>
     <% end %>
