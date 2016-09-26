@@ -66,6 +66,12 @@ class ArticlesController < ApplicationController
     @default_category = params[:category_id]
     @article.category_id = params[:category_id]
     @article.version = params[:version]
+    
+    # Prefill with critical tags
+    if redmine_knowledgebase_settings_value(:critical_tags)
+          @article.tag_list = redmine_knowledgebase_settings_value(:critical_tags).split(',')
+    end
+
     @tags = @project.articles.tag_counts
   end
 
