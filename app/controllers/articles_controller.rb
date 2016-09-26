@@ -66,6 +66,7 @@ class ArticlesController < ApplicationController
     @default_category = params[:category_id]
     @article.category_id = params[:category_id]
     @article.version = params[:version]
+    @tags = @project.articles.tag_counts
   end
 
   def rate
@@ -120,6 +121,7 @@ class ArticlesController < ApplicationController
     # don't keep previous comment
     @article.version_comments = nil
     @article.version = params[:version]
+    @tags = @project.articles.tag_counts
   end
 
   def update
