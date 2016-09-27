@@ -1,7 +1,9 @@
 
 <% articles.each do |article| %>
 
-  <div id="article-<%= article.id %>" class="flex-item box category-<% if article.category.ancestors.first %><%= article.category.ancestors.first.id %><% else %><%= article.category.id %><% end %>" >
+  <% category_id = article.category.ancestors.first ? article.category.ancestors.first.id : article.category.id %>
+
+  <div id="article-<%= article.id %>" class="flex-item box" >
 
       <% style = '' %>
       <% article.attachments.reverse_each do |attach| %>
@@ -11,7 +13,7 @@
         <% end %>
       <% end %>
 
-      <div class="tile-thumbnail" style='<%= style %>'>
+      <div class="tile-thumbnail category-<%= category_id %>" style='<%= style %>'>
       </div>
 
       <%= link_to '', { :controller => 'articles', 
@@ -21,7 +23,7 @@
 
       <div class="tile-overlay">
 
-      <div class="tile-title"><%= article.title %></div>
+      <div class="tile-title icon-category-<%= category_id %>"><%= article.title %></div>
 
       <% unless @author_id %>
         <span class="tile-author">        

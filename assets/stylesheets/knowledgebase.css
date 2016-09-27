@@ -233,5 +233,7 @@ span.tile-author {
 }
 
 /* If you want custom default thumbnails by category, add them here! */
-/* div.flex-item.category-1 { background-image: url(../images/categories/category-1.png); } */
-/* div.title.category-1 { background-image: url(../images/categories/icon-category-1.png); } */
+/*
+div.category-1 { background-image: url(../images/categories/category-1.png); }
+div.icon-category-1 { background-image: url(../images/categories/category-1-icon.png); }
+*/
