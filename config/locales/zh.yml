@@ -2,7 +2,7 @@
 zh: 
   allow_anon_access: "是否允许匿名访问？"
   allow_sort_category_tree: "分类树按字母排序？"
-  disable_article_summaries: "禁止文章汇总"
+  disable_article_summaries: "禁用文章摘要"
   field_article_author: "作者"
   field_article_destroyer: "删除者"
   field_article_updater: "修订人"
@@ -75,7 +75,7 @@ zh:
   permission_manage_article_history: "管理文章历史"
   permission_manage_articles: "管理文章"
   permission_manage_articles_comments: "管理文章评论"
-  permission_manage_own_articles: "管理自己的知识库文章"
+  permission_manage_own_articles: "管理自己的文章"
   permission_view_article_history: "查看文章历史"
   permission_view_articles: "查看文章"
   permission_view_kb_articles: "查看文章"
@@ -110,6 +110,6 @@ zh:
   title_tags: 标签
   title_top_rated_articles: "评分最高的文章"
   title_votes: 
-    one: "1 次评分。"
-    other: "%{count} 次评分。"
+    one: "评分 1 次。"
+    other: "评分 %{count} 次。"
     zero: "未评分。"
