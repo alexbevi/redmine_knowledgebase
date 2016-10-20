@@ -109,7 +109,7 @@ zh:
   title_tagged_articles: "含【%{tag}】标签的文章"
   title_tags: 标签
   title_top_rated_articles: "评分最高的文章"
-  title_votes: "评分"
+  title_votes: 
     one: "1 次评分。"
     other: "%{count} 次评分。"
     zero: "未评分。"
