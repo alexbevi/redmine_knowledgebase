@@ -35,5 +35,19 @@ module Macros
       category = KbCategory.find(args.first)
       link_to_category_with_title(category)
     end
+
+    desc "Knowledge base Article link Macro, using the kb# format"
+    macro :kb_include do |obj, args|
+      args, options = extract_macro_options(args, :parent)
+      raise 'No or bad arguments.' if args.size != 1
+      article = KbArticle.find(args.first)
+      raise 'KB not found' if article.nil?
+      @included_kb_articles ||= []
+      raise 'Circular inclusion detected' if @included_kb_articles.include?(article.id)
+      @included_kb_articles << article.id
+      out = textilizable(article.content, :attachments => article.attachments, :headings => false)
+      @included_kb_articles.pop
+      out
+    end
   end
 end
