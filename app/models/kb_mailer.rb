@@ -26,6 +26,7 @@ class KbMailer < Mailer
   
   def article_destroy(article)
 	redmine_headers 'Project' => article.project.identifier
+	@project = article.project
  	@article = article
 	@destroyer = User.current
 	recipients = article.recipients
