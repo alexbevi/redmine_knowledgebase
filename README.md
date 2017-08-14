@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/alexbevi/redmine_knowledgebase.png)](https://travis-ci.org/alexbevi/redmine_knowledgebase) [![endorse](http://api.coderwall.com/alexbevi/endorsecount.png)](http://coderwall.com/alexbevi)
 [![Flattr this][2]][1][![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/alexbevi/redmine_knowledgebase/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
-## MAINTENER WANTED
+## MAINTAINER WANTED
 
 **[Aug. 14, 2017] After 7 years of maintaining this plugin (though not much in the past year), I've decided to sunset my involvement in this project. I learned a lot about Ruby, Rails and Redmine in my time as author and maintainer, but I've moved on and don't use Redmine actively anymore.**
 
