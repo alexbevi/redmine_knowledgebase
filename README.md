@@ -1,3 +1,13 @@
+https://github.com/alexbevi/redmine_knowledgebase をベースにRedmine3.4で使えるように修正したものです
+本家がメンテナンスする人を募集していますので、そちらに統合できればいいですが当面自分のわかる範囲でメンテナンスしていきたいとおもいます
+ライセンスはオリジナルのものを継承します
+
+協力していただける方募集中です
+
+以下オリジナルのREADMEです
+
+---
+
 [![Build Status](https://travis-ci.org/alexbevi/redmine_knowledgebase.png)](https://travis-ci.org/alexbevi/redmine_knowledgebase) [![endorse](http://api.coderwall.com/alexbevi/endorsecount.png)](http://coderwall.com/alexbevi)
 [![Flattr this][2]][1][![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/alexbevi/redmine_knowledgebase/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
@@ -20,7 +30,6 @@ The latest version of this plugin is for Redmine 3.x and up. If you're still usi
 ## Introduction
 
 [![Join the chat at https://gitter.im/alexbevi/redmine_knowledgebase](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/alexbevi/redmine_knowledgebase?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Falexbevi%2Fredmine_knowledgebase.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Falexbevi%2Fredmine_knowledgebase?ref=badge_shield)
 
 <a href="http://www.packtpub.com/redmine-plugin-extension-and-development/book" target ="_blank">
 <img align="right" src="http://www.alexbevi.com/images/8748OS_mockupcover_normal_0.jpg" alt="Redmine Plugin Extension and Development">
@@ -239,7 +248,3 @@ Though I initially wrote this plugin, it would not be possible without the many 
 
 [1]: http://flattr.com/thing/890708/alexbeviredmineknowledgebase
 [2]: http://api.flattr.com/button/flattr-badge-large.png
-
-
-## License
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Falexbevi%2Fredmine_knowledgebase.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Falexbevi%2Fredmine_knowledgebase?ref=badge_large)
