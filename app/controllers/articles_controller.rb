@@ -108,6 +108,7 @@ class ArticlesController < ApplicationController
     @attachments = @article.attachments.all.sort_by(&:created_on)
     @comments = @article.comments
     @versions = @article.versions.select("id, author_id, version_comments, updated_at, version").order('version DESC')
+    @kb_use_thumbs = redmine_knowledgebase_settings_value(:show_thumbnails_for_articles)
 
     respond_to do |format|
       format.html { render :template => 'articles/show', :layout => !request.xhr? }
@@ -128,6 +129,8 @@ class ArticlesController < ApplicationController
     @article.version_comments = nil
     @article.version = params[:version]
     @tags = @project.articles.tag_counts
+    @kb_article_editing = true
+    @kb_use_thumbs = redmine_knowledgebase_settings_value(:show_thumbnails_for_articles)
   end
 
   def update

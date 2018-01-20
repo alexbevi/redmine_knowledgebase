@@ -7,6 +7,10 @@
 
 <div class="contextual">
   <%= render :partial => "categories/jump_box" %>
+
+  <% if @project.categories.length > 0 %>	
+    <%= link_to_if_authorized l(:title_create_article), { :controller => 'articles', :action => 'new', :project_id => @project}, :class => 'icon icon-add' %>
+  <% end %>
 </div>
 
 <% content_for :sidebar do %>
@@ -48,13 +52,21 @@
 	<%= link_to @article.category.title, { :controller => 'categories', :action => 'show', :id => @article.category.id, :project_id => @project} %>
 </p>
 
-<div class="wiki"><h1><%= @article.title %></h1></div>
-<% unless redmine_knowledgebase_settings_value(:disable_article_summaries) %>
-  <div class="article-summary"><%= @article.summary %></div>
-<% end %>
-
 <% other_formats_links do |f| %>
   <%= f.link_to 'PDF', :url => params %>
+<% end %>
+
+<div class="wiki"><h1><%= @article.title %></h1></div>
+
+<% unless redmine_knowledgebase_settings_value(:disable_article_summaries) %>
+
+  <% if redmine_knowledgebase_settings_value(:show_thumbnails_for_articles) %>
+    <%= image_tag( get_article_thumbnail_url( @article ), :class => 'article-summary-thumbnail' ) %>
+  <% end %>
+
+  <div class="article-summary">
+    <%= @article.summary %>
+  </div>
 <% end %>
 
 <% unless redmine_knowledgebase_settings_value(:show_article_without_tabs) %>
@@ -65,22 +77,21 @@
   <hr>
 
   <% if redmine_knowledgebase_settings_value(:show_attachments_first) %>
-    <h2><%= l(:label_attachment_plural) %></h2>
     <%= render :partial => "articles/sections/attachments" %>
-    <hr>
   <% end %>
 
   <h2><%= l(:label_description) %></h2>
   <%= render :partial => "articles/sections/content" %>
   <hr>
   <h2><%= l(:label_comment_plural) %></h2>
+
+  <p><%= link_to_if_authorized l(:label_new_comment), { :controller => "articles", :action => "comment", :article_id => @article.id, :project_id => @project}, :class => "icon icon-comment", :remote => true, :method => :get %></p>
+
   <%= render :partial => "articles/sections/comments" %>
   <hr>
 
   <% unless redmine_knowledgebase_settings_value(:show_attachments_first) %>
-    <h2><%= l(:label_attachment_plural) %></h2>
     <%= render :partial => "articles/sections/attachments" %>
-    <hr>
   <% end %>
 
   <% if User.current.allowed_to?(:view_article_history, @project) %>

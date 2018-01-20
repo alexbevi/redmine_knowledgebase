@@ -23,7 +23,7 @@ h3.cattitle {
 }
 
 .article-info { color: #aaaaaa; font-size: 0.9em; }
-.article-summary { font-weight: normal; font-size: 11px; color: #777777; line-height: 17px; text-decoration: none; padding: 5px 10px; }
+.article-summary-thumbnail { float: left;  padding: 0 10px 10px 0; }
 .article-title { margin: 0px; padding: 6px 0px 5px 0px; color:#669933; font-size: 16px; font-weight: bold; }
 .article-icon {
 	background-position: 5px 10px;

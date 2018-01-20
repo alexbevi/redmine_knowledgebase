@@ -142,4 +142,39 @@ module KnowledgebaseHelper
       preview_link({ :controller => 'articles', :action => 'preview' }, 'articles-form')
     end
   end
+
+  # The first thumbnailable attachment with description 'thumbnail' is used
+  # as the article thumbnail.  If none is found, then the last thumbnailable
+  # attachment is used.  This is to use Redmine attachment model without changes.
+
+  def get_article_thumbnail( article )
+
+    thumb = article.attachments.find {|a| (a.description == 'thumbnail' && a.thumbnailable?) }
+
+    if !thumb
+      article.attachments.reverse_each do |attach|
+        if attach.thumbnailable? 
+          thumb = attach
+          break
+        end
+      end
+    end
+
+    return thumb
+  end
+
+
+  def get_article_thumbnail_url( article )
+    
+    thumb = get_article_thumbnail( article )
+
+    if thumb
+      return thumbnail_path(thumb)
+    else
+      return nil
+    end
+  end
+
+
 end
+

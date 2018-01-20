@@ -6,11 +6,9 @@
   <div id="article-<%= article.id %>" class="flex-item box" >
 
       <% style = '' %>
-      <% article.attachments.reverse_each do |attach| %>
-        <% if attach.thumbnailable? %>
-          <% style = 'background-image: url(' + thumbnail_path(attach) + ');' %>
-          <% break %>
-        <% end %>
+      <% thumb = get_article_thumbnail_url( article ) %>
+      <% if thumb %>
+          <% style = 'background-image: url(' + thumb + ');' %>
       <% end %>
 
       <div class="tile-thumbnail category-<%= category_id %>" style='<%= style %>'>

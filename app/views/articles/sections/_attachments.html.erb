@@ -1,7 +1,13 @@
 
-<%= link_to_attachments @article,
-:thumbnails => true,
-:author => false %>
+<% if @article.attachments.find {|a| a.description != 'thumbnail' } %>
 
+  <h2><%= l(:label_attachment_plural) %></h2>
 
+  <%= link_to_attachments @article,
+    :thumbnails => true,
+    :author => false %>
+
+  <hr>
+ 
+<% end %>
 

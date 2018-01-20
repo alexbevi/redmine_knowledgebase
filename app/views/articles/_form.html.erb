@@ -36,10 +36,17 @@
 <% if @article.attachments.exists? %>
 <div class="box">
   <p><label><%= l(:label_attachment_plural) %></label>
-    <%= render :partial => "articles/sections/attachments" %>
+    <%= link_to_attachments @article,
+	:thumbnails => true,
+        :author => false %>
   </p>
 </div>
 <% end %>
+
+<% if redmine_knowledgebase_settings_value(:show_thumbnails_for_articles) %>
+  <p><%= l(:thumbnail_explanation) %></p>
+<% end %>
+
 
 <div class="box">
 <p><label><%=l(:label_attachment_add)%></label><%= render :partial => 'attachments/form' %></p>

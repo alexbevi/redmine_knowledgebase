@@ -5,6 +5,7 @@ en:
   allow_sort_category_tree: "Sort the category tree alphabetically?"
   critical_tags: "Critical tags to show first (comma separated)."
   disable_article_summaries: "Disable Article Summaries"
+  description_create_article: ""
   field_article_author: "Created by"
   field_article_destroyer: "Deleted by"
   field_article_updater: "Updated by"
@@ -100,6 +101,7 @@ en:
   summary_item_limit: "Knowledgebase summary page article limit"
   text_confirm_versions_delete: "This will revert and delete any newer versions of this document that may exist. Are you sure?"
   text_current_version: Current
+  thumbnail_explanation: "When adding a file, use the description \"thumbnail\" to set an image as (only) the thumbnail for this item.  Otherwise the last uploaded image file will also be used as the thumbnail."
   title_add_comment: "Add Comment"
   title_article_rating: "Article Rating"
   title_browse_by_category: "Browse by Category"
