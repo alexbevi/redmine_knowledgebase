@@ -23,7 +23,7 @@ h3.cattitle {
 }
 
 .article-info { color: #aaaaaa; font-size: 0.9em; }
-.article-summary-thumbnail { float: left;  padding: 0 10px 10px 0; }
+.article-summary-thumbnail { float: right;  padding: 10px 0 0 10px; }
 .article-title { margin: 0px; padding: 6px 0px 5px 0px; color:#669933; font-size: 16px; font-weight: bold; }
 .article-icon {
 	background-position: 5px 10px;
@@ -131,6 +131,7 @@ dt.article-add { background-image: url(../images/page_add.png); }
 dt.article-edit { background-image: url(../images/page_edit.png); }
 
 div.articles h3 { background: url(../images/page.png) no-repeat 0% 50%; padding-left: 20px; }
+div.articles h2 { padding-top: 18px; }
 
 /* Table styling */
 td.title {width: 50%; text-align: left;}
@@ -155,21 +156,21 @@ div.flex-container {
  
 div.flex-item {
     position: relative;
-    margin: 10px;
+    margin: 6px;
     width: 200px;
-    height: 200px;
-    border:solid 1px #D5E2F1; 
+    height: 250px;
     padding: 0px;
     overflow:hidden;
     background-repeat: no-repeat;  
     background-size: cover;  
     background-position: center;  
+    box-shadow: -1px -1px 0 0 hsla(0,0%,100%,.1),1px 1px 0 0 rgba(0, 0, 0, 0.76);
 }
 
 div.tile-thumbnail {
     position: absolute;
     width: 100%;
-    height: 75%;
+    height: 200px;
     top: 0px;
     left: 0px;
     -webkit-box-sizing: border-box;
@@ -187,7 +188,7 @@ div.tile-thumbnail {
 div.tile-overlay {
     position: absolute;
     width: 100%;
-    top: 75%;
+    top: 200px;
     max-height: 70px;
     padding: 5px;
     -webkit-box-sizing: border-box;
@@ -204,7 +205,8 @@ div.tile-title {
     font-weight: bold;
     /* Default article icon */
     background: url(../images/page.png) no-repeat 0% 50%; 
-    padding-left: 20px;
+    padding-left: 28px;
+    height: 24px;
 }
 
 div.tile-rating {
@@ -232,9 +234,14 @@ span.tile-author {
     z-index: 20;
 }
 
+div.attachments {
+    overflow: hidden;
+}
+
 
 /* If you want custom default thumbnails by category, add them here! */
 /*
-div.category-1 { background-image: url(../images/categories/category-1.png); }
-div.icon-category-1 { background-image: url(../images/categories/category-1-icon.png); }
+div.category-1 { background-image: url(../images/categories/cat1.svg); }
+div.icon-category-1 { background-image: url(../images/categories/cat1.svg); }
 */
+

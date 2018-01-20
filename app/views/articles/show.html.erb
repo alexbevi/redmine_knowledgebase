@@ -65,7 +65,7 @@
   <% end %>
 
   <div class="article-summary">
-    <%= @article.summary %>
+    <p><%= @article.summary %></p>
   </div>
 <% end %>
 
@@ -74,7 +74,7 @@
 
 <% else %>
 
-  <hr>
+
 
   <% if redmine_knowledgebase_settings_value(:show_attachments_first) %>
     <%= render :partial => "articles/sections/attachments" %>
@@ -82,13 +82,15 @@
 
   <h2><%= l(:label_description) %></h2>
   <%= render :partial => "articles/sections/content" %>
-  <hr>
+  
+
   <h2><%= l(:label_comment_plural) %></h2>
 
   <p><%= link_to_if_authorized l(:label_new_comment), { :controller => "articles", :action => "comment", :article_id => @article.id, :project_id => @project}, :class => "icon icon-comment", :remote => true, :method => :get %></p>
 
   <%= render :partial => "articles/sections/comments" %>
-  <hr>
+
+
 
   <% unless redmine_knowledgebase_settings_value(:show_attachments_first) %>
     <%= render :partial => "articles/sections/attachments" %>

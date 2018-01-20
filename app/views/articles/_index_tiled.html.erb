@@ -13,8 +13,8 @@
         </div>
 
         <% if User.current.allowed_to?(:view_recent_articles, @project) %>
-        <div class="articles box">
-          <h3><%= l(:title_recently_updated_articles) %></h3>
+        <div class="articles">
+          <h2><%= l(:title_recently_updated_articles) %></h2>
 	<div class="flex-container">
               <%= render :partial => 'articles/list_articles', :locals => { :summary_format => "updated", :articles => @articles_latest, :default_icon => 'recently-changed' } %>
           </div>
@@ -22,8 +22,8 @@
         <% end %>
 
         <% if User.current.allowed_to?(:view_top_rated_articles, @project) %>
-          <div class="articles box">
-          <h3><%= l(:title_top_rated_articles) %></h3>
+          <div class="articles">
+          <h2><%= l(:title_top_rated_articles) %></h2>
 	<div class="flex-container">
               <%= render :partial => 'articles/list_articles', :locals => { :summary_format => "toprated", :articles => @articles_toprated, :default_icon => 'top-rated' } %>
           </div>
@@ -32,8 +32,8 @@
 
 
         <% if User.current.allowed_to?(:view_most_popular_articles,@project) %>
-          <div class="articles box">
-          <h3><%= l(:title_most_popular_articles) %></h3>
+          <div class="articles">
+          <h2><%= l(:title_most_popular_articles) %></h2>
 	<div class="flex-container">
 
               <%= render :partial => 'articles/list_articles', :locals => { :summary_format => "popular", :articles => @articles_popular, :default_icon => 'popular' } %>
