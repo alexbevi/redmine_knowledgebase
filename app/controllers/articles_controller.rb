@@ -157,16 +157,23 @@ class ArticlesController < ApplicationController
   end
 
   def add_comment
-    @article.without_locking do
-      @comment = Comment.new(params[:comment])
-      @comment.author = User.current || nil
-      if @article.comments << @comment
-        flash[:notice] = l(:label_comment_added)
-        redirect_to :action => 'show', :id => @article, :project_id => @project
-        KbMailer.article_comment(@article, @comment).deliver
-      else
-        show
-        render :action => 'show'
+
+    if params[:comment][:comments] == ""
+      # Ignore empty comment
+      show
+    else
+
+      @article.without_locking do
+        @comment = Comment.new(params[:comment])
+        @comment.author = User.current || nil
+        if @article.comments << @comment
+          flash[:notice] = l(:label_comment_added)
+          redirect_to :action => 'show', :id => @article, :project_id => @project
+          KbMailer.article_comment(@article, @comment).deliver
+        else
+          show
+          render :action => 'show'
+        end
       end
     end
   end
