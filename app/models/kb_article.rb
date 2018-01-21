@@ -64,7 +64,6 @@ class KbArticle < ActiveRecord::Base
   has_many :comments, -> { order 'created_on DESC' }, :as => :commented, :dependent => :destroy
 
 
-
   def recipients
     notified = []
     # Author and assignee are always notified unless they have been

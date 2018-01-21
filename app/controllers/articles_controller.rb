@@ -31,6 +31,8 @@ class ArticlesController < ApplicationController
     @articles_toprated = @project.articles.includes(:ratings).sort_by { |a| [a.rating_average, a.rated_count] }.reverse.first(summary_limit)
 
     @tags = @project.articles.tag_counts.sort { |a, b| a.name.downcase <=> b.name.downcase }
+    @tags_hash = Hash[ @project.articles.tag_counts.map{ |tag| [tag.name.downcase, 1] } ]
+
   end
 
   def authored
@@ -40,12 +42,22 @@ class ArticlesController < ApplicationController
 
     if params[:tag]
       @tag = params[:tag]
+      @tag_array = *@tag.split(',')
+      @tag_hash = Hash[ @tag_array.map{ |tag| [tag.downcase, 1] } ]
       @articles = @articles.tagged_with(@tag)
     end
 
-    @categories = @project.categories.where(:parent_id => nil)
-
     @tags = @articles.tag_counts.sort { |a, b| a.name.downcase <=> b.name.downcase }
+    @tags_hash = Hash[ @articles.tag_counts.map{ |tag| [tag.name.downcase, 1] } ]
+
+    # Pagination of article lists
+    @limit = redmine_knowledgebase_settings_value( :articles_per_list_page).to_i
+    @article_count = @articles.count
+    @article_pages = Redmine::Pagination::Paginator.new @article_count, @limit, params['page']
+    @offset ||= @article_pages.offset
+    @articles = @articles.offset(@offset).limit(@limit)
+
+    @categories = @project.categories.where(:parent_id => nil)
   end
 
   def new
@@ -54,6 +66,13 @@ class ArticlesController < ApplicationController
     @default_category = params[:category_id]
     @article.category_id = params[:category_id]
     @article.version = params[:version]
+    
+    # Prefill with critical tags
+    if redmine_knowledgebase_settings_value(:critical_tags)
+          @article.tag_list = redmine_knowledgebase_settings_value(:critical_tags).split(/\s*,\s*/)
+    end
+
+    @tags = @project.articles.tag_counts
   end
 
   def rate
@@ -89,6 +108,7 @@ class ArticlesController < ApplicationController
     @attachments = @article.attachments.all.sort_by(&:created_on)
     @comments = @article.comments
     @versions = @article.versions.select("id, author_id, version_comments, updated_at, version").order('version DESC')
+    @kb_use_thumbs = redmine_knowledgebase_settings_value(:show_thumbnails_for_articles)
 
     respond_to do |format|
       format.html { render :template => 'articles/show', :layout => !request.xhr? }
@@ -108,6 +128,9 @@ class ArticlesController < ApplicationController
     # don't keep previous comment
     @article.version_comments = nil
     @article.version = params[:version]
+    @tags = @project.articles.tag_counts
+    @kb_article_editing = true
+    @kb_use_thumbs = redmine_knowledgebase_settings_value(:show_thumbnails_for_articles)
   end
 
   def update

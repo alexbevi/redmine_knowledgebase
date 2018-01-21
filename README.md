@@ -1,21 +1,26 @@
 [![Build Status](https://travis-ci.org/alexbevi/redmine_knowledgebase.png)](https://travis-ci.org/alexbevi/redmine_knowledgebase) [![endorse](http://api.coderwall.com/alexbevi/endorsecount.png)](http://coderwall.com/alexbevi)
 [![Flattr this][2]][1][![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/alexbevi/redmine_knowledgebase/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
-## MAINTAINER WANTED
 
-**[Aug. 14, 2017] After 7 years of maintaining this plugin (though not much in the past year), I've decided to sunset my involvement in this project. I learned a lot about Ruby, Rails and Redmine in my time as author and maintainer, but I've moved on and don't use Redmine actively anymore.**
+![](screenshots/tiled-articles-201801.jpg "Screenshot of tiled view option.")
 
-**I still feel there is a lot of value in this plugin, but I need someone dedicated to Redmine and the community to continue this journey. If you think you're interested in taking over, please shoot me a message at [alex@alexbevi.com](mailto:alex@alexbevi.com).**
-
-**I look forward to seeing where this plugin can go under new leadership**
-
-## About
+## Overview
 
 This plugin adds professional knowledgebase functionality to the Redmine project management application.
 
-## Warning
+## Recent Changes
+
+* Tiled visual indexes are now supported using thumbnails.
+* Articles are better formatted to work with more themes.
+* Tag logic is improved and critical tags can be defined easily.
+* Email notifications are better formatted.
+* Bug fixes.
+
+## Warnings
 
 The latest version of this plugin is for Redmine 3.x and up. If you're still using Redmine 2.x, you should checkout the `redmine-2.x` branch.
+
+This plugin can not coexist with the Redmine CRM plugin due to conflicts related to tagging.
 
 ## Introduction
 
@@ -40,6 +45,7 @@ The latest version of this plugin is for Redmine 3.x and up. If you're still usi
 * File attachments
 * Comment on articles
 * Article tagging
+* Visual indexes with thumbnails (optional)
 * Project-based permissions
 
 ## Installation
@@ -233,13 +239,16 @@ Now that categories and articles have been created, the home page of the Knowled
 
 ### About
 
-Copyright (c) 2010-2016 Alex Bevilacqua, released under the MIT license
+Released under the MIT license.
+Copyright (c) 2010-2016 Alex Bevilacqua, original author.
+Modifications (c) 2016-2018 Rob Spearman.
 
-Though I initially wrote this plugin, it would not be possible without the many contributions from the community. See [AUTHORS](https://github.com/alexbevi/redmine_knowledgebase/blob/master/AUTHORS) for the full list.
+This plugin would not be possible without the many contributions from the community. See [AUTHORS](https://github.com/alexbevi/redmine_knowledgebase/blob/master/AUTHORS) for the full list.
+
 
 [1]: http://flattr.com/thing/890708/alexbeviredmineknowledgebase
 [2]: http://api.flattr.com/button/flattr-badge-large.png
 
 
-## License
+## License Details
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Falexbevi%2Fredmine_knowledgebase.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Falexbevi%2Fredmine_knowledgebase?ref=badge_large)
