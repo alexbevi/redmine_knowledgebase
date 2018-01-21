@@ -25,7 +25,6 @@ This plugin can not coexist with the Redmine CRM plugin due to conflicts related
 ## Introduction
 
 [![Join the chat at https://gitter.im/alexbevi/redmine_knowledgebase](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/alexbevi/redmine_knowledgebase?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Falexbevi%2Fredmine_knowledgebase.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Falexbevi%2Fredmine_knowledgebase?ref=badge_shield)
 
 <a href="http://www.packtpub.com/redmine-plugin-extension-and-development/book" target ="_blank">
 <img align="right" src="http://www.alexbevi.com/images/8748OS_mockupcover_normal_0.jpg" alt="Redmine Plugin Extension and Development">
@@ -248,7 +247,3 @@ This plugin would not be possible without the many contributions from the commun
 
 [1]: http://flattr.com/thing/890708/alexbeviredmineknowledgebase
 [2]: http://api.flattr.com/button/flattr-badge-large.png
-
-
-## License Details
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Falexbevi%2Fredmine_knowledgebase.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Falexbevi%2Fredmine_knowledgebase?ref=badge_large)

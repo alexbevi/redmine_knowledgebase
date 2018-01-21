@@ -15,15 +15,17 @@
 <h2><%= @category.title %></h2>
 
 <% content_for :sidebar do %>
-	<ul id="options">
-		<li><%= link_to_if_authorized l(:label_new_article), { :controller => 'articles', :action => 'new', :category_id => @category.id, :project_id => @project}, :class => 'icon icon-add' %></li>
+  <ul id="options">
+    <li><%= link_to_if_authorized l(:label_new_article), { :controller => 'articles', :action => 'new', :category_id => @category.id, :project_id => @project}, :class => 'icon icon-add' %></li>
     <li><%= link_to_if_authorized l(:label_new_category), { :controller => 'categories', :action => 'new', :parent_id => @category.id, :project_id => @project}, :class => 'icon icon-add' %></li>
     <li><%= link_to_if_authorized l(:label_edit_category), { :controller => 'categories', :action => 'edit', :id => @category.id, :project_id => @project}, :class => 'icon icon-edit' %></li>
-    <li><%= link_to_if_authorized l(:label_delete_category), { :controller => 'categories', :action => 'destroy', :id => @category.id, :project_id => @project}, :confirm => l(:text_are_you_sure), :method => :delete, :class => 'icon icon-del' %></li>		<li>
-      <%= render :partial => 'watchers/watchers', :locals => {:watched => @category} %>
+    <li><%= link_to_if_authorized l(:label_delete_category), { :controller => 'categories', :action => 'destroy', :id => @category.id, :project_id => @project}, :confirm => l(:text_are_you_sure), :method => :delete, :class => 'icon icon-del' %></li>
+    <li><%= watcher_link(@category, User.current) %></li>
+    <li>
+      <%= render :partial => 'categories/watchers', :locals => {:watched => @category} %>
     </li>
-	</ul>
-	<h3><%= l(:title_browse_by_category) %></h3>
+  </ul>
+  <h3><%= l(:title_browse_by_category) %></h3>
   <%= render :partial => "categories/tree" %>
 
   <%= render :partial => "categories/tags", :locals => { :controller => 'categories', :action => 'show', :id => @category.id, :author_id => '' } %>
