@@ -1,5 +1,11 @@
 <% html_title 'Index' %>
 
+
+<% if not User.current.allowed_to?(:view_kb_articles, @project) %>
+     <p class="nodata"><%=l(:message_no_permissions)%></p>
+<% else %>
+
+
 <% content_for :sidebar do %>
 
   <ul id="options">
@@ -33,5 +39,7 @@
 
 <% other_formats_links do |f| %>
   <%= f.link_to 'Atom', :url => { :key => User.current.rss_key } %>
+<% end %>
+
 <% end %>
 

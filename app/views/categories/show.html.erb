@@ -1,5 +1,10 @@
 <% html_title @category.title %>
 
+<% if not User.current.allowed_to?(:view_kb_articles, @project) %>
+     <p class="nodata"><%=l(:message_no_permissions)%></p>
+<% else %>
+
+
 <div class="contextual">
   <%= render :partial => "categories/jump_box" %>
 </div>
@@ -63,5 +68,8 @@
 
 <% other_formats_links do |f| %>
   <%= f.link_to 'Atom', :url => { :key => User.current.rss_key } %>
+<% end %>
+
+
 <% end %>
 

@@ -5,6 +5,11 @@
   <%= javascript_include_tag 'jquery.form.js', 'jquery.MetaData.js', 'jquery.rating.pack.js', :plugin => 'redmine_knowledgebase' %>
 <% end %>
 
+<% if not User.current.allowed_to?(:view_kb_articles, @project) %>
+     <p class="nodata"><%=l(:message_no_permissions)%></p>
+<% else %>
+
+
 <div class="contextual">
   <%= render :partial => "categories/jump_box" %>
 
@@ -101,5 +106,7 @@
     <h2><%= l(:label_history) %></h2>
     <%= render :partial => "articles/sections/history" %>
   <% end %>
+
+<% end %>
 
 <% end %>
