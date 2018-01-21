@@ -1,13 +1,3 @@
-https://github.com/alexbevi/redmine_knowledgebase をベースにRedmine3.4で使えるように修正したものです
-本家がメンテナンスする人を募集していますので、そちらに統合できればいいですが当面自分のわかる範囲でメンテナンスしていきたいとおもいます
-ライセンスはオリジナルのものを継承します
-
-協力していただける方募集中です
-
-以下オリジナルのREADMEです
-
----
-
 [![Build Status](https://travis-ci.org/alexbevi/redmine_knowledgebase.png)](https://travis-ci.org/alexbevi/redmine_knowledgebase) [![endorse](http://api.coderwall.com/alexbevi/endorsecount.png)](http://coderwall.com/alexbevi)
 [![Flattr this][2]][1][![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/alexbevi/redmine_knowledgebase/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
