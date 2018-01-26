@@ -1,8 +1,11 @@
 --- 
 zh: 
+  articles_per_list_page: "每页显示多少篇文章？"
   allow_anon_access: "是否允许匿名访问？"
   allow_sort_category_tree: "分类树按字母排序？"
+  critical_tags: "优先显示关键标签（逗号【,】分隔）" 
   disable_article_summaries: "禁用文章摘要"
+  description_create_article: "在知识库的【%{category}】分类中，添加一篇新文章。"
   field_article_author: "作者"
   field_article_destroyer: "删除者"
   field_article_updater: "修订人"
@@ -63,6 +66,7 @@ zh:
   label_title_category: 所属分类
   label_unrated_article: 未评分
   label_updated_who: "由 %{updater} 更新于 %{age} 前"
+  label_unrated_article: "未评分"  
   message_no_articles: "目前尚未有任何文章。"
   message_no_categories: "目前未定义任何分类。您需要至少创建一个知识分类。"
   message_no_permissions: "你无权查看任何文章或分类，请联系管理员。"
@@ -85,14 +89,19 @@ zh:
   permission_watch_articles: "关注文章"
   permission_watch_categories: "关注分类"
   project_module_knowledgebase: 知识库
-  show_article_without_tabs: "不使用TAB页方式显示文章？"
+  show_article_without_tabs: "不使用 TAB 页方式显示文章所有内容？"
   show_attachments_first: "在文章内容前显示附件？"
-  show_breadcrumbs_for_article_lists: "在文章中显示面包屑？"
+  show_breadcrumbs_for_article_lists: "列表中的文章显示面包屑？"
   show_category_totals: "在分类树中显示数量？"
+  show_article_without_tabs: "Show articles without tabs?"  
+  show_attachments_first: "Show attachments before article content?"
+  show_breadcrumbs_for_article_lists: "列表中的文章显示面包屑？"  
   show_thumbnails_for_articles: "在文章中显示略缩图？"
+  show_tiled_article_lists: "以平铺形式显示文章列表？"  
   summary_item_limit: "知识库主页文章限制"
   text_confirm_versions_delete: "文章所有改动将丢失，是否继续？"
   text_current_version: 当前版本
+  thumbnail_explanation: "在添加文章的附件文件时，在描述栏中填写 \"thumbnail\" ，则会将该图片设置为文章的的唯一缩略图。否则，最后上传的图像文件将被用作该文章的缩略图。"
   title_add_comment: "新增批注"
   title_article_rating: "文章评分"
   title_browse_by_category: "按分类浏览"
