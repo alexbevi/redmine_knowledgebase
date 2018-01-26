@@ -1,5 +1,10 @@
 <% html_title @category.title %>
 
+<% if not User.current.allowed_to?(:view_kb_articles, @project) %>
+     <p class="nodata"><%=l(:message_no_permissions)%></p>
+<% else %>
+
+
 <div class="contextual">
   <%= render :partial => "categories/jump_box" %>
 </div>
@@ -15,26 +20,20 @@
 <h2><%= @category.title %></h2>
 
 <% content_for :sidebar do %>
-	<ul id="options">
-		<li><%= link_to_if_authorized l(:label_new_article), { :controller => 'articles', :action => 'new', :category_id => @category.id, :project_id => @project}, :class => 'icon icon-add' %></li>
+  <ul id="options">
+    <li><%= link_to_if_authorized l(:label_new_article), { :controller => 'articles', :action => 'new', :category_id => @category.id, :project_id => @project}, :class => 'icon icon-add' %></li>
     <li><%= link_to_if_authorized l(:label_new_category), { :controller => 'categories', :action => 'new', :parent_id => @category.id, :project_id => @project}, :class => 'icon icon-add' %></li>
     <li><%= link_to_if_authorized l(:label_edit_category), { :controller => 'categories', :action => 'edit', :id => @category.id, :project_id => @project}, :class => 'icon icon-edit' %></li>
-    <li><%= link_to_if_authorized l(:label_delete_category), { :controller => 'categories', :action => 'destroy', :id => @category.id, :project_id => @project}, :confirm => l(:text_are_you_sure), :method => :delete, :class => 'icon icon-del' %></li>		<li>
-      <%= render :partial => 'watchers/watchers', :locals => {:watched => @category} %>
+    <li><%= link_to_if_authorized l(:label_delete_category), { :controller => 'categories', :action => 'destroy', :id => @category.id, :project_id => @project}, :confirm => l(:text_are_you_sure), :method => :delete, :class => 'icon icon-del' %></li>
+    <li><%= watcher_link(@category, User.current) %></li>
+    <li>
+      <%= render :partial => 'categories/watchers', :locals => {:watched => @category} %>
     </li>
-	</ul>
-	<h3><%= l(:title_browse_by_category) %></h3>
+  </ul>
+  <h3><%= l(:title_browse_by_category) %></h3>
   <%= render :partial => "categories/tree" %>
 
-  <% if @tags %>
-  <div id="taglist">
-    <h3><%= l(:label_filter_by_tag) %></h3>
-
-    <% tag_cloud(@tags, ['tag-x-small', 'tag-small', 'tag-medium', 'tag-large', 'tag-x-large']) do |tag, css_class| %>
-    <%= link_to(tag.name, {:controller => 'categories', :action => 'show', :id => @category.id, :project_id => @project, :tag => tag.name }, :class => "tag #{css_class}") %>
-    <% end %>
-  </div>
-  <% end %>
+  <%= render :partial => "categories/tags", :locals => { :controller => 'categories', :action => 'show', :id => @category.id, :author_id => '' } %>
 
 <% end %>
 
@@ -42,7 +41,7 @@
 
 <% @kids = @category.children %>
 <% if @kids.length > 0 %>
-  <div class="categories">
+  <div class="categories box">
     <div class="category-header"><%= l(:label_subcategories) %></div>
     <br />
     <% @kids.each do |subs| %>
@@ -51,22 +50,27 @@
   </div>
 <% end %>
 
-<% if @tag %>
-<div class="category-tag-filter"><p><%= l(:label_filtered_by_tag) %> <%= @tag %> &nbsp;
-<%= link_to("", {:controller => 'categories', :action => 'show', :id => @category.id, :project_id => @project }, :class => "icon icon-delete") %>
-</p></div>
+<%= render :partial => "categories/tags_used" %>
+
+<% if @articles.length > 0 %>
+  <div class="articles category-articles">
+    <% if redmine_knowledgebase_settings_value(:show_tiled_article_lists) %>
+      <%= render :partial => 'articles/list_tiled', :locals => { :articles => @articles } %>
+    <% else %>
+      <%= render :partial => 'articles/list_table', :locals => { :articles => @articles } %>
+    <% end %>
+  </div>
+
+  <% if @article_pages %>
+    <span class="pagination"><%= pagination_links_full @article_pages, @article_count %></span>
+  <% end %>
 <% end %>
 
-<% if @category.articles.length > 0%>
-  <div class="articles category-articles">
-  <%= render :partial => 'articles/list_table', :locals => { :articles => @articles } %>
-  </div>
-<% end %>
 
 <% other_formats_links do |f| %>
   <%= f.link_to 'Atom', :url => { :key => User.current.rss_key } %>
 <% end %>
 
-<% content_for :header_tags do %>
-    <%= stylesheet_link_tag 'knowledgebase', :plugin => 'redmine_knowledgebase' %>
+
 <% end %>
+

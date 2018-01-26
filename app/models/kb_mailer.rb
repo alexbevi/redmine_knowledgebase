@@ -1,5 +1,7 @@
 class KbMailer < Mailer
-  
+
+  add_template_helper(KnowledgebaseHelper)
+
   def article_create(article)
 	redmine_headers 'Project' => article.project.identifier
 	@project = article.project
@@ -9,7 +11,7 @@ class KbMailer < Mailer
 	cc = article.category.watcher_recipients - recipients
 	mail :to => recipients, 
 		:cc => cc,
-		:subject => "#{l(:label_new_article)}: #{article.title}"
+    :subject => "[#{@project.name}] #{@article.category.title}: \"#{article.title}\" - #{l(:label_new_article)}"
   end
   
   def article_update(article)
@@ -21,18 +23,19 @@ class KbMailer < Mailer
 	cc = ((article.watcher_recipients + article.category.watcher_recipients).uniq - recipients)
 	mail :to => recipients, 
 		:cc => cc,
-		:subject => "#{l(:label_article_updated)}: #{article.title}"
+		:subject => "[#{@project.name}] #{@article.category.title}: \"#{article.title}\" - #{l(:label_article_updated)}"
   end
   
   def article_destroy(article)
 	redmine_headers 'Project' => article.project.identifier
+	@project = article.project
  	@article = article
 	@destroyer = User.current
 	recipients = article.recipients
 	cc = ((article.watcher_recipients + article.category.watcher_recipients).uniq - recipients)
 	mail :to => recipients, 
 		:cc => cc,
-		:subject => "#{l(:label_article_removed)}: #{article.title}"
+		:subject => "[#{@project.name}] #{@article.category.title}: \"#{article.title}\" - #{l(:label_article_removed)}"
   end
   
   def article_comment(article, comment)
@@ -45,7 +48,7 @@ class KbMailer < Mailer
 	cc = article.watcher_recipients - recipients
 	mail :to => recipients, 
 		:cc => cc,
-		:subject => "#{l(:label_comment_added)} - #{l(:label_title_articles)}: #{article.title}"
+		:subject => "[#{@project.name}] #{@article.category.title}: \"#{article.title}\" - #{l(:label_comment_added)}"
   end
   
 end

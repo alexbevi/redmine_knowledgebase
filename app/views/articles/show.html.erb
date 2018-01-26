@@ -1,27 +1,36 @@
 <% html_title @article.title %>
 
 <% content_for :header_tags do %>
-  <%= stylesheet_link_tag 'knowledgebase', :plugin => 'redmine_knowledgebase' %>
   <%= stylesheet_link_tag 'scm' %>
   <%= javascript_include_tag 'jquery.form.js', 'jquery.MetaData.js', 'jquery.rating.pack.js', :plugin => 'redmine_knowledgebase' %>
 <% end %>
 
+<% if not User.current.allowed_to?(:view_kb_articles, @project) %>
+     <p class="nodata"><%=l(:message_no_permissions)%></p>
+<% else %>
+
+
 <div class="contextual">
   <%= render :partial => "categories/jump_box" %>
+
+  <% if @project.categories.length > 0 %>	
+    <%= link_to_if_authorized l(:title_create_article), { :controller => 'articles', :action => 'new', :project_id => @project}, :class => 'icon icon-add' %>
+  <% end %>
 </div>
 
 <% content_for :sidebar do %>
 <ul id="options">
   <% if @article.editable_by?(User.current) %>
-  <li><%= link_to l(:label_edit_article), { :controller => 'articles', :action => 'edit', :id => @article.id, :project_id => @project}, :class => 'icon icon-edit' %></li>
-  <li><%= link_to l(:label_delete_article), { :controller => 'articles', :action => 'destroy', :id => @article.id, :project_id => @project}, :confirm => l(:text_are_you_sure), :method => :delete, :class => 'icon icon-del' %></li>
+    <li><%= link_to l(:label_edit_article), { :controller => 'articles', :action => 'edit', :id => @article.id, :project_id => @project}, :class => 'icon icon-edit' %></li>
+    <li><%= link_to l(:label_delete_article), { :controller => 'articles', :action => 'destroy', :id => @article.id, :project_id => @project}, :confirm => l(:text_are_you_sure), :method => :delete, :class => 'icon icon-del' %></li>
   <% end %>
 
-		<li><%= link_to_if_authorized l(:label_new_comment), { :controller => "articles", :action => "comment", :article_id => @article.id, :project_id => @project}, :class => "icon icon-comment", :remote => true, :method => :get %></li>
-		<li>
-      <%= render :partial => 'watchers/watchers', :locals => {:watched => @article} %>
-    </li>
-	</ul>
+  <li><%= link_to_if_authorized l(:label_new_comment), { :controller => "articles", :action => "comment", :article_id => @article.id, :project_id => @project}, :class => "icon icon-comment", :remote => true, :method => :get %></li>
+  <li> <%= watcher_link(@article, User.current) %></li>
+  <li>
+      <%= render :partial => 'articles/watchers', :locals => {:watched => @article} %>
+  </li>
+</ul>
 	<br />
   <div id='rating-container'>
     <%= render :partial => "rating" %>
@@ -29,11 +38,13 @@
 	<% unless @article.tag_list.empty? %>
 	<br /><br /><br />
 	<div class="rating-title"><%= l(:title_tags) %></div>
-	<ul id="taglist">
+
+	<div id="taglist">
 	  <% @article.tag_list.each do |tag| %>
-     <li><%= link_to tag, { :action => "tagged", :id => tag, :project_id => @project }, :class => "tag" %></li>
+	    <%= link_to tag, { :controller => 'categories', :action => "index", :tag => tag, :project_id => @project }, :class => "tag" %>
     <% end %>
-	</ul>
+	</div>
+
   <% end %>
 <% end %>
 
@@ -47,13 +58,21 @@
 	<%= link_to @article.category.title, { :controller => 'categories', :action => 'show', :id => @article.category.id, :project_id => @project} %>
 </p>
 
-<div class="wiki"><h1><%= @article.title %></h1></div>
-<% unless redmine_knowledgebase_settings_value(:disable_article_summaries) %>
-  <div class="article-summary"><%= @article.summary %></div>
-<% end %>
-
 <% other_formats_links do |f| %>
   <%= f.link_to 'PDF', :url => params %>
+<% end %>
+
+<div class="wiki"><h1><%= @article.title %></h1></div>
+
+<% unless redmine_knowledgebase_settings_value(:disable_article_summaries) %>
+
+  <% if redmine_knowledgebase_settings_value(:show_thumbnails_for_articles) %>
+    <%= image_tag( get_article_thumbnail_url( @article ), :class => 'article-summary-thumbnail' ) %>
+  <% end %>
+
+  <div class="article-summary">
+    <p><%= @article.summary %></p>
+  </div>
 <% end %>
 
 <% unless redmine_knowledgebase_settings_value(:show_article_without_tabs) %>
@@ -61,30 +80,33 @@
 
 <% else %>
 
-  <hr>
+
 
   <% if redmine_knowledgebase_settings_value(:show_attachments_first) %>
-    <h2><%= l(:label_attachment_plural) %></h2>
     <%= render :partial => "articles/sections/attachments" %>
-    <hr>
   <% end %>
 
   <h2><%= l(:label_description) %></h2>
   <%= render :partial => "articles/sections/content" %>
-  <hr>
+  
+
   <h2><%= l(:label_comment_plural) %></h2>
+
+  <p><%= link_to_if_authorized l(:label_new_comment), { :controller => "articles", :action => "comment", :article_id => @article.id, :project_id => @project}, :class => "icon icon-comment", :remote => true, :method => :get %></p>
+
   <%= render :partial => "articles/sections/comments" %>
-  <hr>
+
+
 
   <% unless redmine_knowledgebase_settings_value(:show_attachments_first) %>
-    <h2><%= l(:label_attachment_plural) %></h2>
     <%= render :partial => "articles/sections/attachments" %>
-    <hr>
   <% end %>
 
   <% if User.current.allowed_to?(:view_article_history, @project) %>
     <h2><%= l(:label_history) %></h2>
     <%= render :partial => "articles/sections/history" %>
   <% end %>
+
+<% end %>
 
 <% end %>

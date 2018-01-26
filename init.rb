@@ -19,15 +19,15 @@ Redmine::Plugin.register :redmine_knowledgebase do
   author_url  "http://www.alexbevi.com"
   description 'A plugin for Redmine that adds knowledgebase functionality'
   url         'https://github.com/alexbevi/redmine_knowledgebase'
-  version     '3.2.1'
+  version     '3.3.1'
 
   requires_redmine :version_or_higher => '3.0.0'
   requires_acts_as_taggable_on
 
+  # Do not set any default boolean settings to true or will override user false setting!
   settings :default => {
-    :sort_category_tree => true,
-    :show_category_totals => true,
     :summary_limit => 25,
+    :articles_per_list_page => 100,
     :disable_article_summaries => false
   }, :partial => 'redmine_knowledgebase/knowledgebase_settings'
 

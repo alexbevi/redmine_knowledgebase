@@ -1,10 +1,5 @@
 
-
-<% article.attachments.reverse_each do |attach| %>
-  <% if attach.thumbnailable? %>
-
-    <%= link_to image_tag( thumbnail_path(attach)),
+<% if thumb = get_article_thumbnail_url(article) %>
+    <%= link_to image_tag( thumb ),
 	{ :controller => 'articles', :action => 'show', :id => article.id, :project_id => project_id}, :title => article.title %>
-    <% break %>
-  <% end %>
 <% end %>

@@ -1,5 +1,10 @@
 <% html_title l(:knowledgebase_title) %>
 
+<% if not User.current.allowed_to?(:view_kb_articles, @project) %>
+     <p class="nodata"><%=l(:message_no_permissions)%></p>
+<% else %>
+
+
 <div class="contextual">
   <%= render :partial => "categories/jump_box" %>
   <%= link_to_if_authorized l(:title_create_category), { :controller => 'categories', :action => 'new', :project_id => @project}, :class => 'icon icon-add' %>
@@ -17,59 +22,22 @@
   <p class="nodata"><%= l(:message_no_articles) %></p>
   
 <% else %>
-  <% if User.current.allowed_to?(:view_kb_articles, @project) %>
-    <h2><%=l(:label_overview)%></h2>
-    <div class="splitcontentleft">
-        <div class="articles box">
-        <h3><%= l(:title_overview_summary) %></h3>
-        <ul>
-            <li><%= l(:label_overview_total_categories, :total_categories => @total_categories.to_i) %></li>
-            <li><%= l(:label_overview_total_articles, :total_articles => @total_articles.to_i) %></li>
 
-            <% if User.current.allowed_to?(:create_articles, @project) %>
-	    <li><%= link_to_if_authorized l(:label_overview_my_articles, :total_articles_by_me => @total_articles_by_me.to_i), { :controller => 'articles', :action => 'authored', :project_id => @project, :author_id => User.current.id} %></li>
-            <% end %>
-        </ul>
-        </div>
-        <% if User.current.allowed_to?(:view_recent_articles, @project) %>
-          <h3><%= l(:title_recently_updated_articles) %></h3>
-          <div class="articles index-summary">
-              <%= render :partial => 'articles/list', :locals => { :summary_format => "updated", :articles => @articles_latest, :default_icon => 'recently-changed' } %>
-          </div>
-        <% end %>
-    </div>
-
-    <div class="splitcontentright">
-        <% if User.current.allowed_to?(:view_most_popular_articles,@project) %>
-          <h3><%= l(:title_most_popular_articles) %></h3>
-          <div class="articles index-summary">
-              <%= render :partial => 'articles/list', :locals => { :summary_format => "popular", :articles => @articles_popular, :default_icon => 'popular' } %>
-          </div>
-        <% end %>
-        <% if User.current.allowed_to?(:view_top_rated_articles, @project) %>
-          <h3><%= l(:title_top_rated_articles) %></h3>
-          <div class="articles index-summary">
-              <%= render :partial => 'articles/list', :locals => { :summary_format => "toprated", :articles => @articles_toprated, :default_icon => 'top-rated' } %>
-          </div>
-        <% end %>
-    </div>
+    <% if redmine_knowledgebase_settings_value(:show_tiled_article_lists) %>
+      <%= render :partial => 'articles/index_tiled', :locals => { :articles => @articles } %>
+    <% else %>
+      <%= render :partial => 'articles/index_original', :locals => { :articles => @articles } %>
+    <% end %>
     
     <% content_for :sidebar do %>
             <h3><%= l(:title_browse_by_category) %></h3>
             <%= render :partial => "categories/tree" %>
-            </br>
-        <div id="taglist">
-            <h3><%= l(:title_browse_by_tags) %></h3>
-            <% tag_cloud(@tags, ['tag-x-small', 'tag-small', 'tag-medium', 'tag-large', 'tag-x-large']) do |tag, css_class| %>
-            <%= link_to(tag.name, {:controller => 'articles', :action => :tagged, :id => tag.name }, :class => "tag #{css_class}") %>
-            <% end %>
-        </div>
+            <br>
+
+  <%= render :partial => "categories/tags", :locals => { :controller => 'categories', :action => 'index', :id => '', :author_id => '' } %>
+
     <% end %>
-  <% else %>
-     <p class="nodata"><%=l(:message_no_permissions)%></p>
-  <% end %>
 <% end %>
 
-<% content_for :header_tags do %>
-    <%= stylesheet_link_tag 'knowledgebase', :plugin => 'redmine_knowledgebase' %>
 <% end %>
+
