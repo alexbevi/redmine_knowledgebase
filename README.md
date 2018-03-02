@@ -1,8 +1,10 @@
+# Redmine Knowledgebase Plugin
+
 ![](screenshots/tiled-articles-201801.jpg "Screenshot of tiled view option.")
 
 ## Overview
 
-This plugin adds professional knowledgebase functionality to the Redmine project management application.
+This plugin adds professional knowledgebase functionality to the [Redmine](http://www.redmine.org/) project management application.
 
 ## Recent Changes
 
