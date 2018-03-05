@@ -9,7 +9,7 @@ ru:
   field_tag_list: "Список меток"
   field_updated_at: "Изменено в"
   field_version: Версия
-  field_version_comments: "Комметарий к изменению"
+  field_version_comments: "Комментарий к изменению"
   knowledgebase_title: "База знаний"
   label_article_created: "Создана статья '%{title}'"
   label_article_plural: Статьи
@@ -21,12 +21,12 @@ ru:
     few: "Просмотрена %{count} раза"
     many: "Просмотрена %{count} раз"
     other: "Просмотрена %{count} раза"
-  label_attachment_add: "Add files"
-  label_authored_by: "Articles authored by"
+  label_attachment_add: "Добавить файлы"
+  label_authored_by: "Автор статей"
   label_category: Категория
   label_category_created: "Создана категория '%{title}'"
   label_category_deleted: "Категория удалена"
-  label_category_has_subcategory_cannot_delete: "Category can not be deleted because it contains a subcategory."
+  label_category_has_subcategory_cannot_delete: "Категорию нельзя удалить, так как она содержит подкатегорию."
   label_category_not_empty_cannot_delete: "Категория содержит статьи и не может быть удалена."
   label_category_plural: Категории
   label_category_updated: "Категория обновлена"
@@ -36,8 +36,8 @@ ru:
   label_description: Описание
   label_edit_article: Редактировать
   label_edit_category: "Редактировать категорию"
-  label_filter_by_tag: "Filter by Tag"
-  label_filtered_by_tag: "Filtered by tag:"
+  label_filter_by_tag: "Фильтр по тегу"
+  label_filtered_by_tag: "Отфильтровано по тегу:"
   label_jump_category: "Перейти к категории"
   label_kb_article_plural: "Статьи базы знаний"
   label_kb_home: Начало
@@ -68,11 +68,11 @@ ru:
   label_title: Заголовок
   label_title_articles: Статьи
   label_title_category: Категория
-  label_unrated_article: Unrated
+  label_unrated_article: Голосов нет
   label_updated_who: "Обновлено %{updater} %{age} назад"
   message_no_articles: "В базе знаний нет ни одной статьи. Чтобы начать нажмите Создать статью..."
   message_no_categories: "В базе знаний нет ни одной категории. Чтобы начать нажмите Создать категорию..."
-  message_no_permissions: "У вас нет прав на просмотр статей или категорий. Свяжитесь с вашими Администратором."
+  message_no_permissions: "У вас нет прав на просмотр статей или категорий. Свяжитесь с вашим Администратором."
   message_summary_count_not_available: "Счетчик сводок не доступен!"
   permission_comment_and_rate_articles: "Комментировать и голосовать за статьи"
   permission_create_article_categories: "Создавать категории"
@@ -82,22 +82,25 @@ ru:
   permission_manage_article_history: "Управлять историей статей"
   permission_manage_articles: "Управлять статьями"
   permission_manage_articles_comments: "Управлять комментариями к статьям"
-  permission_manage_own_articles: "Manage own articles"
+  permission_manage_own_articles: "Управлять своими статьями"
   permission_view_article_history: "Просматривать историю статей"
   permission_view_articles: "Просматривать статьи"
-  permission_view_kb_articles: "Просматривать статьи"
+  permission_view_kb_articles: "Просматривать статьи базы знаний"
   permission_view_most_popular_articles: "Просматривать наиболее популярные"
   permission_view_recent_articles: "Просматривать недавние статьи"
   permission_view_top_rated_articles: "Просматривать статьи с наивысшим рейтингом"
   permission_watch_articles: "Следить за статьями"
   permission_watch_categories: "Следить за категориями"
   project_module_knowledgebase: Knowledgebase
-  show_article_without_tabs: "Show articles without tabs?"
-  show_attachments_first: "Show attachments before article content?"
-  show_breadcrumbs_for_article_lists: "Show breadcrumbs for articles in lists?"
+  show_article_without_tabs: "Показать статьи без вкладок"
+  show_attachments_first: "Показать вложения перед содержимым статьи"
+  show_breadcrumbs_for_article_lists: "Показать \"хлебные крошки\" для статей в списках"
+  show_tiled_article_lists: "Показать список статей в виде плитки"
   show_category_totals: "Показать информацию по категориям в виде дерева?"
-  show_thumbnails_for_articles: "Show thumbnails for articles in lists?"
+  show_thumbnails_for_articles: "Показать эскизы статей в списках"
+  critical_tags: "Показать важные теги первыми (разделять запятыми)"
   summary_item_limit: "Лимит статей на странице сводки"
+  articles_per_list_page: "Лимит статей на страницу"
   text_confirm_versions_delete: "Данное изменение отменит и удалит все возможные новые версии данного докмуента. Вы уверены?"
   text_current_version: Текущая
   title_add_comment: "Добавить комментарий"
