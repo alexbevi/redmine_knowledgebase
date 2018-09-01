@@ -54,7 +54,7 @@
 
 <% if @articles.length > 0 %>
   <div class="articles category-articles">
-    <% if redmine_knowledgebase_settings_value(:show_tiled_article_lists) %>
+    <% if redmine_knowledgebase_settings_value('show_tiled_article_lists') %>
       <%= render :partial => 'articles/list_tiled', :locals => { :articles => @articles } %>
     <% else %>
       <%= render :partial => 'articles/list_table', :locals => { :articles => @articles } %>
@@ -73,4 +73,3 @@
 
 
 <% end %>
-
