@@ -26,9 +26,9 @@ Redmine::Plugin.register :redmine_knowledgebase do
 
   # Do not set any default boolean settings to true or will override user false setting!
   settings :default => {
-    :summary_limit => 25,
-    :articles_per_list_page => 100,
-    :disable_article_summaries => false
+    'summary_limit' => 25,
+    'articles_per_list_page' => 100,
+    'disable_article_summaries' => false
   }, :partial => 'redmine_knowledgebase/knowledgebase_settings'
 
   project_module :knowledgebase do
