@@ -90,14 +90,14 @@ ja:
   project_module_knowledgebase: ナレッジベース
   show_article_without_tabs: "TABなしの記事を表示しますか?"
   show_attachments_first: "記事の前に添付ファイルを表示しますか?"
-  show_breadcrumbs_for_article_lists: "リスト中に記事のパンくずリストを表示しますか?"
+  show_breadcrumbs_for_article_lists: "記事一覧の記事にパンくずを表示しますか?"
   show_category_totals: ツリーの全てのカテゴリを表示する
-  show_thumbnails_for_articles: "リスト中に記事のサムネイルを表示しますか?"
+  show_thumbnails_for_articles: "記事一覧の記事にサムネイルを表示しますか?"
   show_tiled_article_lists: "記事一覧をタイル表示しますか?"
   summary_item_limit: ナレッジベースに表示する記事数
   text_confirm_versions_delete: このドキュメントの新しいバージョンが存在する場合、記事は逆戻りして削除されます。よろしいですか?
   text_current_version: 現在のバージョン
-  thumbnail_explanation: "When adding a file, use the description \"thumbnail\" to set an image as (only) the thumbnail for this item.  Otherwise the last uploaded image file will also be used as the thumbnail."
+  thumbnail_explanation: "ファイルを登録する場合、説明欄に\"thumbnail\"が設定している画像ファイルが記事のサムネイルとして表示します。それ以外の場合は最後に登録した画像ファイルをサムネイルとして表示します。"
   title_add_comment: コメントを追加
   title_article_rating: 評価レート
   title_browse_by_category: カテゴリ別一覧
