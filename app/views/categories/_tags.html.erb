@@ -4,17 +4,17 @@
     <h3><%= l(:label_filter_by_tag) %></h3>
 
     <% critical_tag_hash = Hash[] %>
-    <% if redmine_knowledgebase_settings_value(:critical_tags) %>
-      <% critical_array = redmine_knowledgebase_settings_value(:critical_tags).split(/\s*,\s*/) %>
+    <% if redmine_knowledgebase_settings_value('critical_tags') %>
+      <% critical_array = redmine_knowledgebase_settings_value('critical_tags').split(/\s*,\s*/) %>
       <% critical_tag_hash = Hash[ critical_array.map { |tag| [tag.downcase, 1] } ] %>
       <% critical_array.each do |critical| %>
-        <% critical_low = critical.downcase %> 
+        <% critical_low = critical.downcase %>
 
-  
+
 	<% if @tag && @tag_hash.has_key?( critical_low ) %>
-	  <a  class="tag tag-large tag-critical selected-tag"><%= critical %></a> 
+	  <a  class="tag tag-large tag-critical selected-tag"><%= critical %></a>
 	<% elsif !@tags_hash.has_key?( critical_low ) %>
-	  <a class="tag tag-large tag-critical invalid-tag"><%= critical %></a> 
+	  <a class="tag tag-large tag-critical invalid-tag"><%= critical %></a>
 	<% else %>
 	  <%= link_to( critical, {:controller => controller, :action => action, :author_id => author_id, :project_id => @project, :tag => currentTags + critical_low }, :class => "tag tag-large tag-critical") %>
 	<% end %>
@@ -26,7 +26,7 @@
 
     <% if !critical_tag_hash.has_key?( tag.name.downcase ) %>
       <% if @tag && @tag_hash.has_key?( tag.name.downcase ) %>
-        <a  class="tag <%= css_class %> selected-tag"><%= tag.name %></a> 
+        <a  class="tag <%= css_class %> selected-tag"><%= tag.name %></a>
       <% else %>
         <%= link_to( tag.name, {:controller => controller, :action => action, :author_id => author_id, :project_id => @project, :tag => currentTags + tag.name }, :class => "tag #{css_class}") %>
       <% end %>
@@ -34,4 +34,3 @@
   <% end %>
 </div>
 <% end %>
-

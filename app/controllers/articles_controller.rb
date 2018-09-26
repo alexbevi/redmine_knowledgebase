@@ -17,7 +17,7 @@ class ArticlesController < ApplicationController
   ActiveRecord::ConnectionAdapters::Column.send(:alias_method, :type_cast, :type_cast_for_database)
 
   def index
-    summary_limit = redmine_knowledgebase_settings_value(:summary_limit).to_i
+    summary_limit = redmine_knowledgebase_settings_value('summary_limit').to_i
 
     @total_categories = @project.categories.count
     @total_articles = @project.articles.count
@@ -51,7 +51,7 @@ class ArticlesController < ApplicationController
     @tags_hash = Hash[ @articles.tag_counts.map{ |tag| [tag.name.downcase, 1] } ]
 
     # Pagination of article lists
-    @limit = redmine_knowledgebase_settings_value( :articles_per_list_page).to_i
+    @limit = redmine_knowledgebase_settings_value('articles_per_list_page').to_i
     @article_count = @articles.count
     @article_pages = Redmine::Pagination::Paginator.new @article_count, @limit, params['page']
     @offset ||= @article_pages.offset
@@ -66,10 +66,10 @@ class ArticlesController < ApplicationController
     @default_category = params[:category_id]
     @article.category_id = params[:category_id]
     @article.version = params[:version]
-    
+
     # Prefill with critical tags
-    if redmine_knowledgebase_settings_value(:critical_tags)
-          @article.tag_list = redmine_knowledgebase_settings_value(:critical_tags).split(/\s*,\s*/)
+    if redmine_knowledgebase_settings_value('critical_tags')
+          @article.tag_list = redmine_knowledgebase_settings_value('critical_tags').split(/\s*,\s*/)
     end
 
     @tags = @project.articles.tag_counts
@@ -108,7 +108,7 @@ class ArticlesController < ApplicationController
     @attachments = @article.attachments.all.sort_by(&:created_on)
     @comments = @article.comments
     @versions = @article.versions.select("id, author_id, version_comments, updated_at, version").order('version DESC')
-    @kb_use_thumbs = redmine_knowledgebase_settings_value(:show_thumbnails_for_articles)
+    @kb_use_thumbs = redmine_knowledgebase_settings_value('show_thumbnails_for_articles')
 
     respond_to do |format|
       format.html { render :template => 'articles/show', :layout => !request.xhr? }
@@ -130,7 +130,7 @@ class ArticlesController < ApplicationController
     @article.version = params[:version]
     @tags = @project.articles.tag_counts
     @kb_article_editing = true
-    @kb_use_thumbs = redmine_knowledgebase_settings_value(:show_thumbnails_for_articles)
+    @kb_use_thumbs = redmine_knowledgebase_settings_value('show_thumbnails_for_articles')
   end
 
   def update

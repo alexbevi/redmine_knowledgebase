@@ -29,12 +29,12 @@ module KnowledgebaseHelper
           :rating_max => "5",
           :count => article.rated_count)
       end
-    else 
+    else
       nil
     end
-    
+
     sum = ""
-    unless redmine_knowledgebase_settings_value(:disable_article_summaries)
+    unless redmine_knowledgebase_settings_value('disable_article_summaries')
       sum = "<p>" + (truncate article.summary, :length => options[:truncate]) + "</p>"
     end
 
@@ -42,13 +42,13 @@ module KnowledgebaseHelper
   end
 
   def sort_categories?
-    redmine_knowledgebase_settings_value(:sort_category_tree)
+    redmine_knowledgebase_settings_value('sort_category_tree')
   end
-  
+
   def show_category_totals?
-    redmine_knowledgebase_settings_value(:show_category_totals)
+    redmine_knowledgebase_settings_value('show_category_totals')
   end
-  
+
   def updated_by(updated, updater)
      l(:label_updated_who, :updater => link_to_user(updater), :age => time_tag(updated)).html_safe
   end
@@ -103,15 +103,15 @@ module KnowledgebaseHelper
       end
     end
   end
-  
+
   def article_tabs
 
     content = {:name => 'content', :action => :content, :partial => 'articles/sections/content', :label => :label_content}
     comments = {:name => 'comments', :action => :comments, :partial => 'articles/sections/comments', :label => :label_comment_plural}
     attachments = {:name => 'attachments', :action => :attachments, :partial => 'articles/sections/attachments', :label => :label_attachment_plural}
     history = {:name => 'history', :action => :history, :partial => 'articles/sections/history', :label => :label_history}
-    
-    unless redmine_knowledgebase_settings_value(:show_attachments_first)
+
+    unless redmine_knowledgebase_settings_value('show_attachments_first')
 
       tabs = [content, comments, attachments, history]
     else
@@ -124,7 +124,7 @@ module KnowledgebaseHelper
       tabs.pop(1)
     end
 
-    # TODO permissions?            
+    # TODO permissions?
     # tabs.select {|tab| User.current.allowed_to?(tab[:action], @project)}
 
     return tabs
@@ -133,10 +133,10 @@ module KnowledgebaseHelper
   def create_preview_link
     v = Redmine::VERSION.to_a
     if v[0] == 2 && v[1] <= 1 && v[2] <= 0
-      link_to_remote l(:label_preview), 
-                     { :url => { :controller => 'articles', :action => 'preview' }, 
-                       :method => 'post', 
-                       :update => 'preview', 
+      link_to_remote l(:label_preview),
+                     { :url => { :controller => 'articles', :action => 'preview' },
+                       :method => 'post',
+                       :update => 'preview',
                        :with => "Form.serialize('articles-form')" }
     else
       preview_link({ :controller => 'articles', :action => 'preview' }, 'articles-form')
@@ -153,7 +153,7 @@ module KnowledgebaseHelper
 
     if !thumb
       article.attachments.reverse_each do |attach|
-        if attach.thumbnailable? 
+        if attach.thumbnailable?
           thumb = attach
           break
         end
@@ -165,7 +165,7 @@ module KnowledgebaseHelper
 
 
   def get_article_thumbnail_url( article )
-    
+
     thumb = get_article_thumbnail( article )
 
     if thumb
@@ -176,7 +176,7 @@ module KnowledgebaseHelper
   end
 
   def get_article_thumbnail_url_absolute( article )
-    
+
     thumb = get_article_thumbnail( article )
 
     if thumb
@@ -188,4 +188,3 @@ module KnowledgebaseHelper
 
 
 end
-

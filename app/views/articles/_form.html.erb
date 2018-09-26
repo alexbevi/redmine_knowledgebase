@@ -22,7 +22,7 @@
 </p>
 <p><%= f.text_field :title, :size => 60, :label => l(:label_title), :required => true %></p>
 
-<% unless redmine_knowledgebase_settings_value(:disable_article_summaries) %>
+<% unless redmine_knowledgebase_settings_value('disable_article_summaries') %>
   <p><%= f.text_area :summary, :cols => 60, :rows => 5, :label => l(:label_summary) %></p>
 <% end %>
 
@@ -43,7 +43,7 @@
 </div>
 <% end %>
 
-<% if redmine_knowledgebase_settings_value(:show_thumbnails_for_articles) %>
+<% if redmine_knowledgebase_settings_value('show_thumbnails_for_articles') %>
   <p><%= l(:thumbnail_explanation) %></p>
 <% end %>
 

@@ -132,7 +132,7 @@ private
     @tags_hash = Hash[ @articles.tag_counts.map{ |tag| [tag.name.downcase, 1] } ]
 
     # Pagination of article lists
-    @limit = redmine_knowledgebase_settings_value( :articles_per_list_page).to_i
+    @limit = redmine_knowledgebase_settings_value('articles_per_list_page').to_i
     @article_count = @articles.count
     @article_pages = Redmine::Pagination::Paginator.new @article_count, @limit, params['page']
     @offset ||= @article_pages.offset
