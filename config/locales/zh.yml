@@ -45,7 +45,7 @@ zh:
   label_kb_link: "KB#%{kb_id}"
   label_new_article: "新建文章"
   label_new_category: "新建分类"
-  label_new_comment: "新增批注"
+  label_new_comment: "添加评论"
   label_overview_my_articles: "我所编写的文章：%{total_articles_by_me}"
   label_overview_total_articles: "文章总数：%{total_articles}"
   label_overview_total_categories: "知识分类总数：%{total_categories}"
@@ -100,7 +100,7 @@ zh:
   text_confirm_versions_delete: "文章所有改动将丢失，是否继续？"
   text_current_version: 当前版本
   thumbnail_explanation: "在添加文章的附件文件时，在描述栏中填写 \"thumbnail\" ，则会将该图片设置为文章的的唯一缩略图。否则，最后上传的图像文件将被用作该文章的缩略图。"
-  title_add_comment: "新增批注"
+  title_add_comment: "添加评论"
   title_article_rating: "文章评分"
   title_browse_by_category: "按分类浏览"
   title_browse_by_tags: "按标签浏览"
