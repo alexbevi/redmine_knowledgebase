@@ -93,8 +93,6 @@ zh:
   show_attachments_first: "在文章内容前显示附件？"
   show_breadcrumbs_for_article_lists: "列表中的文章显示面包屑？"
   show_category_totals: "在分类树中显示数量？"
-  show_article_without_tabs: "Show articles without tabs?"  
-  show_attachments_first: "Show attachments before article content?"
   show_breadcrumbs_for_article_lists: "列表中的文章显示面包屑？"  
   show_thumbnails_for_articles: "在文章中显示略缩图？"
   show_tiled_article_lists: "以平铺形式显示文章列表？"  
