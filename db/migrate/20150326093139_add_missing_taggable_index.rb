@@ -1,8 +1,1 @@
-class AddMissingTaggableIndex < ActiveRecord::Migration
-  def self.up
-    add_index :taggings, [:taggable_id, :taggable_type, :context]
-  end
-  def self.down
-    remove_index :taggings, [:taggable_id, :taggable_type, :context]
-  end
-end
+class AddMissingTaggableIndex < Rails.version < '5.1' ? ActiveRecord::Migration : ActiveRecord::Migration[4.2]; end

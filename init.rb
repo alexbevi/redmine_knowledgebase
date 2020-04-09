@@ -1,16 +1,16 @@
 require 'redmine'
-require 'redmine_acts_as_taggable_on/initialize'
+require 'macros'
+require 'concerns/knowledgebase_project_extension'
+require 'helpers/knowledgebase_link_helper'
+require 'helpers/knowledgebase_settings_helper'
+
+Project.send :include, KnowledgebaseProjectExtension
+SettingsHelper.send :include, KnowledgebaseSettingsHelper
+ApplicationHelper.send :include, RedmineCrm::TagsHelper
 
 Rails.configuration.to_prepare do
   Redmine::Activity.register :kb_articles
   Redmine::Search.available_search_types << 'kb_articles'
-end
-
-ActionDispatch::Reloader.to_prepare do
-  require 'macros'
-  require 'concerns/knowledgebase_project_extension'
-  Project.send :include, KnowledgebaseProjectExtension
-  SettingsHelper.send :include, KnowledgebaseSettingsHelper
 end
 
 Redmine::Plugin.register :redmine_knowledgebase do
@@ -22,7 +22,6 @@ Redmine::Plugin.register :redmine_knowledgebase do
   version     '3.3.1'
 
   requires_redmine :version_or_higher => '3.0.0'
-  requires_acts_as_taggable_on
 
   # Do not set any default boolean settings to true or will override user false setting!
   settings :default => {

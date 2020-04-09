@@ -2,5 +2,4 @@
 
 <%= l(:label_comment) %>: <%= @comment.comments %>
 
-<%= authoring @comment.created_on, @comment.author %>
-
+<%= l(:label_added_time_by, :author => link_to_user(@comment.author), :age => content_tag('abbr', distance_of_time_in_words(Time.now, @comment.created_on), :title => format_time(@comment.created_on))).html_safe %>
