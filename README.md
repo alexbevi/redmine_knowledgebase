@@ -8,6 +8,8 @@ This plugin adds professional knowledgebase functionality to the [Redmine](http:
 
 ## Recent Changes
 
+* Redmine 4.1.x support (thanks @Reshetov!)
+* No longer conflicts with Redmine CRM plugin.
 * Tiled visual indexes are now supported using thumbnails.
 * Articles are better formatted to work with more themes.
 * Tag logic is improved and critical tags can be defined easily.
@@ -16,9 +18,9 @@ This plugin adds professional knowledgebase functionality to the [Redmine](http:
 
 ## Warnings
 
-The latest version of this plugin is for Redmine 3.x. If you're still using Redmine 2.x, you should checkout the `redmine-2.x` branch.
+The latest version of this plugin is for Redmine 4.1.x. If you're still using an older Redmine, checkout tag v3.2.2 for Redmine 3.x or even the ancient `redmine-2.x` branch.
 
-This plugin can not coexist with the Redmine CRM plugin due to conflicts related to tagging.
+As of 4.1.x, this plugin can now coexist with the Redmine CRM plugin.
 
 ## Introduction
 
