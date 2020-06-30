@@ -16,7 +16,7 @@ This plugin adds professional knowledgebase functionality to the [Redmine](http:
 
 ## Warnings
 
-The latest version of this plugin is for Redmine 3.x and up. If you're still using Redmine 2.x, you should checkout the `redmine-2.x` branch.
+The latest version of this plugin is for Redmine 3.x. If you're still using Redmine 2.x, you should checkout the `redmine-2.x` branch.
 
 This plugin can not coexist with the Redmine CRM plugin due to conflicts related to tagging.
 
