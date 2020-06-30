@@ -8,13 +8,15 @@ class ArticlesController < ApplicationController
   helper :watchers
   include WatchersHelper
 
-  before_filter :find_project_by_project_id, :authorize
-  before_filter :get_article, :except => [:index, :new, :create, :preview, :comment, :tagged, :rate, :authored]
+  before_action :find_project_by_project_id, :authorize
+  before_action :get_article, :except => [:index, :new, :create, :preview, :comment, :tagged, :rate, :authored]
 
   rescue_from ActionView::MissingTemplate, :with => :force_404
   rescue_from ActiveRecord::RecordNotFound, :with => :force_404
 
-  ActiveRecord::ConnectionAdapters::Column.send(:alias_method, :type_cast, :type_cast_for_database)
+  if ActiveRecord::ConnectionAdapters::Column.respond_to?(:type_cast_for_database)
+    ActiveRecord::ConnectionAdapters::Column.send(:alias_method, :type_cast, :type_cast_for_database)
+  end
 
   def index
     summary_limit = redmine_knowledgebase_settings_value(:summary_limit).to_i
@@ -38,13 +40,14 @@ class ArticlesController < ApplicationController
   def authored
 
     @author_id = params[:author_id]
-    @articles = @project.articles.where(:author_id => @author_id).order("#{KbArticle.table_name}.#{sort_column} #{sort_direction}")
+    @articles = KbArticle.where(id: @project.articles.where(:author_id => @author_id).pluck(&:id))
+                         .order("#{KbArticle.table_name}.#{sort_column} #{sort_direction}")
 
     if params[:tag]
       @tag = params[:tag]
       @tag_array = *@tag.split(',')
       @tag_hash = Hash[ @tag_array.map{ |tag| [tag.downcase, 1] } ]
-      @articles = @articles.tagged_with(@tag)
+      @articles = KbArticle.where(id: @articles.tagged_with(@tag).map(&:id))
     end
 
     @tags = @articles.tag_counts.sort { |a, b| a.name.downcase <=> b.name.downcase }
@@ -66,7 +69,7 @@ class ArticlesController < ApplicationController
     @default_category = params[:category_id]
     @article.category_id = params[:category_id]
     @article.version = params[:version]
-    
+
     # Prefill with critical tags
     if redmine_knowledgebase_settings_value(:critical_tags)
           @article.tag_list = redmine_knowledgebase_settings_value(:critical_tags).split(/\s*,\s*/)
@@ -86,7 +89,8 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = KbArticle.new(params[:article])
+    @article = KbArticle.new
+    @article.safe_attributes = params[:article]
     @article.category_id = params[:category_id]
     @article.author_id = User.current.id
     @article.project_id = KbCategory.find(params[:category_id]).project_id
@@ -97,7 +101,7 @@ class ArticlesController < ApplicationController
       attachments = attach(@article, params[:attachments])
       flash[:notice] = l(:label_article_created, :title => @article.title)
       redirect_to({ :action => 'show', :id => @article.id, :project_id => @project })
-      KbMailer.article_create(@article).deliver
+      KbMailer.article_create(User.current, @article).deliver
     else
       render(:action => 'new')
     end
@@ -146,11 +150,12 @@ class ArticlesController < ApplicationController
     # don't keep previous comment
     @article.version_comments = nil
     @article.version_comments = params[:article][:version_comments]
-    if @article.update_attributes(params[:article])
+    @article.safe_attributes = params[:article]
+    if @article.save
       attachments = attach(@article, params[:attachments])
       flash[:notice] = l(:label_article_updated)
       redirect_to({ :action => 'show', :id => @article.id, :project_id => @project })
-      KbMailer.article_update(@article).deliver
+      KbMailer.article_update(User.current, @article).deliver
     else
       render({:action => 'edit', :id => @article.id})
     end
@@ -164,12 +169,13 @@ class ArticlesController < ApplicationController
     else
 
       @article.without_locking do
-        @comment = Comment.new(params[:comment])
+        @comment = Comment.new
+        @comment.safe_attributes = params[:comment]
         @comment.author = User.current || nil
         if @article.comments << @comment
           flash[:notice] = l(:label_comment_added)
           redirect_to :action => 'show', :id => @article, :project_id => @project
-          KbMailer.article_comment(@article, @comment).deliver
+          KbMailer.article_comment(User.current, @article, @comment).deliver
         else
           show
           render :action => 'show'
@@ -192,7 +198,7 @@ class ArticlesController < ApplicationController
       return false
     end
 
-    KbMailer.article_destroy(@article).deliver
+    KbMailer.article_destroy(User.current, @article).deliver
     @article.destroy
     flash[:notice] = l(:label_article_removed)
     redirect_to({ :controller => 'articles', :action => 'index', :project_id => @project})

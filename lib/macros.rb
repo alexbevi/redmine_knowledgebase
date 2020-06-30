@@ -1,4 +1,6 @@
+require 'helpers/knowledgebase_link_helper'
 include KnowledgebaseLinkHelper
+
 module Macros
 
   Redmine::WikiFormatting::Macros.register do

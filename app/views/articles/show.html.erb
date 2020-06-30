@@ -13,7 +13,7 @@
 <div class="contextual">
   <%= render :partial => "categories/jump_box" %>
 
-  <% if @project.categories.length > 0 %>	
+  <% if @project.categories.length > 0 %>
     <%= link_to_if_authorized l(:title_create_article), { :controller => 'articles', :action => 'new', :project_id => @project}, :class => 'icon icon-add' %>
   <% end %>
 </div>
@@ -59,7 +59,7 @@
 </p>
 
 <% other_formats_links do |f| %>
-  <%= f.link_to 'PDF', :url => params %>
+  <%= f.link_to 'PDF', :url => params.to_unsafe_hash %>
 <% end %>
 
 <div class="wiki"><h1><%= @article.title %></h1></div>
@@ -88,7 +88,7 @@
 
   <h2><%= l(:label_description) %></h2>
   <%= render :partial => "articles/sections/content" %>
-  
+
 
   <h2><%= l(:label_comment_plural) %></h2>
 
