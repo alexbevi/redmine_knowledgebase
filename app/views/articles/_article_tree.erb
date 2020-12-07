@@ -1,0 +1,54 @@
+<div id="article-tree-options">	
+	<a id="articleTreeExpandBtn" href="#" class="btn" onclick="articleTree.expandAllNodes(); articleTree.reload(); expandArticleTree();">Expand All</a>
+	<a id="articleTreeCollapseBtn" href="#" class="btn" onclick="articleTree.collapseAllNodes(); articleTree.reload(); collapseArticleTree();">Collapse All</a>
+</div>
+
+<div id="article-tree"></div>
+
+<script type="text/javascript">
+function expandArticleTree() {
+	$('#articleTreeExpandBtn').hide(); 
+	$('#articleTreeCollapseBtn').show();
+}
+
+function collapseArticleTree() {
+	$('#articleTreeCollapseBtn').hide(); 
+	$('#articleTreeExpandBtn').show();
+}
+
+var expandIcon = '<i class="icon-folder-expand"></i>';
+var collapseIcon = '<i class="icon-folder-collapse"></i>';
+
+var rootNode = new TreeNode("Categories", 
+	{
+		icon: expandIcon
+	}
+);
+
+rootNode.on('expand', function(node){
+  node.setOptions({
+	icon: expandIcon
+  });
+});
+
+rootNode.on('collapse', function(node){
+  node.setOptions({
+	icon: collapseIcon
+  });
+});
+
+<% cats = @categories %>
+<% cats = cats.sort_by(&:title) if sort_categories? %>
+<% cats.each do |category| %>
+	<%= render :partial => "articles/article_tree_row", :locals => { :category => category, :parent_node_id => 'rootNode' } %>	
+<% end %>
+
+var articleTree = new TreeView(rootNode, "#article-tree");
+
+$(document).ready(function() {
+	articleTree.collapseAllNodes(); 
+	articleTree.reload();
+	collapseArticleTree();
+});
+
+</script>

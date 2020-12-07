@@ -238,6 +238,39 @@ div.attachments {
     overflow: hidden;
 }
 
+#article-tree.tj_container .tj_icon {
+	height: 13px;
+}
+
+.icon-folder-expand:before, .icon-folder-collapse:before, .icon-article:before {
+	content: "";
+	display: block;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.icon-folder-expand:before, .icon-folder-collapse:before {	
+	width: 19px;
+	height: 15px;
+}
+
+.icon-article:before {
+	width: 12px;
+	height: 14px;
+}
+
+.icon-folder-expand:before {
+	background-image: url("../images/article_tree_folder_yellow_document.png");	
+}
+
+.icon-folder-collapse:before {
+	background-image: url("../images/article_tree_folder_yellow.png");
+}
+
+.icon-article:before {
+	background-image: url("../images/article_tree_document.png");
+}
+
 
 /* If you want custom default thumbnails by category, add them here! */
 /*

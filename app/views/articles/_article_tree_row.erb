@@ -1,0 +1,38 @@
+node<%= category.id %> = new TreeNode("<%= category.title %>", 
+	{
+		icon: expandIcon
+	}
+);
+
+node<%= category.id %>.on('expand', function(node){
+  node.setOptions({
+	icon: expandIcon
+  });
+});
+
+node<%= category.id %>.on('collapse', function(node){
+  node.setOptions({
+	icon: collapseIcon
+  });
+});
+
+<%= parent_node_id %>.addChild(node<%= category.id %>);
+
+<% subs = category.children %>
+<% subs = subs.sort_by(&:title) if sort_categories? %>
+<% subs.each do |subcat| %>
+	<%= render :partial => 'articles/article_tree_row', :locals => { :category => subcat, :parent_node_id => "node#{category.id}" } %>	
+<% end %>
+
+<% arts = category.articles %>
+<% arts = arts.sort_by(&:title) if sort_categories? %>
+<% arts.each do |article| %>
+	<% truncate_length = 100 if local_assigns[:truncate_length].nil? %>
+
+	node<%= category.id %>.addChild(new TreeNode('<%= link_to truncate(article.title, :length => truncate_length), { :controller => 'articles', :action => 'show', :id => article.id, :project_id => @project}, :title => article.title %>', 
+		{
+			icon: '<i class="icon-article"></i>'
+		}
+	));
+<% end %>
+

@@ -98,6 +98,7 @@ en:
   show_breadcrumbs_for_article_lists: "Show breadcrumbs for articles in lists?"
   show_thumbnails_for_articles: "Show thumbnails for articles in lists?"
   show_tiled_article_lists: "Show tiled article lists?"
+  show_article_tree_lists: "Show article tree lists?"
   summary_item_limit: "Knowledgebase summary page article limit"
   text_confirm_versions_delete: "This will revert and delete any newer versions of this document that may exist. Are you sure?"
   text_current_version: Current
@@ -105,6 +106,7 @@ en:
   title_add_comment: "Add Comment"
   title_article_rating: "Article Rating"
   title_browse_by_category: "Browse by Category"
+  title_article_tree_lists: "Article Tree Lists"
   title_browse_by_tags: "Browse by Tags"
   title_create_article: "Create Article"
   title_create_category: "Create Category"
