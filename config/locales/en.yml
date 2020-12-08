@@ -67,6 +67,8 @@ en:
   label_unrated_article: Unrated
   label_updated_who: "Updated by %{updater} %{age} ago"
   label_unrated_article: "Unrated"
+  label_expand_all: "Expand All"
+  label_collapse_all: "Fold All"
   message_no_articles: "No articles have been added yet. Click Create Article to get started."
   message_no_categories: "No categories have been created. Click Create Category to get started."
   message_no_permissions: "You do not have permission to view any articles or categories. Please contact your administrator."
