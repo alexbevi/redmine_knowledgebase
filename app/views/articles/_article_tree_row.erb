@@ -1,4 +1,4 @@
-node<%= category.id %> = new TreeNode("<%= category.title %>", 
+node<%= category.id %> = new TreeNode('<%= link_to(category.title, {:controller => 'categories', :action => 'show', :id => category.id, :project_id => @project} ) %>', 
 	{
 		icon: expandIcon
 	}

@@ -271,6 +271,10 @@ div.attachments {
 	background-image: url("../images/article_tree_document.png");
 }
 
+.tj_container span.tj_description.selected a {
+	color: #fff;
+}
+
 
 /* If you want custom default thumbnails by category, add them here! */
 /*
