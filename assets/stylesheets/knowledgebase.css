@@ -250,21 +250,21 @@ div.attachments {
 }
 
 .icon-folder-expand:before, .icon-folder-collapse:before {	
-	width: 19px;
-	height: 15px;
+    width: 17px;
+    height: 17px;
 }
 
 .icon-article:before {
-	width: 12px;
-	height: 14px;
+    width: 15px;
+    height: 15px;
 }
 
 .icon-folder-expand:before {
-	background-image: url("../images/article_tree_folder_yellow_document.png");	
+	background-image: url("../images/article_tree_folder_expanded.png");	
 }
 
 .icon-folder-collapse:before {
-	background-image: url("../images/article_tree_folder_yellow.png");
+	background-image: url("../images/article_tree_folder_folded.png");
 }
 
 .icon-article:before {
