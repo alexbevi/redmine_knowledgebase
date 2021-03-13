@@ -181,7 +181,7 @@ module KnowledgebaseHelper
     thumb = get_article_thumbnail( article )
 
     if thumb
-      return "#{Setting.protocol}://#{Setting.host_name}#{thumbnail_path(thumb)}"
+      return polymorphic_url(thumb, :host => Setting.host_name, :protocol => Setting.protocol)
     else
       return ''
     end
