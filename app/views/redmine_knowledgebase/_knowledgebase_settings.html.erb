@@ -46,6 +46,11 @@
 </p>
 
 <p>
+  <%= label_tag :settings_show_category_tree_lists, l(:show_article_tree_lists) %>
+  <%= check_box_tag 'settings[show_article_tree_lists]', 1, @settings[:show_article_tree_lists] %>
+</p>
+
+<p>
   <%= label_tag :settings_critical_tags, l(:critical_tags) %>
   <%= text_field_tag "settings[critical_tags]", @settings[:critical_tags] %>
 </p>

@@ -12,6 +12,14 @@
             <% end %>
         </ul>
         </div>
+		
+		<% if show_article_tree_lists?	%>	
+			<div class="articles box">
+				<h3><%= l(:title_article_tree_lists) %></h3>
+				<%= render :partial => 'articles/article_tree' %>            
+			</div>
+		<% end %>
+		
         <% if User.current.allowed_to?(:view_recent_articles, @project) %>
           <h3><%= l(:title_recently_updated_articles) %></h3>
           <div class="articles index-summary">
