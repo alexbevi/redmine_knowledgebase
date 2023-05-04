@@ -41,14 +41,14 @@ class ArticlesController < ApplicationController
   def authored
 
     @author_id = params[:author_id]
-    @articles = KbArticle.where(id: @project.articles.where(:author_id => @author_id).pluck(&:id))
+    @articles = KbArticle.where('kb_articles.id in (?)', @project.articles.where(:author_id => @author_id).pluck(:id))
                          .order("#{KbArticle.table_name}.#{sort_column} #{sort_direction}")
 
     if params[:tag]
       @tag = params[:tag]
       @tag_array = *@tag.split(',')
       @tag_hash = Hash[ @tag_array.map{ |tag| [tag.downcase, 1] } ]
-      @articles = KbArticle.where(id: @articles.tagged_with(@tag).map(&:id))
+      @articles = KbArticle.where('kb_articles.id in (?)', @articles.tagged_with(@tag).map(&:id))
     end
 
     @tags = @articles.tag_counts.sort { |a, b| a.name.downcase <=> b.name.downcase }
