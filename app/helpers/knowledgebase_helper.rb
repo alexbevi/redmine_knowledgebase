@@ -181,7 +181,7 @@ module KnowledgebaseHelper
     thumb = get_article_thumbnail( article )
 
     if thumb
-      return "#{Setting.protocol}://#{Setting.host_name}#{thumbnail_path(thumb)}"
+      return thumbnail_url(thumb)
     else
       return ''
     end

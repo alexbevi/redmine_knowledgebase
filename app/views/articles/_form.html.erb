@@ -52,4 +52,4 @@
 <p><label><%=l(:label_attachment_add)%></label><%= render :partial => 'attachments/form' %></p>
 </div>
 
-<%= wikitoolbar_for 'article_content' %>
+<%= wikitoolbar_for 'article_content', preview_articles_path(project_id: @project, id: @article) %>
