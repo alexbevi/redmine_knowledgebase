@@ -19,7 +19,7 @@
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-module ActiveRecord #:nodoc:
+module RedmineKnowledgebase #:nodoc:
   module Acts #:nodoc:
 
     # == acts_as_viewed
@@ -81,8 +81,8 @@ module ActiveRecord #:nodoc:
         #   
         def acts_as_viewed(options = {})
           # don't allow multiple calls
-          return if self.included_modules.include?(ActiveRecord::Acts::Viewed::ViewMethods)
-          send :include, ActiveRecord::Acts::Viewed::ViewMethods
+          return if self.included_modules.include?(RedmineKnowledgebase::Acts::Viewed::ViewMethods)
+          send :include, RedmineKnowledgebase::Acts::Viewed::ViewMethods
                     
           # Create the model for ratings if it doesn't yet exist
           viewing_class = options[:viewing_class] || 'Viewing'
@@ -264,7 +264,3 @@ module ActiveRecord #:nodoc:
     end
   end
 end
-
-
-ActiveRecord::Base.send :include, ActiveRecord::Acts::Viewed
-

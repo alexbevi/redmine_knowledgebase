@@ -1,6 +1,6 @@
 module KnowledgebaseHelper
   include Redmine::Export::PDF
-  include KnowledgebaseSettingsHelper
+  include RedmineKnowledgebase::Helpers::KnowledgebaseSettingsHelper
   include ActionView::Helpers::NumberHelper
   include RedmineCrm::TagsHelper
 

@@ -1,8 +1,3 @@
-require 'acts_as_viewed'
-require 'acts_as_rated'
-require 'acts_as_versioned'
-require 'diff'
-
 class KbArticle < ActiveRecord::Base
   unloadable
   include Redmine::SafeAttributes

@@ -68,7 +68,7 @@
 
 
 <% other_formats_links do |f| %>
-  <%= f.link_to 'Atom', :url => { :key => User.current.rss_key } %>
+  <%= f.link_to 'Atom', :url => { :key => User.current.respond_to?(:atom_key) ? User.current.atom_key : User.current.rss_key } %>
 <% end %>
 
 

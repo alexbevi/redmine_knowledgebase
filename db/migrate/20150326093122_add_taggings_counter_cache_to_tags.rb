@@ -9,6 +9,5 @@ class AddTaggingsCounterCacheToTags < Rails.version < '5.1' ? ActiveRecord::Migr
   end
 
   def self.down
-    remove_column :tags, :taggings_count
   end
 end
