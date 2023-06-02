@@ -1,17 +1,10 @@
-require 'redmine'
-require 'macros'
-require 'concerns/knowledgebase_project_extension'
-require 'helpers/knowledgebase_link_helper'
-require 'helpers/knowledgebase_settings_helper'
-
-Project.send :include, KnowledgebaseProjectExtension
-SettingsHelper.send :include, KnowledgebaseSettingsHelper
-ApplicationHelper.send :include, RedmineCrm::TagsHelper
-
-Rails.configuration.to_prepare do
-  Redmine::Activity.register :kb_articles
-  Redmine::Search.available_search_types << 'kb_articles'
+unless Rails.try(:autoloaders).try(:zeitwerk_enabled?)
+  require 'redmine_knowledgebase'
 end
+
+ActiveRecord::Base.send :include, RedmineKnowledgebase::Acts::Rated
+ActiveRecord::Base.send :include, RedmineKnowledgebase::Acts::Versioned
+ActiveRecord::Base.send :include, RedmineKnowledgebase::Acts::Viewed
 
 Redmine::Plugin.register :redmine_knowledgebase do
   name        'Knowledgebase'
@@ -19,7 +12,7 @@ Redmine::Plugin.register :redmine_knowledgebase do
   author_url  "http://www.alexbevi.com"
   description 'A plugin for Redmine that adds knowledgebase functionality'
   url         'https://github.com/alexbevi/redmine_knowledgebase'
-  version     '4.1.1'
+  version     '5.0.0'
 
   requires_redmine :version_or_higher => '4.0.0'
 
@@ -93,8 +86,4 @@ Redmine::Plugin.register :redmine_knowledgebase do
 
   menu :project_menu, :articles, { :controller => 'articles', :action => 'index' }, :caption => :knowledgebase_title, :after => :activity, :param => :project_id
 
-end
-
-class RedmineKnowledgebaseHookListener < Redmine::Hook::ViewListener
-  render_on :view_layouts_base_html_head, :inline => "<%= stylesheet_link_tag 'knowledgebase', :plugin => :redmine_knowledgebase %>"
 end

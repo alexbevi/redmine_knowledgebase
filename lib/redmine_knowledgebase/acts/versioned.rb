@@ -19,7 +19,7 @@
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-module ActiveRecord #:nodoc:
+module RedmineKnowledgebase #:nodoc:
   module Acts #:nodoc:
     # Specify this act if you want to save a copy of the row in a versioned table.  This assumes there is a
     # versioned table ready and that your model has a version field.  This works with optimistic locking if the lock_version
@@ -169,9 +169,9 @@ module ActiveRecord #:nodoc:
         #
         def acts_as_versioned(options = {}, &extension)
           # don't allow multiple calls
-          return if self.included_modules.include?(ActiveRecord::Acts::Versioned::ActMethods)
+          return if self.included_modules.include?(RedmineKnowledgebase::Acts::Versioned::ActMethods)
 
-          send :include, ActiveRecord::Acts::Versioned::ActMethods
+          send :include, RedmineKnowledgebase::Acts::Versioned::ActMethods
 
           cattr_accessor :versioned_class_name, :versioned_foreign_key, :versioned_table_name, :versioned_inheritance_column,
             :version_column, :max_version_limit, :track_altered_attributes, :version_condition, :version_sequence_name, :non_versioned_columns,
@@ -213,7 +213,7 @@ module ActiveRecord #:nodoc:
           end
 
           class_eval do
-            has_many :versions, version_association_options do
+            has_many :versions, **version_association_options do
               # finds earliest version of this record
               def earliest
                 @earliest ||= order('version').first
@@ -493,7 +493,7 @@ module ActiveRecord #:nodoc:
               self.connection.add_column table_name, :version, :integer
             end
 
-            self.connection.create_table(versioned_table_name, create_table_options) do |t|
+            self.connection.create_table(versioned_table_name, **create_table_options) do |t|
               t.column versioned_foreign_key, :integer
               t.column :version, :integer
             end
@@ -566,5 +566,3 @@ module ActiveRecord #:nodoc:
     end
   end
 end
-
-ActiveRecord::Base.send :include, ActiveRecord::Acts::Versioned
