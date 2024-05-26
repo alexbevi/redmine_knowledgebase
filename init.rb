@@ -1,12 +1,13 @@
 require 'redmine'
-require 'macros'
-require 'concerns/knowledgebase_project_extension'
-require 'helpers/knowledgebase_link_helper'
-require 'helpers/knowledgebase_settings_helper'
+
+if (Rails.configuration.respond_to?(:autoloader) && Rails.configuration.autoloader == :zeitwerk) || Rails.version > '7.0'
+  Rails.autoloaders.each { |loader| loader.ignore(File.dirname(__FILE__) + '/lib') }
+end
+require File.dirname(__FILE__) + '/lib/redmine_knowledgebase'
 
 Project.send :include, KnowledgebaseProjectExtension
 SettingsHelper.send :include, KnowledgebaseSettingsHelper
-ApplicationHelper.send :include, RedmineCrm::TagsHelper
+ApplicationHelper.send :include, Redmineup::TagsHelper
 
 Rails.configuration.to_prepare do
   Redmine::Activity.register :kb_articles

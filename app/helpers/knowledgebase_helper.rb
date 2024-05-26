@@ -2,7 +2,7 @@ module KnowledgebaseHelper
   include Redmine::Export::PDF
   include KnowledgebaseSettingsHelper
   include ActionView::Helpers::NumberHelper
-  include RedmineCrm::TagsHelper
+  include Redmineup::TagsHelper
 
   def format_article_summary(article, format, options = {})
     output = case format
@@ -189,4 +189,3 @@ module KnowledgebaseHelper
 
 
 end
-

@@ -1,10 +1,6 @@
-require 'acts_as_viewed'
-require 'acts_as_rated'
-require 'acts_as_versioned'
-require 'diff'
+require Rails.version > '5.0' ? 'redmine/string_array_diff/diff' : 'diff'
 
-class KbArticle < ActiveRecord::Base
-  unloadable
+class KbArticle < ApplicationRecord
   include Redmine::SafeAttributes
 
   self.locking_column = 'version'
@@ -18,9 +14,9 @@ class KbArticle < ActiveRecord::Base
   belongs_to :author,   :class_name => 'User', :foreign_key => 'author_id'
   belongs_to :updater,  :class_name => 'User', :foreign_key => 'updater_id'
 
-  rcrm_acts_as_viewed
+  up_acts_as_viewed
   acts_as_rated :no_rater => true
-  rcrm_acts_as_taggable
+  up_acts_as_taggable
   acts_as_attachable
   acts_as_watchable
 

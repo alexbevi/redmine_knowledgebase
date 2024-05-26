@@ -1,6 +1,4 @@
 class ArticlesController < ApplicationController
-  unloadable
-
   helper :attachments
   include AttachmentsHelper
   helper :knowledgebase
@@ -131,7 +129,7 @@ class ArticlesController < ApplicationController
     @categories=@project.categories.all
 
     # @page is used when using redmine_wysiwyg_editor plugin to show added attachments in menu
-    @page = @article 
+    @page = @article
     # don't keep previous comment
     @article.version_comments = nil
     @article.version = params[:version]

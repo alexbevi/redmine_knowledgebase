@@ -1,6 +1,4 @@
 class CategoriesController < ApplicationController
-  unloadable
-
   menu_item :articles
   helper :knowledgebase
   include KnowledgebaseHelper
@@ -9,7 +7,7 @@ class CategoriesController < ApplicationController
 
   before_action :find_project_by_project_id, :authorize
   before_action :get_category, :only => [:show, :edit, :update, :destroy, :index]
-  accept_rss_auth :show
+  Rails.version > '5.0' ? accept_atom_auth(:show) : accept_rss_auth(:show)
 
   rescue_from ActiveRecord::RecordNotFound, :with => :force_404
 
