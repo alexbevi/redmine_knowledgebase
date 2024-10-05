@@ -1,6 +1,5 @@
 class KbMailer < Mailer
-
-  add_template_helper(KnowledgebaseHelper)
+  helper KnowledgebaseHelper
 
   def article_create(_user = User.current, article)
 	redmine_headers 'Project' => article.project.identifier

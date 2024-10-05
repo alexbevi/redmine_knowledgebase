@@ -213,7 +213,7 @@ module ActiveRecord #:nodoc:
           end
 
           class_eval do
-            has_many :versions, version_association_options do
+            versions_block = Proc.new do ||
               # finds earliest version of this record
               def earliest
                 @earliest ||= order('version').first
@@ -224,6 +224,13 @@ module ActiveRecord #:nodoc:
                 @latest ||= order('version desc').first
               end
             end
+
+            if RUBY_VERSION >= '3.0'
+              has_many :versions, **version_association_options, &versions_block
+            else
+              has_many :versions, version_association_options, &versions_block
+            end
+
             before_save  :set_new_version
             after_create :save_version_on_create
             after_update :save_version
