@@ -97,5 +97,10 @@ Redmine::Plugin.register :redmine_knowledgebase do
 end
 
 class RedmineKnowledgebaseHookListener < Redmine::Hook::ViewListener
-  render_on :view_layouts_base_html_head, :inline => "<%= stylesheet_link_tag 'knowledgebase', :plugin => :redmine_knowledgebase %>"
+  render_on :view_layouts_base_html_head, 
+	{:inline => "<%= stylesheet_link_tag 'knowledgebase', :plugin => :redmine_knowledgebase %>"},
+	{:inline => "<%= stylesheet_link_tag 'treejs', :plugin => :redmine_knowledgebase %>"},
+	{:inline => "<%= javascript_include_tag 'tree', :plugin => :redmine_knowledgebase %>"}
+	
+	
 end
