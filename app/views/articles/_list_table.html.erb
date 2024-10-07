@@ -50,12 +50,12 @@
       <td class="rating"><% rating = article.rating_average.to_i %><%= rating != 0 ? "#{rating} / 5" : "-" %></td>
 
       <% unless @author_id %>
-        <td class="author">        
-	  <%= link_to article.author.name, { :controller => 'articles', 
+      <td class="author">
+        <%= article.author ? (link_to article.author.name, { :controller => 'articles', 
           :action => 'authored', 
           :author_id => article.author.id, 
-          :project_id => @project} %> 
-	</td>
+          :project_id => @project}): l(:label_user_anonymous) %> 
+      </td>
       <% end %>
 
       <td class="created_at"><%= time_ago_in_words article.created_at %> ago</td>
