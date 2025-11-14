@@ -49,6 +49,10 @@ module KnowledgebaseHelper
   def show_category_totals?
     redmine_knowledgebase_settings_value(:show_category_totals)
   end
+  
+  def show_article_tree_lists?
+    redmine_knowledgebase_settings_value(:show_article_tree_lists)
+  end
 
   def updated_by(updated, updater)
      l(:label_updated_who, :updater => link_to_user(updater), :age => time_tag(updated)).html_safe
