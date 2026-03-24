@@ -1,4 +1,12 @@
-require Rails.version > '5.0' ? 'redmine/string_array_diff/diff' : 'diff'
+require_relative '../../lib/redmine_knowledgebase/acts/viewed'
+require_relative '../../lib/redmine_knowledgebase/acts/rated'
+require_relative '../../lib/redmine_knowledgebase/acts/taggable'
+require_relative '../../lib/redmine_knowledgebase/acts/versioned'
+
+ActiveRecord::Base.send :include, RedmineKnowledgebase::Acts::Viewed
+ActiveRecord::Base.send :include, RedmineKnowledgebase::Acts::Rated
+ActiveRecord::Base.send :include, RedmineKnowledgebase::Acts::Taggable
+ActiveRecord::Base.send :include, RedmineKnowledgebase::Acts::Versioned
 
 class KbArticle < ApplicationRecord
   include Redmine::SafeAttributes
@@ -10,13 +18,13 @@ class KbArticle < ApplicationRecord
   validates_presence_of :category_id
 
   belongs_to :project
-  belongs_to :category, :class_name => "KbCategory"
-  belongs_to :author,   :class_name => 'User', :foreign_key => 'author_id'
-  belongs_to :updater,  :class_name => 'User', :foreign_key => 'updater_id'
+  belongs_to :category, class_name: 'KbCategory'
+  belongs_to :author,   class_name: 'User', foreign_key: 'author_id'
+  belongs_to :updater,  class_name: 'User', foreign_key: 'updater_id'
 
-  up_acts_as_viewed
+  acts_as_viewed
   acts_as_rated :no_rater => true
-  up_acts_as_taggable
+  acts_as_taggable
   acts_as_attachable
   acts_as_watchable
 
@@ -50,9 +58,11 @@ class KbArticle < ApplicationRecord
                               :type => 'kb_articles',
                               :timestamp => :updated_at
 
-    acts_as_searchable :columns => [ "#{table_name}.title", "#{table_name}.summary", "#{table_name}.content"],
-                       :preload => [ :project ],
-                       :date_column => :created_at
+
+    acts_as_searchable :columns => [ "#{table_name}.title", "#{table_name}.summary", "#{table_name}.content" ],
+               :preload => [ :project ],
+               :date_column => :created_at,
+               :project_key => :project_id
 
     scope :visible, lambda {|*args|
       joins(:project).
@@ -74,6 +84,40 @@ class KbArticle < ApplicationRecord
 
   has_many :comments, -> { order 'created_on DESC' }, :as => :commented, :dependent => :destroy
 
+  scope :newest, ->(limit) { preload(:category).order('created_at DESC').limit(limit) }
+
+  scope :recently_updated, ->(limit) { preload(:category).order('updated_at DESC').limit(limit) }
+
+  scope :popular, ->(limit) do
+    preload(:viewings)
+      .preload(:category)
+      .left_joins(:viewings)
+      .group(:id)
+      .select("#{table_name}.*, COUNT(#{Viewing.table_name}.id) AS views")
+      .order('views DESC')
+      .limit(limit)
+  end
+
+  scope :top_rated, ->(limit) do
+    preload(:ratings)
+      .preload(:category)
+      .left_joins(:ratings)
+      .group(:id)
+      .with_rating
+      .order('rating_avg DESC, rating_count DESC')
+      .limit(limit)
+
+  end
+
+  scope :with_rating, -> do
+    left_joins(:ratings)
+      .group(:id)
+      .select(<<~SQL.squish)
+          #{table_name}.*,
+          AVG(COALESCE(#{Rating.table_name}.rating, 0)) AS rating_avg,
+          COUNT(#{Rating.table_name}.id) AS rating_count
+        SQL
+  end
 
   def recipients
     notified = []

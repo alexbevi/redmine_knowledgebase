@@ -1,28 +1,27 @@
-require 'redmine'
-
-if (Rails.configuration.respond_to?(:autoloader) && Rails.configuration.autoloader == :zeitwerk) || Rails.version > '7.0'
-  Rails.autoloaders.each { |loader| loader.ignore(File.dirname(__FILE__) + '/lib') }
+Redmine::Search.map do |search|
+  search.register :kb_articles
 end
-require File.dirname(__FILE__) + '/lib/redmine_knowledgebase'
 
-Project.send :include, KnowledgebaseProjectExtension
-SettingsHelper.send :include, KnowledgebaseSettingsHelper
-ApplicationHelper.send :include, Redmineup::TagsHelper
+# Knowledgebase独自のacts_as_系拡張を明示的にrequireし、ActiveRecord::Baseにinclude
+require_relative 'lib/redmine_knowledgebase/acts/viewed'
+require_relative 'lib/redmine_knowledgebase/acts/rated'
+require_relative 'lib/redmine_knowledgebase/acts/taggable'
+require_relative 'lib/redmine_knowledgebase/acts/versioned'
 
-Rails.configuration.to_prepare do
-  Redmine::Activity.register :kb_articles
-  Redmine::Search.available_search_types << 'kb_articles'
-end
+ActiveRecord::Base.send :include, RedmineKnowledgebase::Acts::Viewed
+ActiveRecord::Base.send :include, RedmineKnowledgebase::Acts::Rated
+ActiveRecord::Base.send :include, RedmineKnowledgebase::Acts::Taggable
+ActiveRecord::Base.send :include, RedmineKnowledgebase::Acts::Versioned
 
 Redmine::Plugin.register :redmine_knowledgebase do
   name        'Knowledgebase'
-  author      'Alex Bevilacqua'
+  author      'Alex Bevilacqua, Southbridge'
   author_url  "http://www.alexbevi.com"
   description 'A plugin for Redmine that adds knowledgebase functionality'
-  url         'https://github.com/alexbevi/redmine_knowledgebase'
-  version     '5.0.0'
+  url         'https://github.com/southbridgeio/redmine_knowledgebase'
+  version     '5.1.0'
 
-  requires_redmine :version_or_higher => '4.0.0'
+  requires_redmine :version_or_higher => '5.1.0'
 
   # Do not set any default boolean settings to true or will override user false setting!
   settings :default => {
@@ -69,10 +68,10 @@ Redmine::Plugin.register :redmine_knowledgebase do
       :articles      => :index,
       :categories    => [:index, :show, :new, :create, :edit, :update, :destroy]
     }
-    permission (Redmine::VERSION.to_s >= "6.0.0" ? :add_kb_article_watchers : :watch_articles), {
+    permission :watch_articles, {
       :watchers		=> [:new, :destroy]
     }
-    permission (Redmine::VERSION.to_s >= "6.0.0" ? :add_kb_category_watchers : :watch_categories), {
+    permission :watch_categories, {
       :watchers => [:new, :destroy]
     }
     permission :view_recent_articles, {
@@ -94,8 +93,4 @@ Redmine::Plugin.register :redmine_knowledgebase do
 
   menu :project_menu, :articles, { :controller => 'articles', :action => 'index' }, :caption => :knowledgebase_title, :after => :activity, :param => :project_id
 
-end
-
-class RedmineKnowledgebaseHookListener < Redmine::Hook::ViewListener
-  render_on :view_layouts_base_html_head, :inline => "<%= stylesheet_link_tag 'knowledgebase', :plugin => :redmine_knowledgebase %>"
 end
